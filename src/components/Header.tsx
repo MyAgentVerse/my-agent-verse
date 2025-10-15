@@ -16,6 +16,9 @@ const Header = () => {
           <a href="/industries" className="text-sm font-medium transition-colors hover:text-primary">
             Industries
           </a>
+          <a href="/hvac" className="text-sm font-medium transition-colors hover:text-primary">
+            HVAC
+          </a>
           <a href="/#meet_your_ai_team" className="text-sm font-medium transition-colors hover:text-primary">
             AI Team
           </a>
