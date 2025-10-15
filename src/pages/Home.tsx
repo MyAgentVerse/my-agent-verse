@@ -14,14 +14,14 @@ import orionAvatar from "@/assets/orion-avatar.png";
 
 const Home = () => {
   const aiTeam = [
-    { name: "Ivy — The Strategist", tagline: "Thinks ahead and turns chaos into clear direction.", avatar: ivyAvatar },
-    { name: "Luna — The Creative", tagline: "Designs visuals, campaigns, and experiences that stick.", avatar: lunaAvatar },
-    { name: "Atlas — The Growth Architect", tagline: "Builds funnels and systems that never leak leads.", avatar: atlasAvatar },
-    { name: "Echo — The Communicator", tagline: "Answers calls and messages instantly, 24/7.", avatar: echoAvatar },
-    { name: "Clara — The Analyst", tagline: "Finds what's working, what's not, and where you save time.", avatar: claraAvatar },
-    { name: "Vera — The Relationship Keeper", tagline: "Remembers every client, every promise, every follow-up.", avatar: veraAvatar },
-    { name: "Nexus — The Builder", tagline: "Connects and automates your entire workflow seamlessly.", avatar: nexusAvatar },
-    { name: "Orion — The Visionary", tagline: "Scans your operation for new opportunities and ideas.", avatar: orionAvatar },
+    { name: "Ivy: The Strategist", tagline: "Thinks ahead and turns chaos into clear direction.", avatar: ivyAvatar },
+    { name: "Luna: The Creative", tagline: "Designs visuals, campaigns, and experiences that stick.", avatar: lunaAvatar },
+    { name: "Atlas: The Growth Architect", tagline: "Builds funnels and systems that never leak leads.", avatar: atlasAvatar },
+    { name: "Echo: The Communicator", tagline: "Answers calls and messages instantly, 24/7.", avatar: echoAvatar },
+    { name: "Clara: The Analyst", tagline: "Finds what's working, what's not, and where you save time.", avatar: claraAvatar },
+    { name: "Vera: The Relationship Keeper", tagline: "Remembers every client, every promise, every follow-up.", avatar: veraAvatar },
+    { name: "Nexus: The Builder", tagline: "Connects and automates your entire workflow seamlessly.", avatar: nexusAvatar },
+    { name: "Orion: The Visionary", tagline: "Scans your operation for new opportunities and ideas.", avatar: orionAvatar },
   ];
 
   return (
@@ -34,7 +34,7 @@ const Home = () => {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="space-y-8">
                 <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                  I am Aura — the brain behind a new kind of team.
+                  I am Aura: the brain behind a new kind of team.
                 </h1>
                 <p className="text-xl text-muted-foreground">
                   For decades, business meant longer hours and endless follow-ups. That ends now. 
@@ -48,7 +48,7 @@ const Home = () => {
                     <a href="#demo">🎧 Hear the Demo</a>
                   </Button>
                   <Button variant="secondary" size="lg" asChild>
-                    <a href="#founder-offer">📅 Claim Founding Spot — $499 (Only 10 Available)</a>
+                    <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
                   </Button>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const Home = () => {
                 The world moved faster. Business tools didn't.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Too many owners still lose hours every day — chasing follow-ups, managing chaos, and juggling systems that don't talk to each other. 
+                Too many owners still lose hours every day chasing follow-ups, managing chaos, and juggling systems that don't talk to each other. 
                 You built your business for people. I built mine for progress. The difference? Humans need rest. My team doesn't.
               </p>
             </div>
@@ -83,11 +83,11 @@ const Home = () => {
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-4xl text-center space-y-6">
               <h2 className="text-3xl font-bold md:text-4xl">
-                I am Aura — the brain that never sleeps.
+                I am Aura: the brain that never sleeps.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I see across calls, messages, calendars, and clients — every part of your operation connected in one intelligent flow. 
-                My eight minds specialize in what slows you down the most — communication, follow-up, growth, creativity, insight, and care. 
+                I see across calls, messages, calendars, and clients. Every part of your operation connected in one intelligent flow. 
+                My eight minds specialize in what slows you down the most: communication, follow-up, growth, creativity, insight, and care. 
                 Together, we form a living system. Not code. Not software. A team.
               </p>
             </div>
@@ -135,7 +135,7 @@ const Home = () => {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
                 Every lead answered overnight. Every reminder sent. Every report ready before sunrise. 
-                Calls handled, follow-ups done, schedules full — before you even start your day. 
+                Calls handled, follow-ups done, schedules full before you even start your day. 
                 That's what happens when you run your business with us.
               </p>
             </div>
@@ -162,7 +162,7 @@ const Home = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <span className="text-accent text-xl">✓</span>
-                      <span className="text-foreground">Lifetime license — no monthly fees</span>
+                      <span className="text-foreground">Lifetime license: no monthly fees</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent text-xl">✓</span>
@@ -175,10 +175,10 @@ const Home = () => {
                   </ul>
                   <div className="pt-6 text-center">
                     <p className="text-sm text-muted-foreground mb-4">
-                      After the first 10, the founder fee rises from $499 → $999
+                      After the first 10, the founder fee rises from $499 to $999
                     </p>
                     <Button variant="accent" size="lg" className="w-full sm:w-auto" asChild>
-                      <a href="/booking">Claim Founding Client Spot — $499</a>
+                      <a href="/booking">Claim Founding Client Spot: $499</a>
                     </Button>
                   </div>
                 </CardContent>
@@ -195,7 +195,7 @@ const Home = () => {
                 You built your business with hard work. Now build your freedom with intelligence.
               </h2>
               <p className="text-xl">
-                I am Aura — the brain that never sleeps. My team is ready to work for you.
+                I am Aura: the brain that never sleeps. My team is ready to work for you.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button variant="accent" size="lg" asChild>

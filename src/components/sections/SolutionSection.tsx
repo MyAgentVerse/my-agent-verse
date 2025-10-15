@@ -10,7 +10,7 @@ const SolutionSection = () => {
             You don't need more people in the office. You need reliable backup.
           </h2>
           <p className="mb-12 text-center text-xl text-muted-foreground">
-            Meet your 24/7 AI team — built by MyAgentVerse.
+            Meet your 24/7 AI team, built by MyAgentVerse.
           </p>
 
           <div className="mb-16 overflow-hidden rounded-2xl">
@@ -24,7 +24,7 @@ const SolutionSection = () => {
           <div className="grid gap-8 md:grid-cols-3">
             <Card>
               <CardHeader>
-                <CardTitle>Ava — Front-Desk Hero</CardTitle>
+                <CardTitle>Ava: Front-Desk Hero</CardTitle>
                 <CardDescription>Calm. Quick. Always on.</CardDescription>
               </CardHeader>
               <CardContent>
@@ -51,7 +51,7 @@ const SolutionSection = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle>Jack — Follow-Up Closer</CardTitle>
+                <CardTitle>Jack: Follow-Up Closer</CardTitle>
                 <CardDescription>Friendly. Persistent. Reliable.</CardDescription>
               </CardHeader>
               <CardContent>
@@ -74,7 +74,7 @@ const SolutionSection = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle>Sofia — Operations Brain</CardTitle>
+                <CardTitle>Sofia: Operations Brain</CardTitle>
                 <CardDescription>Organized. Steady. Detail-driven.</CardDescription>
               </CardHeader>
               <CardContent>

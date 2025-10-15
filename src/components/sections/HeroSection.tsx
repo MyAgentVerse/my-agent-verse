@@ -11,10 +11,10 @@ const HeroSection = () => {
               You're out on a job. The phone rings back at the shop. No one picks up.
             </h1>
             <p className="text-xl text-muted-foreground">
-              Ten minutes later, another company gets the install. Five thousand dollars — gone. Every ad click, every form, every message you paid for — lost if no one answers fast.
+              Ten minutes later, another company gets the install. Five thousand dollars, gone. Every ad click, every form, every message you paid for lost if no one answers fast.
             </p>
             <p className="text-lg font-medium">
-              Meet Ava. Your 24/7 AI Front Desk from MyAgentVerse. Ava answers every call and handles every lead — before competitors do.
+              Meet Ava. Your 24/7 AI Front Desk from MyAgentVerse. Ava answers every call and handles every lead before competitors do.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button variant="accent" size="lg" asChild>
@@ -26,7 +26,7 @@ const HeroSection = () => {
             </div>
             <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
               "We haven't missed a lead since Ava joined our team." <br />
-              <span className="font-semibold not-italic">— Mike, AirMax Heating & Cooling</span>
+              <span className="font-semibold not-italic">Mike, AirMax Heating & Cooling</span>
             </blockquote>
           </div>
           <div className="relative">

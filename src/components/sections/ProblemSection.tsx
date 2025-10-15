@@ -41,7 +41,7 @@ const ProblemSection = () => {
           </div>
 
           <p className="mt-12 text-center text-xl font-semibold">
-            It's not your marketing. It's the follow-up. For most shops, that's $15K–$25K a week left on the table.
+            It's not your marketing. It's the follow-up. For most shops, that's $15K to $25K a week left on the table.
           </p>
         </div>
       </div>
