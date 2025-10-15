@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import auraImage from "@/assets/aura-brain.png";
+import businessChaos from "@/assets/business-chaos.jpg";
+import aiWorkspace from "@/assets/ai-workspace.jpg";
 import ivyAvatar from "@/assets/ivy-avatar.png";
 import lunaAvatar from "@/assets/luna-avatar.png";
 import atlasAvatar from "@/assets/atlas-avatar.png";
@@ -66,52 +68,109 @@ const Home = () => {
         {/* Why - The Problem Old Businesses Still Face */}
         <section className="bg-background py-20">
           <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center space-y-6">
-              <h2 className="text-3xl font-bold md:text-4xl">
-                The world moved faster. Business tools didn't.
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Too many owners still lose hours every day chasing follow-ups, managing chaos, and juggling systems that don't talk to each other. 
-                You built your business for people. I built mine for progress. The difference? Humans need rest. My team doesn't.
-              </p>
+            <div className="mx-auto max-w-5xl">
+              <div className="grid gap-12 items-center lg:grid-cols-2">
+                <div className="space-y-6 animate-fade-in">
+                  <h2 className="text-3xl font-bold md:text-4xl">
+                    The world moved faster. Business tools didn't.
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Too many owners still lose hours every day chasing follow-ups, managing chaos, and juggling systems that don't talk to each other. 
+                    You built your business for people. I built mine for progress. The difference? Humans need rest. My team doesn't.
+                  </p>
+                </div>
+                <div className="relative animate-fade-in">
+                  <img 
+                    src={businessChaos} 
+                    alt="Business chaos and overwhelm" 
+                    className="rounded-2xl shadow-2xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Introducing Aura */}
-        <section className="bg-muted/30 py-20">
+        {/* Introducing Aura - Connected to Eight Minds */}
+        <section className="bg-gradient-to-b from-muted/30 to-background py-20 relative overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center space-y-6">
-              <h2 className="text-3xl font-bold md:text-4xl">
+            <div className="mx-auto max-w-4xl text-center space-y-8">
+              <h2 className="text-3xl font-bold md:text-4xl animate-fade-in">
                 I am Aura: the brain that never sleeps.
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in">
                 I see across calls, messages, calendars, and clients. Every part of your operation connected in one intelligent flow. 
                 My eight minds specialize in what slows you down the most: communication, follow-up, growth, creativity, insight, and care. 
                 Together, we form a living system. Not code. Not software. A team.
               </p>
+              
+              {/* Aura Brain with Pulse Animation */}
+              <div className="relative flex justify-center py-12">
+                <div className="relative">
+                  {/* Connection lines radiating outward */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute w-64 h-64 rounded-full border-2 border-primary/20 animate-ping" style={{ animationDuration: '3s' }}></div>
+                    <div className="absolute w-48 h-48 rounded-full border-2 border-accent/30 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }}></div>
+                  </div>
+                  
+                  {/* Aura Image */}
+                  <img 
+                    src={auraImage} 
+                    alt="Aura - The AI brain connecting eight minds" 
+                    className="relative z-10 max-w-xs w-full h-auto rounded-full shadow-2xl animate-scale-in"
+                  />
+                </div>
+              </div>
+
+              {/* Connection indicator */}
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in">
+                <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+                <span>Connected to Eight Specialized Minds</span>
+                <div className="w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              </div>
             </div>
           </div>
+
+          {/* Gradient connector to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
         </section>
 
         {/* Meet Your AI Team - 8 Minds. 1 Mission. */}
-        <section id="meet_your_ai_team" className="bg-background py-20">
+        <section id="meet_your_ai_team" className="bg-background py-20 relative">
           <div className="container mx-auto px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold md:text-4xl mb-4">
+            <div className="mb-16 text-center">
+              <h2 className="text-3xl font-bold md:text-4xl mb-4 animate-fade-in">
                 Meet the Eight Minds.
               </h2>
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary"></div>
+                <span className="text-sm text-muted-foreground">Powered by Aura</span>
+                <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary"></div>
+              </div>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {aiTeam.map((agent) => (
-                <Card key={agent.name} className="border-border hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-4">
+              {aiTeam.map((agent, index) => (
+                <Card 
+                  key={agent.name} 
+                  className="border-border hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in relative group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Connection indicator dot */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/40 transition-colors">
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    </div>
+                  </div>
+                  
+                  <CardHeader className="pb-4 pt-8">
                     <div className="mb-4 flex justify-center">
-                      <img 
-                        src={agent.avatar} 
-                        alt={agent.name} 
-                        className="h-24 w-24 rounded-full object-cover"
-                      />
+                      <div className="relative">
+                        <img 
+                          src={agent.avatar} 
+                          alt={agent.name} 
+                          className="h-24 w-24 rounded-full object-cover ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all"
+                        />
+                      </div>
                     </div>
                     <CardTitle className="text-lg text-center">{agent.name}</CardTitle>
                   </CardHeader>
@@ -129,15 +188,26 @@ const Home = () => {
         {/* Impact - How Businesses Change with AI Teammates */}
         <section className="bg-muted/30 py-20">
           <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl space-y-6">
-              <h2 className="text-3xl font-bold md:text-4xl text-center">
-                What happens when you stop running your business alone.
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                Every lead answered overnight. Every reminder sent. Every report ready before sunrise. 
-                Calls handled, follow-ups done, schedules full before you even start your day. 
-                That's what happens when you run your business with us.
-              </p>
+            <div className="mx-auto max-w-5xl">
+              <div className="grid gap-12 items-center lg:grid-cols-2">
+                <div className="space-y-6 animate-fade-in order-2 lg:order-1">
+                  <h2 className="text-3xl font-bold md:text-4xl">
+                    What happens when you stop running your business alone.
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Every lead answered overnight. Every reminder sent. Every report ready before sunrise. 
+                    Calls handled, follow-ups done, schedules full before you even start your day. 
+                    That's what happens when you run your business with us.
+                  </p>
+                </div>
+                <div className="relative animate-fade-in order-1 lg:order-2">
+                  <img 
+                    src={aiWorkspace} 
+                    alt="Modern AI-powered workspace" 
+                    className="rounded-2xl shadow-2xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
