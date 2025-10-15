@@ -66,17 +66,30 @@ const Home = () => {
         </section>
 
         {/* Why - The Problem Old Businesses Still Face */}
-        <section className="bg-background py-20">
+        <section className="bg-background py-12 md:py-16">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-5xl">
-              <div className="grid gap-12 items-center lg:grid-cols-2">
-                <div className="space-y-6 animate-fade-in">
+              <div className="grid gap-8 items-center lg:grid-cols-2">
+                <div className="space-y-5 animate-fade-in">
                   <h2 className="text-3xl font-bold md:text-4xl">
                     The world moved faster. Business tools didn't.
                   </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Too many owners still lose hours every day chasing follow-ups, managing chaos, and juggling systems that don't talk to each other. 
-                    You built your business for people. I built mine for progress. The difference? Humans need rest. My team doesn't.
+                  <div className="space-y-3">
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-destructive text-xl flex-shrink-0">×</span>
+                      <span>Hours lost chasing follow-ups</span>
+                    </p>
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-destructive text-xl flex-shrink-0">×</span>
+                      <span>Systems that don't talk to each other</span>
+                    </p>
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-destructive text-xl flex-shrink-0">×</span>
+                      <span>Managing chaos manually every day</span>
+                    </p>
+                  </div>
+                  <p className="text-lg font-semibold text-foreground pt-2">
+                    Humans need rest. My team doesn't.
                   </p>
                 </div>
                 <div className="relative animate-fade-in">
@@ -92,38 +105,51 @@ const Home = () => {
         </section>
 
         {/* Introducing Aura - Connected to Eight Minds */}
-        <section className="bg-gradient-to-b from-muted/30 to-background py-20 relative overflow-hidden">
+        <section className="bg-gradient-to-b from-muted/30 to-background py-12 md:py-16 relative overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center space-y-8">
-              <h2 className="text-3xl font-bold md:text-4xl animate-fade-in">
+            <div className="mx-auto max-w-5xl">
+              <h2 className="text-3xl font-bold md:text-4xl text-center mb-8 animate-fade-in">
                 I am Aura: the brain that never sleeps.
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in">
-                I see across calls, messages, calendars, and clients. Every part of your operation connected in one intelligent flow. 
-                My eight minds specialize in what slows you down the most: communication, follow-up, growth, creativity, insight, and care. 
-                Together, we form a living system. Not code. Not software. A team.
-              </p>
               
-              {/* Aura Brain with Pulse Animation */}
-              <div className="relative flex justify-center py-12">
-                <div className="relative">
-                  {/* Connection lines radiating outward */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute w-64 h-64 rounded-full border-2 border-primary/20 animate-ping" style={{ animationDuration: '3s' }}></div>
-                    <div className="absolute w-48 h-48 rounded-full border-2 border-accent/30 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }}></div>
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                {/* Left: Key Points */}
+                <div className="space-y-4 animate-fade-in">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-lg"><span className="font-semibold text-foreground">I see everything:</span> calls, messages, calendars, clients</p>
                   </div>
-                  
-                  {/* Aura Image */}
-                  <img 
-                    src={auraImage} 
-                    alt="Aura - The AI brain connecting eight minds" 
-                    className="relative z-10 max-w-xs w-full h-auto rounded-full shadow-2xl animate-scale-in"
-                  />
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-lg"><span className="font-semibold text-foreground">Eight specialized minds:</span> communication, follow-up, growth, creativity, insight, care</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-lg"><span className="font-semibold text-foreground">One intelligent flow:</span> not code, not software. A team.</p>
+                  </div>
+                </div>
+
+                {/* Right: Aura Brain with Pulse Animation */}
+                <div className="relative flex justify-center py-6">
+                  <div className="relative">
+                    {/* Connection lines radiating outward */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute w-64 h-64 rounded-full border-2 border-primary/20 animate-ping" style={{ animationDuration: '3s' }}></div>
+                      <div className="absolute w-48 h-48 rounded-full border-2 border-accent/30 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }}></div>
+                    </div>
+                    
+                    {/* Aura Image */}
+                    <img 
+                      src={auraImage} 
+                      alt="Aura - The AI brain connecting eight minds" 
+                      className="relative z-10 max-w-xs w-full h-auto rounded-full shadow-2xl animate-scale-in"
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Connection indicator */}
-              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in">
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in mt-8">
                 <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
                 <span>Connected to Eight Specialized Minds</span>
                 <div className="w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
@@ -132,17 +158,17 @@ const Home = () => {
           </div>
 
           {/* Gradient connector to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
         </section>
 
         {/* Meet Your AI Team - 8 Minds. 1 Mission. */}
-        <section id="meet_your_ai_team" className="bg-background py-20 relative">
+        <section id="meet_your_ai_team" className="bg-background py-12 md:py-16 relative">
           <div className="container mx-auto px-6">
-            <div className="mb-16 text-center">
-              <h2 className="text-3xl font-bold md:text-4xl mb-4 animate-fade-in">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold md:text-4xl mb-3 animate-fade-in">
                 Meet the Eight Minds.
               </h2>
-              <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="flex items-center justify-center gap-3">
                 <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary"></div>
                 <span className="text-sm text-muted-foreground">Powered by Aura</span>
                 <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary"></div>
@@ -186,19 +212,32 @@ const Home = () => {
         </section>
 
         {/* Impact - How Businesses Change with AI Teammates */}
-        <section className="bg-muted/30 py-20">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-5xl">
-              <div className="grid gap-12 items-center lg:grid-cols-2">
-                <div className="space-y-6 animate-fade-in order-2 lg:order-1">
+              <div className="grid gap-8 items-center lg:grid-cols-2">
+                <div className="space-y-5 animate-fade-in order-2 lg:order-1">
                   <h2 className="text-3xl font-bold md:text-4xl">
                     What happens when you stop running your business alone.
                   </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Every lead answered overnight. Every reminder sent. Every report ready before sunrise. 
-                    Calls handled, follow-ups done, schedules full before you even start your day. 
-                    That's what happens when you run your business with us.
-                  </p>
+                  <div className="space-y-3">
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-primary text-xl flex-shrink-0">✓</span>
+                      <span>Every lead answered overnight</span>
+                    </p>
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-primary text-xl flex-shrink-0">✓</span>
+                      <span>Every reminder sent automatically</span>
+                    </p>
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-primary text-xl flex-shrink-0">✓</span>
+                      <span>Reports ready before sunrise</span>
+                    </p>
+                    <p className="text-lg flex items-start gap-2">
+                      <span className="text-primary text-xl flex-shrink-0">✓</span>
+                      <span>Schedules full before you start your day</span>
+                    </p>
+                  </div>
                 </div>
                 <div className="relative animate-fade-in order-1 lg:order-2">
                   <img 
