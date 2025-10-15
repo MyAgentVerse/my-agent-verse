@@ -264,7 +264,7 @@ const Home = () => {
                     Founding Client Lifetime Access
                   </CardTitle>
                   <CardDescription className="text-lg">
-                    Be one of the first 10 businesses to own your AI team for life. Get lifetime access to Aura and three agents of your choice.
+                    Be one of the first 10 businesses to own your AI team for life. Get lifetime access to Aura and all eight AI agents—forever.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">

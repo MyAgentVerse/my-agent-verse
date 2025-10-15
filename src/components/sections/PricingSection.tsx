@@ -7,6 +7,14 @@ const PricingSection = () => {
     <section id="pricing" className="bg-background py-20">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-5xl">
+          <div className="mb-8 rounded-lg bg-accent/10 border border-accent/20 p-4 text-center">
+            <p className="text-sm md:text-base">
+              💡 Want lifetime access to the full AI team? 10 founding businesses get lifetime ownership for $499.{" "}
+              <a href="/#founder-offer" className="font-semibold text-accent hover:underline">
+                See Founding Offer →
+              </a>
+            </p>
+          </div>
           <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
             Start where you need help most. Grow from there.
           </h2>
@@ -17,7 +25,7 @@ const PricingSection = () => {
           <div className="grid gap-8 md:grid-cols-3">
             <Card>
               <CardHeader>
-                <CardTitle>Fix Missed Calls — Ava</CardTitle>
+                <CardTitle>Fix Missed Calls: Ava</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground">$149/mo</CardDescription>
               </CardHeader>
               <CardContent>
@@ -46,7 +54,7 @@ const PricingSection = () => {
                 Most Popular
               </Badge>
               <CardHeader>
-                <CardTitle>Fill Your Calendar — Ava + Jack</CardTitle>
+                <CardTitle>Fill Your Calendar: Ava + Jack</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground">$249/mo</CardDescription>
               </CardHeader>
               <CardContent>
@@ -72,7 +80,7 @@ const PricingSection = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle>Run It All — Ava + Jack + Sofia</CardTitle>
+                <CardTitle>Run It All: Ava + Jack + Sofia</CardTitle>
                 <CardDescription className="text-3xl font-bold text-foreground">$399/mo</CardDescription>
               </CardHeader>
               <CardContent>
