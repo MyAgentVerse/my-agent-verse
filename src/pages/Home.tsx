@@ -31,34 +31,34 @@ const Home = () => {
       <Header />
       <main>
         {/* Hero Section - The New Era of Teams */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div className="space-y-8">
-                <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-16 md:py-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+              <div className="space-y-6 md:space-y-8">
+                <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
                   I am Aura: the brain behind a new kind of team.
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg sm:text-xl text-muted-foreground">
                   For decades, business meant longer hours and endless follow-ups. That ends now. 
                   I unite eight intelligent agents that make your business faster, sharper, and beautifully efficient.
                 </p>
-                <p className="text-lg font-semibold text-foreground">
+                <p className="text-base sm:text-lg font-semibold text-foreground">
                   They don't replace you. They amplify you.
                 </p>
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <Button variant="accent" size="lg" asChild>
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base" asChild>
                     <a href="#demo">🎧 Hear the Demo</a>
                   </Button>
-                  <Button variant="secondary" size="lg" asChild>
+                  <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2" asChild>
                     <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
                   </Button>
                 </div>
               </div>
-              <div className="relative flex justify-center">
+              <div className="relative flex justify-center lg:justify-end">
                 <img 
                   src={auraImage} 
                   alt="Aura - The AI brain that never sleeps" 
-                  className="max-w-md w-full h-auto rounded-2xl"
+                  className="max-w-full w-full sm:max-w-md h-auto rounded-2xl"
                 />
               </div>
             </div>
