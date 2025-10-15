@@ -9,7 +9,7 @@ const PricingSection = () => {
         <div className="mx-auto max-w-5xl">
           <div className="mb-8 rounded-lg bg-accent/10 border border-accent/20 p-4 text-center">
             <p className="text-sm md:text-base">
-              💡 Want lifetime access to the full AI team? 10 founding businesses get lifetime ownership for $499.{" "}
+              💡 Want lifetime access? 10 founding businesses get Aura + 3 agents for life at $499.{" "}
               <a href="/#founder-offer" className="font-semibold text-accent hover:underline">
                 See Founding Offer →
               </a>
