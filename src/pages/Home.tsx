@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import auraImage from "@/assets/aura-brain.png";
+import auraImage from "@/assets/aura-brain-new.png";
 import businessChaos from "@/assets/business-chaos.jpg";
 import aiWorkspace from "@/assets/ai-workspace.jpg";
 import ivyAvatar from "@/assets/ivy-avatar.png";

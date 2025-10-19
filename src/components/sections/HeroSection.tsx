@@ -3,11 +3,12 @@ import heroImage from "@/assets/hero-hvac-tech.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-background py-20 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/10 to-accent/15 py-20 md:py-32">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-20 right-20 h-96 w-96 rounded-full bg-primary/5 blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-40 h-64 w-64 rounded-full bg-accent/5 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 right-20 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-40 h-64 w-64 rounded-full bg-accent/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-40 left-20 h-80 w-80 rounded-full bg-secondary/10 blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
       
       <div className="container mx-auto px-6">
@@ -38,7 +39,7 @@ const HeroSection = () => {
           
           <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
             {/* Decorative elements */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50 animate-pulse" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/20 rounded-3xl blur-2xl opacity-60 animate-pulse" />
             
             {/* Floating badges */}
             <div className="absolute -top-6 -right-6 bg-accent text-accent-foreground px-4 py-2 rounded-full font-semibold shadow-lg animate-[float_3s_ease-in-out_infinite] z-10">
