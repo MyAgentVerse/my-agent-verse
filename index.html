@@ -4,22 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyAgentVerse | Where Humans Lead and AI Amplifies</title>
-  <meta name="description" content="MyAgentVerse is your world of AI agents, built for you. From answering calls to automating workflows, each agent amplifies your team and frees you to focus on what matters most.">
+  <meta name="description" content="MyAgentVerse is your world of AI agents — built to amplify your business, automate workflows, and free your team to focus on what matters most." />
   <meta name="author" content="MyAgentVerse" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- ✅ Dynamic canonical + social image support -->
+  <script>
+    const baseUrl = window.location.origin;
+    const imageUrl = `${baseUrl}/social-preview.png`;
+    document.write(`
+      <meta property="og:image" content="${imageUrl}" />
+      <meta name="twitter:image" content="${imageUrl}" />
+      <meta property="og:url" content="${baseUrl}" />
+    `);
+  </script>
+
+  <!-- ✅ Open Graph (Facebook, LinkedIn, iMessage) -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://staging.myagentverse.com/" />
   <meta property="og:title" content="MyAgentVerse | Where Humans Lead and AI Amplifies" />
   <meta property="og:description" content="Meet your world of AI agents — built to amplify your business, automate workflows, and help your team focus on what matters most." />
-  <meta property="og:image" content="https://staging.myagentverse.com/social-preview.png" />
 
-  <!-- Twitter -->
+  <!-- ✅ Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MyAgentVerse | Where Humans Lead and AI Amplifies" />
   <meta name="twitter:description" content="Meet your world of AI agents — built to amplify your business, automate workflows, and help your team focus on what matters most." />
-  <meta name="twitter:image" content="https://staging.myagentverse.com/social-preview.png" />
 </head>
+
 
   <body>
     <div id="root"></div>
