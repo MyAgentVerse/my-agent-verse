@@ -31,10 +31,23 @@ const Home = () => {
       <Header />
       <main>
         {/* Hero Section - The New Era of Teams */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-16 md:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-accent/15 to-secondary/10 py-16 md:py-32">
+          {/* Animated colorful background elements */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute top-20 right-20 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-3xl animate-pulse" />
+            <div className="absolute bottom-20 left-20 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-accent/25 to-secondary/25 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-40 left-1/3 h-[350px] w-[350px] rounded-full bg-gradient-to-bl from-secondary/20 to-primary/20 blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+            
+            {/* Colorful particles */}
+            <div className="absolute top-32 right-1/4 h-3 w-3 rounded-full bg-accent animate-ping" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute bottom-40 right-1/3 h-2 w-2 rounded-full bg-primary animate-ping" style={{ animationDelay: '1.5s' }} />
+            <div className="absolute top-1/2 right-20 h-2 w-2 rounded-full bg-secondary animate-ping" style={{ animationDelay: '2.5s' }} />
+            <div className="absolute top-1/3 left-20 h-3 w-3 rounded-full bg-accent/70 animate-ping" style={{ animationDelay: '3s' }} />
+          </div>
+          
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-6 md:space-y-8 animate-fade-in">
                 <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
                   I am Aura: the brain behind a new kind of team.
                 </h1>
@@ -46,20 +59,40 @@ const Home = () => {
                   They don't replace you. They amplify you.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4">
-                  <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base" asChild>
+                  <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base hover-scale" asChild>
                     <a href="#demo">🎧 Hear the Demo</a>
                   </Button>
-                  <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2" asChild>
+                  <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2 hover-scale" asChild>
                     <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
                   </Button>
                 </div>
               </div>
-              <div className="relative flex justify-center lg:justify-end">
-                <img 
-                  src={auraImage} 
-                  alt="Aura - The AI brain that never sleeps" 
-                  className="max-w-full w-full sm:max-w-md h-auto rounded-2xl"
-                />
+              
+              <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                {/* Multi-layered colorful background gradients */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-primary/40 via-accent/40 to-secondary/30 rounded-full blur-3xl opacity-70 animate-pulse" />
+                <div className="absolute -inset-6 bg-gradient-to-tl from-accent/35 via-primary/30 to-secondary/25 rounded-full blur-2xl opacity-60 animate-pulse" style={{ animationDelay: '1s' }} />
+                
+                {/* Geometric floating shapes */}
+                <div className="absolute -top-8 right-1/4 h-16 w-16 rotate-45 bg-gradient-to-br from-primary to-accent opacity-20 animate-[float_4s_ease-in-out_infinite] blur-sm" />
+                <div className="absolute -bottom-8 left-1/4 h-20 w-20 rotate-12 bg-gradient-to-tr from-accent to-secondary opacity-20 animate-[float_5s_ease-in-out_infinite] blur-sm" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/3 -right-4 h-12 w-12 rounded-full bg-gradient-to-r from-secondary to-primary opacity-25 animate-[float_3.5s_ease-in-out_infinite] blur-sm" style={{ animationDelay: '2s' }} />
+                <div className="absolute bottom-1/4 -left-4 h-14 w-14 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 opacity-30 animate-[float_4.5s_ease-in-out_infinite] blur-sm" style={{ animationDelay: '1.5s' }} />
+                
+                {/* Orbiting particles */}
+                <div className="absolute top-10 right-8 h-3 w-3 rounded-full bg-primary animate-ping opacity-75" />
+                <div className="absolute bottom-16 left-12 h-3 w-3 rounded-full bg-accent animate-ping opacity-75" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/2 right-4 h-2 w-2 rounded-full bg-secondary animate-ping opacity-75" style={{ animationDelay: '2s' }} />
+                <div className="absolute bottom-1/3 left-8 h-2 w-2 rounded-full bg-primary/70 animate-ping opacity-75" style={{ animationDelay: '1.5s' }} />
+                
+                {/* Main image with gradient border and enhanced float animation */}
+                <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-full bg-gradient-to-br from-primary via-accent to-secondary shadow-2xl">
+                  <img 
+                    src={auraImage} 
+                    alt="Aura - The AI brain that never sleeps" 
+                    className="max-w-full w-full sm:max-w-md h-auto rounded-full bg-background shadow-xl"
+                  />
+                </div>
               </div>
             </div>
           </div>
