@@ -7,7 +7,11 @@
   <meta name="description" content="MyAgentVerse is your world of AI agents — built to amplify your business, automate workflows, and free your team to focus on what matters most." />
   <meta name="author" content="MyAgentVerse" />
 
-  <!-- ✅ Dynamic canonical + social image support -->
+  <!-- ✅ Static fallback for LinkedIn -->
+  <meta property="og:image" content="https://staging.myagentverse.com/social-preview.png" />
+  <meta name="twitter:image" content="https://staging.myagentverse.com/social-preview.png" />
+
+  <!-- ✅ Dynamic version for staging / production -->
   <script>
     const baseUrl = window.location.origin;
     const imageUrl = `${baseUrl}/social-preview.png`;
@@ -18,16 +22,17 @@
     `);
   </script>
 
-  <!-- ✅ Open Graph (Facebook, LinkedIn, iMessage) -->
+  <!-- ✅ Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="MyAgentVerse | Where Humans Lead and AI Amplifies" />
   <meta property="og:description" content="Meet your world of AI agents — built to amplify your business, automate workflows, and help your team focus on what matters most." />
 
-  <!-- ✅ Twitter / X -->
+  <!-- ✅ Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MyAgentVerse | Where Humans Lead and AI Amplifies" />
   <meta name="twitter:description" content="Meet your world of AI agents — built to amplify your business, automate workflows, and help your team focus on what matters most." />
 </head>
+
 
 
   <body>
