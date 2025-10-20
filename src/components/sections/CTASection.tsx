@@ -20,14 +20,14 @@ const CTASection = () => {
                 🎧 Hear Ava Handle a Real HVAC Call
               </Button>
             </DemoModal>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
-              asChild
-            >
-              <a href="#book" id="book">📅 Book Your Shop's Setup Call</a>
-            </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-transparent border-2 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary font-semibold"
+            asChild
+          >
+            <a href="#book" id="book">📅 Book Your Shop's Setup Call</a>
+          </Button>
           </div>
 
           <p className="mt-12 text-sm font-medium opacity-90">
