@@ -28,11 +28,4 @@ const Index = () => {
   );
 };
 
-export default function HVAC() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h1>HVAC AI Agent</h1>
-      <p>This is your HVAC page content.</p>
-    </div>
-  );
-}
+export default HvacLanding;
