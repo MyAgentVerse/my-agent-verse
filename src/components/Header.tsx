@@ -21,14 +21,8 @@ const Header = () => {
           <a href="/hvac" className="text-sm font-medium transition-colors hover:text-primary">
             HVAC
           </a>
-          <a href="/#meet_your_ai_team" className="text-sm font-medium transition-colors hover:text-primary">
-            AI Team
-          </a>
           <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
             Book Demo
-          </a>
-          <a href="/contact" className="text-sm font-medium transition-colors hover:text-primary">
-            Contact
           </a>
         </nav>
 
@@ -51,14 +45,8 @@ const Header = () => {
                 <a href="/hvac" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   HVAC
                 </a>
-                <a href="/#meet_your_ai_team" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
-                  AI Team
-                </a>
                 <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Book Demo
-                </a>
-                <a href="/contact" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
-                  Contact
                 </a>
                 <Button variant="accent" asChild className="mt-4">
                   <a href="/#founder-offer">Claim Spot</a>
