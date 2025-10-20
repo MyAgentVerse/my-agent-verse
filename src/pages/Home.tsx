@@ -435,7 +435,13 @@ const Home = () => {
         </section>
 
         {/* Industry Use Cases */}
-        <section className="bg-background py-16 md:py-20">
+        <section className="bg-background py-16 md:py-20 relative overflow-hidden">
+          {/* Subtle animated background */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-20 right-20 h-96 w-96 rounded-full bg-primary/5 blur-3xl animate-pulse" style={{ animationDuration: "4s" }} />
+            <div className="absolute bottom-20 left-20 h-96 w-96 rounded-full bg-accent/5 blur-3xl animate-pulse" style={{ animationDuration: "5s", animationDelay: "1s" }} />
+          </div>
+
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="text-center mb-12 animate-fade-in">
@@ -447,10 +453,10 @@ const Home = () => {
 
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {/* Real Estate */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group">
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group">
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <HomeIcon className="w-8 h-8 text-primary" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 animate-[float_3s_ease-in-out_infinite]">
+                      <HomeIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Real Estate</CardTitle>
                   </CardHeader>
@@ -462,10 +468,10 @@ const Home = () => {
                 </Card>
 
                 {/* Home Services */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.1s" }}>
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.1s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <Wrench className="w-8 h-8 text-accent" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 animate-[float_3.5s_ease-in-out_infinite]" style={{ animationDelay: "0.5s" }}>
+                      <Wrench className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Home Services</CardTitle>
                   </CardHeader>
@@ -477,10 +483,10 @@ const Home = () => {
                 </Card>
 
                 {/* Healthcare & Assisted Living */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.2s" }}>
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.2s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                      <Heart className="w-8 h-8 text-secondary" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: "1s" }}>
+                      <Heart className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Healthcare & Assisted Living</CardTitle>
                   </CardHeader>
@@ -492,10 +498,10 @@ const Home = () => {
                 </Card>
 
                 {/* Manufacturing & Operations */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.3s" }}>
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.3s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Settings className="w-8 h-8 text-primary" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 animate-[float_3.2s_ease-in-out_infinite]" style={{ animationDelay: "1.5s" }}>
+                      <Settings className="w-8 h-8 text-primary group-hover:scale-110 group-hover:rotate-90 transition-all duration-300" />
                     </div>
                     <CardTitle className="text-xl">Manufacturing & Operations</CardTitle>
                   </CardHeader>
@@ -507,10 +513,10 @@ const Home = () => {
                 </Card>
 
                 {/* Professional Services */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.4s" }}>
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.4s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <Briefcase className="w-8 h-8 text-accent" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 animate-[float_3.8s_ease-in-out_infinite]" style={{ animationDelay: "2s" }}>
+                      <Briefcase className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Professional Services</CardTitle>
                   </CardHeader>
@@ -522,10 +528,10 @@ const Home = () => {
                 </Card>
 
                 {/* Education & Training */}
-                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.5s" }}>
+                <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.5s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                      <BookOpen className="w-8 h-8 text-secondary" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 animate-[float_4.2s_ease-in-out_infinite]" style={{ animationDelay: "2.5s" }}>
+                      <BookOpen className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Education & Training</CardTitle>
                   </CardHeader>
