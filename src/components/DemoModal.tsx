@@ -21,9 +21,9 @@ const DemoModal = ({ children }: DemoModalProps) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[550px]">
+      <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center">
+          <DialogTitle className="text-2xl font-bold text-center pr-8">
             🎧 Try Ava - Your AI HVAC Assistant
           </DialogTitle>
           <DialogDescription className="text-base pt-2">
@@ -31,11 +31,11 @@ const DemoModal = ({ children }: DemoModalProps) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="space-y-6 py-4">
+        <div className="space-y-4 py-4 pb-6">
           {/* Instructions */}
-          <div className="bg-accent/10 rounded-lg p-4 space-y-3">
-            <h3 className="font-semibold text-lg flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-accent" />
+          <div className="bg-accent/10 rounded-lg p-3 space-y-2">
+            <h3 className="font-semibold text-base flex items-center gap-2">
+              <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
               How it Works
             </h3>
             <p className="text-sm text-muted-foreground">
@@ -45,8 +45,8 @@ const DemoModal = ({ children }: DemoModalProps) => {
 
           {/* What to Expect */}
           <div className="space-y-2">
-            <h4 className="font-semibold">What to Expect:</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-semibold text-sm">What to Expect:</h4>
+            <ul className="space-y-1.5 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>Professional greeting and natural conversation</span>
@@ -63,9 +63,9 @@ const DemoModal = ({ children }: DemoModalProps) => {
           </div>
 
           {/* Example Scenarios */}
-          <div className="bg-secondary/10 rounded-lg p-4 space-y-2">
+          <div className="bg-secondary/10 rounded-lg p-3 space-y-2">
             <h4 className="font-semibold text-sm">Try These Scenarios:</h4>
-            <ul className="text-sm text-muted-foreground space-y-1">
+            <ul className="text-sm text-muted-foreground space-y-0.5">
               <li>• "My AC stopped working and it's 95 degrees"</li>
               <li>• "I need a quote for a new heating system"</li>
               <li>• "Can someone come out this week?"</li>
@@ -73,17 +73,17 @@ const DemoModal = ({ children }: DemoModalProps) => {
           </div>
 
           {/* Phone Number */}
-          <div className="space-y-4">
-            <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-4 text-center">
-              <p className="text-sm text-muted-foreground mb-2">Call this number:</p>
-              <p className="text-3xl font-bold text-primary tracking-wide">{phoneNumber}</p>
+          <div className="space-y-3">
+            <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-3 text-center">
+              <p className="text-sm text-muted-foreground mb-1">Call this number:</p>
+              <p className="text-2xl sm:text-3xl font-bold text-primary tracking-wide break-all">{phoneNumber}</p>
             </div>
 
             {/* Call Button */}
             <Button 
               variant="accent" 
               size="lg" 
-              className="w-full" 
+              className="w-full text-base" 
               asChild
             >
               <a href={`tel:${phoneNumber}`}>
@@ -93,7 +93,7 @@ const DemoModal = ({ children }: DemoModalProps) => {
             </Button>
           </div>
 
-          <p className="text-xs text-center text-muted-foreground">
+          <p className="text-xs text-center text-muted-foreground pb-2">
             This is a live demo line. Ava is ready to show you how she handles your customers.
           </p>
         </div>
