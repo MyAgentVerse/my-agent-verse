@@ -14,7 +14,7 @@ import claraAvatar from "@/assets/clara-avatar.png";
 import veraAvatar from "@/assets/vera-avatar.png";
 import nexusAvatar from "@/assets/nexus-avatar.png";
 import orionAvatar from "@/assets/orion-avatar.png";
-import { Home as HomeIcon, Wrench, Briefcase, Settings, BookOpen, Heart } from "lucide-react";
+import { Home as HomeIcon, Wrench, Briefcase, Settings, BookOpen, Heart, Eye, Brain, Zap } from "lucide-react";
 
 const Home = () => {
   const aiTeam = [
@@ -237,69 +237,108 @@ const Home = () => {
         </section>
 
         {/* Introducing Aura - Connected to Eight Minds */}
-        <section className="bg-gradient-to-b from-muted/30 to-background py-12 md:py-16 relative overflow-hidden">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold md:text-4xl text-center mb-8 animate-fade-in">
-                I am Aura: the brain that never sleeps.
-              </h2>
+        <section className="relative py-20 md:py-32 overflow-hidden">
+          {/* Vibrant gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.15),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--accent)/0.15),transparent_50%)]"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-20 left-10 w-2 h-2 rounded-full bg-primary/40 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 rounded-full bg-accent/40 animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+          <div className="absolute bottom-20 left-1/4 w-2 h-2 rounded-full bg-secondary/40 animate-pulse" style={{ animationDelay: "1s" }}></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="mx-auto max-w-6xl">
+              {/* Header */}
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl mb-4 animate-fade-in bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+                  I am Aura: the brain that never sleeps.
+                </h2>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                  The orchestrator AI that coordinates your entire team
+                </p>
+              </div>
 
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                {/* Left: Key Points */}
-                <div className="space-y-4 animate-fade-in">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <p className="text-lg">
-                      <span className="font-semibold text-foreground">I see everything:</span> calls, messages,
-                      calendars, clients
-                    </p>
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left: Key Points with Icons */}
+                <div className="space-y-6 animate-fade-in order-2 lg:order-1">
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Eye className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-lg">
+                        <span className="font-bold text-foreground block mb-1">I see everything</span>
+                        <span className="text-muted-foreground">Calls, messages, calendars, clients - all synchronized in real-time</span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <p className="text-lg">
-                      <span className="font-semibold text-foreground">Eight specialized minds:</span> communication,
-                      follow-up, growth, creativity, insight, care
-                    </p>
+                  
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/50 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Brain className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-lg">
+                        <span className="font-bold text-foreground block mb-1">Eight specialized minds</span>
+                        <span className="text-muted-foreground">Communication, follow-up, growth, creativity, insight, care, and more</span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <p className="text-lg">
-                      <span className="font-semibold text-foreground">One intelligent flow:</span> not code, not
-                      software. A team.
-                    </p>
+                  
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/50 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Zap className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div>
+                      <p className="text-lg">
+                        <span className="font-bold text-foreground block mb-1">One intelligent flow</span>
+                        <span className="text-muted-foreground">Not code, not software. A team that works together seamlessly</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Right: Aura Brain with Pulse Animation */}
-                <div className="relative flex justify-center py-6">
+                {/* Right: Aura Brain with Pulse Animation - LARGER */}
+                <div className="relative flex justify-center py-8 order-1 lg:order-2">
                   <div className="relative">
-                    {/* Connection lines radiating outward */}
+                    {/* Outer glow rings */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div
-                        className="absolute w-64 h-64 rounded-full border-2 border-primary/20 animate-ping"
+                        className="absolute w-96 h-96 rounded-full border-2 border-primary/20 animate-ping"
                         style={{ animationDuration: "3s" }}
                       ></div>
                       <div
-                        className="absolute w-48 h-48 rounded-full border-2 border-accent/30 animate-ping"
-                        style={{ animationDuration: "2s", animationDelay: "0.5s" }}
+                        className="absolute w-80 h-80 rounded-full border-2 border-accent/30 animate-ping"
+                        style={{ animationDuration: "2.5s", animationDelay: "0.3s" }}
+                      ></div>
+                      <div
+                        className="absolute w-64 h-64 rounded-full border-2 border-secondary/20 animate-ping"
+                        style={{ animationDuration: "2s", animationDelay: "0.6s" }}
                       ></div>
                     </div>
 
-                    {/* Aura Image */}
-                    <img
-                      src={auraImage}
-                      alt="Aura - The AI brain connecting eight minds"
-                      className="relative z-10 max-w-xs w-full h-auto rounded-full shadow-2xl animate-scale-in"
-                    />
+                    {/* Aura Image - MUCH LARGER */}
+                    <div className="relative z-10">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 rounded-full blur-3xl"></div>
+                      <img
+                        src={auraImage}
+                        alt="Aura - The AI brain connecting eight minds"
+                        className="relative z-10 w-full max-w-md md:max-w-lg h-auto rounded-full shadow-2xl animate-scale-in"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Connection indicator */}
-              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in mt-8">
-                <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
-                <span>Connected to Eight Specialized Minds</span>
-                <div className="w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+              {/* Connection indicator - Enhanced */}
+              <div className="flex items-center justify-center gap-3 animate-fade-in mt-12 md:mt-16">
+                <div className="flex items-center gap-2 px-6 py-3 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg">
+                  <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+                  <span className="font-semibold text-foreground">Connected to Eight Specialized Minds</span>
+                  <div className="w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+                </div>
               </div>
             </div>
           </div>
