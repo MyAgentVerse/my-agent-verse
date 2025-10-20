@@ -455,7 +455,7 @@ const Home = () => {
                 {/* Real Estate */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group">
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 animate-[float_3s_ease-in-out_infinite]">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <HomeIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Real Estate</CardTitle>
@@ -470,7 +470,7 @@ const Home = () => {
                 {/* Home Services */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.1s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 animate-[float_3.5s_ease-in-out_infinite]" style={{ animationDelay: "0.5s" }}>
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <Wrench className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Home Services</CardTitle>
@@ -485,7 +485,7 @@ const Home = () => {
                 {/* Healthcare & Assisted Living */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.2s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 animate-[float_4s_ease-in-out_infinite]" style={{ animationDelay: "1s" }}>
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <Heart className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Healthcare & Assisted Living</CardTitle>
@@ -500,7 +500,7 @@ const Home = () => {
                 {/* Manufacturing & Operations */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.3s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 animate-[float_3.2s_ease-in-out_infinite]" style={{ animationDelay: "1.5s" }}>
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <Settings className="w-8 h-8 text-primary group-hover:scale-110 group-hover:rotate-90 transition-all duration-300" />
                     </div>
                     <CardTitle className="text-xl">Manufacturing & Operations</CardTitle>
@@ -515,7 +515,7 @@ const Home = () => {
                 {/* Professional Services */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.4s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 animate-[float_3.8s_ease-in-out_infinite]" style={{ animationDelay: "2s" }}>
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <Briefcase className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Professional Services</CardTitle>
@@ -530,7 +530,7 @@ const Home = () => {
                 {/* Education & Training */}
                 <Card className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-fade-in group" style={{ animationDelay: "0.5s" }}>
                   <CardHeader className="text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 animate-[float_4.2s_ease-in-out_infinite]" style={{ animationDelay: "2.5s" }}>
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300 group-hover:animate-[float_1s_ease-in-out_infinite]">
                       <BookOpen className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
                     <CardTitle className="text-xl">Education & Training</CardTitle>
@@ -563,7 +563,10 @@ const Home = () => {
               <p className="text-xl">I am Aura: the brain that never sleeps. My team is ready to work for you.</p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button variant="accent" size="lg" asChild>
-                  <a href="#meet_your_ai_team">🧠 Meet Your AI Team</a>
+                  <a href="#meet_your_ai_team" className="flex items-center gap-2">
+                    <span>🧠</span>
+                    <span>Meet Your AI Team</span>
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
@@ -571,7 +574,10 @@ const Home = () => {
                   className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
                   asChild
                 >
-                  <a href="/booking">📅 Claim Founding Spot</a>
+                  <a href="/booking" className="flex items-center gap-2">
+                    <span>📅</span>
+                    <span>Claim Founding Spot</span>
+                  </a>
                 </Button>
               </div>
             </div>
