@@ -14,6 +14,7 @@ import claraAvatar from "@/assets/clara-avatar.png";
 import veraAvatar from "@/assets/vera-avatar.png";
 import nexusAvatar from "@/assets/nexus-avatar.png";
 import orionAvatar from "@/assets/orion-avatar.png";
+import { Home as HomeIcon, Wrench, Briefcase, Settings, BookOpen, Heart } from "lucide-react";
 
 const Home = () => {
   const aiTeam = [
@@ -429,6 +430,119 @@ const Home = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Use Cases */}
+        <section className="bg-background py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-6xl">
+              <div className="text-center mb-12 animate-fade-in">
+                <h2 className="text-3xl font-bold md:text-4xl mb-4">AI Agents That Fit the Way You Work</h2>
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                  No matter your industry, your AI agent adapts to how you work
+                </p>
+              </div>
+
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {/* Real Estate */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group">
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <HomeIcon className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">Real Estate</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Your AI agent becomes your personal assistant—answering buyer questions, scheduling showings, and following up while you focus on closing deals. It's like having a reliable team member who never forgets a lead or an appointment.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Home Services */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.1s" }}>
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                      <Wrench className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="text-xl">Home Services</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Whether you run an HVAC company, plumbing team, or cleaning service, your AI agent handles incoming calls, books jobs, sends reminders, and updates your records automatically. No missed calls, no lost jobs—just smoother days and happier customers.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Healthcare & Assisted Living */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.2s" }}>
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                      <Heart className="w-8 h-8 text-secondary" />
+                    </div>
+                    <CardTitle className="text-xl">Healthcare & Assisted Living</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Your AI agent supports caregivers and staff by collecting daily care notes, scheduling family updates, and generating shift reports. It frees up time for what really matters—providing quality care and attention.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Manufacturing & Operations */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.3s" }}>
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Settings className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">Manufacturing & Operations</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Your AI agent keeps operations running smoothly by tracking orders, monitoring supplies, and generating production summaries. It can even alert your team before a delay becomes a problem.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Professional Services */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.4s" }}>
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                      <Briefcase className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="text-xl">Professional Services</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      From marketing agencies to accounting firms, your AI agent manages client onboarding, tracks tasks, and sends updates automatically. It keeps everything organized so your team can stay focused on delivering results.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Education & Training */}
+                <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: "0.5s" }}>
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                      <BookOpen className="w-8 h-8 text-secondary" />
+                    </div>
+                    <CardTitle className="text-xl">Education & Training</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center leading-relaxed">
+                      Your AI agent responds to student questions, manages class schedules, and keeps everyone informed about upcoming lessons or deadlines. It's the digital assistant every educator wishes they had.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Wrap-up line */}
+              <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+                <p className="text-lg text-foreground font-medium max-w-3xl mx-auto">
+                  No matter your industry, your AI agent adapts to how you work—saving time, improving accuracy, and helping your business run on autopilot.
+                </p>
+              </div>
             </div>
           </div>
         </section>
