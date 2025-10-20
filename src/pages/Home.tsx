@@ -563,21 +563,15 @@ const Home = () => {
               <p className="text-xl">I am Aura: the brain that never sleeps. My team is ready to work for you.</p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button variant="accent" size="lg" asChild>
-                  <a href="#meet_your_ai_team" className="flex items-center gap-2">
-                    <span>🧠</span>
-                    <span>Meet Your AI Team</span>
-                  </a>
+                  <a href="#meet_your_ai_team">🧠 Meet Your AI Team</a>
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="default"
                   size="lg"
-                  className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+                  className="bg-background text-foreground hover:bg-background/90"
                   asChild
                 >
-                  <a href="/booking" className="flex items-center gap-2">
-                    <span>📅</span>
-                    <span>Claim Founding Spot</span>
-                  </a>
+                  <a href="/booking">📅 Claim Founding Spot</a>
                 </Button>
               </div>
             </div>
