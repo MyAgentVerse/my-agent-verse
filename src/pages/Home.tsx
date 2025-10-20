@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DemoModal from "@/components/DemoModal";
 import auraImage from "@/assets/aura-brain-new.png";
 import businessChaos from "@/assets/business-chaos.jpg";
 import aiWorkspace from "@/assets/ai-workspace.jpg";
@@ -59,9 +60,11 @@ const Home = () => {
                   They don't replace you. They amplify you.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4">
-                  <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base hover-scale" asChild>
-                    <a href="#demo">🎧 Hear the Demo</a>
-                  </Button>
+                  <DemoModal>
+                    <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base hover-scale">
+                      🎧 Hear the Demo
+                    </Button>
+                  </DemoModal>
                   <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2 hover-scale" asChild>
                     <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
                   </Button>

@@ -16,11 +16,9 @@ interface DemoModalProps {
 const DemoModal = ({ children }: DemoModalProps) => {
   const phoneNumber = "(832) 842-9474";
 
-  console.log("DemoModal rendered");
-
   return (
     <Dialog>
-      <DialogTrigger asChild onClick={() => console.log("DialogTrigger clicked")}>
+      <DialogTrigger asChild>
         {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[550px]">
