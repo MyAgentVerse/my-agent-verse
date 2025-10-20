@@ -21,42 +21,14 @@ const HeroSection = () => {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
             <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl animate-fade-in">
-              Meet Your AI Agents, Built to Amplify Every Part of Your Business
+              You're out on a job. The phone rings back at the shop. No one picks up.
             </h1>
             <p className="text-xl text-muted-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              From answering customers to automating operations, MyAgentVerse creates AI teammates that talk, act, and think — streamlining work 24/7 across every industry.
+              Ten minutes later, another company gets the install. Five thousand dollars, gone. Every ad click, every form, every message you paid for lost if no one answers fast.
             </p>
-            
-            <div className="space-y-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-lg font-semibold">Key Feature Highlights</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">🕒</span>
-                  <span><strong>Works 24/7:</strong> never misses a task or opportunity.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">💬</span>
-                  <span><strong>Communicates Naturally:</strong> across calls, texts, chat, or email.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">⚡</span>
-                  <span><strong>Automates Workflows:</strong> handles scheduling, data entry, and reminders.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">📋</span>
-                  <span><strong>Captures & Organizes Info:</strong> updates CRMs, sheets, and dashboards automatically.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">📈</span>
-                  <span><strong>Delivers Real-Time Insights:</strong> so you can make faster, smarter decisions.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">🔄</span>
-                  <span><strong>Integrates Everywhere:</strong> connects with your tools and grows with your business.</span>
-                </li>
-              </ul>
-            </div>
-            
+            <p className="text-lg font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Meet Ava. Your 24/7 AI Front Desk from MyAgentVerse. Ava answers every call and handles every lead before competitors do.
+            </p>
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <DemoModal>
                 <Button variant="accent" size="lg" className="hover-scale">
@@ -64,13 +36,13 @@ const HeroSection = () => {
                 </Button>
               </DemoModal>
               <Button variant="outline" size="lg" asChild className="hover-scale">
-                <a href="#pricing">Claim Founding Spot: $499 (Lifetime) — Only 10 Available</a>
+                <a href="#pricing">See Plans Starting at $149/mo</a>
               </Button>
             </div>
-            
-            <p className="text-sm text-muted-foreground italic animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              "Trusted by local businesses to convert conversations into customers."
-            </p>
+            <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              "We haven't missed a lead since Ava joined our team." <br />
+              <span className="font-semibold not-italic">Mike, AirMax Heating & Cooling</span>
+            </blockquote>
           </div>
           
           <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>

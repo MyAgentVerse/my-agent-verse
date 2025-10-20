@@ -50,42 +50,15 @@ const Home = () => {
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-6 md:space-y-8 animate-fade-in">
                 <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                  Meet Your AI Agents, Built to Amplify Every Part of Your Business
+                  I am Aura: the brain behind a new kind of team.
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground">
-                  From answering customers to automating operations, MyAgentVerse creates AI teammates that talk, act, and think — streamlining work 24/7 across every industry.
+                  For decades, business meant longer hours and endless follow-ups. That ends now. 
+                  I unite eight intelligent agents that make your business faster, sharper, and beautifully efficient.
                 </p>
-                
-                <div className="space-y-3">
-                  <h3 className="text-base sm:text-lg font-semibold">Key Feature Highlights</h3>
-                  <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">🕒</span>
-                      <span><strong>Works 24/7:</strong> never misses a task or opportunity.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">💬</span>
-                      <span><strong>Communicates Naturally:</strong> across calls, texts, chat, or email.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">⚡</span>
-                      <span><strong>Automates Workflows:</strong> handles scheduling, data entry, and reminders.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">📋</span>
-                      <span><strong>Captures & Organizes Info:</strong> updates CRMs, sheets, and dashboards automatically.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">📈</span>
-                      <span><strong>Delivers Real-Time Insights:</strong> so you can make faster, smarter decisions.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary flex-shrink-0">🔄</span>
-                      <span><strong>Integrates Everywhere:</strong> connects with your tools and grows with your business.</span>
-                    </li>
-                  </ul>
-                </div>
-                
+                <p className="text-base sm:text-lg font-semibold text-foreground">
+                  They don't replace you. They amplify you.
+                </p>
                 <div className="flex flex-col gap-3 sm:gap-4">
                   <DemoModal>
                     <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base hover-scale">
@@ -93,13 +66,9 @@ const Home = () => {
                     </Button>
                   </DemoModal>
                   <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2 hover-scale" asChild>
-                    <a href="#founder-offer">📅 Claim Founding Spot: $499 (Lifetime) — Only 10 Available</a>
+                    <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
                   </Button>
                 </div>
-                
-                <p className="text-sm text-muted-foreground italic">
-                  "Trusted by local businesses to convert conversations into customers."
-                </p>
               </div>
               
               <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
