@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import TrustSection from "@/components/sections/TrustSection";
 import CTASection from "@/components/sections/CTASection";
 
-const Index = () => {
+const HvacLanding = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
