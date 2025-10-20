@@ -26,7 +26,7 @@ const CTASection = () => {
             className="bg-transparent border-2 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary font-semibold"
             asChild
           >
-            <a href="#book" id="book">📅 Book Your Shop's Setup Call</a>
+            <a href="/booking">📅 Book Your Shop's Setup Call</a>
           </Button>
           </div>
 
