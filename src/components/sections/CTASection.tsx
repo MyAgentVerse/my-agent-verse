@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import DemoModal from "@/components/DemoModal";
 
 const CTASection = () => {
   return (
@@ -14,9 +15,11 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button variant="accent" size="lg" asChild>
-              <a href="#demo">🎧 Hear Ava Handle a Real HVAC Call</a>
-            </Button>
+            <DemoModal>
+              <Button variant="accent" size="lg">
+                🎧 Hear Ava Handle a Real HVAC Call
+              </Button>
+            </DemoModal>
             <Button 
               variant="outline" 
               size="lg" 

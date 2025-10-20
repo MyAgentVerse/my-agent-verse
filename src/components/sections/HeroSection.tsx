@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-hvac-tech.jpg";
+import DemoModal from "@/components/DemoModal";
 
 const HeroSection = () => {
   return (
@@ -29,9 +30,11 @@ const HeroSection = () => {
               Meet Ava. Your 24/7 AI Front Desk from MyAgentVerse. Ava answers every call and handles every lead before competitors do.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button variant="accent" size="lg" asChild className="hover-scale">
-                <a href="#demo">🎧 Hear Ava Handle a Real HVAC Call</a>
-              </Button>
+              <DemoModal>
+                <Button variant="accent" size="lg" className="hover-scale">
+                  🎧 Hear Ava Handle a Real HVAC Call
+                </Button>
+              </DemoModal>
               <Button variant="outline" size="lg" asChild className="hover-scale">
                 <a href="#pricing">See Plans Starting at $149/mo</a>
               </Button>
