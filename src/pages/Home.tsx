@@ -50,15 +50,32 @@ const Home = () => {
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-6 md:space-y-8 animate-fade-in">
                 <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                  I am Aura: the brain behind a new kind of team.
+                  Meet Your AI Agents, Built to Amplify Every Part of Your Business
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground">
-                  For decades, business meant longer hours and endless follow-ups. That ends now. 
-                  I unite eight intelligent agents that make your business faster, sharper, and beautifully efficient.
+                  From answering customers to automating operations, MyAgentVerse creates AI teammates that talk, act, and think — streamlining work 24/7 across every industry.
                 </p>
-                <p className="text-base sm:text-lg font-semibold text-foreground">
-                  They don't replace you. They amplify you.
-                </p>
+                
+                {/* Key Feature Highlights */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-accent text-xl flex-shrink-0">🕒</span>
+                    <p className="text-base sm:text-lg"><span className="font-semibold">Works 24/7:</span> never misses a task or opportunity.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-accent text-xl flex-shrink-0">💬</span>
+                    <p className="text-base sm:text-lg"><span className="font-semibold">Communicates Naturally:</span> across calls, texts, chat, or email.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-accent text-xl flex-shrink-0">📈</span>
+                    <p className="text-base sm:text-lg"><span className="font-semibold">Delivers Real-Time Insights:</span> so you can make faster, smarter decisions.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-accent text-xl flex-shrink-0">🔄</span>
+                    <p className="text-base sm:text-lg"><span className="font-semibold">Integrates Everywhere:</span> connects with your tools and grows with your business.</p>
+                  </div>
+                </div>
+
                 <div className="flex flex-col gap-3 sm:gap-4">
                   <DemoModal>
                     <Button variant="accent" size="lg" className="w-full sm:w-auto text-sm sm:text-base hover-scale">
@@ -66,8 +83,11 @@ const Home = () => {
                     </Button>
                   </DemoModal>
                   <Button variant="secondary" size="lg" className="w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3 sm:py-2 hover-scale" asChild>
-                    <a href="#founder-offer">📅 Claim Founding Spot: $499 (Only 10 Available)</a>
+                    <a href="#founder-offer">📅 Claim Founding Spot: $499 (Lifetime) — Only 10 Available</a>
                   </Button>
+                  <p className="text-sm text-muted-foreground text-center sm:text-left italic">
+                    "Trusted by local businesses to convert conversations into customers."
+                  </p>
                 </div>
               </div>
               
