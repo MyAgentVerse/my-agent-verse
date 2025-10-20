@@ -14,7 +14,7 @@ interface DemoModalProps {
 }
 
 const DemoModal = ({ children }: DemoModalProps) => {
-  const phoneNumber = "(832) 842-9474";
+  const phoneNumber = "(832) 843-9474";
 
   return (
     <Dialog>
