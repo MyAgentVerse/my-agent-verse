@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -16,10 +15,9 @@ interface DemoModalProps {
 
 const DemoModal = ({ children }: DemoModalProps) => {
   const phoneNumber = "(832) 842-9474";
-  const [open, setOpen] = useState(false);
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
