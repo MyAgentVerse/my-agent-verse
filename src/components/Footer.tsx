@@ -42,6 +42,9 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 text-lg font-bold">Connect</h3>
             <div className="space-y-2">
+              <a href="tel:+12816998318" className="block text-sm font-semibold opacity-90 transition-opacity hover:opacity-100 hover:underline">
+                📞 (281) 699-8318
+              </a>
               <a href="/booking" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 Book a Demo
               </a>

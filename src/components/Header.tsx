@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
 
 const Header = () => {
@@ -27,6 +27,14 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a 
+            href="tel:+12816998318" 
+            className="hidden lg:flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            <Phone className="h-4 w-4" />
+            <span className="font-semibold">(281) 699-8318</span>
+          </a>
+          
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" className="flex-shrink-0">
@@ -36,6 +44,13 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col gap-4 mt-8">
+                <a 
+                  href="tel:+12816998318" 
+                  className="flex items-center gap-2 text-base font-semibold text-primary px-2 py-3 border-2 border-primary rounded-lg hover:bg-primary/5 transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>(281) 699-8318</span>
+                </a>
                 <a href="/" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Home
                 </a>

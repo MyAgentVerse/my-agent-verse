@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 import heroImage from "@/assets/hero-hvac-tech.jpg";
 import DemoModal from "@/components/DemoModal";
 
@@ -30,14 +31,17 @@ const HeroSection = () => {
               Meet Ava. Your 24/7 AI Front Desk from MyAgentVerse. Ava answers every call and handles every lead before competitors do.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <Button variant="accent" size="lg" asChild className="hover-scale">
+                <a href="tel:+12816998318" className="flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call Now: (281) 699-8318
+                </a>
+              </Button>
               <DemoModal>
-                <Button variant="accent" size="lg" className="hover-scale">
-                  🎧 Hear Ava Handle a Real HVAC Call
+                <Button variant="outline" size="lg" className="hover-scale">
+                  🎧 Hear Ava Demo
                 </Button>
               </DemoModal>
-              <Button variant="outline" size="lg" asChild className="hover-scale">
-                <a href="#pricing">See Plans Starting at $149/mo</a>
-              </Button>
             </div>
             <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground animate-fade-in" style={{ animationDelay: '0.4s' }}>
               "We haven't missed a lead since Ava joined our team." <br />
