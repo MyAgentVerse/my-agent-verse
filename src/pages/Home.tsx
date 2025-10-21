@@ -194,11 +194,11 @@ const Home = () => {
                 />
 
                 {/* Main image with gradient border and enhanced float animation */}
-                <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-full bg-gradient-to-br from-primary via-accent to-secondary shadow-2xl">
+                <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary shadow-2xl">
                   <img
                     src={frustratedOwner}
                     alt="Overwhelmed business owner struggling with multiple tasks and phone calls"
-                    className="max-w-full w-full sm:max-w-md h-auto rounded-full bg-background shadow-xl"
+                    className="max-w-full w-full sm:max-w-2xl lg:max-w-3xl h-auto rounded-2xl bg-background shadow-xl"
                   />
                 </div>
               </div>
