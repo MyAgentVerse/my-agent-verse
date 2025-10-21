@@ -6,6 +6,7 @@ import DemoModal from "@/components/DemoModal";
 import auraImage from "@/assets/aura-brain-new.png";
 import businessChaos from "@/assets/business-chaos.jpg";
 import aiWorkspace from "@/assets/ai-workspace.jpg";
+import frustratedOwner from "@/assets/frustrated-business-owner.jpg";
 import ivyAvatar from "@/assets/ivy-avatar.png";
 import lunaAvatar from "@/assets/luna-avatar.png";
 import atlasAvatar from "@/assets/atlas-avatar.png";
@@ -195,8 +196,8 @@ const Home = () => {
                 {/* Main image with gradient border and enhanced float animation */}
                 <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-full bg-gradient-to-br from-primary via-accent to-secondary shadow-2xl">
                   <img
-                    src={auraImage}
-                    alt="Aura - The AI brain that never sleeps"
+                    src={frustratedOwner}
+                    alt="Overwhelmed business owner struggling with multiple tasks and phone calls"
                     className="max-w-full w-full sm:max-w-md h-auto rounded-full bg-background shadow-xl"
                   />
                 </div>
