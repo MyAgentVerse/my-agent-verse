@@ -1,8 +1,10 @@
+import ContactForm from "./ContactForm";
+
 const Footer = () => {
   return (
     <footer className="bg-secondary py-16 text-secondary-foreground">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div>
             <h3 className="mb-4 text-lg font-bold">MyAgentVerse</h3>
             <p className="mb-6 text-sm leading-relaxed opacity-90">
@@ -58,6 +60,11 @@ const Footer = () => {
                 Privacy Policy
               </a>
             </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-lg font-bold">Get in Touch</h3>
+            <ContactForm />
           </div>
         </div>
 
