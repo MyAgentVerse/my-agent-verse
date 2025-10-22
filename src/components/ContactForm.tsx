@@ -95,7 +95,7 @@ const ContactForm = () => {
           id="name"
           type="text"
           placeholder="Your name"
-          className="mt-1"
+          className="mt-1 text-gray-900 placeholder:text-gray-500"
           {...register("name")}
           disabled={isSubmitting}
         />
@@ -112,7 +112,7 @@ const ContactForm = () => {
           id="email"
           type="email"
           placeholder="your@email.com"
-          className="mt-1"
+          className="mt-1 text-gray-900 placeholder:text-gray-500"
           {...register("email")}
           disabled={isSubmitting}
         />
@@ -129,7 +129,7 @@ const ContactForm = () => {
           id="phone"
           type="tel"
           placeholder="(123) 456-7890"
-          className="mt-1"
+          className="mt-1 text-gray-900 placeholder:text-gray-500"
           {...register("phone")}
           disabled={isSubmitting}
         />
@@ -145,7 +145,7 @@ const ContactForm = () => {
         <Textarea
           id="message"
           placeholder="Tell us how we can help..."
-          className="mt-1 min-h-[100px]"
+          className="mt-1 min-h-[100px] text-gray-900 placeholder:text-gray-500"
           {...register("message")}
           disabled={isSubmitting}
         />
