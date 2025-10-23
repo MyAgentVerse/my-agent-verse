@@ -7,7 +7,7 @@ import hvacTech from "@/assets/hero-hvac-tech.jpg";
 import avaAvatar from "@/assets/clara-avatar.png";
 import jackAvatar from "@/assets/nexus-avatar.png";
 import sofiaAvatar from "@/assets/vera-avatar.png";
-import workshopImage from "@/assets/hvac-success-testimonial.jpg";
+import workshopImage from "@/assets/hvac-technicians-working.jpg";
 import { Phone, Clock, DollarSign, Zap, CheckCircle, Shield } from "lucide-react";
 
 const Home = () => {

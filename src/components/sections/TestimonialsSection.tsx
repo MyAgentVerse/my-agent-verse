@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import workshopImage from "@/assets/hvac-success-testimonial.jpg";
+import workshopImage from "@/assets/hvac-technicians-working.jpg";
 
 const TestimonialsSection = () => {
   const testimonials = [
