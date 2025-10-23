@@ -4,6 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SolutionSection from "@/components/sections/SolutionSection";
 import ROISection from "@/components/sections/ROISection";
+import ImplementationSection from "@/components/sections/ImplementationSection";
 import PricingSection from "@/components/sections/PricingSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import TrustSection from "@/components/sections/TrustSection";
@@ -18,6 +19,7 @@ const HvacLanding = () => {
         <ProblemSection />
         <SolutionSection />
         <ROISection />
+        <ImplementationSection />
         <PricingSection />
         <TestimonialsSection />
         <TrustSection />

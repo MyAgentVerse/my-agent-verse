@@ -26,7 +26,8 @@ const PricingSection = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Fix Missed Calls: Ava</CardTitle>
-                <CardDescription className="text-3xl font-bold text-foreground">$149/mo</CardDescription>
+                <CardDescription className="text-3xl font-bold text-foreground">$99/mo</CardDescription>
+                <p className="text-xs text-muted-foreground mt-2">+ $0.10 per call/text</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
