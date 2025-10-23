@@ -27,9 +27,9 @@ const Industries = () => {
             </div>
             
             <div className="rounded-lg border bg-card p-8">
-              <h3 className="mb-4 text-2xl font-bold">Sign & Print</h3>
+              <h3 className="mb-4 text-2xl font-bold">Plumbing</h3>
               <p className="mb-6 text-muted-foreground">
-                Coming soon. AI agents designed for print shops and sign makers.
+                Coming soon. AI teammates for plumbing businesses.
               </p>
               <Button variant="outline" disabled>
                 Coming Soon
@@ -37,9 +37,9 @@ const Industries = () => {
             </div>
             
             <div className="rounded-lg border bg-card p-8">
-              <h3 className="mb-4 text-2xl font-bold">Dental</h3>
+              <h3 className="mb-4 text-2xl font-bold">Electrical Services</h3>
               <p className="mb-6 text-muted-foreground">
-                Coming soon. AI teammates for dental practices.
+                Coming soon. AI teammates for electrical contractors.
               </p>
               <Button variant="outline" disabled>
                 Coming Soon
@@ -47,9 +47,9 @@ const Industries = () => {
             </div>
             
             <div className="rounded-lg border bg-card p-8">
-              <h3 className="mb-4 text-2xl font-bold">Real Estate</h3>
+              <h3 className="mb-4 text-2xl font-bold">Appliance Repair & Installation</h3>
               <p className="mb-6 text-muted-foreground">
-                Coming soon. AI support for real estate professionals.
+                Coming soon. AI teammates for appliance service businesses.
               </p>
               <Button variant="outline" disabled>
                 Coming Soon
