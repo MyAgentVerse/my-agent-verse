@@ -16,6 +16,11 @@ const Consultation = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "60mins" });
+      cal("floatingButton", {
+        calLink: "agentverse/60mins",
+        config: { layout: "month_view" },
+        buttonText: "Book my consultation with founder",
+      });
       cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
     })();
   }, []);
