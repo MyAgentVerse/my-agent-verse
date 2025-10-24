@@ -29,14 +29,14 @@ const Footer = () => {
               <a href="/hvac" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 HVAC
               </a>
-              <a href="/signs" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Sign & Print
+              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+                Plumbing
               </a>
-              <a href="/dental" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Dental
+              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+                Electrical Services
               </a>
-              <a href="/realtors" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Real Estate
+              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+                Appliance Repair
               </a>
             </div>
           </div>
@@ -46,6 +46,9 @@ const Footer = () => {
             <div className="space-y-2">
               <a href="tel:+12816998318" className="block text-sm font-semibold opacity-90 transition-opacity hover:opacity-100 hover:underline">
                 📞 (281) 699-8318
+              </a>
+              <a href="/consultation" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+                Free Consultation
               </a>
               <a href="/booking" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 Book a Demo
