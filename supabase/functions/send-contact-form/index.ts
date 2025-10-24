@@ -3,6 +3,147 @@ import { Resend } from "https://esm.sh/resend@4.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
+// Google Sheets API configuration
+const GOOGLE_SHEETS_PRIVATE_KEY = Deno.env.get("GOOGLE_SHEETS_PRIVATE_KEY");
+const GOOGLE_SHEETS_CLIENT_EMAIL = Deno.env.get("GOOGLE_SHEETS_CLIENT_EMAIL");
+const GOOGLE_SHEET_ID = Deno.env.get("GOOGLE_SHEET_ID");
+
+// Helper function to get Google Sheets access token
+async function getGoogleSheetsAccessToken(): Promise<string> {
+  const header = {
+    alg: "RS256",
+    typ: "JWT",
+  };
+
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: GOOGLE_SHEETS_CLIENT_EMAIL,
+    scope: "https://www.googleapis.com/auth/spreadsheets",
+    aud: "https://oauth2.googleapis.com/token",
+    exp: now + 3600,
+    iat: now,
+  };
+
+  // Import crypto key for signing
+  const encoder = new TextEncoder();
+  const privateKey = GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  
+  const cryptoKey = await crypto.subtle.importKey(
+    "pkcs8",
+    pemToArrayBuffer(privateKey!),
+    {
+      name: "RSASSA-PKCS1-v1_5",
+      hash: "SHA-256",
+    },
+    false,
+    ["sign"]
+  );
+
+  // Create JWT
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signatureInput = `${encodedHeader}.${encodedPayload}`;
+  
+  const signature = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5",
+    cryptoKey,
+    encoder.encode(signatureInput)
+  );
+  
+  const encodedSignature = base64UrlEncode(signature);
+  const jwt = `${signatureInput}.${encodedSignature}`;
+
+  // Exchange JWT for access token
+  const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      assertion: jwt,
+    }),
+  });
+
+  const tokenData = await tokenResponse.json();
+  return tokenData.access_token;
+}
+
+function pemToArrayBuffer(pem: string): ArrayBuffer {
+  const b64 = pem
+    .replace(/-----BEGIN PRIVATE KEY-----/, "")
+    .replace(/-----END PRIVATE KEY-----/, "")
+    .replace(/\s/g, "");
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes.buffer;
+}
+
+function base64UrlEncode(data: string | ArrayBuffer): string {
+  const bytes = typeof data === "string" 
+    ? new TextEncoder().encode(data)
+    : new Uint8Array(data);
+  
+  let binary = "";
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  
+  return btoa(binary)
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=/g, "");
+}
+
+// Helper function to append data to Google Sheets
+async function appendToGoogleSheet(
+  name: string,
+  email: string,
+  phone: string,
+  message: string
+): Promise<void> {
+  try {
+    const accessToken = await getGoogleSheetsAccessToken();
+    const timestamp = new Date().toLocaleString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+
+    const values = [[timestamp, name, email, phone || "Not provided", message]];
+
+    const response = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/Sheet1!A:E:append?valueInputOption=USER_ENTERED`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ values }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Google Sheets API error: ${response.status} - ${errorText}`);
+    }
+
+    const result = await response.json();
+    console.log("Successfully appended to Google Sheet:", result);
+  } catch (error) {
+    console.error("Error appending to Google Sheet:", error);
+    // Don't throw - we want emails to still work even if Sheets fails
+  }
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -45,6 +186,10 @@ const handler = async (req: Request): Promise<Response> => {
     const trimmedPhone = phone?.trim();
 
     console.log("Processing contact form submission from:", trimmedEmail);
+
+    // Append data to Google Sheet
+    console.log("Attempting to write to Google Sheet...");
+    await appendToGoogleSheet(trimmedName, trimmedEmail, trimmedPhone || "", trimmedMessage);
 
     // Send notification email to business
     const businessEmailResponse = await resend.emails.send({
