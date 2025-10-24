@@ -100,13 +100,13 @@ async function appendToGoogleSheet(
 
     console.log("Appending data to Google Sheet:", { 
       sheetId: GOOGLE_SHEET_ID,
-      range: "website form!A:E",
+      range: "'website form'!A:E",
       rowData: values[0]
     });
 
     // Append values to the sheet
     const response = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/website form!A:E:append?valueInputOption=USER_ENTERED`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/'website form'!A:E:append?valueInputOption=USER_ENTERED`,
       {
         method: "POST",
         headers: {
