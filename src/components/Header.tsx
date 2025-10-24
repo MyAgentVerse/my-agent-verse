@@ -27,9 +27,12 @@ const Header = () => {
           <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
             Book Demo
           </a>
-          <a href="/#contact-form" className="text-sm font-medium transition-colors hover:text-primary">
+          <button 
+            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Contact Us
-          </a>
+          </button>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -72,9 +75,14 @@ const Header = () => {
                 <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Book Demo
                 </a>
-                <a href="/#contact-form" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <button 
+                  onClick={() => {
+                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="text-base font-medium transition-colors hover:text-primary px-2 py-2 text-left"
+                >
                   Contact Us
-                </a>
+                </button>
                 <Button variant="accent" asChild className="mt-4">
                   <a href="/#founder-offer">Claim Spot</a>
                 </Button>
