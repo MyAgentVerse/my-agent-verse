@@ -117,11 +117,11 @@ const Consultation = () => {
               What Happens During the Free Session
             </h2>
             
-            <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
               <img 
                 src={roadmapImage} 
                 alt="AI strategy roadmap with milestones" 
-                className="w-full hover-scale transition-transform duration-500"
+                className="w-full h-auto max-h-[500px] object-cover hover-scale transition-transform duration-500"
               />
             </div>
 
