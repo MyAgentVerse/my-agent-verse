@@ -13,10 +13,16 @@ const GOOGLE_SHEET_ID = Deno.env.get("GOOGLE_SHEET_ID");
 // Helper function to get Google Sheets access token using jose library
 async function getGoogleSheetsAccessToken(): Promise<string> {
   try {
-    const privateKey = GOOGLE_SHEETS_PRIVATE_KEY!;
+    // Replace escaped newlines with actual newlines
+    const privateKey = GOOGLE_SHEETS_PRIVATE_KEY!.replace(/\\n/g, '\n');
     const clientEmail = GOOGLE_SHEETS_CLIENT_EMAIL!;
 
     console.log("Importing private key for JWT signing...");
+    console.log("Private key format check:", {
+      startsWithBegin: privateKey.startsWith('-----BEGIN'),
+      endsWithEnd: privateKey.endsWith('-----\n'),
+      length: privateKey.length
+    });
     
     // Import the private key
     const key = await importPKCS8(privateKey, "RS256");
@@ -25,8 +31,10 @@ async function getGoogleSheetsAccessToken(): Promise<string> {
 
     console.log("Creating JWT for Google OAuth...");
     
-    // Create and sign the JWT
-    const jwt = await new SignJWT({})
+    // Create and sign the JWT with proper scope
+    const jwt = await new SignJWT({
+      scope: "https://www.googleapis.com/auth/spreadsheets",
+    })
       .setProtectedHeader({ alg: "RS256", typ: "JWT" })
       .setIssuer(clientEmail)
       .setSubject(clientEmail)
