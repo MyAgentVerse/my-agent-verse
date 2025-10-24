@@ -16,11 +16,6 @@ const Consultation = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "60mins" });
-      cal("floatingButton", {
-        calLink: "agentverse/60mins",
-        config: { layout: "month_view" },
-        buttonText: "Book my consultation with founder",
-      });
       cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
     })();
   }, []);
@@ -80,7 +75,14 @@ const Consultation = () => {
               <p className="mb-8 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
                 I personally host a few sessions each week. They fill up fast. Click below to reserve your free consultation.
               </p>
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform"
+                data-cal-namespace="60mins"
+                data-cal-link="agentverse/60mins"
+                data-cal-config='{"layout":"month_view"}'
+              >
                 Book My Consultation
               </Button>
             </div>

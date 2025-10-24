@@ -27,6 +27,9 @@ const Header = () => {
           <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
             Book Demo
           </a>
+          <a href="/#contact-form" className="text-sm font-medium transition-colors hover:text-primary">
+            Contact Us
+          </a>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -68,6 +71,9 @@ const Header = () => {
                 </a>
                 <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Book Demo
+                </a>
+                <a href="/#contact-form" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                  Contact Us
                 </a>
                 <Button variant="accent" asChild className="mt-4">
                   <a href="/#founder-offer">Claim Spot</a>

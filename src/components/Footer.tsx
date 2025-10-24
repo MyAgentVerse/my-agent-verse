@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div id="contact-form">
             <h3 className="mb-4 text-lg font-bold">Get in Touch</h3>
             <ContactForm />
           </div>
