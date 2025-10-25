@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Lightbulb, Target, FileText, Rocket } from "lucide-react";
+import ManufacturingSpotlight from "@/components/sections/ManufacturingSpotlight";
 import heroImage from "@/assets/consultation-hero.jpg";
 import roadmapImage from "@/assets/consultation-roadmap.jpg";
 import founderImage from "@/assets/founder-journey.jpg";
@@ -286,6 +287,9 @@ const Consultation = () => {
               </blockquote>
             </div>
           </section>
+
+          {/* MANUFACTURING SPOTLIGHT */}
+          <ManufacturingSpotlight />
 
           {/* FAQ */}
           <section className="mb-32 animate-fade-in">
