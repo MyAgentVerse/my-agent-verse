@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
-import hvacTech from "@/assets/hero-hvac-tech.jpg";
+import ElevenLabsVoiceAgent from "@/components/ElevenLabsVoiceAgent";
 import avaAvatar from "@/assets/clara-avatar.png";
 import jackAvatar from "@/assets/nexus-avatar.png";
 import sofiaAvatar from "@/assets/vera-avatar.png";
@@ -66,29 +66,7 @@ const Home = () => {
                   </p>
                 </div>
 
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
-                  <img
-                    src={hvacTech}
-                    alt="HVAC technician at work"
-                    className="relative rounded-2xl shadow-2xl"
-                  />
-                  
-                  {/* Floating badges */}
-                  <div className="absolute -top-4 -right-4 rounded-lg bg-card p-4 shadow-lg border border-border">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-primary" />
-                      <span className="font-semibold">24/7 Available</span>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute -bottom-4 -left-4 rounded-lg bg-card p-4 shadow-lg border border-border">
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-5 w-5 text-accent" />
-                      <span className="font-semibold">Never Miss a Call</span>
-                    </div>
-                  </div>
-                </div>
+                <ElevenLabsVoiceAgent />
               </div>
             </div>
           </div>
