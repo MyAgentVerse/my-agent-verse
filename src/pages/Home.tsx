@@ -40,11 +40,11 @@ const Home = () => {
                 {/* Left Content */}
                 <div className="space-y-6 animate-fade-in">
                   <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                    Meet Your AI Agents — Built to Work for You, 24/7.
+                    Meet Your AI Agents. Built to Work for You, 24/7.
                   </h1>
                   
-                  <p className="text-xl text-muted-foreground leading-relaxed">
-                    Automate calls, tasks, and customer conversations with intelligent agents trained to solve real business problems — so your team can focus on growth.
+                  <p className="text-xl text-foreground/80 leading-relaxed">
+                    Automate calls, tasks, and customer conversations with intelligent agents trained to solve real business problems so your team can focus on growth.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -83,7 +83,7 @@ const Home = () => {
         </section>
 
         {/* Why AI Matters Section */}
-        <section className="bg-muted/50 py-20">
+        <section className="bg-white py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -99,8 +99,8 @@ const Home = () => {
                   <h2 className="text-3xl font-bold md:text-4xl">
                     Why AI Matters Right Now
                   </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Every day, thousands of businesses lose time and money doing tasks AI could handle faster, smarter, and around the clock. MyAgentVerse helps companies unlock that potential — turning automation into growth.
+                  <p className="text-lg text-foreground/80 leading-relaxed">
+                    Every day, thousands of businesses lose time and money doing tasks AI could handle faster, smarter, and around the clock. MyAgentVerse helps companies unlock that potential, turning automation into growth.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 pt-4">
@@ -128,75 +128,75 @@ const Home = () => {
         </section>
 
         {/* What Businesses Are Automating Grid */}
-        <section className="bg-background py-20">
+        <section className="bg-gradient-to-br from-slate-50 to-cyan-50/30 py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold md:text-4xl mb-4">
                   What Businesses Are Automating with AI Today
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
                   From small teams to enterprise operations, AI is helping businesses work smarter. Here are real use cases we help implement every day:
                 </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <Phone className="h-10 w-10 text-primary mb-4" />
+                    <Phone className="h-10 w-10 text-[#0085FF] mb-4" />
                     <h3 className="text-xl font-bold mb-2">Front Desk AI</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Answers calls, books appointments, and qualifies leads automatically.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <MessageCircle className="h-10 w-10 text-primary mb-4" />
+                    <MessageCircle className="h-10 w-10 text-[#0085FF] mb-4" />
                     <h3 className="text-xl font-bold mb-2">Chat AI</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Handles website chats, FAQs, and customer support 24/7.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <Calendar className="h-10 w-10 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-2">Follow-Up AI</h3>
-                    <p className="text-muted-foreground">
+                    <Calendar className="h-10 w-10 text-[#0085FF] mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Follow Up AI</h3>
+                    <p className="text-foreground/70">
                       Reconnects with leads, rebooks missed calls, and boosts retention.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <Database className="h-10 w-10 text-accent mb-4" />
+                    <Database className="h-10 w-10 text-[#00B7C2] mb-4" />
                     <h3 className="text-xl font-bold mb-2">Operations AI</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Updates CRMs, organizes data, and streamlines team workflows.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <BarChart className="h-10 w-10 text-accent mb-4" />
+                    <BarChart className="h-10 w-10 text-[#00B7C2] mb-4" />
                     <h3 className="text-xl font-bold mb-2">Marketing AI</h3>
-                    <p className="text-muted-foreground">
-                      Creates social posts, ad copy, and emails that convert — in seconds.
+                    <p className="text-foreground/70">
+                      Creates social posts, ad copy, and emails that convert in seconds.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
                   <CardContent className="pt-6">
-                    <Factory className="h-10 w-10 text-accent mb-4" />
-                    <h3 className="text-xl font-bold mb-2">Industry-Specific AI</h3>
-                    <p className="text-muted-foreground">
-                      Adapts to any field — from real estate to manufacturing to healthcare.
+                    <Factory className="h-10 w-10 text-[#00B7C2] mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Industry Specific AI</h3>
+                    <p className="text-foreground/70">
+                      Adapts to any field, from real estate to manufacturing to healthcare.
                     </p>
                   </CardContent>
                 </Card>
@@ -214,18 +214,18 @@ const Home = () => {
         </section>
 
         {/* Problem/Solution Split */}
-        <section className="bg-muted/50 py-20">
+        <section className="bg-white py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold md:text-4xl mb-3">
                   The Problem: Human Hours Can't Scale
                 </h2>
-                <h3 className="text-2xl font-semibold text-primary mb-6">
-                  The Solution: Intelligent AI Agents That Never Sleep.
+                <h3 className="text-2xl font-semibold text-[#0085FF] mb-6">
+                  The Solution: Intelligent AI Agents That Never Sleep
                 </h3>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Missed calls, delayed responses, manual admin — they all cost your business money. AI agents from MyAgentVerse don't replace your team — they empower them by taking care of repetitive work so your people can focus on what really matters.
+                <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+                  Missed calls, delayed responses, manual admin. They all cost your business money. AI agents from MyAgentVerse don't replace your team, they empower them by taking care of repetitive work so your people can focus on what really matters.
                 </p>
               </div>
 
@@ -241,14 +241,14 @@ const Home = () => {
         </section>
 
         {/* Talk to Ava CTA */}
-        <section id="talk-to-ava" className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
+        <section id="talk-to-ava" className="bg-gradient-to-br from-cyan-50 to-blue-50 py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold md:text-4xl mb-4">
-                  🎙️ Experience the Future — Talk to Ava
+                  🎙️ Experience the Future. Talk to Ava
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
                   See how natural AI can sound. Talk with Ava, our AI front desk assistant, and experience firsthand how AI can help your business run smoother.
                 </p>
               </div>
@@ -279,7 +279,7 @@ const Home = () => {
                   Why Choose MyAgentVerse
                 </h2>
                 <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                  We combine real human strategy with cutting-edge AI execution.
+                  We combine real human strategy with cutting edge AI execution.
                 </p>
               </div>
 
@@ -287,7 +287,7 @@ const Home = () => {
                 <Card className="bg-white/5 border-white/10 backdrop-blur hover-scale">
                   <CardContent className="pt-6 text-center">
                     <Puzzle className="h-12 w-12 text-[#00B7C2] mx-auto mb-4" />
-                    <h3 className="text-xl font-bold mb-3">Custom-Built AI Agents</h3>
+                    <h3 className="text-xl font-bold mb-3">Custom Built AI Agents</h3>
                     <p className="text-gray-300">
                       Each AI agent is tailored to your workflow, tone, and business goals.
                     </p>
@@ -299,7 +299,7 @@ const Home = () => {
                     <Link2 className="h-12 w-12 text-[#00B7C2] mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-3">Seamless Integration</h3>
                     <p className="text-gray-300">
-                      Our agents connect with your tools — from CRMs to calendars — without friction.
+                      Our agents connect with your tools, from CRMs to calendars, without friction.
                     </p>
                   </CardContent>
                 </Card>
@@ -327,16 +327,16 @@ const Home = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 py-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0085FF]/10 to-[#00B7C2]/10" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-slate-50 py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0085FF]/5 to-[#00B7C2]/5" />
           
           <div className="container relative mx-auto px-6">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-4xl font-bold md:text-5xl mb-6">
                 Explore What AI Could Do for You
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Every business has hidden opportunities for AI — let's uncover yours today.
+              <p className="text-xl text-foreground/70 mb-8">
+                Every business has hidden opportunities for AI. Let's uncover yours today.
               </p>
               
               <Button 
@@ -353,13 +353,13 @@ const Home = () => {
         </section>
 
         {/* Footer Info */}
-        <section className="bg-muted py-12">
+        <section className="bg-slate-100 py-12">
           <div className="container mx-auto px-6">
             <div className="text-center">
               <p className="text-xl font-bold mb-2">
                 Built by Humans. Powered by AI. Proven by Results.
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-foreground/60">
                 © 2025 MyAgentVerse | All Rights Reserved · Powered by Retell AI · ElevenLabs · n8n · Cal.com
               </p>
             </div>
