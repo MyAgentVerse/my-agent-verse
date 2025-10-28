@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { Clock, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { MessageCircle, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 // Declare the custom element for TypeScript
 declare global {
@@ -13,6 +14,8 @@ declare global {
 }
 
 const ElevenLabsVoiceAgent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     // Load the ElevenLabs widget script
     const script = document.createElement('script');
@@ -30,30 +33,46 @@ const ElevenLabsVoiceAgent = () => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center min-h-[500px] md:min-h-[600px]">
-      {/* Decorative gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
-      
-      {/* ElevenLabs ConvAI Widget */}
-      <div className="relative z-10 w-full flex items-center justify-center">
-        <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
-      </div>
+    <>
+      {/* Floating Toggle Button */}
+      {!isOpen && (
+        <Button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg hover-scale"
+          size="icon"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      )}
 
-      {/* Floating badges */}
-      <div className="absolute -top-4 -right-4 rounded-lg bg-card p-4 shadow-lg border border-border animate-fade-in hover-scale z-20">
-        <div className="flex items-center gap-2">
-          <Clock className="h-5 w-5 text-primary" />
-          <span className="font-semibold">24/7 Available</span>
+      {/* Widget Modal */}
+      {isOpen && (
+        <div className="fixed bottom-6 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] bg-card rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-primary to-accent p-4 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-white">
+              <MessageCircle className="h-5 w-5" />
+              <span className="font-semibold">Talk to Ava</span>
+            </div>
+            <Button
+              onClick={() => setIsOpen(false)}
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-white hover:bg-white/20"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Widget Content */}
+          <div className="p-4 bg-background">
+            <div className="flex items-center justify-center min-h-[400px]">
+              <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div className="absolute -bottom-4 -left-4 rounded-lg bg-card p-4 shadow-lg border border-border animate-fade-in hover-scale z-20" style={{ animationDelay: '0.2s' }}>
-        <div className="flex items-center gap-2">
-          <Phone className="h-5 w-5 text-accent" />
-          <span className="font-semibold">Never Miss a Call</span>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

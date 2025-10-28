@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Consultation from "./pages/Consultation";
 import NotFound from "./pages/NotFound";
+import ElevenLabsVoiceAgent from "./components/ElevenLabsVoiceAgent";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ElevenLabsVoiceAgent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
