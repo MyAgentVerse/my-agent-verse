@@ -31,8 +31,8 @@ const Home = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0A192F] via-background to-accent/10 py-20 md:py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-cyan-50 via-blue-50 to-white py-20 md:py-32">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00B7C2]/10 via-[#0085FF]/5 to-transparent" />
           
           <div className="container relative mx-auto px-6">
             <div className="mx-auto max-w-7xl">
