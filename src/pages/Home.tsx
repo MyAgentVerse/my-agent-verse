@@ -50,18 +50,18 @@ const Home = () => {
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <Button 
                       size="lg" 
-                      className="text-lg rounded-xl hover:scale-105 transition-transform shadow-lg"
+                      className="text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg bg-gradient-to-r from-[#0085FF] to-[#00B7C2] hover:shadow-2xl hover:from-[#0070DD] hover:to-[#009BAA] animate-fade-in"
                       asChild
                     >
                       <a href="#talk-to-ava">🎙️ Talk to Ava Live</a>
                     </Button>
                     <Button 
                       size="lg" 
-                      variant="outline"
-                      className="text-lg rounded-xl hover:scale-105 transition-transform"
+                      className="text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg border-2 border-[#0085FF] bg-white text-[#0085FF] hover:bg-[#0085FF] hover:text-white animate-fade-in"
+                      style={{ animationDelay: '0.1s' }}
                       asChild
                     >
-                      <a href="https://cal.com/myagentverse/consultation" target="_blank" rel="noopener noreferrer">
+                      <a href="/consultation">
                         Book a Free AI Strategy Call
                       </a>
                     </Button>
@@ -69,12 +69,12 @@ const Home = () => {
                 </div>
 
                 {/* Right Content - Hero Image */}
-                <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
+                <div className="relative animate-fade-in hover-scale" style={{ animationDelay: '0.2s' }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00B7C2]/30 to-[#0085FF]/30 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
                   <img 
                     src={heroWorkspace} 
                     alt="AI collaboration workspace" 
-                    className="relative rounded-2xl shadow-2xl"
+                    className="relative rounded-2xl shadow-2xl border-2 border-cyan-200/50"
                   />
                 </div>
               </div>
@@ -83,20 +83,20 @@ const Home = () => {
         </section>
 
         {/* Why AI Matters Section */}
-        <section className="bg-white py-20">
+        <section className="bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="grid items-center gap-12 lg:grid-cols-2">
-                <div className="order-2 lg:order-1">
+                <div className="order-2 lg:order-1 animate-fade-in">
                   <img 
                     src={aiMatters} 
                     alt="AI transformation infographic" 
-                    className="rounded-xl shadow-lg"
+                    className="rounded-xl shadow-lg hover-scale border-2 border-cyan-100"
                   />
                 </div>
                 
-                <div className="order-1 lg:order-2 space-y-6">
-                  <h2 className="text-3xl font-bold md:text-4xl">
+                <div className="order-1 lg:order-2 space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  <h2 className="text-3xl font-bold md:text-4xl bg-gradient-to-r from-[#0085FF] to-[#00B7C2] bg-clip-text text-transparent">
                     Why AI Matters Right Now
                   </h2>
                   <p className="text-lg text-foreground/80 leading-relaxed">
@@ -104,20 +104,20 @@ const Home = () => {
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="flex items-center gap-3">
-                      <Clock className="h-8 w-8 text-primary" />
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-br from-cyan-50 to-blue-50 hover-scale animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                      <Clock className="h-8 w-8 text-[#0085FF]" />
                       <span className="font-semibold">Save Time</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <TrendingUp className="h-8 w-8 text-primary" />
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-br from-blue-50 to-cyan-50 hover-scale animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                      <TrendingUp className="h-8 w-8 text-[#0085FF]" />
                       <span className="font-semibold">Boost Growth</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Bot className="h-8 w-8 text-accent" />
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-br from-cyan-50 to-teal-50 hover-scale animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                      <Bot className="h-8 w-8 text-[#00B7C2]" />
                       <span className="font-semibold">24/7 Automation</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Settings className="h-8 w-8 text-accent" />
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-br from-teal-50 to-cyan-50 hover-scale animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                      <Settings className="h-8 w-8 text-[#00B7C2]" />
                       <span className="font-semibold">Smart Systems</span>
                     </div>
                   </div>
@@ -128,11 +128,12 @@ const Home = () => {
         </section>
 
         {/* What Businesses Are Automating Grid */}
-        <section className="bg-gradient-to-br from-slate-50 to-cyan-50/30 py-20">
-          <div className="container mx-auto px-6">
+        <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0085FF]/5 to-[#00B7C2]/5" />
+          <div className="container relative mx-auto px-6">
             <div className="mx-auto max-w-6xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold md:text-4xl mb-4">
+              <div className="text-center mb-12 animate-fade-in">
+                <h2 className="text-3xl font-bold md:text-4xl mb-4 bg-gradient-to-r from-[#0085FF] to-[#00B7C2] bg-clip-text text-transparent">
                   What Businesses Are Automating with AI Today
                 </h2>
                 <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
@@ -141,9 +142,11 @@ const Home = () => {
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-cyan-50/30 border-cyan-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#0085FF] animate-fade-in" style={{ animationDelay: '0.1s' }}>
                   <CardContent className="pt-6">
-                    <Phone className="h-10 w-10 text-[#0085FF] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0085FF] to-[#00B7C2] flex items-center justify-center mb-4">
+                      <Phone className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Front Desk AI</h3>
                     <p className="text-foreground/70">
                       Answers calls, books appointments, and qualifies leads automatically.
@@ -151,9 +154,11 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-blue-50/30 border-blue-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#0085FF] animate-fade-in" style={{ animationDelay: '0.2s' }}>
                   <CardContent className="pt-6">
-                    <MessageCircle className="h-10 w-10 text-[#0085FF] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0085FF] to-[#00B7C2] flex items-center justify-center mb-4">
+                      <MessageCircle className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Chat AI</h3>
                     <p className="text-foreground/70">
                       Handles website chats, FAQs, and customer support 24/7.
@@ -161,9 +166,11 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-cyan-50/30 border-cyan-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#0085FF] animate-fade-in" style={{ animationDelay: '0.3s' }}>
                   <CardContent className="pt-6">
-                    <Calendar className="h-10 w-10 text-[#0085FF] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0085FF] to-[#00B7C2] flex items-center justify-center mb-4">
+                      <Calendar className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Follow Up AI</h3>
                     <p className="text-foreground/70">
                       Reconnects with leads, rebooks missed calls, and boosts retention.
@@ -171,9 +178,11 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#00B7C2] animate-fade-in" style={{ animationDelay: '0.4s' }}>
                   <CardContent className="pt-6">
-                    <Database className="h-10 w-10 text-[#00B7C2] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00B7C2] to-[#0085FF] flex items-center justify-center mb-4">
+                      <Database className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Operations AI</h3>
                     <p className="text-foreground/70">
                       Updates CRMs, organizes data, and streamlines team workflows.
@@ -181,9 +190,11 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-cyan-50/30 border-cyan-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#00B7C2] animate-fade-in" style={{ animationDelay: '0.5s' }}>
                   <CardContent className="pt-6">
-                    <BarChart className="h-10 w-10 text-[#00B7C2] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00B7C2] to-[#0085FF] flex items-center justify-center mb-4">
+                      <BarChart className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Marketing AI</h3>
                     <p className="text-foreground/70">
                       Creates social posts, ad copy, and emails that convert in seconds.
@@ -191,9 +202,11 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border-white shadow-md hover:shadow-xl transition-shadow hover-scale">
+                <Card className="bg-gradient-to-br from-white to-blue-50/30 border-blue-200 shadow-md hover:shadow-2xl transition-all duration-300 hover-scale hover:border-[#00B7C2] animate-fade-in" style={{ animationDelay: '0.6s' }}>
                   <CardContent className="pt-6">
-                    <Factory className="h-10 w-10 text-[#00B7C2] mb-4" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00B7C2] to-[#0085FF] flex items-center justify-center mb-4">
+                      <Factory className="h-6 w-6 text-white" />
+                    </div>
                     <h3 className="text-xl font-bold mb-2">Industry Specific AI</h3>
                     <p className="text-foreground/70">
                       Adapts to any field, from real estate to manufacturing to healthcare.
@@ -341,10 +354,10 @@ const Home = () => {
               
               <Button 
                 size="lg" 
-                className="text-lg rounded-xl hover:scale-105 transition-transform shadow-lg px-8"
+                className="text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg px-8 bg-gradient-to-r from-[#0085FF] to-[#00B7C2] hover:shadow-2xl hover:from-[#0070DD] hover:to-[#009BAA] animate-fade-in"
                 asChild
               >
-                <a href="https://cal.com/myagentverse/consultation" target="_blank" rel="noopener noreferrer">
+                <a href="/consultation">
                   📅 Book Your Free AI Consultation
                 </a>
               </Button>
