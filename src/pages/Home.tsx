@@ -57,7 +57,7 @@ const Home = () => {
                       className="text-lg rounded-xl hover-scale shadow-lg animate-fade-in"
                       asChild
                     >
-                      <a href="#talk-to-ava">🎙️ Talk to Ava Live</a>
+                      <a href="/booking">📅 Book Demo</a>
                     </Button>
                     <Button 
                       size="lg" 
@@ -258,35 +258,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Talk to Ava CTA */}
-        <section id="talk-to-ava" className="bg-gradient-to-br from-primary/5 to-accent/10 py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-6xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold md:text-4xl mb-4">
-                  🎙️ Experience the Future. Talk to Ava
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  See how natural AI can sound. Talk with Ava, our AI front desk assistant, and experience firsthand how AI can help your business run smoother.
-                </p>
-              </div>
-
-              <div className="grid gap-12 lg:grid-cols-2 items-center">
-                <div className="order-2 lg:order-1">
-                  <ElevenLabsVoiceAgent />
-                </div>
-
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src={avaDemo} 
-                    alt="Ava AI assistant" 
-                    className="rounded-xl shadow-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Why Choose MyAgentVerse */}
         <section className="bg-secondary text-secondary-foreground py-20">
