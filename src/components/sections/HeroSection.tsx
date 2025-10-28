@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import heroImage from "@/assets/hero-hvac-tech.jpg";
 import DemoModal from "@/components/DemoModal";
-import ElevenLabsVoice from "@/components/ElevenLabsVoice";
 
 const HeroSection = () => {
   return (
@@ -72,17 +72,14 @@ const HeroSection = () => {
             <div className="absolute bottom-16 -right-3 h-3 w-3 rounded-full bg-accent animate-ping opacity-75" style={{ animationDelay: '1s' }} />
             <div className="absolute top-1/2 right-8 h-2 w-2 rounded-full bg-secondary animate-ping opacity-75" style={{ animationDelay: '2s' }} />
             
-            {/* ElevenLabs Voice Widget */}
-            <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary min-h-[400px] flex items-center justify-center">
-              <div className="rounded-2xl shadow-2xl relative z-0 bg-background w-full h-full p-12 flex items-center justify-center">
-                <div className="text-center space-y-6">
-                  <div className="text-6xl animate-pulse">🎙️</div>
-                  <h3 className="text-2xl font-bold">Talk to Ava Now</h3>
-                  <p className="text-muted-foreground">Click the voice button to start a conversation</p>
-                </div>
-              </div>
+            {/* Main image with enhanced float animation and colorful border */}
+            <div className="relative animate-[float_6s_ease-in-out_infinite] p-1 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary">
+              <img 
+                src={heroImage} 
+                alt="HVAC technician on rooftop at sunset" 
+                className="rounded-2xl shadow-2xl relative z-0 bg-background"
+              />
             </div>
-            <ElevenLabsVoice />
           </div>
         </div>
       </div>
