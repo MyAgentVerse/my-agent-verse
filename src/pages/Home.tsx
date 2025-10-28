@@ -2,372 +2,366 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import DemoModal from "@/components/DemoModal";
 import ElevenLabsVoiceAgent from "@/components/ElevenLabsVoiceAgent";
-import avaAvatar from "@/assets/clara-avatar.png";
-import jackAvatar from "@/assets/nexus-avatar.png";
-import sofiaAvatar from "@/assets/vera-avatar.png";
-import workshopImage from "@/assets/hvac-technicians-working.jpg";
-import { Phone, Clock, DollarSign, Zap, CheckCircle, Shield } from "lucide-react";
+import heroWorkspace from "@/assets/hero-ai-workspace.jpg";
+import aiMatters from "@/assets/ai-matters-infographic.jpg";
+import aiAvatars from "@/assets/ai-avatars-grid.jpg";
+import problemSolution from "@/assets/problem-solution-split.jpg";
+import avaDemo from "@/assets/ava-voice-demo.jpg";
+import collaboration from "@/assets/why-choose-collaboration.jpg";
+import { 
+  Phone, 
+  MessageCircle, 
+  Calendar, 
+  Database, 
+  BarChart, 
+  Factory,
+  Clock,
+  TrendingUp,
+  Bot,
+  Settings,
+  Puzzle,
+  Link2,
+  Lightbulb
+} from "lucide-react";
 
 const Home = () => {
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-20 md:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0A192F] via-background to-accent/10 py-20 md:py-32">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+          
+          <div className="container relative mx-auto px-6">
+            <div className="mx-auto max-w-7xl">
+              <div className="grid items-center gap-12 lg:grid-cols-2">
+                {/* Left Content */}
+                <div className="space-y-6 animate-fade-in">
+                  <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+                    Meet Your AI Agents — Built to Work for You, 24/7.
+                  </h1>
+                  
+                  <p className="text-xl text-muted-foreground leading-relaxed">
+                    Automate calls, tasks, and customer conversations with intelligent agents trained to solve real business problems — so your team can focus on growth.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Button 
+                      size="lg" 
+                      className="text-lg rounded-xl hover:scale-105 transition-transform shadow-lg"
+                      asChild
+                    >
+                      <a href="#talk-to-ava">🎙️ Talk to Ava Live</a>
+                    </Button>
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="text-lg rounded-xl hover:scale-105 transition-transform"
+                      asChild
+                    >
+                      <a href="https://cal.com/myagentverse/consultation" target="_blank" rel="noopener noreferrer">
+                        Book a Free AI Strategy Call
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Right Content - Hero Image */}
+                <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
+                  <img 
+                    src={heroWorkspace} 
+                    alt="AI collaboration workspace" 
+                    className="relative rounded-2xl shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why AI Matters Section */}
+        <section className="bg-muted/50 py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="grid items-center gap-12 lg:grid-cols-2">
-                <div className="space-y-8">
-                  <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                    For HVAC Businesses
-                  </div>
-                  
-                  <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                    Stop Losing Calls. Start Booking Jobs.
-                  </h1>
-                  
-                  <p className="text-xl text-muted-foreground">
-                    Your AI front desk team answers every call, books appointments, and follows up with customers—24/7. Never miss another lead.
-                  </p>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                      <span className="text-lg">Live calls in 24 hours</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                      <span className="text-lg">7-day free pilot—no credit card</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                      <span className="text-lg">Only $99/month + $0.10 per call</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" variant="default" asChild className="text-base">
-                      <a href="/booking">Start Free 7-Day Trial</a>
-                    </Button>
-                    <DemoModal>
-                      <Button size="lg" variant="outline" className="text-base">
-                        <Phone className="mr-2 h-5 w-5" />
-                        Hear Ava Demo
-                      </Button>
-                    </DemoModal>
-                  </div>
-
-                  <p className="text-sm text-muted-foreground italic">
-                    "We caught 47 missed calls in the first week. Ava paid for herself in 3 days." — Ben, Lone Star Heating & Air
-                  </p>
+                <div className="order-2 lg:order-1">
+                  <img 
+                    src={aiMatters} 
+                    alt="AI transformation infographic" 
+                    className="rounded-xl shadow-lg"
+                  />
                 </div>
-
-                <ElevenLabsVoiceAgent />
+                
+                <div className="order-1 lg:order-2 space-y-6">
+                  <h2 className="text-3xl font-bold md:text-4xl">
+                    Why AI Matters Right Now
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Every day, thousands of businesses lose time and money doing tasks AI could handle faster, smarter, and around the clock. MyAgentVerse helps companies unlock that potential — turning automation into growth.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="flex items-center gap-3">
+                      <Clock className="h-8 w-8 text-primary" />
+                      <span className="font-semibold">Save Time</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <TrendingUp className="h-8 w-8 text-primary" />
+                      <span className="font-semibold">Boost Growth</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Bot className="h-8 w-8 text-accent" />
+                      <span className="font-semibold">24/7 Automation</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Settings className="h-8 w-8 text-accent" />
+                      <span className="font-semibold">Smart Systems</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Problem Section */}
-        <section className="bg-muted/50 py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-                Every missed call is money walking out the door
-              </h2>
-              <div className="grid gap-6 md:grid-cols-3 text-left mt-12">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="mb-4 text-4xl font-bold text-destructive">$347</div>
-                    <p className="text-muted-foreground">Average value of one missed HVAC service call</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="mb-4 text-4xl font-bold text-destructive">62%</div>
-                    <p className="text-muted-foreground">Of customers who don't reach you call a competitor</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="mb-4 text-4xl font-bold text-destructive">5-7</div>
-                    <p className="text-muted-foreground">Calls missed per week by average HVAC shop</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solution - Meet Your AI Team */}
+        {/* What Businesses Are Automating Grid */}
         <section className="bg-background py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
-                Meet your AI front desk team
-              </h2>
-              <p className="mb-12 text-center text-xl text-muted-foreground">
-                Three specialized AI agents working together to handle your calls, scheduling, and follow-ups
-              </p>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold md:text-4xl mb-4">
+                  What Businesses Are Automating with AI Today
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  From small teams to enterprise operations, AI is helping businesses work smarter. Here are real use cases we help implement every day:
+                </p>
+              </div>
 
-              <div className="grid gap-8 md:grid-cols-3">
-                <Card>
-                  <CardContent className="pt-6 text-center">
-                    <img src={avaAvatar} alt="Ava" className="mx-auto mb-4 h-24 w-24 rounded-full" />
-                    <h3 className="mb-2 text-xl font-bold">Ava</h3>
-                    <p className="mb-2 text-sm font-semibold text-primary">Your AI Receptionist</p>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <Phone className="h-10 w-10 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Front Desk AI</h3>
                     <p className="text-muted-foreground">
-                      Answers every call with a warm greeting, qualifies leads, and books appointments directly into your calendar
+                      Answers calls, books appointments, and qualifies leads automatically.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card>
-                  <CardContent className="pt-6 text-center">
-                    <img src={jackAvatar} alt="Jack" className="mx-auto mb-4 h-24 w-24 rounded-full" />
-                    <h3 className="mb-2 text-xl font-bold">Jack</h3>
-                    <p className="mb-2 text-sm font-semibold text-accent">Your AI Dispatcher</p>
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <MessageCircle className="h-10 w-10 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Chat AI</h3>
                     <p className="text-muted-foreground">
-                      Coordinates your team, sends job details to technicians, and keeps everyone on the same page
+                      Handles website chats, FAQs, and customer support 24/7.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card>
-                  <CardContent className="pt-6 text-center">
-                    <img src={sofiaAvatar} alt="Sofia" className="mx-auto mb-4 h-24 w-24 rounded-full" />
-                    <h3 className="mb-2 text-xl font-bold">Sofia</h3>
-                    <p className="mb-2 text-sm font-semibold text-secondary">Your AI Follow-Up Specialist</p>
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <Calendar className="h-10 w-10 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Follow-Up AI</h3>
                     <p className="text-muted-foreground">
-                      Sends appointment reminders, follows up on estimates, and nurtures leads until they book
+                      Reconnects with leads, rebooks missed calls, and boosts retention.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <Database className="h-10 w-10 text-accent mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Operations AI</h3>
+                    <p className="text-muted-foreground">
+                      Updates CRMs, organizes data, and streamlines team workflows.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <BarChart className="h-10 w-10 text-accent mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Marketing AI</h3>
+                    <p className="text-muted-foreground">
+                      Creates social posts, ad copy, and emails that convert — in seconds.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="hover:shadow-lg transition-shadow hover-scale">
+                  <CardContent className="pt-6">
+                    <Factory className="h-10 w-10 text-accent mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Industry-Specific AI</h3>
+                    <p className="text-muted-foreground">
+                      Adapts to any field — from real estate to manufacturing to healthcare.
                     </p>
                   </CardContent>
                 </Card>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* ROI Section */}
-        <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl">
-              <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
-                The math is simple
-              </h2>
-              
-              <div className="grid gap-8 md:grid-cols-2">
-                <div className="rounded-xl bg-card p-8 shadow-lg">
-                  <h3 className="mb-4 text-2xl font-bold text-destructive">Without Ava</h3>
-                  <div className="space-y-3 text-muted-foreground">
-                    <p>→ 6 missed calls per week</p>
-                    <p>→ Average job value: $347</p>
-                    <p>→ 62% book with competitors</p>
-                    <div className="pt-4 text-2xl font-bold text-foreground">
-                      = $1,292 lost per week
-                    </div>
-                    <div className="text-3xl font-bold text-destructive">
-                      $67,184 lost per year
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-xl bg-primary p-8 shadow-lg text-primary-foreground">
-                  <h3 className="mb-4 text-2xl font-bold">With Ava</h3>
-                  <div className="space-y-3">
-                    <p>→ 0 missed calls</p>
-                    <p>→ Every lead answered instantly</p>
-                    <p>→ Automatic appointment booking</p>
-                    <div className="pt-4 text-2xl font-bold">
-                      Cost: $99/month + calls
-                    </div>
-                    <div className="text-3xl font-bold">
-                      ROI: 12.9x in month 1
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="bg-muted py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-5xl">
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
-                Real HVAC shops, real results
-              </h2>
-
-              <div className="mb-12 overflow-hidden rounded-2xl">
+              <div className="relative rounded-xl overflow-hidden">
                 <img 
-                  src={workshopImage} 
-                  alt="HVAC workshop" 
+                  src={aiAvatars} 
+                  alt="AI avatars grid" 
                   className="w-full"
                 />
               </div>
-
-              <div className="grid gap-6 md:grid-cols-2">
-                <Card>
-                  <CardContent className="pt-6">
-                    <p className="mb-4 text-lg italic">"Ava catches every call now — my office manager finally goes home on time."</p>
-                    <p className="font-semibold text-primary">Ben, Lone Star Heating & Air</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <p className="mb-4 text-lg italic">"Jack fills the gaps we never had time for."</p>
-                    <p className="font-semibold text-primary">Melissa, CoolZone Services</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <p className="mb-4 text-lg italic">"Sofia keeps everything moving — like a second pair of hands for dispatch."</p>
-                    <p className="font-semibold text-primary">Ray, QuickCool HVAC</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <p className="mb-4 text-lg italic">"Feels like we finally have the backup we needed."</p>
-                    <p className="font-semibold text-primary">Tony, Comfort Pros HVAC</p>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </section>
 
-
-        {/* How It Works */}
-        <section className="bg-background py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl">
-              <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
-                Get started in 3 simple steps
-              </h2>
-
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xl font-bold text-primary-foreground">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold">Book Your Free Setup Call</h3>
-                    <p className="text-muted-foreground">
-                      We'll learn about your business, get your phone number forwarding, and customize Ava's greeting and responses for your shop.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-xl font-bold text-accent-foreground">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold">Go Live in 24 Hours</h3>
-                    <p className="text-muted-foreground">
-                      Your AI team starts answering calls, booking appointments, and following up with leads. You'll see every interaction in your dashboard.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-xl font-bold text-secondary-foreground">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold">Watch Your Calendar Fill Up</h3>
-                    <p className="text-muted-foreground">
-                      Try it free for 7 days. No credit card required. If you love it, keep going for just $99/month + $0.10 per call.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
+        {/* Problem/Solution Split */}
         <section className="bg-muted/50 py-20">
           <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-3xl">
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
-                Simple, transparent pricing
-              </h2>
-              <p className="mb-12 text-center text-xl text-muted-foreground">
-                One flat rate. No hidden fees. Cancel anytime.
-              </p>
+            <div className="mx-auto max-w-6xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold md:text-4xl mb-3">
+                  The Problem: Human Hours Can't Scale
+                </h2>
+                <h3 className="text-2xl font-semibold text-primary mb-6">
+                  The Solution: Intelligent AI Agents That Never Sleep.
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Missed calls, delayed responses, manual admin — they all cost your business money. AI agents from MyAgentVerse don't replace your team — they empower them by taking care of repetitive work so your people can focus on what really matters.
+                </p>
+              </div>
 
-              <Card className="border-2 border-primary">
-                <CardContent className="p-8 text-center">
-                  <h3 className="mb-2 text-2xl font-bold">Complete AI Front Desk Team</h3>
-                  <div className="mb-6">
-                    <span className="text-5xl font-bold">$99</span>
-                    <span className="text-xl text-muted-foreground">/month</span>
-                  </div>
-                  <p className="mb-6 text-lg text-muted-foreground">+ $0.10 per call or text handled</p>
-                  
-                  <div className="mb-8 space-y-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>Ava (AI Receptionist) - answers & books calls</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>Jack (AI Dispatcher) - coordinates your team</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>Sofia (AI Follow-Up) - nurtures every lead</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>24/7 availability - never miss a call</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>Calendar integration & automatic booking</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>7-day free trial - no credit card required</span>
-                    </div>
-                  </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={problemSolution} 
+                  alt="Business transformation" 
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-                  <Button size="lg" className="w-full text-lg" asChild>
-                    <a href="/booking">Start Your Free 7-Day Trial</a>
-                  </Button>
-                </CardContent>
-              </Card>
+        {/* Talk to Ava CTA */}
+        <section id="talk-to-ava" className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-6xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold md:text-4xl mb-4">
+                  🎙️ Experience the Future — Talk to Ava
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  See how natural AI can sound. Talk with Ava, our AI front desk assistant, and experience firsthand how AI can help your business run smoother.
+                </p>
+              </div>
+
+              <div className="grid gap-12 lg:grid-cols-2 items-center">
+                <div className="order-2 lg:order-1">
+                  <ElevenLabsVoiceAgent />
+                </div>
+
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src={avaDemo} 
+                    alt="Ava AI assistant" 
+                    className="rounded-xl shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose MyAgentVerse */}
+        <section className="bg-[#0A192F] text-white py-20">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-6xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold md:text-4xl mb-4">
+                  Why Choose MyAgentVerse
+                </h2>
+                <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                  We combine real human strategy with cutting-edge AI execution.
+                </p>
+              </div>
+
+              <div className="grid gap-8 md:grid-cols-3 mb-12">
+                <Card className="bg-white/5 border-white/10 backdrop-blur hover-scale">
+                  <CardContent className="pt-6 text-center">
+                    <Puzzle className="h-12 w-12 text-[#00B7C2] mx-auto mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Custom-Built AI Agents</h3>
+                    <p className="text-gray-300">
+                      Each AI agent is tailored to your workflow, tone, and business goals.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/5 border-white/10 backdrop-blur hover-scale">
+                  <CardContent className="pt-6 text-center">
+                    <Link2 className="h-12 w-12 text-[#00B7C2] mx-auto mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Seamless Integration</h3>
+                    <p className="text-gray-300">
+                      Our agents connect with your tools — from CRMs to calendars — without friction.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/5 border-white/10 backdrop-blur hover-scale">
+                  <CardContent className="pt-6 text-center">
+                    <Lightbulb className="h-12 w-12 text-[#00B7C2] mx-auto mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Proven ROI</h3>
+                    <p className="text-gray-300">
+                      We focus on measurable outcomes: saved time, captured leads, and faster growth.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="relative rounded-xl overflow-hidden">
+                <img 
+                  src={collaboration} 
+                  alt="Team collaboration" 
+                  className="w-full opacity-80"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
-          <div className="container mx-auto px-6">
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0085FF]/10 to-[#00B7C2]/10" />
+          
+          <div className="container relative mx-auto px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-                Stop losing calls. Start growing.
+              <h2 className="text-4xl font-bold md:text-5xl mb-6">
+                Explore What AI Could Do for You
               </h2>
-              <p className="mb-8 text-xl text-muted-foreground">
-                Join HVAC shops already using AI to capture every lead and book more jobs.
+              <p className="text-xl text-muted-foreground mb-8">
+                Every business has hidden opportunities for AI — let's uncover yours today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="default" className="text-lg" asChild>
-                  <a href="/booking">Get Started Free</a>
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg" asChild>
-                  <a href="/hvac">Learn More About HVAC Solutions</a>
-                </Button>
-              </div>
+              
+              <Button 
+                size="lg" 
+                className="text-lg rounded-xl hover:scale-105 transition-transform shadow-lg px-8"
+                asChild
+              >
+                <a href="https://cal.com/myagentverse/consultation" target="_blank" rel="noopener noreferrer">
+                  📅 Book Your Free AI Consultation
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer Info */}
+        <section className="bg-muted py-12">
+          <div className="container mx-auto px-6">
+            <div className="text-center">
+              <p className="text-xl font-bold mb-2">
+                Built by Humans. Powered by AI. Proven by Results.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                © 2025 MyAgentVerse | All Rights Reserved · Powered by Retell AI · ElevenLabs · n8n · Cal.com
+              </p>
             </div>
           </div>
         </section>
