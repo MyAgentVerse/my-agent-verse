@@ -52,29 +52,8 @@ const ElevenLabsVoiceAgent = () => {
 
       {/* Widget Modal */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] bg-card rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-primary to-accent p-4 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-white">
-              <MessageCircle className="h-5 w-5" />
-              <span className="font-semibold">Talk to Ava</span>
-            </div>
-            <Button
-              onClick={() => setIsOpen(false)}
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 text-white hover:bg-white/20"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
-
-          {/* Widget Content */}
-          <div className="p-4 bg-background">
-            <div className="flex items-center justify-center min-h-[400px]">
-              <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
-            </div>
-          </div>
+        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+          <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
         </div>
       )}
     </>
