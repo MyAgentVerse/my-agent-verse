@@ -260,55 +260,55 @@ const Home = () => {
 
 
         {/* Why Choose MyAgentVerse */}
-        <section className="bg-secondary text-secondary-foreground py-20">
+        <section className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-6xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold md:text-4xl mb-4">
                   Why Choose MyAgentVerse
                 </h2>
-                <p className="text-xl opacity-80 max-w-2xl mx-auto">
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                   We combine real human strategy with cutting edge AI execution.
                 </p>
               </div>
 
               <div className="grid gap-8 md:grid-cols-3 mb-12">
-                <Card className="bg-secondary-foreground/5 border-secondary-foreground/10 backdrop-blur hover-scale">
+                <Card className="bg-card border hover-scale hover:shadow-lg">
                   <CardContent className="pt-6 text-center">
                     <Puzzle className="h-12 w-12 text-accent mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-3">Custom Built AI Agents</h3>
-                    <p className="opacity-80">
+                    <p className="text-muted-foreground">
                       Each AI agent is tailored to your workflow, tone, and business goals.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-secondary-foreground/5 border-secondary-foreground/10 backdrop-blur hover-scale">
+                <Card className="bg-card border hover-scale hover:shadow-lg">
                   <CardContent className="pt-6 text-center">
                     <Link2 className="h-12 w-12 text-accent mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-3">Seamless Integration</h3>
-                    <p className="opacity-80">
+                    <p className="text-muted-foreground">
                       Our agents connect with your tools, from CRMs to calendars, without friction.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-secondary-foreground/5 border-secondary-foreground/10 backdrop-blur hover-scale">
+                <Card className="bg-card border hover-scale hover:shadow-lg">
                   <CardContent className="pt-6 text-center">
                     <Lightbulb className="h-12 w-12 text-accent mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-3">Proven ROI</h3>
-                    <p className="opacity-80">
+                    <p className="text-muted-foreground">
                       We focus on measurable outcomes: saved time, captured leads, and faster growth.
                     </p>
                   </CardContent>
                 </Card>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden">
+              <div className="relative rounded-xl overflow-hidden max-w-3xl mx-auto">
                 <img 
                   src={collaboration} 
                   alt="Team collaboration" 
-                  className="w-full opacity-80"
+                  className="w-full h-64 object-cover"
                 />
               </div>
             </div>
