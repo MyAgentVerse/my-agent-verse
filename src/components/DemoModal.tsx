@@ -11,10 +11,33 @@ import { Phone, CheckCircle2 } from "lucide-react";
 
 interface DemoModalProps {
   children: React.ReactNode;
+  phoneNumber?: string;
+  industry?: "hvac" | "realtor";
 }
 
-const DemoModal = ({ children }: DemoModalProps) => {
-  const phoneNumber = "(832) 843-9474";
+const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac" }: DemoModalProps) => {
+  const isRealtor = industry === "realtor";
+  
+  const content = {
+    title: isRealtor ? "Try Ava - Your AI Real Estate Assistant" : "Try Ava - Your AI HVAC Assistant",
+    description: isRealtor 
+      ? "Experience how Ava handles real customer calls with natural, professional conversations for real estate."
+      : "Experience how Ava handles real customer calls with natural, professional conversations.",
+    howItWorksText: isRealtor
+      ? "When you call, pretend you're a customer calling a real estate agent. Ava will answer and handle your call just like a real receptionist - but she's available 24/7 and never misses a beat."
+      : "When you call, pretend you're a customer calling an HVAC company. Ava will answer and handle your call just like a real receptionist - but she's available 24/7 and never misses a beat.",
+    needsText: isRealtor ? "Ava will ask about your real estate needs" : "Ava will ask about your HVAC needs",
+    scheduleText: isRealtor ? "She'll capture your information and schedule a showing" : "She'll capture your information and schedule service",
+    scenarios: isRealtor ? [
+      "\"I'm interested in seeing homes in the downtown area\"",
+      "\"Can you help me sell my house?\"",
+      "\"I'd like to schedule a showing this week\""
+    ] : [
+      "\"My AC stopped working and it's 95 degrees\"",
+      "\"I need a quote for a new heating system\"",
+      "\"Can someone come out this week?\""
+    ]
+  };
 
   return (
     <Dialog>
@@ -24,10 +47,10 @@ const DemoModal = ({ children }: DemoModalProps) => {
       <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center pr-8">
-            🎧 Try Ava - Your AI HVAC Assistant
+            🎧 {content.title}
           </DialogTitle>
           <DialogDescription className="text-base pt-2">
-            Experience how Ava handles real customer calls with natural, professional conversations.
+            {content.description}
           </DialogDescription>
         </DialogHeader>
         
@@ -39,7 +62,7 @@ const DemoModal = ({ children }: DemoModalProps) => {
               How it Works
             </h3>
             <p className="text-sm text-muted-foreground">
-              When you call, pretend you're a customer calling an HVAC company. Ava will answer and handle your call just like a real receptionist - but she's available 24/7 and never misses a beat.
+              {content.howItWorksText}
             </p>
           </div>
 
@@ -53,11 +76,11 @@ const DemoModal = ({ children }: DemoModalProps) => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>Ava will ask about your HVAC needs</span>
+                <span>{content.needsText}</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>She'll capture your information and schedule service</span>
+                <span>{content.scheduleText}</span>
               </li>
             </ul>
           </div>
@@ -66,9 +89,9 @@ const DemoModal = ({ children }: DemoModalProps) => {
           <div className="bg-secondary/10 rounded-lg p-3 space-y-2">
             <h4 className="font-semibold text-sm">Try These Scenarios:</h4>
             <ul className="text-sm text-muted-foreground space-y-0.5">
-              <li>• "My AC stopped working and it's 95 degrees"</li>
-              <li>• "I need a quote for a new heating system"</li>
-              <li>• "Can someone come out this week?"</li>
+              {content.scenarios.map((scenario, index) => (
+                <li key={index}>• {scenario}</li>
+              ))}
             </ul>
           </div>
 

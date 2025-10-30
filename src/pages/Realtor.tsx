@@ -33,7 +33,7 @@ const Realtor = () => {
                   Ava is your 24/7 AI Real Estate Assistant that answers calls, books showings, and follows up in your voice — so you close more deals with zero missed opportunities.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <DemoModal>
+                  <DemoModal phoneNumber="+13466342736" industry="realtor">
                     <Button size="lg" className="text-lg px-8">
                       Try Ava Risk-Free
                     </Button>
@@ -142,7 +142,7 @@ const Realtor = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Watch (or listen) as Ava answers a real buyer's call, qualifies them, and books a showing automatically.
             </p>
-            <DemoModal>
+            <DemoModal phoneNumber="+13466342736" industry="realtor">
               <Button size="lg">
                 Listen to Demo Call
               </Button>
