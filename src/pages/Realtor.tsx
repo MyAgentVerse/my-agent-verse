@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
 import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
 import { Helmet } from "react-helmet";
+import realtorBusyImage from "@/assets/realtor-busy-calls.jpg";
 
 const Realtor = () => {
   return (
@@ -43,9 +44,11 @@ const Realtor = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl flex items-center justify-center">
-                  <Headset className="h-32 w-32 text-primary animate-pulse" />
-                </div>
+                <img 
+                  src={realtorBusyImage} 
+                  alt="Real estate agent in meeting with clients while missing incoming calls" 
+                  className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
