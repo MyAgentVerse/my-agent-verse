@@ -24,10 +24,13 @@ const contactFormSchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(10, "Phone must be at least 10 characters")
-    .max(20, "Phone must be less than 20 characters")
-    .optional()
-    .or(z.literal("")),
+    .min(10, "Phone is required and must be at least 10 characters")
+    .max(20, "Phone must be less than 20 characters"),
+  industry: z
+    .string()
+    .trim()
+    .min(1, "Industry is required")
+    .max(100, "Industry must be less than 100 characters"),
   message: z
     .string()
     .trim()
@@ -58,7 +61,8 @@ const ContactForm = () => {
         body: {
           name: data.name,
           email: data.email,
-          phone: data.phone || undefined,
+          phone: data.phone,
+          industry: data.industry,
           message: data.message,
         },
       });
@@ -123,7 +127,7 @@ const ContactForm = () => {
 
       <div>
         <Label htmlFor="phone" className="text-sm font-medium">
-          Phone
+          Phone *
         </Label>
         <Input
           id="phone"
@@ -135,6 +139,23 @@ const ContactForm = () => {
         />
         {errors.phone && (
           <p className="mt-1 text-xs text-red-400">{errors.phone.message}</p>
+        )}
+      </div>
+
+      <div>
+        <Label htmlFor="industry" className="text-sm font-medium">
+          Industry *
+        </Label>
+        <Input
+          id="industry"
+          type="text"
+          placeholder="e.g., Real Estate, Manufacturing, HVAC"
+          className="mt-1 text-gray-900 placeholder:text-gray-500"
+          {...register("industry")}
+          disabled={isSubmitting}
+        />
+        {errors.industry && (
+          <p className="mt-1 text-xs text-red-400">{errors.industry.message}</p>
         )}
       </div>
 
