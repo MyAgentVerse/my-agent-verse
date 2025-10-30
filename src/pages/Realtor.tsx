@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
-import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star } from "lucide-react";
+import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
 import { Helmet } from "react-helmet";
 
 const Realtor = () => {
@@ -44,7 +44,7 @@ const Realtor = () => {
               </div>
               <div className="relative">
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl flex items-center justify-center">
-                  <Phone className="h-32 w-32 text-primary animate-pulse" />
+                  <Headset className="h-32 w-32 text-primary animate-pulse" />
                 </div>
               </div>
             </div>
