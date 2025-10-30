@@ -21,6 +21,9 @@ const Header = () => {
           <a href="/hvac" className="text-sm font-medium transition-colors hover:text-primary">
             HVAC
           </a>
+          <a href="/realtor" className="text-sm font-medium transition-colors hover:text-primary">
+            Real Estate
+          </a>
           <a href="/consultation" className="text-sm font-medium transition-colors hover:text-primary">
             Free Consultation
           </a>
@@ -68,6 +71,9 @@ const Header = () => {
                 </a>
                 <a href="/hvac" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   HVAC
+                </a>
+                <a href="/realtor" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                  Real Estate
                 </a>
                 <a href="/consultation" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Free Consultation

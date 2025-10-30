@@ -27,6 +27,16 @@ const Industries = () => {
             </div>
             
             <div className="rounded-lg border bg-card p-8">
+              <h3 className="mb-4 text-2xl font-bold">Real Estate</h3>
+              <p className="mb-6 text-muted-foreground">
+                Ava answers calls, books showings, and follows up 24/7 so you never miss a lead.
+              </p>
+              <Button variant="accent" asChild>
+                <a href="/realtor">Learn More</a>
+              </Button>
+            </div>
+            
+            <div className="rounded-lg border bg-card p-8">
               <h3 className="mb-4 text-2xl font-bold">Plumbing</h3>
               <p className="mb-6 text-muted-foreground">
                 Coming soon. AI teammates for plumbing businesses.
