@@ -79,6 +79,7 @@ async function appendToGoogleSheet(
   name: string,
   email: string,
   phone: string,
+  industry: string,
   message: string
 ): Promise<void> {
   try {
@@ -96,17 +97,17 @@ async function appendToGoogleSheet(
       hour12: true,
     });
 
-    const values = [[timestamp, name, email, phone || "Not provided", message]];
+    const values = [[timestamp, name, email, phone || "Not provided", message, industry || "Not provided"]];
 
     console.log("Appending data to Google Sheet:", { 
       sheetId: GOOGLE_SHEET_ID,
-      range: "'website form'!A:E",
+      range: "'website form'!A:F",
       rowData: values[0]
     });
 
     // Append values to the sheet
     const response = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/'website form'!A:E:append?valueInputOption=USER_ENTERED`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/'website form'!A:F:append?valueInputOption=USER_ENTERED`,
       {
         method: "POST",
         headers: {
@@ -148,6 +149,7 @@ interface ContactFormRequest {
   name: string;
   email: string;
   phone?: string;
+  industry?: string;
   message: string;
 }
 
@@ -158,7 +160,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, phone, message }: ContactFormRequest = await req.json();
+    const { name, email, phone, industry, message }: ContactFormRequest = await req.json();
 
     // Server-side validation
     if (!name || name.trim().length === 0 || name.length > 100) {
@@ -173,17 +175,21 @@ const handler = async (req: Request): Promise<Response> => {
     if (phone && (phone.length < 10 || phone.length > 20)) {
       throw new Error("Phone number must be between 10 and 20 characters");
     }
+    if (!industry || industry.trim().length === 0 || industry.length > 100) {
+      throw new Error("Industry is required and must be between 1 and 100 characters");
+    }
 
     const trimmedName = name.trim();
     const trimmedEmail = email.trim();
     const trimmedMessage = message.trim();
     const trimmedPhone = phone?.trim();
+    const trimmedIndustry = industry?.trim();
 
     console.log("Processing contact form submission from:", trimmedEmail);
 
     // Append data to Google Sheet
     console.log("Attempting to write to Google Sheet...");
-    await appendToGoogleSheet(trimmedName, trimmedEmail, trimmedPhone || "", trimmedMessage);
+    await appendToGoogleSheet(trimmedName, trimmedEmail, trimmedPhone || "", trimmedIndustry || "", trimmedMessage);
 
     // Send notification email to business
     const businessEmailResponse = await resend.emails.send({
@@ -195,6 +201,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Name:</strong> ${trimmedName}</p>
         <p><strong>Email:</strong> ${trimmedEmail}</p>
         <p><strong>Phone:</strong> ${trimmedPhone || "Not provided"}</p>
+        <p><strong>Industry:</strong> ${trimmedIndustry || "Not provided"}</p>
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${trimmedMessage}</p>
         <hr />
