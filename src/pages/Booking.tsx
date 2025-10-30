@@ -41,12 +41,9 @@ const Booking = () => {
               <p className="text-lg font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 See Ava in action and get all your questions answered. No commitment required.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <Button variant="accent" size="lg" asChild className="hover-scale">
                   <a href="#calendar">📅 Schedule Now</a>
-                </Button>
-                <Button variant="outline" size="lg" asChild className="hover-scale">
-                  <a href="/hvac">Learn More About Ava</a>
                 </Button>
               </div>
             </div>

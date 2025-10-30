@@ -38,8 +38,8 @@ const Realtor = () => {
                       Try Ava Risk-Free
                     </Button>
                   </DemoModal>
-                  <Button size="lg" variant="outline" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
-                    Book a Demo
+                  <Button size="lg" variant="outline" asChild>
+                    <a href="/booking">Book a Demo</a>
                   </Button>
                 </div>
               </div>
