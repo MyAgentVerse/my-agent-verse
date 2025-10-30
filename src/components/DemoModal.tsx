@@ -18,6 +18,26 @@ interface DemoModalProps {
 const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac" }: DemoModalProps) => {
   const isRealtor = industry === "realtor";
   
+  // Format phone number for display (e.g., "+13466342736" -> "(346) 634-2736")
+  const formatPhoneForDisplay = (phone: string) => {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length === 11 && cleaned.startsWith('1')) {
+      const areaCode = cleaned.slice(1, 4);
+      const middle = cleaned.slice(4, 7);
+      const last = cleaned.slice(7, 11);
+      return `(${areaCode}) ${middle}-${last}`;
+    }
+    if (cleaned.length === 10) {
+      const areaCode = cleaned.slice(0, 3);
+      const middle = cleaned.slice(3, 6);
+      const last = cleaned.slice(6, 10);
+      return `(${areaCode}) ${middle}-${last}`;
+    }
+    return phone;
+  };
+  
+  const displayPhone = formatPhoneForDisplay(phoneNumber);
+  
   const content = {
     title: isRealtor ? "Try Ava - Your AI Real Estate Assistant" : "Try Ava - Your AI HVAC Assistant",
     description: isRealtor 
@@ -99,7 +119,7 @@ const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac"
           <div className="space-y-3">
             <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-3 text-center">
               <p className="text-sm text-muted-foreground mb-1">Call this number:</p>
-              <p className="text-2xl sm:text-3xl font-bold text-primary tracking-wide break-all">{phoneNumber}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-primary tracking-wide break-all">{displayPhone}</p>
             </div>
 
             {/* Call Button */}
