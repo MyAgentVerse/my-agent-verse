@@ -35,7 +35,7 @@ const Realtor = () => {
                   Never Miss Another Lead Again.
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Ava is your 24/7 AI Real Estate Assistant that answers calls, books showings, and follows up in your voice — so you close more deals with zero missed opportunities.
+                  Ava is your 24/7 AI Real Estate Assistant that answers calls, books showings, and follows up in your voice, so you close more deals with zero missed opportunities.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <DemoModal phoneNumber="+13466342736" industry="realtor">
@@ -86,7 +86,7 @@ const Realtor = () => {
               </Card>
             </div>
             <p className="text-center text-lg max-w-3xl mx-auto">
-              Ava fixes this instantly — she answers, qualifies, and books appointments 24/7 so you never lose a lead again.
+              Ava fixes this instantly. She answers, qualifies, and books appointments 24/7 so you never lose a lead again.
             </p>
           </div>
         </section>
@@ -95,7 +95,7 @@ const Realtor = () => {
         <section className="py-20">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Meet Ava – Your AI Real Estate Assistant
+              Meet Ava: Your AI Real Estate Assistant
             </h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <Card className="hover-scale">
@@ -212,7 +212,7 @@ const Realtor = () => {
                     <Badge variant="secondary" className="mt-1">Bonus #4</Badge>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">90-Day ROI Guarantee</h3>
-                      <p className="text-muted-foreground">2 extra deals or 90 days free – no risk</p>
+                      <p className="text-muted-foreground">2 extra deals or 90 days free, no risk</p>
                     </div>
                   </div>
                 </CardContent>
@@ -296,7 +296,7 @@ const Realtor = () => {
                   Why This Guarantee Exists
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  We built Ava to solve one simple problem: missed opportunities. Realtors were losing thousands every month simply because no one picked up after hours. We're so confident Ava will turn those missed calls into booked appointments and closed deals that we made her performance fully guaranteed — your success is the only metric that matters.
+                  We built Ava to solve one simple problem: missed opportunities. Realtors were losing thousands every month simply because no one picked up after hours. We're so confident Ava will turn those missed calls into booked appointments and closed deals that we made her performance fully guaranteed. Your success is the only metric that matters.
                 </p>
               </div>
               <div className="relative">
@@ -325,7 +325,7 @@ const Realtor = () => {
                 Our 90-Day ROI Guarantee
               </h2>
               <p className="text-lg text-muted-foreground">
-                If Ava doesn't help you close 2 extra deals or book at least 10 qualified calls in your first 90 days, you'll get another 90 days completely free — no questions asked. That's how confident we are in her performance.
+                If Ava doesn't help you close 2 extra deals or book at least 10 qualified calls in your first 90 days, you'll get another 90 days completely free, no questions asked. That's how confident we are in her performance.
               </p>
               <p className="text-base text-muted-foreground font-semibold">
                 Zero contracts. Zero risk. 100% performance-based.
@@ -347,7 +347,7 @@ const Realtor = () => {
               </div>
               <div className="space-y-6 order-1 md:order-2">
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Extra Assurance – We've Got You Covered
+                  Extra Assurance: We've Got You Covered
                 </h2>
                 <div className="space-y-4 text-lg text-muted-foreground">
                   <div className="flex items-start gap-3">
@@ -356,7 +356,7 @@ const Realtor = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <p>Cancel anytime after 90 days — no contracts or penalties.</p>
+                    <p>Cancel anytime after 90 days, no contracts or penalties.</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
@@ -368,7 +368,7 @@ const Realtor = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <p>Flat $49/month — no upsells, no hidden fees, ever.</p>
+                    <p>Flat $49/month with no upsells, no hidden fees, ever.</p>
                   </div>
                 </div>
               </div>
@@ -386,13 +386,13 @@ const Realtor = () => {
                   Limited Pilot Cohort
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Limited Pilot Cohort — November Enrollment Now Open
+                  Limited Pilot Cohort: November Enrollment Now Open
                 </h2>
                 <p className="text-lg text-muted-foreground">
                   To ensure every agent gets personalized voice training and perfect setup, we only accept 20 realtors each month. Once the November cohort is full, registration closes until next month.
                 </p>
                 <p className="text-base text-muted-foreground">
-                  Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing — and claim your $499 Lead Surge Setup bonus free.
+                  Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing and claim your $499 Lead Surge Setup bonus free.
                 </p>
                 <Button 
                   size="lg" 
@@ -443,7 +443,7 @@ const Realtor = () => {
                     Does Ava replace my CRM?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    No. Ava integrates seamlessly with your existing CRM to log calls, notes, and appointment details — she makes it work better.
+                    No. Ava integrates seamlessly with your existing CRM to log calls, notes, and appointment details. She makes it work better.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
@@ -459,7 +459,7 @@ const Realtor = () => {
                     How does Ava book my appointments?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Ava connects directly to your calendar. When a qualified lead calls, she checks availability and books them instantly via Cal.com — no manual follow-up needed.
+                    Ava connects directly to your calendar. When a qualified lead calls, she checks availability and books them instantly via Cal.com with no manual follow-up needed.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-6">
@@ -475,7 +475,7 @@ const Realtor = () => {
                     Can Ava handle after-hours or weekend calls?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Yes. Ava works 24/7 — nights, weekends, and holidays — so you never miss a single opportunity again.
+                    Yes. Ava works 24/7, nights, weekends, and holidays, so you never miss a single opportunity again.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-8">
@@ -495,7 +495,7 @@ const Realtor = () => {
         <section className="py-20 bg-gradient-to-br from-primary to-accent text-primary-foreground">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start Closing More Deals — While You Sleep.
+              Start Closing More Deals While You Sleep.
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               Let Ava handle the calls so you can focus on closings. 24/7 coverage. Zero risk.
