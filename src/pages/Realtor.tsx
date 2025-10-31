@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
 import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import realtorBusyImage from "@/assets/realtor-busy-calls.jpg";
 import guaranteePartnershipImage from "@/assets/guarantee-partnership.png";
 import guaranteeBadgeImage from "@/assets/guarantee-badge.png";
@@ -393,8 +394,8 @@ const Realtor = () => {
                 <p className="text-base text-muted-foreground">
                   Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing — and claim your $499 Lead Surge Setup bonus free.
                 </p>
-                <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
-                  Reserve My Spot Now
+                <Button size="lg" asChild>
+                  <Link to="/booking">Reserve My Spot Now</Link>
                 </Button>
               </div>
               <div className="relative">
