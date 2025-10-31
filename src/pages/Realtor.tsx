@@ -394,8 +394,13 @@ const Realtor = () => {
                 <p className="text-base text-muted-foreground">
                   Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing — and claim your $499 Lead Surge Setup bonus free.
                 </p>
-                <Button size="lg" asChild>
-                  <Link to="/booking">Reserve My Spot Now</Link>
+                <Button 
+                  size="lg" 
+                  onClick={() => {
+                    window.location.href = '/booking';
+                  }}
+                >
+                  Reserve My Spot Now
                 </Button>
               </div>
               <div className="relative">
