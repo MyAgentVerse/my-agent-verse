@@ -8,6 +8,10 @@ import DemoModal from "@/components/DemoModal";
 import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
 import { Helmet } from "react-helmet";
 import realtorBusyImage from "@/assets/realtor-busy-calls.jpg";
+import guaranteePartnershipImage from "@/assets/guarantee-partnership.png";
+import guaranteeBadgeImage from "@/assets/guarantee-badge.png";
+import assuranceIconsImage from "@/assets/assurance-icons.png";
+import limitedCohortImage from "@/assets/limited-cohort.png";
 
 const Realtor = () => {
   return (
@@ -282,40 +286,124 @@ const Realtor = () => {
           </div>
         </section>
 
-        {/* Guarantee Section */}
+        {/* Why This Guarantee Exists */}
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="mb-8 inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-accent to-primary rounded-full">
-                <CheckCircle className="h-16 w-16 text-white" />
+            <div className="grid gap-12 md:grid-cols-2 items-center max-w-6xl mx-auto">
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Why This Guarantee Exists
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  We built Ava to solve one simple problem: missed opportunities. Realtors were losing thousands every month simply because no one picked up after hours. We're so confident Ava will turn those missed calls into booked appointments and closed deals that we made her performance fully guaranteed — your success is the only metric that matters.
+                </p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <div className="relative">
+                <img 
+                  src={guaranteePartnershipImage} 
+                  alt="Vector-style image showing a realtor and AI assistant shaking hands with a large checkmark behind them, symbolizing trust and partnership" 
+                  className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our 90-Day ROI Guarantee */}
+        <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <div className="flex justify-center">
+                <img 
+                  src={guaranteeBadgeImage} 
+                  alt="Flat vector image of a gold badge with a checkmark in the center and soft gradient lighting on navy background representing reliability and assurance" 
+                  className="w-48 h-48 object-contain"
+                />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">
                 Our 90-Day ROI Guarantee
               </h2>
               <p className="text-lg text-muted-foreground">
-                If Ava doesn't help you close 2 extra deals or book 10 qualified calls in your first 90 days, you get another 90 days free — no questions asked.
+                If Ava doesn't help you close 2 extra deals or book at least 10 qualified calls in your first 90 days, you'll get another 90 days completely free — no questions asked. That's how confident we are in her performance.
+              </p>
+              <p className="text-base text-muted-foreground font-semibold">
+                Zero contracts. Zero risk. 100% performance-based.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Urgency Section */}
+        {/* Extra Assurance */}
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <div className="grid gap-12 md:grid-cols-2 items-center max-w-6xl mx-auto">
+              <div className="relative order-2 md:order-1">
+                <img 
+                  src={assuranceIconsImage} 
+                  alt="Clean vector graphic with icons for time (calendar), support (headset), transparency (document report), and protection (shield), arranged in a neat 2x2 grid with blue glow effects" 
+                  className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                />
+              </div>
+              <div className="space-y-6 order-1 md:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Extra Assurance – We've Got You Covered
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <p>Your AI assistant goes live within 48 hours or setup is free.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <p>Cancel anytime after 90 days — no contracts or penalties.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <p>Direct founder support for your first 30 days.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <p>Monthly report shows how many calls Ava booked and your estimated ROI.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <p>Flat $49/month — no upsells, no hidden fees, ever.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Limited Pilot Cohort */}
         <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <Badge variant="secondary" className="text-lg px-6 py-2">
-                <Clock className="h-5 w-5 mr-2" />
-                Limited Pilot Cohort
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Limited Pilot Cohort
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Only 20 realtors accepted each month for personalized voice training. Apply by Friday 11:59 PM to lock in $49/mo lifetime pricing.
-              </p>
-              <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
-                Reserve My Spot Now
-              </Button>
+            <div className="grid gap-12 md:grid-cols-2 items-center max-w-6xl mx-auto">
+              <div className="space-y-6">
+                <Badge variant="secondary" className="text-lg px-6 py-2">
+                  <Clock className="h-5 w-5 mr-2" />
+                  Limited Pilot Cohort
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Limited Pilot Cohort — November Enrollment Now Open
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  To ensure every agent gets personalized voice training and perfect setup, we only accept 20 realtors each month. Once the November cohort is full, registration closes until next month.
+                </p>
+                <p className="text-base text-muted-foreground">
+                  Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing — and claim your $499 Lead Surge Setup bonus free.
+                </p>
+                <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
+                  Reserve My Spot Now
+                </Button>
+              </div>
+              <div className="relative">
+                <img 
+                  src={limitedCohortImage} 
+                  alt="Vector illustration showing a countdown timer and circular avatars of realtors joining a limited access group, conveying urgency and exclusivity with blue gradient tones" 
+                  className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
