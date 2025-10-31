@@ -421,7 +421,7 @@ const Realtor = () => {
                     How long does setup take?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Your AI assistant goes live within 48 hours of signup.
+                    Setup takes less than 48 hours. Our team personalizes Ava's voice, connects your calendar, and ensures she sounds just like you before going live.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -429,7 +429,7 @@ const Realtor = () => {
                     Can I cancel anytime?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Yes. Cancel anytime after the first 90 days — no contracts or penalties.
+                    Yes, absolutely. After your first 90 days, you can cancel anytime with no contracts or penalties.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
@@ -437,7 +437,7 @@ const Realtor = () => {
                     Does Ava replace my CRM?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    No, she connects with your existing CRM or Google Sheets using n8n.
+                    No. Ava integrates seamlessly with your existing CRM to log calls, notes, and appointment details — she makes it work better.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
@@ -445,7 +445,39 @@ const Realtor = () => {
                     What if Ava doesn't sound natural?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    We include a free voice personalization session to make sure she sounds human and warm.
+                    Ava uses advanced ElevenLabs voice synthesis and real conversational AI. Most clients say she sounds more natural than human receptionists!
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger className="text-left text-lg">
+                    How does Ava book my appointments?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Ava connects directly to your calendar. When a qualified lead calls, she checks availability and books them instantly via Cal.com — no manual follow-up needed.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6">
+                  <AccordionTrigger className="text-left text-lg">
+                    What if Ava misses something important on a call?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Every conversation is summarized and logged for review. You'll see caller details, call outcomes, and follow-up actions right in your dashboard.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-7">
+                  <AccordionTrigger className="text-left text-lg">
+                    Can Ava handle after-hours or weekend calls?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes. Ava works 24/7 — nights, weekends, and holidays — so you never miss a single opportunity again.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-8">
+                  <AccordionTrigger className="text-left text-lg">
+                    Do I need to train or manage Ava?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Not at all. We handle everything during setup. Ava runs automatically, and you can always reach our team if you want to adjust her behavior.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
