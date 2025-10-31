@@ -395,7 +395,7 @@ const Realtor = () => {
                   Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing — and claim your $499 Lead Surge Setup bonus free.
                 </p>
                 <Button size="lg" asChild>
-                  <a href="https://myagentverse.com/booking" target="_blank" rel="noopener noreferrer">Reserve My Spot Now</a>
+                  <Link to="/booking">Reserve My Spot Now</Link>
                 </Button>
               </div>
               <div className="relative">
