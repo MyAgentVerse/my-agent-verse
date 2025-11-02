@@ -39,12 +39,16 @@ const Realtor = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <DemoModal phoneNumber="+13466342736" industry="realtor">
-                    <Button size="lg" className="text-lg px-8">
-                      Try Live Instant Demo with Ava
+                    <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Try Live Demo with Ava
                     </Button>
                   </DemoModal>
-                  <Button size="lg" variant="outline" asChild>
-                    <a href="/booking">Book a call to get your AI Assistant</a>
+                  <Button size="lg" variant="outline" className="text-lg px-8 border-2 hover:bg-primary/5 transition-all" asChild>
+                    <a href="/booking">
+                      <Calendar className="mr-2 h-5 w-5" />
+                      Schedule Your Free Consultation
+                    </a>
                   </Button>
                 </div>
               </div>
