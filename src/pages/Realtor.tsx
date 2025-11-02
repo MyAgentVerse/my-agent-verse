@@ -40,11 +40,11 @@ const Realtor = () => {
                 <div className="flex flex-wrap gap-4">
                   <DemoModal phoneNumber="+13466342736" industry="realtor">
                     <Button size="lg" className="text-lg px-8">
-                      Try Live Instant Demo with Ava
+                      Try Ava Risk-Free
                     </Button>
                   </DemoModal>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="/booking">Book a call to get your AI Assistant</a>
+                    <a href="/booking">Book a Demo</a>
                   </Button>
                 </div>
               </div>
