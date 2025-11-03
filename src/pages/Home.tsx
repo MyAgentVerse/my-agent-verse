@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ElevenLabsVoiceAgent from "@/components/ElevenLabsVoiceAgent";
-import AIRoadmapHero from "@/components/sections/AIRoadmapHero";
 import heroWorkspace from "@/assets/hero-ai-workspace.jpg";
 import aiMatters from "@/assets/ai-matters-infographic.jpg";
 import aiAvatars from "@/assets/ai-avatars-grid.jpg";
@@ -31,9 +30,6 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* AI Roadmap Hero Banner */}
-        <AIRoadmapHero />
-        
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 py-20 md:py-32">
           <div className="absolute inset-0 overflow-hidden">
