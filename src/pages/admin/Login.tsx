@@ -11,6 +11,7 @@ const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -31,6 +32,40 @@ const AdminLogin = () => {
       if (roles) {
         navigate('/admin/consultations');
       }
+    }
+  };
+
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/admin/login`
+        }
+      });
+
+      if (authError) throw authError;
+
+      toast({
+        title: "Account Created",
+        description: "Please contact an administrator to grant you admin access, then login.",
+      });
+      
+      setIsSignUp(false);
+      setEmail("");
+      setPassword("");
+    } catch (error: any) {
+      toast({
+        title: "Sign Up Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,7 +91,7 @@ const AdminLogin = () => {
 
         if (roleError || !roles) {
           await supabase.auth.signOut();
-          throw new Error("You don't have admin access");
+          throw new Error("You don't have admin access. Please contact an administrator.");
         }
 
         toast({
@@ -81,13 +116,18 @@ const AdminLogin = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-background to-muted/50">
       <Card className="w-full max-w-md mx-4">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Admin Login</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">
+            {isSignUp ? "Admin Sign Up" : "Admin Login"}
+          </CardTitle>
           <CardDescription className="text-center">
-            Enter your credentials to access the admin dashboard
+            {isSignUp 
+              ? "Create an account to request admin access"
+              : "Enter your credentials to access the admin dashboard"
+            }
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={isSignUp ? handleSignUp : handleLogin} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -108,11 +148,33 @@ const AdminLogin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minLength={6}
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Logging in..." : "Login"}
+              {loading 
+                ? (isSignUp ? "Creating account..." : "Logging in...") 
+                : (isSignUp ? "Sign Up" : "Login")
+              }
             </Button>
+            
+            <div className="text-center">
+              <Button
+                type="button"
+                variant="link"
+                onClick={() => {
+                  setIsSignUp(!isSignUp);
+                  setEmail("");
+                  setPassword("");
+                }}
+                className="text-sm"
+              >
+                {isSignUp 
+                  ? "Already have an account? Login" 
+                  : "Need an account? Sign Up"
+                }
+              </Button>
+            </div>
           </form>
         </CardContent>
       </Card>
