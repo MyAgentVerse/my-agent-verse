@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      consultation_leads: {
+        Row: {
+          annual_revenue: string
+          biggest_challenge: string
+          company_name: string
+          consultation_scheduled: boolean
+          created_at: string
+          email: string
+          id: string
+          industry: string
+          name: string
+          payment_status: string
+          phone: string
+          stripe_session_id: string | null
+          team_size: string
+          use_cases: Json | null
+          website: string | null
+        }
+        Insert: {
+          annual_revenue: string
+          biggest_challenge: string
+          company_name: string
+          consultation_scheduled?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          industry: string
+          name: string
+          payment_status?: string
+          phone: string
+          stripe_session_id?: string | null
+          team_size: string
+          use_cases?: Json | null
+          website?: string | null
+        }
+        Update: {
+          annual_revenue?: string
+          biggest_challenge?: string
+          company_name?: string
+          consultation_scheduled?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string
+          name?: string
+          payment_status?: string
+          phone?: string
+          stripe_session_id?: string | null
+          team_size?: string
+          use_cases?: Json | null
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

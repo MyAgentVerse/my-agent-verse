@@ -6,6 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CheckCircle, Lightbulb, Target, FileText, Rocket, DollarSign, Calendar, TrendingUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -21,8 +25,19 @@ import testimonialImage from "@/assets/testimonial-success.jpg";
 const Consultation = () => {
   const [searchParams] = useSearchParams();
   const [isPaymentDialogOpen, setIsPaymentDialogOpen] = useState(false);
-  const [email, setEmail] = useState("");
+  
+  // Form state
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [website, setWebsite] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [annualRevenue, setAnnualRevenue] = useState("");
+  const [teamSize, setTeamSize] = useState("");
+  const [phone, setPhone] = useState("");
+  const [biggestChallenge, setBiggestChallenge] = useState("");
+  const [useCases, setUseCases] = useState<string[]>([]);
+  
   const [isProcessing, setIsProcessing] = useState(false);
   const { toast } = useToast();
 
@@ -53,11 +68,42 @@ const Consultation = () => {
     }
   }, [searchParams, toast]);
 
+  const handleUseCaseToggle = (useCase: string) => {
+    setUseCases(prev => 
+      prev.includes(useCase) 
+        ? prev.filter(uc => uc !== useCase)
+        : [...prev, useCase]
+    );
+  };
+
   const handlePayment = async () => {
-    if (!email || !name) {
+    // Validate required fields
+    if (!name || !email || !companyName || !industry || !annualRevenue || !teamSize || !phone || !biggestChallenge) {
       toast({
         title: "Required Information",
-        description: "Please provide your name and email.",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate phone format (basic)
+    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+    if (!phoneRegex.test(phone)) {
+      toast({
+        title: "Invalid Phone",
+        description: "Please enter a valid phone number.",
         variant: "destructive",
       });
       return;
@@ -67,7 +113,18 @@ const Consultation = () => {
 
     try {
       const { data, error } = await supabase.functions.invoke("create-consultation-payment", {
-        body: { email, name },
+        body: { 
+          name,
+          email,
+          companyName,
+          website: website || null,
+          industry,
+          annualRevenue,
+          teamSize,
+          phone,
+          biggestChallenge,
+          useCases,
+        },
       });
 
       if (error) throw error;
@@ -538,42 +595,186 @@ const Consultation = () => {
 
         {/* Payment Dialog */}
         <Dialog open={isPaymentDialogOpen} onOpenChange={setIsPaymentDialogOpen}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl">Reserve Your Strategy Call</DialogTitle>
               <DialogDescription>
-                Enter your information to proceed to payment. Your $299 investment is fully credited toward your first AI project.
+                Complete this quick form to help us prepare for your call. All fields marked with * are required.
               </DialogDescription>
             </DialogHeader>
-            <div className="space-y-4 py-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Full Name *
-                </label>
-                <Input
-                  id="name"
-                  placeholder="John Doe"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+            <div className="space-y-6 py-4">
+              {/* Basic Information */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground border-b pb-2">Basic Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      placeholder="John Doe"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@company.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email Address *
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+
+              {/* Business Information */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground border-b pb-2">Business Information</h3>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="companyName">Company Name *</Label>
+                    <Input
+                      id="companyName"
+                      placeholder="Your Company Inc."
+                      value={companyName}
+                      onChange={(e) => setCompanyName(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="website">Business Website</Label>
+                    <Input
+                      id="website"
+                      type="url"
+                      placeholder="https://yourcompany.com"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="industry">Industry/Sector *</Label>
+                    <Select value={industry} onValueChange={setIndustry}>
+                      <SelectTrigger id="industry">
+                        <SelectValue placeholder="Select your industry" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background z-50">
+                        <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                        <SelectItem value="real-estate">Real Estate</SelectItem>
+                        <SelectItem value="hvac">HVAC</SelectItem>
+                        <SelectItem value="healthcare">Healthcare</SelectItem>
+                        <SelectItem value="professional-services">Professional Services</SelectItem>
+                        <SelectItem value="retail">Retail</SelectItem>
+                        <SelectItem value="technology">Technology</SelectItem>
+                        <SelectItem value="finance">Finance</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Qualifying Questions */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground border-b pb-2">Qualifying Questions</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="annualRevenue">Annual Revenue Range *</Label>
+                    <Select value={annualRevenue} onValueChange={setAnnualRevenue}>
+                      <SelectTrigger id="annualRevenue">
+                        <SelectValue placeholder="Select revenue range" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background z-50">
+                        <SelectItem value="under-500k">Under $500K</SelectItem>
+                        <SelectItem value="500k-1m">$500K - $1M</SelectItem>
+                        <SelectItem value="1m-5m">$1M - $5M</SelectItem>
+                        <SelectItem value="5m-10m">$5M - $10M</SelectItem>
+                        <SelectItem value="10m-plus">$10M+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="teamSize">Team Size *</Label>
+                    <Select value={teamSize} onValueChange={setTeamSize}>
+                      <SelectTrigger id="teamSize">
+                        <SelectValue placeholder="Select team size" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-background z-50">
+                        <SelectItem value="1-5">1-5 employees</SelectItem>
+                        <SelectItem value="6-20">6-20 employees</SelectItem>
+                        <SelectItem value="21-50">21-50 employees</SelectItem>
+                        <SelectItem value="51-100">51-100 employees</SelectItem>
+                        <SelectItem value="100-plus">100+ employees</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+1 (555) 123-4567"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              {/* Consultation Focus */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground border-b pb-2">Consultation Focus</h3>
+                <div className="space-y-2">
+                  <Label htmlFor="biggestChallenge">What's your biggest challenge with AI? * (200 char max)</Label>
+                  <Textarea
+                    id="biggestChallenge"
+                    placeholder="e.g., Not sure where to start, overwhelmed by options, need help with implementation..."
+                    value={biggestChallenge}
+                    onChange={(e) => setBiggestChallenge(e.target.value.slice(0, 200))}
+                    maxLength={200}
+                    rows={3}
+                  />
+                  <p className="text-xs text-muted-foreground">{biggestChallenge.length}/200 characters</p>
+                </div>
+                <div className="space-y-3">
+                  <Label>What specific AI use cases are you interested in?</Label>
+                  <div className="space-y-2">
+                    {[
+                      { id: "lead-generation", label: "Lead Generation" },
+                      { id: "customer-service", label: "Customer Service" },
+                      { id: "workflow-automation", label: "Workflow Automation" },
+                      { id: "data-analysis", label: "Data Analysis" },
+                      { id: "other", label: "Other" },
+                    ].map((useCase) => (
+                      <div key={useCase.id} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={useCase.id}
+                          checked={useCases.includes(useCase.id)}
+                          onCheckedChange={() => handleUseCaseToggle(useCase.id)}
+                        />
+                        <Label
+                          htmlFor={useCase.id}
+                          className="text-sm font-normal cursor-pointer"
+                        >
+                          {useCase.label}
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Privacy Note */}
+              <div className="bg-muted/50 p-4 rounded-lg">
+                <p className="text-xs text-muted-foreground">
+                  🔒 Your information is secure and will only be used to prepare for your consultation. We respect your privacy.
+                </p>
               </div>
             </div>
             <DialogFooter>
               <Button
                 onClick={handlePayment}
-                disabled={isProcessing || !email || !name}
+                disabled={isProcessing || !name || !email || !companyName || !industry || !annualRevenue || !teamSize || !phone || !biggestChallenge}
                 className="w-full"
                 size="lg"
               >

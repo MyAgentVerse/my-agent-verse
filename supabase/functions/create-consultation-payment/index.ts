@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -12,11 +13,29 @@ serve(async (req) => {
   }
 
   try {
-    const { email, name } = await req.json();
+    const { 
+      email, 
+      name, 
+      companyName, 
+      website, 
+      industry, 
+      annualRevenue, 
+      teamSize, 
+      phone, 
+      biggestChallenge, 
+      useCases 
+    } = await req.json();
     
-    if (!email) {
-      throw new Error("Email is required");
+    // Validate required fields
+    if (!email || !name || !companyName || !industry || !annualRevenue || !teamSize || !phone || !biggestChallenge) {
+      throw new Error("All required fields must be provided");
     }
+
+    // Initialize Supabase client
+    const supabaseClient = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
+    );
 
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
@@ -52,8 +71,33 @@ serve(async (req) => {
       cancel_url: `${req.headers.get("origin")}/consultation?payment=canceled`,
       metadata: {
         product_type: "ai_implementation_roadmap_call",
+        email,
+        company_name: companyName,
       },
     });
+
+    // Store consultation lead data in database
+    const { error: dbError } = await supabaseClient
+      .from("consultation_leads")
+      .insert({
+        name,
+        email,
+        company_name: companyName,
+        website: website || null,
+        industry,
+        annual_revenue: annualRevenue,
+        team_size: teamSize,
+        phone,
+        biggest_challenge: biggestChallenge,
+        use_cases: useCases,
+        stripe_session_id: session.id,
+        payment_status: "pending",
+      });
+
+    if (dbError) {
+      console.error("Database error:", dbError);
+      // Don't fail payment if DB insert fails, but log it
+    }
 
     return new Response(JSON.stringify({ url: session.url }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
