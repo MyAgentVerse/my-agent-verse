@@ -24,7 +24,7 @@ const Header = () => {
           <a href="/realtor" className="text-sm font-medium transition-colors hover:text-primary">
             Real Estate
           </a>
-          <a href="/consultation" className="text-sm font-medium transition-colors hover:text-primary">
+          <a href="/consultation" className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg hover:scale-105 transition-all duration-300">
             AI Roadmap Call
           </a>
           <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
@@ -75,7 +75,7 @@ const Header = () => {
                 <a href="/realtor" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Real Estate
                 </a>
-                <a href="/consultation" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a href="/consultation" className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg transition-all duration-300 mx-2">
                   AI Roadmap Call
                 </a>
                 <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
