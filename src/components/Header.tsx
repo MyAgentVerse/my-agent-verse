@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
       <div className="container mx-auto flex h-18 items-center justify-between px-4 sm:px-6 gap-2 sm:gap-4">
@@ -12,22 +16,37 @@ const Header = () => {
         </a>
         
         <nav className="hidden items-center gap-4 lg:gap-8 md:flex">
-          <a href="/" className="text-sm font-medium transition-colors hover:text-primary">
+          <a 
+            href="/" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
             Home
           </a>
-          <a href="/industries" className="text-sm font-medium transition-colors hover:text-primary">
+          <a 
+            href="/industries" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/industries') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
             Industries
           </a>
-          <a href="/hvac" className="text-sm font-medium transition-colors hover:text-primary">
+          <a 
+            href="/hvac" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/hvac') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
             HVAC
           </a>
-          <a href="/realtor" className="text-sm font-medium transition-colors hover:text-primary">
+          <a 
+            href="/realtor" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/realtor') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
             Real Estate
           </a>
           <a href="/consultation" className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg hover:scale-105 transition-all duration-300">
             AI Roadmap Call
           </a>
-          <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
+          <a 
+            href="/booking" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/booking') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
             Book Demo
           </a>
           <button 
@@ -63,22 +82,37 @@ const Header = () => {
                   <Phone className="h-5 w-5" />
                   <span>(281) 699-8318</span>
                 </a>
-                <a href="/" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a 
+                  href="/" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
                   Home
                 </a>
-                <a href="/industries" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a 
+                  href="/industries" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/industries') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
                   Industries
                 </a>
-                <a href="/hvac" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a 
+                  href="/hvac" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/hvac') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
                   HVAC
                 </a>
-                <a href="/realtor" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a 
+                  href="/realtor" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/realtor') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
                   Real Estate
                 </a>
                 <a href="/consultation" className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg transition-all duration-300 mx-2">
                   AI Roadmap Call
                 </a>
-                <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
+                <a 
+                  href="/booking" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/booking') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
                   Book Demo
                 </a>
                 <button 
