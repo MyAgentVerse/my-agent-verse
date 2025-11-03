@@ -179,7 +179,7 @@ const Consultation = () => {
                   Turn AI Confusion Into a Clear, Profitable Roadmap
                 </h1>
                 <p className="mb-6 mx-auto lg:mx-0 max-w-3xl text-xl text-muted-foreground leading-relaxed">
-                  The AI Implementation Roadmap Call — Your <strong className="text-foreground">$10,000 Strategy</strong> for Just <strong className="text-primary text-2xl">$299</strong>
+                  The AI Implementation Roadmap Call — Your <strong className="text-foreground">$4,750 Strategy</strong> for Just <strong className="text-primary text-2xl">$299</strong>
                 </p>
                 <p className="mx-auto lg:mx-0 max-w-3xl text-lg text-muted-foreground leading-relaxed">
                   Most businesses know AI can save time and money — but few know <em>where to start</em>. In this 60-minute private strategy call, we'll identify exactly how AI fits into your operations, marketing, and sales, and show you where it can deliver the highest ROI.
@@ -222,7 +222,7 @@ const Consultation = () => {
                           <p className="font-semibold text-foreground mb-1 text-sm">Personalized AI Opportunity Audit</p>
                           <p className="text-xs text-muted-foreground">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$1,000</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$750</td>
                       </tr>
                       <tr className="hover:bg-muted transition-colors">
                         <td className="px-4 py-3 font-semibold text-foreground text-sm">Live Call<br/>(45–60 min)</td>
@@ -230,7 +230,7 @@ const Consultation = () => {
                           <p className="font-semibold text-foreground mb-1 text-sm">AI Strategy & ROI Breakdown</p>
                           <p className="text-xs text-muted-foreground">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$2,500</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$1,500</td>
                       </tr>
                       <tr className="hover:bg-muted transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap font-semibold text-foreground text-sm">Post-Call</td>
@@ -238,7 +238,7 @@ const Consultation = () => {
                           <p className="font-semibold text-foreground mb-1 text-sm">Custom 3–5 Page AI Implementation Roadmap</p>
                           <p className="text-xs text-muted-foreground">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$5,000</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$2,500</td>
                       </tr>
                       <tr className="bg-primary/10 hover:bg-primary/20 transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap font-semibold text-foreground text-sm">Bonus</td>
@@ -252,7 +252,7 @@ const Consultation = () => {
                     <tfoot className="bg-gradient-to-r from-primary/20 to-purple-600/20">
                       <tr>
                         <td colSpan={2} className="px-4 py-3 text-right font-bold text-foreground text-base">Total Value:</td>
-                        <td className="px-4 py-3 font-bold text-primary text-xl">$8,500+</td>
+                        <td className="px-4 py-3 font-bold text-primary text-xl">$4,750+</td>
                       </tr>
                       <tr className="bg-gradient-to-r from-green-500/20 to-green-600/20">
                         <td colSpan={2} className="px-4 py-3 text-right font-bold text-foreground text-lg">Your Investment:</td>
@@ -272,7 +272,7 @@ const Consultation = () => {
                   <div className="p-4">
                     <p className="font-semibold text-foreground mb-2">Personalized AI Opportunity Audit</p>
                     <p className="text-sm text-muted-foreground mb-3">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
-                    <p className="font-bold text-primary text-lg">Value: $1,000</p>
+                    <p className="font-bold text-primary text-lg">Value: $750</p>
                   </div>
                 </div>
 
@@ -283,7 +283,7 @@ const Consultation = () => {
                   <div className="p-4">
                     <p className="font-semibold text-foreground mb-2">AI Strategy & ROI Breakdown</p>
                     <p className="text-sm text-muted-foreground mb-3">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
-                    <p className="font-bold text-primary text-lg">Value: $2,500</p>
+                    <p className="font-bold text-primary text-lg">Value: $1,500</p>
                   </div>
                 </div>
 
@@ -294,7 +294,7 @@ const Consultation = () => {
                   <div className="p-4">
                     <p className="font-semibold text-foreground mb-2">Custom 3–5 Page AI Implementation Roadmap</p>
                     <p className="text-sm text-muted-foreground mb-3">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
-                    <p className="font-bold text-primary text-lg">Value: $5,000</p>
+                    <p className="font-bold text-primary text-lg">Value: $2,500</p>
                   </div>
                 </div>
 
@@ -312,7 +312,7 @@ const Consultation = () => {
                 <div className="rounded-2xl overflow-hidden shadow-xl border border-primary/30 bg-gradient-to-r from-primary/20 to-purple-600/20 p-4 space-y-3">
                   <div className="flex justify-between items-center">
                     <p className="font-bold text-foreground">Total Value:</p>
-                    <p className="font-bold text-primary text-2xl">$8,500+</p>
+                    <p className="font-bold text-primary text-2xl">$4,750+</p>
                   </div>
                   <div className="flex justify-between items-center bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-xl p-3">
                     <p className="font-bold text-foreground text-lg">Your Investment:</p>
@@ -328,7 +328,7 @@ const Consultation = () => {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6TTI0IDQyYzMuMzEgMCA2IDIuNjkgNiA2cy0yLjY5IDYtNiA2LTYtMi42OS02LTYgMi42OS02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
             <div className="relative z-10">
               <DollarSign className="w-16 h-16 mx-auto mb-6 text-primary-foreground" />
-              <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">A $10,000 Strategy for a $299 Commitment</h2>
+              <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">A $4,750 Strategy for a $299 Commitment</h2>
               <p className="mb-8 text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
                 "This isn't a sales pitch — it's a paid strategy session that gives you clarity, numbers, and a roadmap you can act on immediately. You'll know exactly how AI can save or make your business money."
               </p>
