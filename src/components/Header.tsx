@@ -25,7 +25,7 @@ const Header = () => {
             Real Estate
           </a>
           <a href="/consultation" className="text-sm font-medium transition-colors hover:text-primary">
-            Free Consultation
+            AI Roadmap Call
           </a>
           <a href="/booking" className="text-sm font-medium transition-colors hover:text-primary">
             Book Demo
@@ -76,7 +76,7 @@ const Header = () => {
                   Real Estate
                 </a>
                 <a href="/consultation" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
-                  Free Consultation
+                  AI Roadmap Call
                 </a>
                 <a href="/booking" className="text-base font-medium transition-colors hover:text-primary px-2 py-2">
                   Book Demo

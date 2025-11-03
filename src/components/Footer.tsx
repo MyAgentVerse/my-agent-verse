@@ -48,7 +48,7 @@ const Footer = () => {
                 📞 (281) 699-8318
               </a>
               <a href="/consultation" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Free Consultation
+                AI Roadmap Call
               </a>
               <a href="/booking" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 Book a Demo

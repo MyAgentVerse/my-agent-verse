@@ -47,7 +47,7 @@ const Realtor = () => {
                   <Button size="lg" variant="outline" className="text-lg px-8 border-2 hover:bg-primary/5 transition-all" asChild>
                     <a href="/booking">
                       <Calendar className="mr-2 h-5 w-5" />
-                      Schedule Your Free Consultation
+                      Schedule Strategy Session
                     </a>
                   </Button>
                 </div>
