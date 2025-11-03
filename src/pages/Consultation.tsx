@@ -202,61 +202,123 @@ const Consultation = () => {
               What You'll Get Inside Your Session
             </h2>
             
-            <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl shadow-2xl border border-primary/20">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gradient-to-r from-primary via-purple-600 to-primary">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Step</th>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Deliverable</th>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-muted/50 divide-y divide-border">
-                    <tr className="hover:bg-muted transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Pre-Call</td>
-                      <td className="px-6 py-4">
-                        <p className="font-semibold text-foreground mb-1">Personalized AI Opportunity Audit</p>
-                        <p className="text-sm text-muted-foreground">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$1,000</td>
-                    </tr>
-                    <tr className="hover:bg-muted transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Live Call<br/>(45–60 min)</td>
-                      <td className="px-6 py-4">
-                        <p className="font-semibold text-foreground mb-1">AI Strategy & ROI Breakdown</p>
-                        <p className="text-sm text-muted-foreground">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$2,500</td>
-                    </tr>
-                    <tr className="hover:bg-muted transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Post-Call</td>
-                      <td className="px-6 py-4">
-                        <p className="font-semibold text-foreground mb-1">Custom 3–5 Page AI Implementation Roadmap</p>
-                        <p className="text-sm text-muted-foreground">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$5,000</td>
-                    </tr>
-                    <tr className="bg-primary/10 hover:bg-primary/20 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Bonus</td>
-                      <td className="px-6 py-4">
-                        <p className="font-semibold text-foreground mb-1">Full Credit Toward First Project</p>
-                        <p className="text-sm text-muted-foreground">Your $299 fee is fully credited toward your first AI project if you move forward with us.</p>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-bold text-green-600 text-lg">Risk-Free</td>
-                    </tr>
-                  </tbody>
-                  <tfoot className="bg-gradient-to-r from-primary/20 to-purple-600/20">
-                    <tr>
-                      <td colSpan={2} className="px-6 py-4 text-right font-bold text-foreground text-lg">Total Value:</td>
-                      <td className="px-6 py-4 font-bold text-primary text-2xl">$8,500+</td>
-                    </tr>
-                    <tr className="bg-gradient-to-r from-green-500/20 to-green-600/20">
-                      <td colSpan={2} className="px-6 py-4 text-right font-bold text-foreground text-xl">Your Investment:</td>
-                      <td className="px-6 py-4 font-bold text-green-600 text-3xl">$299</td>
-                    </tr>
-                  </tfoot>
-                </table>
+            {/* Mobile-friendly card layout */}
+            <div className="max-w-5xl mx-auto">
+              {/* Desktop table view */}
+              <div className="hidden lg:block overflow-hidden rounded-3xl shadow-2xl border border-primary/20">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[700px]">
+                    <thead className="bg-gradient-to-r from-primary via-purple-600 to-primary">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs sm:text-sm font-bold text-primary-foreground uppercase tracking-wider">Step</th>
+                        <th className="px-4 py-3 text-left text-xs sm:text-sm font-bold text-primary-foreground uppercase tracking-wider">Deliverable</th>
+                        <th className="px-4 py-3 text-left text-xs sm:text-sm font-bold text-primary-foreground uppercase tracking-wider">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-muted/50 divide-y divide-border">
+                      <tr className="hover:bg-muted transition-colors">
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-foreground text-sm">Pre-Call</td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground mb-1 text-sm">Personalized AI Opportunity Audit</p>
+                          <p className="text-xs text-muted-foreground">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$1,000</td>
+                      </tr>
+                      <tr className="hover:bg-muted transition-colors">
+                        <td className="px-4 py-3 font-semibold text-foreground text-sm">Live Call<br/>(45–60 min)</td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground mb-1 text-sm">AI Strategy & ROI Breakdown</p>
+                          <p className="text-xs text-muted-foreground">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$2,500</td>
+                      </tr>
+                      <tr className="hover:bg-muted transition-colors">
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-foreground text-sm">Post-Call</td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground mb-1 text-sm">Custom 3–5 Page AI Implementation Roadmap</p>
+                          <p className="text-xs text-muted-foreground">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-primary text-base">$5,000</td>
+                      </tr>
+                      <tr className="bg-primary/10 hover:bg-primary/20 transition-colors">
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-foreground text-sm">Bonus</td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground mb-1 text-sm">Full Credit Toward First Project</p>
+                          <p className="text-xs text-muted-foreground">Your $299 fee is fully credited toward your first AI project if you move forward with us.</p>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap font-bold text-green-600 text-base">Risk-Free</td>
+                      </tr>
+                    </tbody>
+                    <tfoot className="bg-gradient-to-r from-primary/20 to-purple-600/20">
+                      <tr>
+                        <td colSpan={2} className="px-4 py-3 text-right font-bold text-foreground text-base">Total Value:</td>
+                        <td className="px-4 py-3 font-bold text-primary text-xl">$8,500+</td>
+                      </tr>
+                      <tr className="bg-gradient-to-r from-green-500/20 to-green-600/20">
+                        <td colSpan={2} className="px-4 py-3 text-right font-bold text-foreground text-lg">Your Investment:</td>
+                        <td className="px-4 py-3 font-bold text-green-600 text-2xl">$299</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+
+              {/* Mobile card view */}
+              <div className="lg:hidden space-y-4">
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-primary/20 bg-muted/50">
+                  <div className="bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-3">
+                    <h3 className="font-bold text-primary-foreground text-sm">Pre-Call</h3>
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-foreground mb-2">Personalized AI Opportunity Audit</p>
+                    <p className="text-sm text-muted-foreground mb-3">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
+                    <p className="font-bold text-primary text-lg">Value: $1,000</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-primary/20 bg-muted/50">
+                  <div className="bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-3">
+                    <h3 className="font-bold text-primary-foreground text-sm">Live Call (45–60 min)</h3>
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-foreground mb-2">AI Strategy & ROI Breakdown</p>
+                    <p className="text-sm text-muted-foreground mb-3">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
+                    <p className="font-bold text-primary text-lg">Value: $2,500</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-primary/20 bg-muted/50">
+                  <div className="bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-3">
+                    <h3 className="font-bold text-primary-foreground text-sm">Post-Call</h3>
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-foreground mb-2">Custom 3–5 Page AI Implementation Roadmap</p>
+                    <p className="text-sm text-muted-foreground mb-3">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
+                    <p className="font-bold text-primary text-lg">Value: $5,000</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-green-500/30 bg-primary/10">
+                  <div className="bg-gradient-to-r from-green-500 via-green-600 to-green-500 px-4 py-3">
+                    <h3 className="font-bold text-white text-sm">Bonus</h3>
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-foreground mb-2">Full Credit Toward First Project</p>
+                    <p className="text-sm text-muted-foreground mb-3">Your $299 fee is fully credited toward your first AI project if you move forward with us.</p>
+                    <p className="font-bold text-green-600 text-lg">Value: Risk-Free</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-xl border border-primary/30 bg-gradient-to-r from-primary/20 to-purple-600/20 p-4 space-y-3">
+                  <div className="flex justify-between items-center">
+                    <p className="font-bold text-foreground">Total Value:</p>
+                    <p className="font-bold text-primary text-2xl">$8,500+</p>
+                  </div>
+                  <div className="flex justify-between items-center bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-xl p-3">
+                    <p className="font-bold text-foreground text-lg">Your Investment:</p>
+                    <p className="font-bold text-green-600 text-3xl">$299</p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -293,10 +355,10 @@ const Consultation = () => {
                   size="lg" 
                   variant="secondary" 
                   onClick={() => setIsPaymentDialogOpen(true)}
-                  className="text-xl px-12 py-8 shadow-xl hover:scale-105 transition-transform font-bold"
+                  className="text-lg sm:text-xl px-6 sm:px-12 py-6 sm:py-8 shadow-xl hover:scale-105 transition-transform font-bold w-full sm:w-auto"
                 >
-                  <Calendar className="mr-3 h-6 w-6" />
-                  Reserve My Strategy Call ($299)
+                  <Calendar className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
+                  <span className="block sm:inline">Reserve Strategy Call<span className="hidden sm:inline"> ($299)</span><span className="block sm:hidden text-base">$299</span></span>
                 </Button>
               )}
             </div>
