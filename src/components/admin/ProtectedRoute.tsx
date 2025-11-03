@@ -14,27 +14,26 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
   const checkAdminStatus = async () => {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
+      const { data: { session } } = await supabase.auth.getSession();
       
-      if (!user) {
+      if (!session) {
         setIsAdmin(false);
         setLoading(false);
         return;
       }
 
-      // Check if user has admin role
-      const { data: roles, error } = await supabase
-        .from('user_roles')
-        .select('role')
-        .eq('user_id', user.id)
-        .eq('role', 'admin')
-        .single();
+      // Call server-side edge function to verify admin status
+      const { data, error } = await supabase.functions.invoke('check-admin-status', {
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
 
       if (error) {
         console.error('Error checking admin status:', error);
         setIsAdmin(false);
       } else {
-        setIsAdmin(!!roles);
+        setIsAdmin(data?.isAdmin === true);
       }
     } catch (error) {
       console.error('Error in checkAdminStatus:', error);

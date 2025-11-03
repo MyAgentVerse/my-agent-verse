@@ -20,16 +20,16 @@ const AdminLogin = () => {
   }, []);
 
   const checkExistingSession = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (user) {
-      const { data: roles } = await supabase
-        .from('user_roles')
-        .select('role')
-        .eq('user_id', user.id)
-        .eq('role', 'admin')
-        .single();
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+      // Use server-side edge function to verify admin status
+      const { data: adminCheck } = await supabase.functions.invoke('check-admin-status', {
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
       
-      if (roles) {
+      if (adminCheck?.isAdmin) {
         navigate('/admin/consultations');
       }
     }
@@ -81,15 +81,15 @@ const AdminLogin = () => {
 
       if (authError) throw authError;
 
-      if (authData.user) {
-        const { data: roles, error: roleError } = await supabase
-          .from('user_roles')
-          .select('role')
-          .eq('user_id', authData.user.id)
-          .eq('role', 'admin')
-          .single();
+      if (authData.session) {
+        // Use server-side edge function to verify admin status
+        const { data: adminCheck, error: adminError } = await supabase.functions.invoke('check-admin-status', {
+          headers: {
+            Authorization: `Bearer ${authData.session.access_token}`,
+          },
+        });
 
-        if (roleError || !roles) {
+        if (adminError || !adminCheck?.isAdmin) {
           await supabase.auth.signOut();
           throw new Error("You don't have admin access. Please contact an administrator.");
         }

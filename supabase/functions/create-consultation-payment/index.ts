@@ -1,11 +1,26 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
+
+// Input validation schema
+const consultationSchema = z.object({
+  email: z.string().email().max(255),
+  name: z.string().trim().min(1).max(100),
+  companyName: z.string().trim().min(1).max(200),
+  website: z.string().url().max(500).optional().or(z.literal("")),
+  industry: z.string().trim().min(1).max(100),
+  annualRevenue: z.string().trim().min(1).max(100),
+  teamSize: z.string().trim().min(1).max(100),
+  phone: z.string().regex(/^[\d\s\-\+\(\)]+$/).max(20),
+  biggestChallenge: z.string().trim().min(1).max(1000),
+  useCases: z.array(z.string().max(100)).max(20).optional(),
+});
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -13,6 +28,22 @@ serve(async (req) => {
   }
 
   try {
+    const rawData = await req.json();
+    
+    // Validate and sanitize input using Zod schema
+    const validationResult = consultationSchema.safeParse(rawData);
+    
+    if (!validationResult.success) {
+      console.error("Validation error:", validationResult.error);
+      return new Response(
+        JSON.stringify({ error: "Invalid input data provided" }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400,
+        }
+      );
+    }
+    
     const { 
       email, 
       name, 
@@ -24,12 +55,7 @@ serve(async (req) => {
       phone, 
       biggestChallenge, 
       useCases 
-    } = await req.json();
-    
-    // Validate required fields
-    if (!email || !name || !companyName || !industry || !annualRevenue || !teamSize || !phone || !biggestChallenge) {
-      throw new Error("All required fields must be provided");
-    }
+    } = validationResult.data;
 
     // Initialize Supabase client
     const supabaseClient = createClient(
@@ -105,8 +131,9 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error("Payment creation error:", error);
+    // Return generic error message to prevent information leakage
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : "Payment processing failed" }), 
+      JSON.stringify({ error: "Unable to process payment. Please try again or contact support." }), 
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
