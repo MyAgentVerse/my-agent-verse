@@ -38,13 +38,12 @@ serve(async (req) => {
     }
 
     // Create checkout session for one-time $299 payment
-    // NOTE: Replace 'price_PLACEHOLDER' with your actual Stripe price ID from the dashboard
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : email,
       line_items: [
         {
-          price: "price_PLACEHOLDER", // TODO: Replace with actual price ID after creating product in Stripe
+          price: "price_1SPBKnHT0ThhYCZBk9yBXWag",
           quantity: 1,
         },
       ],
@@ -63,7 +62,7 @@ serve(async (req) => {
   } catch (error) {
     console.error("Payment creation error:", error);
     return new Response(
-      JSON.stringify({ error: error.message }), 
+      JSON.stringify({ error: error instanceof Error ? error.message : "Payment processing failed" }), 
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
