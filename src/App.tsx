@@ -14,6 +14,9 @@ import Privacy from "./pages/Privacy";
 import Consultation from "./pages/Consultation";
 import NotFound from "./pages/NotFound";
 import ElevenLabsVoiceAgent from "./components/ElevenLabsVoiceAgent";
+import AdminLogin from "./pages/admin/Login";
+import ConsultationDashboard from "./pages/admin/ConsultationDashboard";
+import { ProtectedRoute } from "./components/admin/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,12 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/consultation" element={<Consultation />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/consultations" element={
+            <ProtectedRoute>
+              <ConsultationDashboard />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
