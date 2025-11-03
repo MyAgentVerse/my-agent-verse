@@ -53,6 +53,10 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --banner-gradient-start: 259 100% 56%;
+    --banner-gradient-end: 271 76% 53%;
+    --banner-link: 186 100% 38%;
   }
 
   .dark {
@@ -91,6 +95,10 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --banner-gradient-start: 259 100% 56%;
+    --banner-gradient-end: 271 76% 53%;
+    --banner-link: 186 100% 38%;
   }
 }
 

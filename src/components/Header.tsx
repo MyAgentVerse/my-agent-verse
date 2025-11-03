@@ -3,13 +3,16 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
 import { useLocation } from "react-router-dom";
+import BannerTop from "./BannerTop";
 
 const Header = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
+    <>
+      <BannerTop />
+      <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
       <div className="container mx-auto flex h-18 items-center justify-between px-4 sm:px-6 gap-2 sm:gap-4">
         <a href="/" className="flex items-center gap-2 flex-shrink-0">
           <img src={logo} alt="MyAgentVerse" className="w-40 sm:w-52 md:w-60" />
@@ -136,6 +139,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 
