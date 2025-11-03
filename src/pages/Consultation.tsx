@@ -1,10 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { getCalApi } from "@calcom/embed-react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Lightbulb, Target, FileText, Rocket } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { CheckCircle, Lightbulb, Target, FileText, Rocket, DollarSign, Calendar, TrendingUp } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import ManufacturingSpotlight from "@/components/sections/ManufacturingSpotlight";
 import heroImage from "@/assets/consultation-hero.jpg";
 import roadmapImage from "@/assets/consultation-roadmap.jpg";
@@ -14,33 +19,90 @@ import resultsImage from "@/assets/consultation-results.jpg";
 import testimonialImage from "@/assets/testimonial-success.jpg";
 
 const Consultation = () => {
+  const [searchParams] = useSearchParams();
+  const [isPaymentDialogOpen, setIsPaymentDialogOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
+  const { toast } = useToast();
+
   useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "60mins" });
-      cal("floatingButton", {
-        calLink: "agentverse/60mins",
-        config: { layout: "month_view" },
-        buttonText: "Book my consultation with founder",
+    const payment = searchParams.get("payment");
+    const sessionId = searchParams.get("session_id");
+    
+    if (payment === "success" && sessionId) {
+      // Initialize Cal.com for post-payment booking
+      (async function () {
+        const cal = await getCalApi({ namespace: "paid-consultation" });
+        cal("ui", { 
+          hideEventTypeDetails: false, 
+          layout: "month_view",
+        });
+      })();
+      
+      toast({
+        title: "Payment Successful! 🎉",
+        description: "Please schedule your consultation below.",
       });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-    })();
-  }, []);
+    } else if (payment === "canceled") {
+      toast({
+        title: "Payment Canceled",
+        description: "You can try again anytime.",
+        variant: "destructive",
+      });
+    }
+  }, [searchParams, toast]);
+
+  const handlePayment = async () => {
+    if (!email || !name) {
+      toast({
+        title: "Required Information",
+        description: "Please provide your name and email.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsProcessing(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("create-consultation-payment", {
+        body: { email, name },
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.open(data.url, "_blank");
+        setIsPaymentDialogOpen(false);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      toast({
+        title: "Payment Error",
+        description: error.message || "Unable to process payment. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
+  };
 
   return (
     <>
       <Helmet>
-        <title>Free AI Consultation with Dawood Kokawala | MyAgentVerse</title>
+        <title>AI Implementation Roadmap Call | MyAgentVerse</title>
         <meta
           name="description"
-          content="Book a free 1-hour AI consultation with Dawood Kokawala, Founder of MyAgentVerse. Get a personalized AI strategy roadmap for your business — open to all industries."
+          content="Unlock a custom AI roadmap for your business. In one paid strategy session, discover how AI can save and earn your company up to $100K+ annually. Includes pre-call audit, ROI breakdown, and full roadmap PDF."
         />
         <meta
           property="og:title"
-          content="Free AI Consultation with Dawood Kokawala | MyAgentVerse"
+          content="AI Implementation Roadmap Call | MyAgentVerse"
         />
         <meta
           property="og:description"
-          content="Discover where AI fits in your business. Join Dawood Kokawala for a free 1-hour strategy session and walk away with your personalized AI roadmap."
+          content="Turn AI confusion into a clear, profitable roadmap. $299 strategy session with full credit toward your first AI project."
         />
         <meta property="og:url" content="https://myagentverse.com/consultation" />
       </Helmet>
@@ -53,60 +115,193 @@ const Consultation = () => {
           <section className="mb-32 animate-fade-in">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="text-center lg:text-left">
+                <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <span className="text-sm font-semibold text-primary">💼 Executive Strategy Session</span>
+                </div>
                 <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent animate-scale-in">
-                  Not sure where AI fits in your business? Let's figure it out together.
+                  Turn AI Confusion Into a Clear, Profitable Roadmap
                 </h1>
+                <p className="mb-6 mx-auto lg:mx-0 max-w-3xl text-xl text-muted-foreground leading-relaxed">
+                  The AI Implementation Roadmap Call — Your <strong className="text-foreground">$10,000 Strategy</strong> for Just <strong className="text-primary text-2xl">$299</strong>
+                </p>
                 <p className="mx-auto lg:mx-0 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-                  Join <strong className="text-foreground">Dawood Kokawala</strong>, Founder of{" "}
-                  <strong className="text-foreground">MyAgentVerse</strong>, for a free 1-hour strategy session. 
-                  Walk away with a <strong className="text-foreground">personalized AI roadmap</strong> built just for your business.
+                  Most businesses know AI can save time and money — but few know <em>where to start</em>. In this 60-minute private strategy call, we'll identify exactly how AI fits into your operations, marketing, and sales, and show you where it can deliver the highest ROI.
                 </p>
               </div>
               <div className="relative animate-slide-in-right">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
                 <img 
                   src={heroImage} 
-                  alt="AI consultation session with holographic technology" 
+                  alt="AI consultation session with strategic business planning" 
                   className="relative rounded-3xl shadow-2xl w-full hover-scale transition-transform duration-500"
                 />
               </div>
             </div>
           </section>
 
-          {/* BOOKING SECTION */}
-          <section className="mb-32 rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-purple-600 p-12 text-center md:p-16 shadow-2xl animate-fade-in relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6TTI0IDQyYzMuMzEgMCA2IDIuNjkgNiA2cy0yLjY5IDYtNiA2LTYtMi42OS02LTYgMi42OS02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-            <div className="relative z-10">
-              <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">Book Your Free Founder Session</h2>
-              <p className="mb-8 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                I personally host a few sessions each week. They fill up fast. Click below to reserve your free consultation.
-              </p>
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform"
-                data-cal-namespace="60mins"
-                data-cal-link="agentverse/60mins"
-                data-cal-config='{"layout":"month_view"}'
-              >
-                Book My Consultation
-              </Button>
+          {/* VALUE PROPOSITION TABLE */}
+          <section className="mb-32 animate-fade-in">
+            <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              What You'll Get Inside Your Session
+            </h2>
+            
+            <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl shadow-2xl border border-primary/20">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gradient-to-r from-primary via-purple-600 to-primary">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Step</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Deliverable</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-primary-foreground uppercase tracking-wider">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-muted/50 divide-y divide-border">
+                    <tr className="hover:bg-muted transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Pre-Call</td>
+                      <td className="px-6 py-4">
+                        <p className="font-semibold text-foreground mb-1">Personalized AI Opportunity Audit</p>
+                        <p className="text-sm text-muted-foreground">We analyze your workflows and find untapped automation opportunities before the meeting.</p>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$1,000</td>
+                    </tr>
+                    <tr className="hover:bg-muted transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Live Call<br/>(45–60 min)</td>
+                      <td className="px-6 py-4">
+                        <p className="font-semibold text-foreground mb-1">AI Strategy & ROI Breakdown</p>
+                        <p className="text-sm text-muted-foreground">We pinpoint 2–3 automation opportunities and estimate your annual savings or revenue gains.</p>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$2,500</td>
+                    </tr>
+                    <tr className="hover:bg-muted transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Post-Call</td>
+                      <td className="px-6 py-4">
+                        <p className="font-semibold text-foreground mb-1">Custom 3–5 Page AI Implementation Roadmap</p>
+                        <p className="text-sm text-muted-foreground">A detailed PDF showing your AI integration plan, recommended agents, and phase roadmap.</p>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-bold text-primary text-lg">$5,000</td>
+                    </tr>
+                    <tr className="bg-primary/10 hover:bg-primary/20 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap font-semibold text-foreground">Bonus</td>
+                      <td className="px-6 py-4">
+                        <p className="font-semibold text-foreground mb-1">Full Credit Toward First Project</p>
+                        <p className="text-sm text-muted-foreground">Your $299 fee is fully credited toward your first AI project if you move forward with us.</p>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-bold text-green-600 text-lg">Risk-Free</td>
+                    </tr>
+                  </tbody>
+                  <tfoot className="bg-gradient-to-r from-primary/20 to-purple-600/20">
+                    <tr>
+                      <td colSpan={2} className="px-6 py-4 text-right font-bold text-foreground text-lg">Total Value:</td>
+                      <td className="px-6 py-4 font-bold text-primary text-2xl">$8,500+</td>
+                    </tr>
+                    <tr className="bg-gradient-to-r from-green-500/20 to-green-600/20">
+                      <td colSpan={2} className="px-6 py-4 text-right font-bold text-foreground text-xl">Your Investment:</td>
+                      <td className="px-6 py-4 font-bold text-green-600 text-3xl">$299</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
             </div>
           </section>
 
-          {/* WHY SECTION */}
+          {/* CTA SECTION */}
+          <section className="mb-32 rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-purple-600 p-12 text-center md:p-16 shadow-2xl animate-fade-in relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6TTI0IDQyYzMuMzEgMCA2IDIuNjkgNiA2cy0yLjY5IDYtNiA2LTYtMi42OS02LTYgMi42OS02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+            <div className="relative z-10">
+              <DollarSign className="w-16 h-16 mx-auto mb-6 text-primary-foreground" />
+              <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">A $10,000 Strategy for a $299 Commitment</h2>
+              <p className="mb-8 text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+                "This isn't a sales pitch — it's a paid strategy session that gives you clarity, numbers, and a roadmap you can act on immediately. You'll know exactly how AI can save or make your business money."
+              </p>
+              <p className="mb-8 text-sm text-primary-foreground/80 italic">— Dawood Kokawala, Founder of MyAgentVerse</p>
+              
+              {searchParams.get("payment") === "success" ? (
+                <div className="space-y-4">
+                  <div className="inline-block px-6 py-3 rounded-full bg-green-500/20 border border-green-500">
+                    <CheckCircle className="inline-block w-5 h-5 mr-2 text-green-400" />
+                    <span className="font-semibold text-primary-foreground">Payment Successful!</span>
+                  </div>
+                  <div className="max-w-4xl mx-auto bg-background/95 rounded-2xl p-8">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">Schedule Your Consultation</h3>
+                    <div
+                      data-cal-namespace="paid-consultation"
+                      data-cal-link="agentverse/60mins"
+                      data-cal-config='{"layout":"month_view"}'
+                      className="min-h-[600px]"
+                    ></div>
+                  </div>
+                </div>
+              ) : (
+                <Button 
+                  size="lg" 
+                  variant="secondary" 
+                  onClick={() => setIsPaymentDialogOpen(true)}
+                  className="text-xl px-12 py-8 shadow-xl hover:scale-105 transition-transform font-bold"
+                >
+                  <Calendar className="mr-3 h-6 w-6" />
+                  Reserve My Strategy Call ($299)
+                </Button>
+              )}
+            </div>
+          </section>
+
+          {/* WHY INVEST SECTION */}
           <section className="mb-32 animate-fade-in">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="mb-8 text-3xl font-bold text-center md:text-4xl">Why This Consultation Exists</h2>
-              <div className="rounded-3xl bg-gradient-to-br from-muted to-muted/50 p-8 md:p-12 shadow-xl">
-                <p className="mb-6 text-xl text-muted-foreground leading-relaxed">
-                  Every business talks about AI, but most owners still wonder:{" "}
-                  <em className="text-foreground font-semibold">"Where does it actually fit in my business?"</em>
-                </p>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="mb-12 text-3xl font-bold text-center md:text-4xl">Why Businesses Invest in This Call</h2>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="group rounded-2xl bg-gradient-to-br from-blue-500/10 to-blue-600/5 p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <Lightbulb className="w-12 h-12 text-blue-500 mb-4" />
+                  <h3 className="mb-3 text-2xl font-bold">Clarity Instead of Confusion</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Know exactly where AI fits in your business — no more guessing or chasing trends.
+                  </p>
+                </div>
+                <div className="group rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <TrendingUp className="w-12 h-12 text-purple-500 mb-4" />
+                  <h3 className="mb-3 text-2xl font-bold">Proven Playbooks</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Learn how similar companies are saving 100+ hours a month or adding $50K+ in revenue using AI.
+                  </p>
+                </div>
+                <div className="group rounded-2xl bg-gradient-to-br from-green-500/10 to-green-600/5 p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <Target className="w-12 h-12 text-green-500 mb-4" />
+                  <h3 className="mb-3 text-2xl font-bold">Executive-Level Strategy</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Walk away with a professional roadmap you can implement with or without us.
+                  </p>
+                </div>
+                <div className="group rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 p-8 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <CheckCircle className="w-12 h-12 text-orange-500 mb-4" />
+                  <h3 className="mb-3 text-2xl font-bold">Risk-Free Offer</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    If you continue with an AI project, your consultation fee is credited in full.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* WHO THIS IS FOR */}
+          <section className="mb-32 rounded-3xl bg-gradient-to-br from-primary/10 via-purple-500/10 to-primary/5 p-8 md:p-16 shadow-xl animate-fade-in">
+            <h2 className="mb-8 text-3xl font-bold text-center md:text-4xl">Who This Is For</h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div className="flex items-start gap-4 group">
+                <CheckCircle className="mt-1 h-8 w-8 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform" />
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  This 1-hour session is built for <strong className="text-foreground">founders, owners, and operators</strong>{" "}
-                  who want to see <strong className="text-foreground">practical AI opportunities</strong>, not buzzwords. 
-                  Even if your industry isn't listed on our site, I'll help you uncover where AI can save time, reduce costs, and increase results.
+                  Businesses earning <strong className="text-foreground">$1M–$5M per year</strong> who want to modernize operations
+                </p>
+              </div>
+              <div className="flex items-start gap-4 group">
+                <CheckCircle className="mt-1 h-8 w-8 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform" />
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Founders, COOs, and Marketing Directors seeking <strong className="text-foreground">clarity, not just ideas</strong>
+                </p>
+              </div>
+              <div className="flex items-start gap-4 group">
+                <CheckCircle className="mt-1 h-8 w-8 flex-shrink-0 text-green-500 group-hover:scale-110 transition-transform" />
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Teams that want to <strong className="text-foreground">automate lead capture, scheduling, or reporting</strong> using AI agents
                 </p>
               </div>
             </div>
@@ -340,6 +535,53 @@ const Consultation = () => {
         </main>
 
         <Footer />
+
+        {/* Payment Dialog */}
+        <Dialog open={isPaymentDialogOpen} onOpenChange={setIsPaymentDialogOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">Reserve Your Strategy Call</DialogTitle>
+              <DialogDescription>
+                Enter your information to proceed to payment. Your $299 investment is fully credited toward your first AI project.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Full Name *
+                </label>
+                <Input
+                  id="name"
+                  placeholder="John Doe"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email Address *
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john@company.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button
+                onClick={handlePayment}
+                disabled={isProcessing || !email || !name}
+                className="w-full"
+                size="lg"
+              >
+                {isProcessing ? "Processing..." : "Continue to Payment ($299)"}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );
