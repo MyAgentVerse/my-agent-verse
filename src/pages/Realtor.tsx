@@ -44,12 +44,6 @@ const Realtor = () => {
                       Try Live Demo with Ava
                     </Button>
                   </DemoModal>
-                  <Button size="lg" variant="outline" className="text-lg px-8 h-12 border-2 hover:bg-primary/5 transition-all w-full sm:w-auto" asChild>
-                    <a href="/booking" className="flex items-center justify-center w-full h-full">
-                      <Calendar className="mr-2 h-5 w-5" />
-                      Schedule Strategy Session
-                    </a>
-                  </Button>
                 </div>
               </div>
               <div className="relative">
