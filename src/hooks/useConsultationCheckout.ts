@@ -5,8 +5,14 @@ import { toast } from "sonner";
 interface ConsultationData {
   email: string;
   name: string;
-  company: string;
-  challenge: string;
+  companyName: string;
+  website?: string;
+  industry: string;
+  annualRevenue: string;
+  teamSize: string;
+  phone: string;
+  biggestChallenge: string;
+  useCases?: string[];
 }
 
 export const useConsultationCheckout = () => {
