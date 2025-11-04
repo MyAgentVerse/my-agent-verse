@@ -57,6 +57,11 @@ All colors MUST be HSL.
     --banner-gradient-start: 259 100% 56%;
     --banner-gradient-end: 271 76% 53%;
     --banner-link: 186 100% 38%;
+    
+    --hero-gradient-start: 259 100% 56%;
+    --hero-gradient-end: 186 100% 27%;
+    --hero-button: 186 100% 38%;
+    --hero-button-hover: 186 100% 30%;
   }
 
   .dark {
@@ -99,6 +104,11 @@ All colors MUST be HSL.
     --banner-gradient-start: 259 100% 56%;
     --banner-gradient-end: 271 76% 53%;
     --banner-link: 186 100% 38%;
+    
+    --hero-gradient-start: 259 100% 56%;
+    --hero-gradient-end: 186 100% 35%;
+    --hero-button: 186 100% 38%;
+    --hero-button-hover: 186 100% 30%;
   }
 }
 
