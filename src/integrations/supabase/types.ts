@@ -14,6 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
+      analytics_events: {
+        Row: {
+          browser: string | null
+          created_at: string
+          device_type: string | null
+          event_action: string | null
+          event_category: string | null
+          event_label: string | null
+          event_type: string
+          event_value: number | null
+          id: string
+          ip_address: string | null
+          metadata: Json | null
+          os: string | null
+          page_title: string | null
+          page_url: string
+          referrer: string | null
+          session_id: string
+          user_agent: string | null
+          user_id: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          browser?: string | null
+          created_at?: string
+          device_type?: string | null
+          event_action?: string | null
+          event_category?: string | null
+          event_label?: string | null
+          event_type: string
+          event_value?: number | null
+          id?: string
+          ip_address?: string | null
+          metadata?: Json | null
+          os?: string | null
+          page_title?: string | null
+          page_url: string
+          referrer?: string | null
+          session_id: string
+          user_agent?: string | null
+          user_id?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          browser?: string | null
+          created_at?: string
+          device_type?: string | null
+          event_action?: string | null
+          event_category?: string | null
+          event_label?: string | null
+          event_type?: string
+          event_value?: number | null
+          id?: string
+          ip_address?: string | null
+          metadata?: Json | null
+          os?: string | null
+          page_title?: string | null
+          page_url?: string
+          referrer?: string | null
+          session_id?: string
+          user_agent?: string | null
+          user_id?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
       consultation_leads: {
         Row: {
           annual_revenue: string
@@ -77,6 +155,105 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          assigned_to: string | null
+          company_name: string | null
+          contacted_at: string | null
+          contacted_by: string | null
+          created_at: string
+          custom_fields: Json | null
+          deleted_at: string | null
+          email: string
+          form_source: string | null
+          form_type: Database["public"]["Enums"]["form_type"]
+          id: string
+          ip_address: string | null
+          last_activity_at: string | null
+          name: string
+          notes: string | null
+          payment_amount: number | null
+          payment_status: string | null
+          phone: string | null
+          priority: Database["public"]["Enums"]["lead_priority"]
+          referrer: string | null
+          status: Database["public"]["Enums"]["lead_status"]
+          stripe_session_id: string | null
+          tags: string[] | null
+          updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          assigned_to?: string | null
+          company_name?: string | null
+          contacted_at?: string | null
+          contacted_by?: string | null
+          created_at?: string
+          custom_fields?: Json | null
+          deleted_at?: string | null
+          email: string
+          form_source?: string | null
+          form_type: Database["public"]["Enums"]["form_type"]
+          id?: string
+          ip_address?: string | null
+          last_activity_at?: string | null
+          name: string
+          notes?: string | null
+          payment_amount?: number | null
+          payment_status?: string | null
+          phone?: string | null
+          priority?: Database["public"]["Enums"]["lead_priority"]
+          referrer?: string | null
+          status?: Database["public"]["Enums"]["lead_status"]
+          stripe_session_id?: string | null
+          tags?: string[] | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          assigned_to?: string | null
+          company_name?: string | null
+          contacted_at?: string | null
+          contacted_by?: string | null
+          created_at?: string
+          custom_fields?: Json | null
+          deleted_at?: string | null
+          email?: string
+          form_source?: string | null
+          form_type?: Database["public"]["Enums"]["form_type"]
+          id?: string
+          ip_address?: string | null
+          last_activity_at?: string | null
+          name?: string
+          notes?: string | null
+          payment_amount?: number | null
+          payment_status?: string | null
+          phone?: string | null
+          priority?: Database["public"]["Enums"]["lead_priority"]
+          referrer?: string | null
+          status?: Database["public"]["Enums"]["lead_status"]
+          stripe_session_id?: string | null
+          tags?: string[] | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
@@ -110,9 +287,21 @@ export type Database = {
         }
         Returns: boolean
       }
+      migrate_consultation_leads: { Args: never; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "user"
+      form_type: "contact" | "consultation" | "build" | "demo" | "other"
+      lead_priority: "low" | "medium" | "high" | "urgent"
+      lead_status:
+        | "new"
+        | "contacted"
+        | "qualified"
+        | "proposal"
+        | "negotiation"
+        | "won"
+        | "lost"
+        | "nurture"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -241,6 +430,18 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
+      form_type: ["contact", "consultation", "build", "demo", "other"],
+      lead_priority: ["low", "medium", "high", "urgent"],
+      lead_status: [
+        "new",
+        "contacted",
+        "qualified",
+        "proposal",
+        "negotiation",
+        "won",
+        "lost",
+        "nurture",
+      ],
     },
   },
 } as const
