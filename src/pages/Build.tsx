@@ -11,7 +11,7 @@ import idealClientImage from "@/assets/build-ideal-client.jpg";
 import processImage from "@/assets/build-process.jpg";
 import decisionImage from "@/assets/build-decision.jpg";
 import whyWorksImage from "@/assets/build-why-works.jpg";
-import bookingImage from "@/assets/build-booking.jpg";
+import bookingImage from "@/assets/build-booking-calendar.png";
 
 const Build = () => {
   return (
@@ -60,7 +60,7 @@ const Build = () => {
           </section>
 
           {/* Quick Heads-Up Section */}
-          <section className="py-20 bg-card/50">
+          <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
             <div className="container mx-auto px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div>
@@ -124,7 +124,7 @@ const Build = () => {
           </section>
 
           {/* Why Teams Wait Section */}
-          <section className="py-20 bg-card/50">
+          <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
             <div className="container mx-auto px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div>
@@ -187,7 +187,7 @@ const Build = () => {
           </section>
 
           {/* How It Works Section */}
-          <section className="py-20 bg-card/50">
+          <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
             <div className="container mx-auto px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div>
@@ -246,7 +246,7 @@ const Build = () => {
           </section>
 
           {/* Why This Works Section */}
-          <section className="py-20 bg-card/50">
+          <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
             <div className="container mx-auto px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div>
@@ -282,11 +282,11 @@ const Build = () => {
             <div className="container mx-auto px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                 <div className="relative order-2 lg:order-1">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-3xl"></div>
                   <img 
                     src={bookingImage} 
                     alt="Calendar with limited booking slots" 
-                    className="relative rounded-3xl shadow-2xl w-full"
+                    className="relative rounded-3xl shadow-2xl w-full border border-primary/20"
                   />
                 </div>
                 <div className="order-1 lg:order-2">
