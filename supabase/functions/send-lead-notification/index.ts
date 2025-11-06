@@ -20,7 +20,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { leadId, notifyEmails = ["team@myagentverse.com"] }: LeadNotificationRequest = await req.json();
+    const { leadId, notifyEmails = ["dawoodk@myagentverse.com"] }: LeadNotificationRequest = await req.json();
 
     // Initialize Supabase client to fetch lead details
     const supabaseClient = createClient(
