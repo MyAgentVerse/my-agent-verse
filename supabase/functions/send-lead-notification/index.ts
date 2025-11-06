@@ -126,7 +126,10 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error sending lead notification:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: "Unable to send notification. Please contact support if this persists.",
+        success: false
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

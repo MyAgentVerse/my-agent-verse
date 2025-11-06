@@ -247,18 +247,15 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in send-contact-form function:", error);
+    console.error("Error in send-contact-form:", error);
     return new Response(
       JSON.stringify({ 
-        error: error.message || "Failed to send contact form",
+        error: "Unable to send your message. Please try again or contact us directly.",
         success: false
       }),
       {
         status: 500,
-        headers: { 
-          "Content-Type": "application/json", 
-          ...corsHeaders 
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   }
