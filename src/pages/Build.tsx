@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BuildTestimonials from "@/components/sections/build/BuildTestimonials";
+import BuildApplicationForm from "@/components/BuildApplicationForm";
 import heroImage from "@/assets/build-hero.jpg";
 import exclusivityImage from "@/assets/build-exclusivity.jpg";
 import collaborationImage from "@/assets/build-collaboration.jpg";
@@ -360,6 +361,35 @@ const Build = () => {
 
           {/* Testimonials Section */}
           <BuildTestimonials />
+
+          {/* Application Form Section */}
+          <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    📋 Apply for a Build Slot
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Only 2 build slots available per month. Tell us about your project and we'll get back to you within 24 hours.
+                  </p>
+                </div>
+                
+                <div className="bg-card rounded-3xl shadow-2xl p-8 md:p-12 border border-primary/10">
+                  <BuildApplicationForm />
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <p className="text-muted-foreground mb-4">
+                    Or prefer to talk first?
+                  </p>
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto" asChild>
+                    <a href="/consultation">Schedule Discovery Call</a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Currently Booking Section */}
           <section className="py-20">
