@@ -56,6 +56,9 @@ const Footer = () => {
               <a href="/contact" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 Contact Us
               </a>
+              <a href="/build" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+                21-Day Build
+              </a>
               <a href="/support" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
                 Support
               </a>

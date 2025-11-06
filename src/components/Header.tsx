@@ -52,7 +52,13 @@ const Header = () => {
           >
             Book Demo
           </a>
-          <button 
+          <a 
+            href="/build" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/build') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
+            21-Day Build
+          </a>
+          <button
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
@@ -118,7 +124,13 @@ const Header = () => {
                 >
                   Book Demo
                 </a>
-                <button 
+                <a 
+                  href="/build" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/build') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
+                  21-Day Build
+                </a>
+                <button
                   onClick={() => {
                     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
