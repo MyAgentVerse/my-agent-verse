@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BuildTestimonials from "@/components/sections/build/BuildTestimonials";
 import heroImage from "@/assets/build-hero.jpg";
 import exclusivityImage from "@/assets/build-exclusivity.jpg";
 import collaborationImage from "@/assets/build-collaboration.jpg";
@@ -272,6 +273,9 @@ const Build = () => {
               </div>
             </div>
           </section>
+
+          {/* Testimonials Section */}
+          <BuildTestimonials />
 
           {/* Currently Booking Section */}
           <section className="py-20">
