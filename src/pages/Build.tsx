@@ -388,7 +388,7 @@ const Build = () => {
                     Or prefer to talk first?
                   </p>
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto" asChild>
-                    <a href="/consultation">Schedule a Call</a>
+                    <a href="/booking">Schedule a Call</a>
                   </Button>
                 </div>
               </div>
