@@ -43,18 +43,28 @@ const Build = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/50"></div>
+              
+              {/* Animated Gradient Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse"></div>
+              <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-[120px] animate-[pulse_4s_ease-in-out_infinite]"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/30 rounded-full blur-[120px] animate-[pulse_6s_ease-in-out_infinite]"></div>
+              
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent"></div>
             </div>
             <div className="container mx-auto px-6 py-20 relative z-10">
               <div className="max-w-3xl">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in drop-shadow-[0_0_30px_rgba(0,183,194,0.3)]">
                   ⚡ Build Custom Software in 21 Days
                 </h1>
-                <p className="text-xl sm:text-2xl mb-8 text-muted-foreground leading-snug">
+                <p className="text-xl sm:text-2xl mb-8 text-muted-foreground leading-snug animate-fade-in [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
                   For Founders Ready to Move Fast — and Who Qualify
                 </p>
-                <Button size="lg" className="text-lg px-8 py-6" asChild>
-                  <a href="/consultation">Book Discovery Call</a>
-                </Button>
+                <div className="animate-fade-in [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
+                  <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_40px_rgba(0,183,194,0.4)] hover:shadow-[0_0_60px_rgba(0,183,194,0.6)] transition-all duration-300" asChild>
+                    <a href="/consultation">Book Discovery Call</a>
+                  </Button>
+                </div>
               </div>
             </div>
           </section>
