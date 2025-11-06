@@ -15,6 +15,10 @@ import whyWorksImage from "@/assets/build-why-works.jpg";
 import bookingImage from "@/assets/build-booking-calendar.png";
 
 const Build = () => {
+  const scrollToForm = () => {
+    document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <>
       <Helmet>
@@ -62,8 +66,8 @@ const Build = () => {
                   For Founders Ready to Move Fast — and Who Qualify
                 </p>
                 <div className="animate-fade-in [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
-                  <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_40px_rgba(0,183,194,0.4)] hover:shadow-[0_0_60px_rgba(0,183,194,0.6)] transition-all duration-300" asChild>
-                    <a href="/consultation">Book Discovery Call</a>
+                  <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_40px_rgba(0,183,194,0.4)] hover:shadow-[0_0_60px_rgba(0,183,194,0.6)] transition-all duration-300" onClick={scrollToForm}>
+                    Book Discovery Call
                   </Button>
                 </div>
               </div>
@@ -363,7 +367,7 @@ const Build = () => {
           <BuildTestimonials />
 
           {/* Application Form Section */}
-          <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
+          <section id="apply-form" className="py-20 bg-gradient-to-b from-accent/5 to-background">
             <div className="container mx-auto px-6">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
@@ -384,7 +388,7 @@ const Build = () => {
                     Or prefer to talk first?
                   </p>
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto" asChild>
-                    <a href="/consultation">Schedule Discovery Call</a>
+                    <a href="/consultation">Schedule a Call</a>
                   </Button>
                 </div>
               </div>
@@ -421,8 +425,8 @@ const Build = () => {
                       <span className="font-semibold text-foreground">January (waitlist)</span>
                     </div>
                   </div>
-                  <Button size="lg" className="text-lg px-8 py-6" asChild>
-                    <a href="/consultation">👉 Book a Discovery Call Now</a>
+                  <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToForm}>
+                    👉 Apply for a Build Slot
                   </Button>
                 </div>
               </div>
@@ -436,10 +440,10 @@ const Build = () => {
                 Ready to Move Fast?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Let's build something powerful together. Book your discovery call today.
+                Let's build something powerful together. Apply for your build slot today.
               </p>
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
-                <a href="/consultation">Book Discovery Call</a>
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" onClick={scrollToForm}>
+                Apply for a Build Slot
               </Button>
             </div>
           </section>
