@@ -47,16 +47,16 @@ const Header = () => {
             AI Roadmap Call
           </a>
           <a 
-            href="/booking" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/booking') ? 'text-primary border-b-2 border-primary' : ''}`}
-          >
-            Book Demo
-          </a>
-          <a 
             href="/build" 
             className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/build') ? 'text-primary border-b-2 border-primary' : ''}`}
           >
             21-Day Build
+          </a>
+          <a 
+            href="/booking" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/booking') ? 'text-primary border-b-2 border-primary' : ''}`}
+          >
+            Book Demo
           </a>
           <button
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
@@ -119,16 +119,16 @@ const Header = () => {
                   AI Roadmap Call
                 </a>
                 <a 
-                  href="/booking" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/booking') ? 'text-primary border-l-4 border-primary' : ''}`}
-                >
-                  Book Demo
-                </a>
-                <a 
                   href="/build" 
                   className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/build') ? 'text-primary border-l-4 border-primary' : ''}`}
                 >
                   21-Day Build
+                </a>
+                <a 
+                  href="/booking" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/booking') ? 'text-primary border-l-4 border-primary' : ''}`}
+                >
+                  Book Demo
                 </a>
                 <button
                   onClick={() => {
