@@ -102,22 +102,40 @@ serve(async (req) => {
       },
     });
 
-    // Store consultation lead data in database
+    // Get UTM parameters from request headers or query params
+    const url = new URL(req.url);
+    const utmParams = {
+      utm_source: url.searchParams.get('utm_source') || undefined,
+      utm_medium: url.searchParams.get('utm_medium') || undefined,
+      utm_campaign: url.searchParams.get('utm_campaign') || undefined,
+      utm_content: url.searchParams.get('utm_content') || undefined,
+      utm_term: url.searchParams.get('utm_term') || undefined,
+    };
+
+    // Store lead data in unified leads table
     const { error: dbError } = await supabaseClient
-      .from("consultation_leads")
+      .from("leads")
       .insert({
         name,
         email,
-        company_name: companyName,
-        website: website || null,
-        industry,
-        annual_revenue: annualRevenue,
-        team_size: teamSize,
         phone,
-        biggest_challenge: biggestChallenge,
-        use_cases: useCases,
+        company_name: companyName,
+        form_type: "consultation",
+        custom_fields: {
+          website: website || null,
+          industry,
+          annual_revenue: annualRevenue,
+          team_size: teamSize,
+          biggest_challenge: biggestChallenge,
+          use_cases: useCases,
+        },
         stripe_session_id: session.id,
         payment_status: "pending",
+        payment_amount: 299,
+        form_source: req.headers.get("referer") || undefined,
+        referrer: req.headers.get("referer") || undefined,
+        ...utmParams,
+        user_agent: req.headers.get("user-agent") || undefined,
       });
 
     if (dbError) {

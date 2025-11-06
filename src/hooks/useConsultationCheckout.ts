@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useAnalytics } from "./useAnalytics";
 
 interface ConsultationData {
   email: string;
@@ -17,6 +18,7 @@ interface ConsultationData {
 
 export const useConsultationCheckout = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { trackFormSubmit } = useAnalytics();
 
   const initiateCheckout = async (data: ConsultationData) => {
     setIsLoading(true);
@@ -31,6 +33,13 @@ export const useConsultationCheckout = () => {
       if (error) throw error;
 
       if (result?.url) {
+        // Track consultation form submission
+        trackFormSubmit('consultation', {
+          email: data.email,
+          company_name: data.companyName,
+          industry: data.industry,
+        });
+        
         window.open(result.url, "_blank");
       } else {
         throw new Error("No checkout URL received");

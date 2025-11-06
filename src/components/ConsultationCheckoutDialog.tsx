@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useConsultationCheckout } from "@/hooks/useConsultationCheckout";
 import { Loader2 } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface ConsultationCheckoutDialogProps {
   open: boolean;
@@ -24,6 +25,7 @@ const ConsultationCheckoutDialog = ({
   onOpenChange,
 }: ConsultationCheckoutDialogProps) => {
   const { initiateCheckout, isLoading } = useConsultationCheckout();
+  const { trackFormStart } = useAnalytics();
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -50,7 +52,11 @@ const ConsultationCheckoutDialog = ({
             Fill in your details to proceed to secure checkout. Your $299 is fully credited toward your first project.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form 
+          onSubmit={handleSubmit} 
+          onFocus={() => trackFormStart('consultation')}
+          className="space-y-4"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name *</Label>

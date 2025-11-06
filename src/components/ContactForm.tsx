@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { useLeadSubmission } from "@/hooks/useLeadSubmission";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const contactFormSchema = z.object({
   name: z
@@ -43,6 +44,8 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { submitLead } = useLeadSubmission();
+  const { trackFormStart, trackFormSubmit } = useAnalytics();
 
   const {
     register,
@@ -57,19 +60,27 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke("send-contact-form", {
-        body: {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
+      // Submit to CRM
+      const result = await submitLead({
+        email: data.email,
+        name: data.name,
+        phone: data.phone,
+        form_type: 'contact',
+        custom_fields: {
           industry: data.industry,
           message: data.message,
         },
       });
 
-      if (error) {
-        throw error;
+      if (!result.success) {
+        throw new Error(result.error);
       }
+
+      // Track successful submission
+      trackFormSubmit('contact', {
+        lead_id: result.lead?.id,
+        email: data.email,
+      });
 
       toast({
         title: "Thank you!",
@@ -90,7 +101,11 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form 
+      onSubmit={handleSubmit(onSubmit)} 
+      onFocus={() => trackFormStart('contact')}
+      className="space-y-4"
+    >
       <div>
         <Label htmlFor="name" className="text-sm font-medium">
           Name *
