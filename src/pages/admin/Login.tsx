@@ -30,7 +30,7 @@ const AdminLogin = () => {
       });
       
       if (adminCheck?.isAdmin) {
-        navigate('/admin/consultations');
+        navigate('/admin/dashboard');
       }
     }
   };
@@ -99,7 +99,7 @@ const AdminLogin = () => {
           description: "Welcome to the admin dashboard",
         });
         
-        navigate('/admin/consultations');
+        navigate('/admin/dashboard');
       }
     } catch (error: any) {
       toast({

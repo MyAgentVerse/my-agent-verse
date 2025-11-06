@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import ElevenLabsVoiceAgent from "./components/ElevenLabsVoiceAgent";
 import AdminLogin from "./pages/admin/Login";
 import ConsultationDashboard from "./pages/admin/ConsultationDashboard";
+import Dashboard from "./pages/admin/Dashboard";
 import { ProtectedRoute } from "./components/admin/ProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,11 @@ const App = () => (
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/build" element={<Build />} />
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
           <Route path="/admin/consultations" element={
             <ProtectedRoute>
               <ConsultationDashboard />
