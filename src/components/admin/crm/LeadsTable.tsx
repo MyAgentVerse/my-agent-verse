@@ -1,15 +1,26 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, Mail, Phone } from "lucide-react";
 import { Lead } from "@/hooks/useLeads";
 
 interface LeadsTableProps {
   leads: Lead[];
   onViewDetails: (lead: Lead) => void;
+  selectedLeads?: string[];
+  onSelectLead?: (leadId: string, selected: boolean) => void;
+  onSelectAll?: (selected: boolean) => void;
 }
 
-export const LeadsTable = ({ leads, onViewDetails }: LeadsTableProps) => {
+export const LeadsTable = ({ 
+  leads, 
+  onViewDetails,
+  selectedLeads = [],
+  onSelectLead,
+  onSelectAll
+}: LeadsTableProps) => {
+  const allSelected = leads.length > 0 && selectedLeads.length === leads.length;
   const getStatusColor = (status: string) => {
     const colors: Record<string, string> = {
       new: "bg-blue-500",
@@ -66,6 +77,15 @@ export const LeadsTable = ({ leads, onViewDetails }: LeadsTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
+            {onSelectAll && (
+              <TableHead className="w-12">
+                <Checkbox
+                  checked={allSelected}
+                  onCheckedChange={(checked) => onSelectAll(checked as boolean)}
+                  aria-label="Select all leads"
+                />
+              </TableHead>
+            )}
             <TableHead>Date</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Company</TableHead>
@@ -79,6 +99,15 @@ export const LeadsTable = ({ leads, onViewDetails }: LeadsTableProps) => {
         <TableBody>
           {leads.map((lead) => (
             <TableRow key={lead.id}>
+              {onSelectLead && (
+                <TableCell>
+                  <Checkbox
+                    checked={selectedLeads.includes(lead.id)}
+                    onCheckedChange={(checked) => onSelectLead(lead.id, checked as boolean)}
+                    aria-label={`Select ${lead.name}`}
+                  />
+                </TableCell>
+              )}
               <TableCell className="whitespace-nowrap">
                 {formatDate(lead.created_at)}
               </TableCell>

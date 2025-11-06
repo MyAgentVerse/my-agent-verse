@@ -16,7 +16,7 @@ interface LeadData {
 export const useLeadSubmission = () => {
   const { trackFormSubmit } = useAnalytics();
 
-  const submitLead = async (data: LeadData) => {
+  const submitLead = async (data: LeadData, options?: { sendNotification?: boolean; notifyEmails?: string[] }) => {
     try {
       // Get UTM parameters
       const params = new URLSearchParams(window.location.search);
@@ -49,6 +49,21 @@ export const useLeadSubmission = () => {
         email: data.email,
         form_source: window.location.pathname,
       });
+
+      // Send email notification if enabled
+      if (options?.sendNotification !== false) {
+        try {
+          await supabase.functions.invoke('send-lead-notification', {
+            body: {
+              leadId: lead.id,
+              notifyEmails: options?.notifyEmails,
+            },
+          });
+        } catch (notifyError) {
+          console.error('Failed to send notification:', notifyError);
+          // Don't fail the lead submission if notification fails
+        }
+      }
 
       return { success: true, lead };
     } catch (error: any) {
