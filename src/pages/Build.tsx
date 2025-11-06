@@ -96,6 +96,80 @@ const Build = () => {
             </div>
           </section>
 
+          {/* Why Work With Us - 4 USPs Section */}
+          <section className="py-20 bg-gradient-to-b from-accent/5 to-background">
+            <div className="container mx-auto px-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                🌟 Why Work With Us?
+              </h2>
+              <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+                Here's what makes our approach different — and why clients trust us with their most important software builds:
+              </p>
+              
+              <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+                {/* USP 1 - Speed */}
+                <div className="group relative p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-background hover:from-primary/10 hover:border-primary/40 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">⚡</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">Speed that Delivers</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      You get a review-ready MVP in just <span className="font-semibold text-foreground">14 to 21 working days</span>. No drawn-out cycles.
+                    </p>
+                  </div>
+                </div>
+
+                {/* USP 2 - Future-Ready Tech */}
+                <div className="group relative p-8 rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-background hover:from-accent/10 hover:border-accent/40 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">🚀</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">Future-Ready Tech</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We build on modern frameworks (React, PostgreSQL, Supabase) so your product stays fast, stable, and scalable.
+                    </p>
+                  </div>
+                </div>
+
+                {/* USP 3 - Smart AI Integration */}
+                <div className="group relative p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-background hover:from-primary/10 hover:border-primary/40 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">🧠</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">Smart AI Integration</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Whether it's quoting, messaging, scheduling, or backend automation — we can embed AI from Day 1, or prepare your system to add it when you're ready.
+                    </p>
+                  </div>
+                </div>
+
+                {/* USP 4 - Human Process */}
+                <div className="group relative p-8 rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-background hover:from-accent/10 hover:border-accent/40 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">🤝</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">A Smooth, Human Process</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We keep things clear and collaborative from start to finish — with transparent steps, rapid feedback loops, and zero confusion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-center text-lg text-foreground font-semibold mt-12">
+                This isn't a generic dev shop. This is high-performance software, delivered by people who care.
+              </p>
+            </div>
+          </section>
+
           {/* What We Build Section */}
           <section className="py-20">
             <div className="container mx-auto px-6">
