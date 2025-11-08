@@ -1,40 +1,32 @@
 import { useEffect } from "react";
 
-// Declare global type for ElevenLabs
+// Declare the custom element for TypeScript
 declare global {
-  interface Window {
-    ElevenLabs?: {
-      agent?: {
-        agentId: string;
-        type: string;
+  namespace JSX {
+    interface IntrinsicElements {
+      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'agent-id': string;
       };
-    };
+    }
   }
 }
 
 export default function VoiceAgentSection() {
   useEffect(() => {
-    // Configure ElevenLabs before loading the script
-    window.ElevenLabs = window.ElevenLabs || {};
-    window.ElevenLabs.agent = {
-      agentId: "agent_2501k8pea9pxftab4kcbn0985jmh",
-      type: "inline"
-    };
-
-    // Load the ElevenLabs agent script
-    const script = document.createElement("script");
-    script.src = "https://cdn.elevenlabs.io/agent.js";
+    // Load the ElevenLabs widget script
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
     script.async = true;
-    script.type = "text/javascript";
+    script.type = 'text/javascript';
     
     script.onload = () => {
-      console.log("ElevenLabs agent script loaded successfully");
+      console.log("ElevenLabs widget script loaded successfully");
     };
     
     script.onerror = () => {
-      console.error("Failed to load ElevenLabs agent script");
+      console.error("Failed to load ElevenLabs widget script");
     };
-
+    
     document.body.appendChild(script);
 
     return () => {
@@ -56,8 +48,8 @@ export default function VoiceAgentSection() {
             Experience conversational AI in action. Click the disc below to start a voice conversation with our intelligent agent.
           </p>
         </div>
-        <div className="flex justify-center min-h-[400px] items-center">
-          <div id="elevenlabs-voice-agent" className="w-full max-w-2xl"></div>
+        <div className="flex justify-center min-h-[500px] items-center">
+          <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
         </div>
       </div>
     </section>
