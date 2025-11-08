@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
+import { RealtorLeadDialog } from "@/components/RealtorLeadDialog";
 import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
@@ -240,9 +241,11 @@ const Realtor = () => {
                 For group discounts ask in meeting
               </p>
               <p className="text-muted-foreground">Cancel anytime after 90 days.</p>
-              <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
-                Start My 90-Day Risk-Free Trial
-              </Button>
+              <RealtorLeadDialog ctaSource="pricing_trial">
+                <Button size="lg" className="w-full">
+                  Start My 90-Day Risk-Free Trial
+                </Button>
+              </RealtorLeadDialog>
             </div>
           </div>
         </section>
@@ -398,14 +401,11 @@ const Realtor = () => {
                 <p className="text-base text-muted-foreground">
                   Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing and claim your $499 Lead Surge Setup bonus free.
                 </p>
-                <Button 
-                  size="lg" 
-                  onClick={() => {
-                    window.location.href = '/booking';
-                  }}
-                >
-                  Reserve My Spot Now
-                </Button>
+                <RealtorLeadDialog ctaSource="pilot_reserve">
+                  <Button size="lg">
+                    Reserve My Spot Now
+                  </Button>
+                </RealtorLeadDialog>
               </div>
               <div className="relative">
                 <img 
@@ -504,9 +504,11 @@ const Realtor = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               Let Ava handle the calls so you can focus on closings. 24/7 coverage. Zero risk.
             </p>
-            <Button size="lg" variant="secondary" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')} className="text-lg px-8">
-              Activate Ava Now
-            </Button>
+            <RealtorLeadDialog ctaSource="final_activate">
+              <Button size="lg" variant="secondary" className="text-lg px-8">
+                Activate Ava Now
+              </Button>
+            </RealtorLeadDialog>
           </div>
         </section>
 
