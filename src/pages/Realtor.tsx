@@ -236,6 +236,9 @@ const Realtor = () => {
               <p className="text-base text-muted-foreground">
                 Includes 100 minutes for $49/mo • After 100 mins: $0.30/min
               </p>
+              <p className="text-sm text-muted-foreground italic">
+                For group discounts ask in meeting
+              </p>
               <p className="text-muted-foreground">Cancel anytime after 90 days.</p>
               <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
                 Start My 90-Day Risk-Free Trial
