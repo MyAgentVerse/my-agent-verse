@@ -1,38 +1,9 @@
-import { useEffect } from "react";
-
-// Declare the custom element for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'agent-id': string;
-      };
-    }
-  }
-}
+import { useState } from "react";
+import VoiceDiscButton from "./voice/VoiceDiscButton";
+import VoiceChatModal from "./voice/VoiceChatModal";
 
 export default function VoiceAgentSection() {
-  useEffect(() => {
-    // Check if script already exists (to avoid duplicates with floating bubble)
-    const existingScript = document.querySelector('script[src="https://unpkg.com/@elevenlabs/convai-widget-embed"]');
-    
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-      script.async = true;
-      script.type = 'text/javascript';
-      
-      script.onload = () => {
-        console.log("ElevenLabs inline widget script loaded");
-      };
-      
-      script.onerror = () => {
-        console.error("Failed to load ElevenLabs inline widget script");
-      };
-      
-      document.body.appendChild(script);
-    }
-  }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 py-16">
@@ -45,10 +16,12 @@ export default function VoiceAgentSection() {
             Experience conversational AI in action. Click the disc below to start a voice conversation with our intelligent agent.
           </p>
         </div>
-        <div className="flex justify-center min-h-[500px] items-center">
-          <elevenlabs-convai agent-id="agent_2501k8pea9pxftab4kcbn0985jmh"></elevenlabs-convai>
+        <div className="flex justify-center min-h-[300px] items-center">
+          <VoiceDiscButton onClick={() => setIsModalOpen(true)} />
         </div>
       </div>
+
+      <VoiceChatModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
