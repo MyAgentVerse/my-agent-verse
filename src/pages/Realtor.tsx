@@ -233,6 +233,9 @@ const Realtor = () => {
                 <span className="mx-4">|</span>
                 <span className="text-primary font-bold">Launch Offer: $49/mo + $199 setup</span>
               </div>
+              <p className="text-base text-muted-foreground">
+                Includes 100 minutes for $49/mo • After 100 mins: $0.30/min
+              </p>
               <p className="text-muted-foreground">Cancel anytime after 90 days.</p>
               <Button size="lg" onClick={() => window.open('https://cal.com/myagentverse/discovery', '_blank')}>
                 Start My 90-Day Risk-Free Trial
