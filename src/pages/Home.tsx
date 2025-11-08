@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ElevenLabsVoiceAgent from "@/components/ElevenLabsVoiceAgent";
-import VoiceAgentSection from "@/components/VoiceAgentSection";
 import heroWorkspace from "@/assets/hero-ai-workspace.jpg";
 import aiMatters from "@/assets/ai-matters-infographic.jpg";
 import aiAvatars from "@/assets/ai-avatars-grid.jpg";
@@ -132,9 +131,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        {/* Voice Agent Section */}
-        <VoiceAgentSection />
 
         {/* What Businesses Are Automating Grid */}
         <section className="bg-background py-20 relative overflow-hidden">
