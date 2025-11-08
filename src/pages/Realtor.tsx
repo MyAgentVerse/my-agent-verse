@@ -242,7 +242,7 @@ const Realtor = () => {
               </p>
               <p className="text-muted-foreground">Cancel anytime after 90 days.</p>
               <RealtorLeadDialog ctaSource="pricing_trial">
-                <Button size="lg" className="w-full">
+                <Button size="lg">
                   Start My 90-Day Risk-Free Trial
                 </Button>
               </RealtorLeadDialog>
