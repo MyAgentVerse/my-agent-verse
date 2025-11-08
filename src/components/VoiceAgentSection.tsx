@@ -13,28 +13,25 @@ declare global {
 
 export default function VoiceAgentSection() {
   useEffect(() => {
-    // Load the ElevenLabs widget script
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-    script.async = true;
-    script.type = 'text/javascript';
+    // Check if script already exists (to avoid duplicates with floating bubble)
+    const existingScript = document.querySelector('script[src="https://unpkg.com/@elevenlabs/convai-widget-embed"]');
     
-    script.onload = () => {
-      console.log("ElevenLabs widget script loaded successfully");
-    };
-    
-    script.onerror = () => {
-      console.error("Failed to load ElevenLabs widget script");
-    };
-    
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+      script.async = true;
+      script.type = 'text/javascript';
+      
+      script.onload = () => {
+        console.log("ElevenLabs inline widget script loaded");
+      };
+      
+      script.onerror = () => {
+        console.error("Failed to load ElevenLabs inline widget script");
+      };
+      
+      document.body.appendChild(script);
+    }
   }, []);
 
   return (
