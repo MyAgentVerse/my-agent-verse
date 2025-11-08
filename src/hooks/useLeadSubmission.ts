@@ -65,6 +65,16 @@ export const useLeadSubmission = () => {
         }
       }
 
+      // Send lead data to n8n webhook
+      try {
+        await supabase.functions.invoke('notify-n8n', {
+          body: { leadId: lead.id },
+        });
+      } catch (n8nError) {
+        console.error('Failed to notify n8n:', n8nError);
+        // Don't fail the lead submission if n8n notification fails
+      }
+
       return { success: true, lead };
     } catch (error: any) {
       console.error('Lead submission error:', error);
