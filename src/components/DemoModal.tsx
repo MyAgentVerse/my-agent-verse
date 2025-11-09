@@ -15,8 +15,12 @@ interface DemoModalProps {
   industry?: "hvac" | "realtor";
 }
 
-const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac" }: DemoModalProps) => {
+const DemoModal = ({ children, phoneNumber, industry = "hvac" }: DemoModalProps) => {
   const isRealtor = industry === "realtor";
+  
+  // Set default phone number based on industry
+  const defaultPhone = isRealtor ? "(346) 634-2736" : "(832) 843-9474";
+  const finalPhoneNumber = phoneNumber || defaultPhone;
   
   // Format phone number for display (e.g., "+13466342736" -> "(346) 634-2736")
   const formatPhoneForDisplay = (phone: string) => {
@@ -36,7 +40,7 @@ const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac"
     return phone;
   };
   
-  const displayPhone = formatPhoneForDisplay(phoneNumber);
+  const displayPhone = formatPhoneForDisplay(finalPhoneNumber);
   
   const content = {
     title: isRealtor ? "Try Ava - Your AI Real Estate Assistant" : "Try Ava - Your AI HVAC Assistant",
@@ -129,7 +133,7 @@ const DemoModal = ({ children, phoneNumber = "(832) 843-9474", industry = "hvac"
               className="w-full text-base" 
               asChild
             >
-              <a href={`tel:${phoneNumber}`}>
+              <a href={`tel:${finalPhoneNumber}`}>
                 <Phone className="h-5 w-5 mr-2" />
                 Call Now
               </a>
