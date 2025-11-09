@@ -51,25 +51,25 @@ const Home = () => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Button 
-                      size="lg" 
-                      variant="accent"
-                      className="text-lg rounded-xl hover-scale shadow-lg animate-fade-in"
-                      asChild
-                    >
-                      <a href="/booking">📅 Book Demo</a>
-                    </Button>
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      className="text-lg rounded-xl hover-scale shadow-lg animate-fade-in"
-                      style={{ animationDelay: '0.1s' }}
-                      asChild
-                    >
-                      <a href="/consultation">
-                        Book a Free AI Strategy Call
-                      </a>
-                    </Button>
+                  <Button 
+                    size="lg" 
+                    variant="accent"
+                    className="text-lg rounded-xl hover-scale shadow-lg animate-fade-in"
+                    asChild
+                  >
+                    <a href="/discovery-call">📅 Book Your Free Discovery Call</a>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="text-lg rounded-xl hover-scale shadow-lg animate-fade-in"
+                    style={{ animationDelay: '0.1s' }}
+                    asChild
+                  >
+                    <a href="/discovery-call">
+                      Start with a Discovery Call
+                    </a>
+                  </Button>
                   </div>
                 </div>
 
@@ -334,8 +334,8 @@ const Home = () => {
                 className="text-lg rounded-xl hover-scale shadow-lg px-8 animate-fade-in"
                 asChild
               >
-                <a href="/consultation">
-                  📅 Book Your Free AI Consultation
+                <a href="/discovery-call">
+                  📅 Book Your Free Discovery Call
                 </a>
               </Button>
             </div>

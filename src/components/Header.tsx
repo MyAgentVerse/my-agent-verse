@@ -53,10 +53,10 @@ const Header = () => {
             21-Day Build
           </a>
           <a 
-            href="/booking" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/booking') ? 'text-primary border-b-2 border-primary' : ''}`}
+            href="/discovery-call" 
+            className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-accent to-primary text-accent-foreground hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Book Demo
+            Book Discovery Call
           </a>
           <button
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
@@ -125,10 +125,10 @@ const Header = () => {
                   21-Day Build
                 </a>
                 <a 
-                  href="/booking" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/booking') ? 'text-primary border-l-4 border-primary' : ''}`}
+                  href="/discovery-call" 
+                  className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-accent to-primary text-accent-foreground hover:shadow-lg transition-all duration-300 mx-2"
                 >
-                  Book Demo
+                  Book Discovery Call
                 </a>
                 <button
                   onClick={() => {

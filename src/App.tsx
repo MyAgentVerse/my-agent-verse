@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Consultation from "./pages/Consultation";
 import Build from "./pages/Build";
+import DiscoveryCall from "./pages/DiscoveryCall";
 import NotFound from "./pages/NotFound";
 import ElevenLabsVoiceAgent from "./components/ElevenLabsVoiceAgent";
 import AdminLogin from "./pages/admin/Login";
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/build" element={<Build />} />
+          <Route path="/discovery-call" element={<DiscoveryCall />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={
             <ProtectedRoute>

@@ -66,8 +66,8 @@ const Build = () => {
                   For Founders Ready to Move Fast — and Who Qualify
                 </p>
                 <div className="animate-fade-in [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
-                  <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_40px_rgba(0,183,194,0.4)] hover:shadow-[0_0_60px_rgba(0,183,194,0.6)] transition-all duration-300" onClick={scrollToForm}>
-                    Book Discovery Call
+                  <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_40px_rgba(0,183,194,0.4)] hover:shadow-[0_0_60px_rgba(0,183,194,0.6)] transition-all duration-300" asChild>
+                    <a href="/discovery-call">Apply for Discovery Call</a>
                   </Button>
                 </div>
               </div>

@@ -39,12 +39,12 @@ const Realtor = () => {
                   Ava is your 24/7 AI Real Estate Assistant that answers calls, books showings, and follows up in your voice, so you close more deals with zero missed opportunities.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <DemoModal phoneNumber="+13466342736" industry="realtor">
-                    <Button size="lg" className="text-lg px-8 h-12 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  <Button size="lg" className="text-lg px-8 h-12 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto" asChild>
+                    <a href="/discovery-call">
                       <Phone className="mr-2 h-5 w-5" />
-                      Try Live Demo with Ava
-                    </Button>
-                  </DemoModal>
+                      Talk to Us — Free Discovery Call
+                    </a>
+                  </Button>
                 </div>
               </div>
               <div className="relative">
@@ -146,11 +146,11 @@ const Realtor = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Watch (or listen) as Ava answers a real buyer's call, qualifies them, and books a showing automatically.
             </p>
-            <DemoModal phoneNumber="+13466342736" industry="realtor">
-              <Button size="lg">
-                Listen to Demo Call
-              </Button>
-            </DemoModal>
+            <Button size="lg" asChild>
+              <a href="/discovery-call">
+                Book Your Discovery Call
+              </a>
+            </Button>
           </div>
         </section>
 
@@ -241,11 +241,11 @@ const Realtor = () => {
                 For group discounts ask in meeting
               </p>
               <p className="text-muted-foreground">Cancel anytime after 90 days.</p>
-              <RealtorLeadDialog ctaSource="pricing_trial">
-                <Button size="lg">
+              <Button size="lg" asChild>
+                <a href="/discovery-call">
                   Start My 90-Day Risk-Free Trial
-                </Button>
-              </RealtorLeadDialog>
+                </a>
+              </Button>
             </div>
           </div>
         </section>

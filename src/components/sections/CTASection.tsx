@@ -41,7 +41,7 @@ const CTASection = () => {
               className="bg-transparent border-2 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary font-semibold"
               asChild
             >
-              <a href="/booking">📅 Book Setup Call</a>
+              <a href="/discovery-call">📅 Book a Discovery Call for Your HVAC Business</a>
             </Button>
           </div>
 
