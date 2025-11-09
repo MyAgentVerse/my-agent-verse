@@ -146,11 +146,12 @@ const Realtor = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Watch (or listen) as Ava answers a real buyer's call, qualifies them, and books a showing automatically.
             </p>
-            <Button size="lg" asChild>
-              <a href="/discovery-call">
-                Book Your Discovery Call
-              </a>
-            </Button>
+            <DemoModal industry="realtor">
+              <Button size="lg">
+                <Headset className="mr-2 h-5 w-5" />
+                Hear Ava Demo
+              </Button>
+            </DemoModal>
           </div>
         </section>
 
