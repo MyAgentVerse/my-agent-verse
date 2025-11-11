@@ -15,8 +15,8 @@ import {
   Sparkles, Handshake, Brain
 } from "lucide-react";
 import heroImage from "@/assets/realtor-ai-hero.jpg";
-import problemsImage from "@/assets/realtor-problems.jpg";
-import howItWorksImage from "@/assets/realtor-how-it-works.jpg";
+import problemsImage from "@/assets/realtor-problems-clean.jpg";
+import howItWorksImage from "@/assets/realtor-workflow-clean.jpg";
 import dashboardImage from "@/assets/realtor-dashboard.jpg";
 import growthPlanImage from "@/assets/realtor-growth-plan.jpg";
 import partnershipImage from "@/assets/realtor-partnership.jpg";
@@ -172,11 +172,11 @@ const RealEstate = () => {
                 </p>
               </Card>
             </div>
-            <div className="relative">
+            <div className="flex justify-center">
               <img 
                 src={problemsImage} 
                 alt="Infographic showing realtor pain points solved by AI automation"
-                className="rounded-2xl shadow-xl mx-auto"
+                className="rounded-2xl shadow-xl max-w-2xl w-full"
               />
             </div>
           </div>
@@ -222,11 +222,11 @@ const RealEstate = () => {
                 </p>
               </Card>
             </div>
-            <div className="relative mb-8">
+            <div className="flex justify-center mb-8">
               <img 
                 src={howItWorksImage} 
                 alt="3-step flowchart showing Realtor AI setup process"
-                className="rounded-2xl shadow-xl mx-auto"
+                className="rounded-2xl shadow-xl max-w-2xl w-full"
               />
             </div>
             <div className="text-center">
