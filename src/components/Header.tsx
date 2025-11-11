@@ -38,8 +38,8 @@ const Header = () => {
             HVAC
           </a>
           <a 
-            href="/realtor" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/realtor') ? 'text-primary border-b-2 border-primary' : ''}`}
+            href="/real-estate" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/real-estate') ? 'text-primary border-b-2 border-primary' : ''}`}
           >
             Real Estate
           </a>
@@ -110,8 +110,8 @@ const Header = () => {
                   HVAC
                 </a>
                 <a 
-                  href="/realtor" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/realtor') ? 'text-primary border-l-4 border-primary' : ''}`}
+                  href="/real-estate" 
+                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/real-estate') ? 'text-primary border-l-4 border-primary' : ''}`}
                 >
                   Real Estate
                 </a>
