@@ -149,35 +149,28 @@ const RealEstate = () => {
                 The #1 Reason Realtors Lose Deals — Slow Follow-Up.
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="p-8 border-2 hover:border-accent/50 transition-all">
-                <PhoneOff className="w-12 h-12 text-destructive mb-4" />
-                <h3 className="text-xl font-bold mb-3">Missed Calls</h3>
-                <p className="text-muted-foreground">
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950 dark:to-red-900 border-2 border-red-200 dark:border-red-800 hover:shadow-xl transition-all">
+                <PhoneOff className="h-16 w-16 text-red-600 dark:text-red-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4 text-red-900 dark:text-red-100">Missed Calls</h3>
+                <p className="text-red-700 dark:text-red-200 text-lg leading-relaxed">
                   Every unanswered call is a lost opportunity. Ava answers instantly — day or night.
                 </p>
               </Card>
-              <Card className="p-8 border-2 hover:border-accent/50 transition-all">
-                <Snowflake className="w-12 h-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-bold mb-3">Cold Leads</h3>
-                <p className="text-muted-foreground">
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-2 border-blue-200 dark:border-blue-800 hover:shadow-xl transition-all">
+                <Snowflake className="h-16 w-16 text-blue-600 dark:text-blue-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-blue-100">Cold Leads</h3>
+                <p className="text-blue-700 dark:text-blue-200 text-lg leading-relaxed">
                   AI reactivates old prospects with smart text and voice follow-ups.
                 </p>
               </Card>
-              <Card className="p-8 border-2 hover:border-accent/50 transition-all">
-                <TrendingDown className="w-12 h-12 text-orange-400 mb-4" />
-                <h3 className="text-xl font-bold mb-3">No Consistent New Leads</h3>
-                <p className="text-muted-foreground">
+              <Card className="p-8 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-2 border-orange-200 dark:border-orange-800 hover:shadow-xl transition-all">
+                <TrendingDown className="h-16 w-16 text-orange-600 dark:text-orange-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4 text-orange-900 dark:text-orange-100">No Consistent New Leads</h3>
+                <p className="text-orange-700 dark:text-orange-200 text-lg leading-relaxed">
                   The Growth Plan runs targeted ads that bring in verified buyers and sellers automatically.
                 </p>
               </Card>
-            </div>
-            <div className="flex justify-center">
-              <img 
-                src={problemsImage} 
-                alt="Infographic showing realtor pain points solved by AI automation"
-                className="rounded-2xl shadow-xl max-w-2xl w-full"
-              />
             </div>
           </div>
         </section>
@@ -190,44 +183,34 @@ const RealEstate = () => {
                 How It Works — Simple, Fast, and Fully Automated
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="p-8 bg-accent/5 border-accent/20">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 text-accent text-2xl font-bold mb-4">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <Card className="p-8 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-2 border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-purple-600 text-white mb-6 text-3xl font-bold shadow-lg">
                   1
                 </div>
-                <Settings className="w-10 h-10 text-accent mb-4" />
-                <h3 className="text-xl font-bold mb-3">Connect Your Account</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-purple-900 dark:text-purple-100">Connect Your Account</h3>
+                <p className="text-purple-700 dark:text-purple-200 text-lg leading-relaxed">
                   Access your private Realtor AI Dashboard where every call, text, and lead is tracked automatically.
                 </p>
               </Card>
-              <Card className="p-8 bg-accent/5 border-accent/20">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 text-accent text-2xl font-bold mb-4">
+              <Card className="p-8 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-2 border-green-200 dark:border-green-800 hover:shadow-xl transition-all">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-600 text-white mb-6 text-3xl font-bold shadow-lg">
                   2
                 </div>
-                <GitBranch className="w-10 h-10 text-accent mb-4" />
-                <h3 className="text-xl font-bold mb-3">Choose Your Growth Level</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-green-900 dark:text-green-100">Choose Your Growth Level</h3>
+                <p className="text-green-700 dark:text-green-200 text-lg leading-relaxed">
                   Start with automation or activate the Growth Plan for exclusive local leads.
                 </p>
               </Card>
-              <Card className="p-8 bg-accent/5 border-accent/20">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 text-accent text-2xl font-bold mb-4">
+              <Card className="p-8 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-950 dark:to-cyan-900 border-2 border-cyan-200 dark:border-cyan-800 hover:shadow-xl transition-all">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cyan-600 text-white mb-6 text-3xl font-bold shadow-lg">
                   3
                 </div>
-                <Bot className="w-10 h-10 text-accent mb-4" />
-                <h3 className="text-xl font-bold mb-3">Let Ava Do the Work</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-cyan-900 dark:text-cyan-100">Let Ava Do the Work</h3>
+                <p className="text-cyan-700 dark:text-cyan-200 text-lg leading-relaxed">
                   Ava calls, texts, and emails leads 24/7 — books appointments, revives old ones, and keeps you updated in real time.
                 </p>
               </Card>
-            </div>
-            <div className="flex justify-center mb-8">
-              <img 
-                src={howItWorksImage} 
-                alt="3-step flowchart showing Realtor AI setup process"
-                className="rounded-2xl shadow-xl max-w-2xl w-full"
-              />
             </div>
             <div className="text-center">
               <Button 

@@ -26,18 +26,6 @@ const Header = () => {
             Home
           </a>
           <a 
-            href="/industries" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/industries') ? 'text-primary border-b-2 border-primary' : ''}`}
-          >
-            Industries
-          </a>
-          <a 
-            href="/hvac" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/hvac') ? 'text-primary border-b-2 border-primary' : ''}`}
-          >
-            HVAC
-          </a>
-          <a 
             href="/real-estate" 
             className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/real-estate') ? 'text-primary border-b-2 border-primary' : ''}`}
           >
@@ -96,18 +84,6 @@ const Header = () => {
                   className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/') ? 'text-primary border-l-4 border-primary' : ''}`}
                 >
                   Home
-                </a>
-                <a 
-                  href="/industries" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/industries') ? 'text-primary border-l-4 border-primary' : ''}`}
-                >
-                  Industries
-                </a>
-                <a 
-                  href="/hvac" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/hvac') ? 'text-primary border-l-4 border-primary' : ''}`}
-                >
-                  HVAC
                 </a>
                 <a 
                   href="/real-estate" 
