@@ -12,7 +12,7 @@ import {
   BarChart3, Clock, Repeat, Mail,
   Target, Megaphone, DollarSign, 
   Star, Quote, Shield, Lock, CheckCircle2,
-  Sparkles, Handshake, Brain
+  Sparkles, Handshake, Brain, Lightbulb
 } from "lucide-react";
 import heroImage from "@/assets/realtor-ai-hero.jpg";
 import problemsImage from "@/assets/realtor-problems-clean.jpg";
@@ -290,76 +290,109 @@ const RealEstate = () => {
                 Choose Your Growth Level
               </h2>
               <p className="text-xl text-muted-foreground">
-                Start small or scale big — every plan includes your AI assistant and dashboard.
+                Start with automation or go full-scale with the Growth Plan. Every plan includes your AI assistant and Realtor Dashboard.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {/* Starter Plan */}
               <Card className="p-8 hover:shadow-xl transition-all">
                 <h3 className="text-2xl font-bold mb-2">Starter</h3>
                 <div className="text-4xl font-bold text-accent mb-4">$49<span className="text-lg text-muted-foreground">/mo</span></div>
+                <p className="text-sm text-muted-foreground mb-4 italic">
+                  Best for: Agents testing AI call handling or starting automation.
+                </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>100 call minutes</span>
+                    <span>100 call minutes included</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>AI call handling</span>
+                    <span>AI call handling — answers & returns calls 24/7</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Dashboard access</span>
+                    <span>Realtor AI Dashboard access</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>$0.35/min after limit</span>
+                    <MessageSquare className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">$0.35/min after 100 mins</span>
                   </li>
                 </ul>
               </Card>
 
-              <Card className="p-8 hover:shadow-xl transition-all border-accent/50">
-                <Badge className="mb-2 bg-accent/20 text-accent">Popular</Badge>
+              {/* Pro Plan */}
+              <Card className="p-8 hover:shadow-xl transition-all border-2 border-accent shadow-lg">
+                <Badge className="mb-2 bg-accent text-accent-foreground">Popular</Badge>
                 <h3 className="text-2xl font-bold mb-2">Pro</h3>
                 <div className="text-4xl font-bold text-accent mb-4">$99<span className="text-lg text-muted-foreground">/mo</span></div>
+                <p className="text-sm text-muted-foreground mb-4 italic">
+                  Best for: Realtors ready for automated follow-ups and improved conversion rates.
+                </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>250 mins, 500 texts, 200 emails</span>
+                    <span>250 call minutes, 500 texts, 200 emails</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Automated follow-ups</span>
+                    <span>AI follow-ups via call, text, and email</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>$0.30/min after limit</span>
+                    <span>Appointment booking & confirmations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MessageSquare className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">$0.30/min after call limit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MessageSquare className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">$0.02/text, $0.01/email beyond plan</span>
                   </li>
                 </ul>
               </Card>
 
+              {/* Elite Plan */}
               <Card className="p-8 hover:shadow-xl transition-all">
                 <h3 className="text-2xl font-bold mb-2">Elite</h3>
                 <div className="text-4xl font-bold text-accent mb-4">$149<span className="text-lg text-muted-foreground">/mo</span></div>
+                <p className="text-sm text-muted-foreground mb-4 italic">
+                  Best for: Top producers & teams wanting ongoing AI engagement with all leads.
+                </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>500 mins, 1,000 texts, 500 emails</span>
+                    <span>500 call minutes, 1,000 texts, 500 emails</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Full reactivation</span>
+                    <span>Full database reactivation campaigns</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Priority support</span>
+                    <span>Priority support + custom script tweaks</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MessageSquare className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">$0.25/min after call limit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MessageSquare className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">$0.02/text, $0.01/email beyond plan</span>
                   </li>
                 </ul>
               </Card>
 
-              <Card className="p-8 hover:shadow-xl transition-all bg-accent/5 border-accent">
+              {/* Growth Plan */}
+              <Card className="p-8 hover:shadow-xl transition-all bg-gradient-to-br from-accent/5 to-accent/10 border-2 border-accent shadow-lg">
                 <Badge className="mb-2 bg-accent text-accent-foreground">Best Value</Badge>
                 <h3 className="text-2xl font-bold mb-2">Growth Plan</h3>
-                <div className="text-4xl font-bold text-accent mb-4">$299<span className="text-lg text-muted-foreground">/mo</span></div>
+                <div className="text-4xl font-bold text-accent mb-2">$299<span className="text-lg text-muted-foreground">/mo</span></div>
+                <p className="text-sm text-muted-foreground mb-4">+ ad spend</p>
+                <p className="text-sm text-muted-foreground mb-4 italic">
+                  Best for: Agents ready to scale lead generation and dominate their market.
+                </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
@@ -367,22 +400,29 @@ const RealEstate = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Ad setup + optimization</span>
+                    <span>Facebook + Instagram ad setup & optimization</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>AI follow-up + ROI dashboard</span>
+                    <span>AI follow-up + ROI dashboard integration</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>$99 per additional territory</span>
+                    <span>Exclusive lead flow for your area</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Lightbulb className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span className="font-medium">Add-on: +$99/mo per additional territory</span>
                   </li>
                 </ul>
               </Card>
             </div>
-            <p className="text-center text-sm text-muted-foreground">
-              Setup fee: $199 (Voice + Branding) • Guarantee: 2 extra deals or 90 days free.
-            </p>
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground">
+                <span className="font-semibold">Setup Fee: $199</span> (Voice + Branding) • 
+                <span className="font-semibold"> Guarantee:</span> 2 extra deals or 90 days free.
+              </p>
+            </div>
           </div>
         </section>
 
