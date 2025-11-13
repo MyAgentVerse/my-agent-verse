@@ -312,6 +312,10 @@ const RealEstate = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span>Appointment booking & confirmations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <span>Realtor AI Dashboard access</span>
                   </li>
                   <li className="flex items-start gap-2">
