@@ -421,11 +421,19 @@ const RealEstate = () => {
                 </ul>
               </Card>
             </div>
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <p className="text-lg text-muted-foreground">
                 <span className="font-semibold">Setup Fee: $199</span> (Voice + Branding) • 
                 <span className="font-semibold"> Guarantee:</span> 2 extra deals or 90 days free.
               </p>
+              
+              <div className="max-w-4xl mx-auto mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-900 dark:text-blue-100">
+                  <span className="font-semibold">API Lead Connection:</span> For platforms that don't send leads by email (like Zillow), an API connection is required. 
+                  API-connected sources are billed at: <span className="font-semibold">Starter $10/month per source</span>, 
+                  <span className="font-semibold"> Pro/Elite/Growth $7/month per source</span>. Email-based lead sources are included at no extra cost.
+                </p>
+              </div>
             </div>
           </div>
         </section>
