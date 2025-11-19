@@ -20,6 +20,7 @@ import howItWorksImage from "@/assets/realtor-workflow-clean.jpg";
 import dashboardImage from "@/assets/realtor-dashboard.jpg";
 import growthPlanImage from "@/assets/realtor-growth-plan.jpg";
 import partnershipImage from "@/assets/realtor-partnership.jpg";
+import realtorAiDashboardHero from "@/assets/realtor-ai-dashboard-hero.png";
 
 const RealEstate = () => {
   const scrollToBooking = () => {
@@ -277,6 +278,61 @@ const RealEstate = () => {
                     Wake up old leads automatically with targeted outreach.
                   </p>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Dashboard Visualization Section */}
+        <section className="py-20 px-6 bg-background">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Your AI Assistant Works 24/7
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Watch as your AI agent handles incoming calls, texts, and emails—automatically booking appointments and scheduling showings while you focus on closing deals.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <Phone className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Instant Call Handling</p>
+                      <p className="text-muted-foreground text-sm">Never miss a lead—AI answers every call immediately</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MessageSquare className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Smart Text Follow-ups</p>
+                      <p className="text-muted-foreground text-sm">Automated responses keep leads engaged 24/7</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Email Automation</p>
+                      <p className="text-muted-foreground text-sm">Personalized email campaigns nurture every contact</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Calendar className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Automatic Scheduling</p>
+                      <p className="text-muted-foreground text-sm">Seamlessly book showings and appointments</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
+                  <img 
+                    src={realtorAiDashboardHero} 
+                    alt="Real Estate AI Assistant Dashboard managing calls, texts, emails with automated booking" 
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
