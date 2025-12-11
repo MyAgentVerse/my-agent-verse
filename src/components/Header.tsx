@@ -4,6 +4,7 @@ import { Menu, Phone } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
 import { useLocation } from "react-router-dom";
 import BannerTop from "./BannerTop";
+import { HealthcareDemoDialog } from "./HealthcareDemoDialog";
 
 const Header = () => {
   const location = useLocation();
@@ -25,14 +26,11 @@ const Header = () => {
           >
             Home
           </a>
-          <a 
-            href="https://healthcare.myagentverse.com/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Healthcare Demo
-          </a>
+          <HealthcareDemoDialog>
+            <button className="text-sm font-medium transition-colors hover:text-primary">
+              Healthcare Demo
+            </button>
+          </HealthcareDemoDialog>
           <a href="/consultation" className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg hover:scale-105 transition-all duration-300">
             AI Roadmap Call
           </a>
@@ -87,14 +85,11 @@ const Header = () => {
                 >
                   Home
                 </a>
-                <a 
-                  href="https://healthcare.myagentverse.com/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium transition-colors hover:text-primary px-2 py-2"
-                >
-                  Healthcare Demo
-                </a>
+                <HealthcareDemoDialog>
+                  <button className="text-base font-medium transition-colors hover:text-primary px-2 py-2 text-left w-full">
+                    Healthcare Demo
+                  </button>
+                </HealthcareDemoDialog>
                 <a href="/consultation" className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg transition-all duration-300 mx-2">
                   AI Roadmap Call
                 </a>
