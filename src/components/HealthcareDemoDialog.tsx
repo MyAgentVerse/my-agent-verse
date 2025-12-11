@@ -30,7 +30,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useLeadSubmission } from "@/hooks/useLeadSubmission";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Loader2, Stethoscope } from "lucide-react";
+import { Loader2, Stethoscope, CheckCircle, ExternalLink } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -49,6 +49,7 @@ interface HealthcareDemoDialogProps {
 export const HealthcareDemoDialog = ({ children }: HealthcareDemoDialogProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
   const { submitLead } = useLeadSubmission();
   const { trackFormStart, trackFormSubmit } = useAnalytics();
@@ -68,7 +69,15 @@ export const HealthcareDemoDialog = ({ children }: HealthcareDemoDialogProps) =>
     setOpen(isOpen);
     if (isOpen) {
       trackFormStart("demo");
+      setIsSuccess(false);
     }
+  };
+
+  const handleGoToDemo = () => {
+    window.open("https://healthcare.myagentverse.com/", "_blank");
+    setOpen(false);
+    setIsSuccess(false);
+    form.reset();
   };
 
   const onSubmit = async (data: FormData) => {
@@ -89,16 +98,7 @@ export const HealthcareDemoDialog = ({ children }: HealthcareDemoDialogProps) =>
 
     if (result.success) {
       trackFormSubmit("demo", { industry: "healthcare" });
-      toast({
-        title: "Access Granted!",
-        description: "Opening the Healthcare AI Demo for you...",
-      });
-      
-      // Open demo in new tab
-      window.open("https://healthcare.myagentverse.com/", "_blank");
-      
-      setOpen(false);
-      form.reset();
+      setIsSuccess(true);
     } else {
       toast({
         title: "Something went wrong",
@@ -114,115 +114,135 @@ export const HealthcareDemoDialog = ({ children }: HealthcareDemoDialogProps) =>
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <div className="flex items-center gap-2 mb-2">
-            <div className="p-2 rounded-full bg-primary/10">
-              <Stethoscope className="h-5 w-5 text-primary" />
+        {isSuccess ? (
+          <div className="flex flex-col items-center text-center py-6 space-y-4">
+            <div className="p-3 rounded-full bg-green-100">
+              <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <DialogTitle className="text-xl">See Our Healthcare AI in Action</DialogTitle>
-          </div>
-          <DialogDescription>
-            Get instant access to our live demo. See how AI can transform patient communication for your practice.
-          </DialogDescription>
-        </DialogHeader>
-
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name *</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Dr. Jane Smith" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email *</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="jane@practice.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone</FormLabel>
-                    <FormControl>
-                      <Input type="tel" placeholder="(555) 123-4567" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="company_name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Practice Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="ABC Medical" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <div>
+              <h3 className="text-xl font-semibold text-foreground">You're All Set!</h3>
+              <p className="text-muted-foreground mt-2">
+                Click below to explore our Healthcare AI Demo.
+              </p>
             </div>
-
-            <FormField
-              control={form.control}
-              name="role"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Your Role *</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your role" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="doctor">Doctor / Physician</SelectItem>
-                      <SelectItem value="practice_admin">Practice Administrator</SelectItem>
-                      <SelectItem value="office_manager">Office Manager</SelectItem>
-                      <SelectItem value="nurse">Nurse / Clinical Staff</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Getting Access...
-                </>
-              ) : (
-                "Access Live Demo →"
-              )}
+            <Button onClick={handleGoToDemo} className="w-full gap-2" size="lg">
+              <ExternalLink className="h-4 w-4" />
+              Open Healthcare Demo
             </Button>
-          </form>
-        </Form>
+          </div>
+        ) : (
+          <>
+            <DialogHeader>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="p-2 rounded-full bg-primary/10">
+                  <Stethoscope className="h-5 w-5 text-primary" />
+                </div>
+                <DialogTitle className="text-xl">See Our Healthcare AI in Action</DialogTitle>
+              </div>
+              <DialogDescription>
+                Get instant access to our live demo. See how AI can transform patient communication for your practice.
+              </DialogDescription>
+            </DialogHeader>
+
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name *</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Dr. Jane Smith" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email *</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="jane@practice.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="grid grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <FormControl>
+                          <Input type="tel" placeholder="(555) 123-4567" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="company_name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Practice Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="ABC Medical" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="role"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Your Role *</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select your role" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="doctor">Doctor / Physician</SelectItem>
+                          <SelectItem value="practice_admin">Practice Administrator</SelectItem>
+                          <SelectItem value="office_manager">Office Manager</SelectItem>
+                          <SelectItem value="nurse">Nurse / Clinical Staff</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Getting Access...
+                    </>
+                  ) : (
+                    "Access Live Demo →"
+                  )}
+                </Button>
+              </form>
+            </Form>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );
