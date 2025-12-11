@@ -26,10 +26,12 @@ const Header = () => {
             Home
           </a>
           <a 
-            href="/real-estate" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/real-estate') ? 'text-primary border-b-2 border-primary' : ''}`}
+            href="https://healthcare.myagentverse.com/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium transition-colors hover:text-primary"
           >
-            Real Estate
+            Healthcare Demo
           </a>
           <a href="/consultation" className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg hover:scale-105 transition-all duration-300">
             AI Roadmap Call
@@ -86,10 +88,12 @@ const Header = () => {
                   Home
                 </a>
                 <a 
-                  href="/real-estate" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/real-estate') ? 'text-primary border-l-4 border-primary' : ''}`}
+                  href="https://healthcare.myagentverse.com/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-primary px-2 py-2"
                 >
-                  Real Estate
+                  Healthcare Demo
                 </a>
                 <a href="/consultation" className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg transition-all duration-300 mx-2">
                   AI Roadmap Call
