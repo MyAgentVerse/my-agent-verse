@@ -166,7 +166,8 @@ const PlayWithAI = () => {
   };
 
   const questionValue = questionForm.watch("question");
-  const isQuestionDisabled = uploadStatus !== "ready" || isLoadingQuestion || !questionValue?.trim();
+  const isTextareaDisabled = uploadStatus !== "ready" || isLoadingQuestion;
+  const isButtonDisabled = isTextareaDisabled || !questionValue?.trim();
 
   return (
     <>
@@ -298,7 +299,7 @@ const PlayWithAI = () => {
                             placeholder="Example: What is this document about?"
                             className="min-h-[100px] resize-none"
                             {...field}
-                            disabled={isQuestionDisabled}
+                            disabled={isTextareaDisabled}
                           />
                         </FormControl>
                         <FormMessage />
@@ -309,7 +310,7 @@ const PlayWithAI = () => {
                     type="submit"
                     className="w-full"
                     size="lg"
-                    disabled={isQuestionDisabled}
+                    disabled={isButtonDisabled}
                   >
                     {isLoadingQuestion ? (
                       <>
