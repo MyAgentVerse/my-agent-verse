@@ -133,15 +133,16 @@ const PlayWithAI = () => {
     setIsLoadingQuestion(true);
     setAiResponse(null);
 
+    const payload = { question: trimmedQuestion };
+    console.log("Sending question payload:", payload);
+    
     try {
       const response = await fetch("https://ai-agent.msdreamsolutions.com/webhook/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          question: trimmedQuestion,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
