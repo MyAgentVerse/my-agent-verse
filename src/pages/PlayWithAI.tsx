@@ -18,7 +18,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Upload, FileText, Sparkles, AlertCircle } from "lucide-react";
+import { Loader2, Upload, FileText, Sparkles, AlertCircle, RotateCcw } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
 
 const SUPPORTED_TYPES = ["application/pdf", "image/jpeg", "image/png", "text/plain"];
@@ -53,6 +53,17 @@ const PlayWithAI = () => {
       return "This demo currently accepts only one document in Image (JPG, PNG), PDF, or TXT format. Please upload a supported file to continue.";
     }
     return null;
+  };
+
+  const handleStartOver = () => {
+    setUploadStatus("idle");
+    setSelectedFile(null);
+    setAiResponse(null);
+    setUploadError(null);
+    questionForm.reset();
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -254,6 +265,19 @@ const PlayWithAI = () => {
                       </div>
                     )}
                   </label>
+
+                  {uploadStatus === "ready" && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={handleStartOver}
+                      className="mt-4"
+                    >
+                      <RotateCcw className="mr-2 h-4 w-4" />
+                      Start Over
+                    </Button>
+                  )}
                 </div>
 
                 {/* Upload Progress */}
