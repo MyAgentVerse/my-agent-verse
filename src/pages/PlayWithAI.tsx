@@ -115,6 +115,12 @@ const PlayWithAI = () => {
   };
 
   const handleAskQuestion = async (values: QuestionFormData) => {
+    const trimmedQuestion = values.question.trim();
+    
+    if (!trimmedQuestion) {
+      return;
+    }
+
     if (uploadStatus !== "ready") {
       toast({
         title: "Upload Required",
@@ -134,7 +140,7 @@ const PlayWithAI = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          question: values.question,
+          question: trimmedQuestion,
         }),
       });
 
@@ -159,7 +165,8 @@ const PlayWithAI = () => {
     }
   };
 
-  const isQuestionDisabled = uploadStatus !== "ready" || isLoadingQuestion;
+  const questionValue = questionForm.watch("question");
+  const isQuestionDisabled = uploadStatus !== "ready" || isLoadingQuestion || !questionValue?.trim();
 
   return (
     <>
