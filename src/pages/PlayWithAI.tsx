@@ -29,11 +29,13 @@ import {
 import logo from "@/assets/myagentverse-logo-new.png";
 
 const SUPPORTED_TYPES = ["text/plain"];
+const [sessionId, setSessionId] = useState<string | null>(null);
+
 
 
 const questionSchema = z.object({
   question: z.string().min(1, "Please enter a question."),
-});
+});  
 
 type QuestionFormData = z.infer<typeof questionSchema>;
 
