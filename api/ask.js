@@ -34,6 +34,11 @@ export default async function handler(req, res) {
             });
         }
 
+        console.log("ASK SESSION:", sessionId);
+        console.log("DOCUMENT TEXT:", documentText);
+        console.log("QUESTION:", question);
+
+
         const completion = await openai.chat.completions.create({
             model: "gpt-4.1-mini",
             temperature: 0.2,
