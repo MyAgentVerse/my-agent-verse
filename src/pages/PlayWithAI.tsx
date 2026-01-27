@@ -28,12 +28,8 @@ import {
 } from "lucide-react";
 import logo from "@/assets/myagentverse-logo-new.png";
 
-const SUPPORTED_TYPES = [
-  "application/pdf",
-  "image/jpeg",
-  "image/png",
-  "text/plain",
-];
+const SUPPORTED_TYPES = ["text/plain"];
+
 
 const questionSchema = z.object({
   question: z.string().min(1, "Please enter a question."),
@@ -206,7 +202,7 @@ const PlayWithAI = () => {
             <CardContent>
               <Input
                 type="file"
-                accept=".pdf,.jpg,.jpeg,.png,.txt"
+                accept=".txt"
                 onChange={handleFileChange}
                 ref={fileInputRef}
                 disabled={uploadStatus === "ready"}
