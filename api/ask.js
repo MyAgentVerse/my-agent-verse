@@ -1,3 +1,6 @@
+// FORCE_REDEPLOY_ASK_FUNCTION
+
+
 export const config = {
     runtime: "nodejs",
 };
