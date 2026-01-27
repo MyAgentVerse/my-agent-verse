@@ -110,10 +110,10 @@ const PlayWithAI = () => {
       const documentText = await readFileAsText(file);
 
       const res = await fetch("/api/upload", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ documentText }),
-      });
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ documentText }),
+        });
 
       const data = await res.json();
 
@@ -154,13 +154,14 @@ const PlayWithAI = () => {
 
     try {
       const res = await fetch("/api/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          sessionId,
-          question: values.question.trim(),
-        }),
-      });
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sessionId,
+            question,
+          }),
+        });
+
 
       const data = await res.json();
 
