@@ -1,49 +1,59 @@
+import OpenAI from "openai";
 import { kv } from "@vercel/kv";
 
-export const config = {
-    runtime: "edge",
-};
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 
-export default async function handler(req) {
-    if (req.method !== "POST") {
-        return new Response(
-            JSON.stringify({ error: "Method not allowed" }),
-            { status: 405 }
-        );
-    }
+export default async function handler(req, res) {
+    try {
+        if (req.method !== "POST") {
+            return res.status(405).json({ error: "Method not allowed" });
+        }
 
-    const body = await req.json();
-    const { sessionId, question } = body;
+        const { sessionId, question } = req.body;
 
-    if (!sessionId || !question) {
-        return new Response(
-            JSON.stringify({ error: "Missing sessionId or question" }),
-            { status: 400 }
-        );
-    }
+        if (!sessionId || !question) {
+            return res.status(400).json({ error: "Missing sessionId or question" });
+        }
 
-    const session = await kv.get(sessionId);
+        // 1️⃣ Load document from KV
+        const documentText = await kv.get(`doc:${sessionId}`);
 
-    if (!session) {
-        return new Response(
-            JSON.stringify({ error: "Session expired or not found" }),
-            { status: 404 }
-        );
-    }
+        if (!documentText) {
+            return res.status(404).json({ error: "Session expired or document not found" });
+        }
 
-    if (session.expiresAt < Date.now()) {
-        await kv.del(sessionId);
-        return new Response(
-            JSON.stringify({ error: "Session expired" }),
-            { status: 410 }
-        );
-    }
+        // 2️⃣ Call OpenAI with document grounding
+        const completion = await openai.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: [
+                {
+                    role: "system",
+                    content:
+                        "You are an AI assistant. Answer ONLY using the provided document. If the answer is not in the document, say you do not know.",
+                },
+                {
+                    role: "user",
+                    content: `DOCUMENT:\n${documentText}\n\nQUESTION:\n${question}`,
+                },
+            ],
+            temperature: 0.2,
+            max_tokens: 300,
+        });
 
-    return new Response(
-        JSON.stringify({
+        const answer =
+            completion.choices[0]?.message?.content ||
+            "I could not find an answer in the document.";
+
+        // 3️⃣ Return real AI answer
+        return res.status(200).json({
             success: true,
-            answer: `Question received: "${question}". Document length: ${session.documentText.length} characters.`,
-        }),
-        { status: 200 }
-    );
+            answer,
+            confidence: "High",
+        });
+    } catch (error) {
+        console.error("ASK API ERROR:", error);
+        return res.status(500).json({ error: "AI processing failed" });
+    }
 }
