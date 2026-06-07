@@ -1,133 +1,214 @@
+// === FILE: src/components/Header.tsx ===
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Phone, Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import BannerTop from "@/components/BannerTop";
 import logo from "@/assets/myagentverse-logo-new.png";
-import { useLocation } from "react-router-dom";
-import BannerTop from "./BannerTop";
-import { HealthcareDemoDialog } from "./HealthcareDemoDialog";
 
-const Header = () => {
-  const location = useLocation();
-  const isActive = (path: string) => location.pathname === path;
+const industries = [
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Field Service", href: "/industries/field-service" },
+  { label: "Professional Services", href: "/industries/professional-services" },
+];
+
+export default function Header() {
+  const { pathname } = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  function isActive(href: string) {
+    return pathname === href;
+  }
+
+  function isIndustriesActive() {
+    return pathname.startsWith("/industries");
+  }
+
+  const linkClass = (href: string) =>
+    `text-sm font-medium transition-colors hover:text-primary ${
+      isActive(href)
+        ? "text-primary border-b-2 border-primary pb-0.5"
+        : "text-slate-700"
+    }`;
 
   return (
-    <>
+    <div className="sticky top-0 z-50 w-full">
       <BannerTop />
-      <header className="sticky top-0 z-50 w-full bg-background shadow-sm">
-      <div className="container mx-auto flex h-18 items-center justify-between px-4 sm:px-6 gap-2 sm:gap-4">
-        <a href="/" className="flex items-center gap-2 flex-shrink-0">
-          <img src={logo} alt="MyAgentVerse" className="w-40 sm:w-52 md:w-60" />
-        </a>
-        
-        <nav className="hidden items-center gap-4 lg:gap-8 md:flex">
-          <a 
-            href="/" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/') ? 'text-primary border-b-2 border-primary' : ''}`}
-          >
-            Home
-          </a>
-          <HealthcareDemoDialog>
-            <button className="text-sm font-medium transition-colors hover:text-primary">
-              Healthcare Demo
-            </button>
-          </HealthcareDemoDialog>
-          <a href="/consultation" className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg hover:scale-105 transition-all duration-300">
-            AI Roadmap Call
-          </a>
-          <a 
-            href="/build" 
-            className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/build') ? 'text-primary border-b-2 border-primary' : ''}`}
-          >
-            21-Day Build
-          </a>
-          <a 
-            href="/discovery-call" 
-            className="text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-accent to-primary text-accent-foreground hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            Book Discovery Call
-          </a>
-          <button
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Contact Us
-          </button>
-        </nav>
+      <header className="bg-white border-b border-slate-200 shadow-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between gap-6">
+            {/* Logo */}
+            <Link to="/" className="flex items-center shrink-0">
+              <img
+                src={logo}
+                alt="MyAgentVerse"
+                className="h-9 w-auto object-contain"
+              />
+            </Link>
 
-        <div className="flex items-center gap-2">
-          <a 
-            href="tel:+12816998318" 
-            className="hidden lg:flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            <span className="font-semibold">(281) 699-8318</span>
-          </a>
-          
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="flex-shrink-0">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                <a 
-                  href="tel:+12816998318" 
-                  className="flex items-center gap-2 text-base font-semibold text-primary px-2 py-3 border-2 border-primary rounded-lg hover:bg-primary/5 transition-colors"
-                >
-                  <Phone className="h-5 w-5" />
-                  <span>(281) 699-8318</span>
-                </a>
-                <a 
-                  href="/" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/') ? 'text-primary border-l-4 border-primary' : ''}`}
-                >
-                  Home
-                </a>
-                <HealthcareDemoDialog>
-                  <button className="text-base font-medium transition-colors hover:text-primary px-2 py-2 text-left w-full">
-                    Healthcare Demo
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-7">
+              <Link to="/" className={linkClass("/")}>
+                Home
+              </Link>
+              <Link to="/services" className={linkClass("/services")}>
+                Services
+              </Link>
+
+              {/* Industries dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary focus:outline-none ${
+                      isIndustriesActive()
+                        ? "text-primary border-b-2 border-primary pb-0.5"
+                        : "text-slate-700"
+                    }`}
+                  >
+                    Industries
+                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
                   </button>
-                </HealthcareDemoDialog>
-                <a href="/consultation" className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground hover:shadow-lg transition-all duration-300 mx-2">
-                  AI Roadmap Call
-                </a>
-                <a 
-                  href="/build" 
-                  className={`text-base font-medium transition-colors hover:text-primary px-2 py-2 ${isActive('/build') ? 'text-primary border-l-4 border-primary' : ''}`}
-                >
-                  21-Day Build
-                </a>
-                <a 
-                  href="/discovery-call" 
-                  className="text-base font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-accent to-primary text-accent-foreground hover:shadow-lg transition-all duration-300 mx-2"
-                >
-                  Book Discovery Call
-                </a>
-                <button
-                  onClick={() => {
-                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                  className="text-base font-medium transition-colors hover:text-primary px-2 py-2 text-left"
-                >
-                  Contact Us
-                </button>
-                <Button variant="accent" asChild className="mt-4">
-                  <a href="/#founder-offer">Claim Spot</a>
-                </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-          
-          <Button variant="accent" asChild className="flex-shrink-0 text-xs sm:text-sm px-3 sm:px-4">
-            <a href="/#founder-offer">Claim Spot</a>
-          </Button>
-        </div>
-      </div>
-    </header>
-    </>
-  );
-};
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-52">
+                  {industries.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link
+                        to={item.href}
+                        className="cursor-pointer w-full"
+                      >
+                        {item.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-export default Header;
+              <Link to="/results" className={linkClass("/results")}>
+                Results
+              </Link>
+              <Link to="/about" className={linkClass("/about")}>
+                About
+              </Link>
+            </nav>
+
+            {/* Desktop right side */}
+            <div className="hidden md:flex items-center gap-4 shrink-0">
+              <a
+                href="tel:+12816998318"
+                className="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                (281) 699-8318
+              </a>
+              <Button
+                asChild
+                size="sm"
+                className="rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold px-5"
+              >
+                <Link to="/process-audit">Free Process Audit</Link>
+              </Button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <div className="md:hidden">
+              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" aria-label="Open menu">
+                    <Menu className="w-5 h-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-80 p-0">
+                  <div className="flex flex-col h-full">
+                    {/* Mobile header */}
+                    <div className="px-6 py-5 border-b border-slate-100">
+                      <Link
+                        to="/"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center"
+                      >
+                        <img src={logo} alt="MyAgentVerse" className="h-8 w-auto" />
+                      </Link>
+                    </div>
+
+                    {/* Phone prominent */}
+                    <a
+                      href="tel:+12816998318"
+                      className="flex items-center gap-3 px-6 py-4 bg-slate-50 border-b border-slate-100 text-base font-semibold text-slate-800 hover:text-primary transition-colors"
+                    >
+                      <Phone className="w-5 h-5 text-primary" />
+                      (281) 699-8318
+                    </a>
+
+                    {/* Mobile nav links */}
+                    <nav className="flex flex-col px-6 py-4 gap-1 flex-1">
+                      {[
+                        { label: "Home", href: "/" },
+                        { label: "Services", href: "/services" },
+                        { label: "Results", href: "/results" },
+                        { label: "About", href: "/about" },
+                      ].map((item) => (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          onClick={() => setMobileOpen(false)}
+                          className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                            isActive(item.href)
+                              ? "bg-primary/10 text-primary"
+                              : "text-slate-700 hover:bg-slate-100 hover:text-primary"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+
+                      {/* Industries section */}
+                      <div className="mt-2">
+                        <p className="px-3 py-1 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+                          Industries
+                        </p>
+                        {industries.map((item) => (
+                          <Link
+                            key={item.href}
+                            to={item.href}
+                            onClick={() => setMobileOpen(false)}
+                            className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                              isActive(item.href)
+                                ? "bg-primary/10 text-primary"
+                                : "text-slate-700 hover:bg-slate-100 hover:text-primary"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </nav>
+
+                    {/* Mobile CTA */}
+                    <div className="px-6 py-5 border-t border-slate-100">
+                      <Button
+                        asChild
+                        size="lg"
+                        className="w-full rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold"
+                      >
+                        <Link to="/process-audit" onClick={() => setMobileOpen(false)}>
+                          Free Process Audit
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  );
+}

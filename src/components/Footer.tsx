@@ -1,89 +1,158 @@
-import ContactForm from "./ContactForm";
+// === FILE: src/components/Footer.tsx ===
+import { Link } from "react-router-dom";
+import { Phone, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 
-const Footer = () => {
+const PHONE = "(281) 699-8318";
+const PHONE_HREF = "tel:+12816998318";
+const EMAIL = "hello@myagentverse.com";
+const EMAIL_HREF = "mailto:hello@myagentverse.com";
+
+export default function Footer() {
   return (
-    <footer className="bg-secondary py-16 text-secondary-foreground">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          <div>
-            <h3 className="mb-4 text-lg font-bold">MyAgentVerse</h3>
-            <p className="mb-6 text-sm leading-relaxed opacity-90">
-              Your world of AI agents, built for you. Empowering small businesses with 24/7 AI teammates that answer, schedule, and follow up automatically.
+    <footer className="bg-[hsl(222,47%,11%)] text-slate-300">
+      {/* Main grid */}
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Col 1 — Brand */}
+          <div className="lg:col-span-1">
+            <p className="text-lg font-bold text-white mb-2">MyAgentVerse</p>
+            <p className="text-sm text-slate-400 leading-relaxed mb-6">
+              We simplify the hard stuff. AI automation for businesses that are
+              growing but drowning in process. The Woodlands, TX.
             </p>
-            <div className="space-y-2">
-              <a href="/about" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                About Us
-              </a>
-              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Industries
-              </a>
-              <a href="/careers" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Careers
-              </a>
-            </div>
+            <nav className="flex flex-col gap-2">
+              {[
+                { label: "About", href: "/about" },
+                { label: "Results", href: "/results" },
+                { label: "Privacy Policy", href: "/privacy" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
+          {/* Col 2 — Services */}
           <div>
-            <h3 className="mb-4 text-lg font-bold">Solutions</h3>
-            <div className="space-y-2">
-              <a href="/hvac" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                HVAC
-              </a>
-              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Plumbing
-              </a>
-              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Electrical Services
-              </a>
-              <a href="/industries" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Appliance Repair
-              </a>
-            </div>
+            <p className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
+              Services
+            </p>
+            <nav className="flex flex-col gap-2">
+              {[
+                { label: "Operations Automation", href: "/services" },
+                { label: "Lead & Quote Automation", href: "/services" },
+                { label: "Document Processing", href: "/services" },
+                { label: "Free Process Audit", href: "/process-audit" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
+          {/* Col 3 — Industries */}
           <div>
-            <h3 className="mb-4 text-lg font-bold">Connect</h3>
-            <div className="space-y-2">
-              <a href="tel:+12816998318" className="block text-sm font-semibold opacity-90 transition-opacity hover:opacity-100 hover:underline">
-                📞 (281) 699-8318
-              </a>
-              <a href="/consultation" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                AI Roadmap Call
-              </a>
-              <a href="/booking" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Book a Demo
-              </a>
-              <a href="/contact" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Contact Us
-              </a>
-              <a href="/build" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                21-Day Build
-              </a>
-              <a href="/support" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Support
-              </a>
-              <a href="/privacy" className="block text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
-                Privacy Policy
-              </a>
-            </div>
+            <p className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
+              Industries
+            </p>
+            <nav className="flex flex-col gap-2">
+              {[
+                { label: "Manufacturing", href: "/industries/manufacturing" },
+                { label: "Field Service", href: "/industries/field-service" },
+                {
+                  label: "Professional Services",
+                  href: "/industries/professional-services",
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
-          <div id="contact-form">
-            <h3 className="mb-4 text-lg font-bold">Get in Touch</h3>
+          {/* Col 4 — Get In Touch */}
+          <div>
+            <p className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
+              Get In Touch
+            </p>
+            <div className="flex flex-col gap-3 mb-5">
+              <a
+                href={PHONE_HREF}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+              >
+                <Phone className="w-4 h-4 shrink-0" />
+                {PHONE}
+              </a>
+              <a
+                href={EMAIL_HREF}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4 shrink-0" />
+                {EMAIL}
+              </a>
+            </div>
+            <Button
+              asChild
+              size="sm"
+              className="mb-6 w-full rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold"
+            >
+              <Link to="/process-audit">Book Free Audit</Link>
+            </Button>
             <ContactForm />
           </div>
         </div>
+      </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-sm opacity-80">© 2025 MyAgentVerse. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="https://linkedin.com/company/myagentverse" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500">
+            © 2025 MyAgentVerse. All rights reserved.
+          </p>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://linkedin.com/company/myagentverse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
               LinkedIn
             </a>
-            <a href="https://x.com/myagentverse" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+            <a
+              href="https://x.com/myagentverse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 hover:text-white transition-colors"
+              aria-label="X (Twitter)"
+            >
               X
             </a>
-            <a href="https://youtube.com/@myagentverse" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 transition-opacity hover:opacity-100 hover:underline">
+            <a
+              href="https://youtube.com/@myagentverse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 hover:text-white transition-colors"
+              aria-label="YouTube"
+            >
               YouTube
             </a>
           </div>
@@ -91,6 +160,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
