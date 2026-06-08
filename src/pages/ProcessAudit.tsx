@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProcessAuditVideo from "@/components/ProcessAuditVideo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
-import { HF } from "@/lib/hf-images";
-
-
-
-
-
+import consultationHero from "@/assets/consultation-hero.jpg";
+import buildCollaboration from "@/assets/build-collaboration.jpg";
+import buildIdealClient from "@/assets/build-ideal-client.jpg";
+import consultationResults from "@/assets/consultation-results.jpg";
+import consultationRoadmap from "@/assets/consultation-roadmap.jpg";
 
 interface FormState {
   name: string;
@@ -87,13 +87,23 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={HF.consultation}
+                src={consultationHero}
                 alt="Professional consultation meeting"
                 className="h-[420px] w-full object-cover rounded-2xl shadow-xl"
                 style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Video Demo ───────────────────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-[hsl(222_47%_11%)]">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-slate-400 text-sm uppercase tracking-widest mb-6 font-medium">
+            See how it works — 15 seconds
+          </p>
+          <ProcessAuditVideo />
         </div>
       </section>
 
@@ -111,7 +121,7 @@ export default function ProcessAudit() {
           {/* Banner image above 3 columns */}
           <div className="relative overflow-hidden mb-12">
             <img
-              src={HF.consultation}
+              src={buildCollaboration}
               alt="Team collaborating on process audit"
               className="w-full h-64 object-cover rounded-2xl shadow-xl"
             />
@@ -206,7 +216,7 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={HF.heroOwner}
+                src={buildIdealClient}
                 alt="Ideal client — business owner at work"
                 className="w-full h-[380px] object-cover rounded-2xl shadow-xl"
               />
@@ -267,7 +277,7 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={HF.solutionClean}
+                src={consultationResults}
                 alt="Consultation results and deliverables"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />
@@ -295,7 +305,7 @@ export default function ProcessAudit() {
             {/* Right — roadmap image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={HF.teamResults}
+                src={consultationRoadmap}
                 alt="Roadmap and planning visual"
                 className="w-full h-72 object-cover rounded-2xl shadow-xl opacity-80"
               />
