@@ -3,9 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, ArrowRight, MapPin, Phone, Shield, Zap, Heart } from "lucide-react";
-import { HF } from "@/lib/hf-images";
 import founderJourney from "@/assets/founder-journey.jpg";
-
+import aiTeam from "@/assets/ai-team-avatars.jpg";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
 
 const beliefs = [
@@ -55,7 +54,7 @@ const About = () => {
               </div>
               <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-2xl" />
-                <img src={HF.heroOwner} alt="Our team" className="relative rounded-2xl shadow-2xl w-full object-cover" />
+                <img src={founderJourney} alt="Our team" className="relative rounded-2xl shadow-2xl w-full object-cover" />
               </div>
             </div>
           </div>
@@ -66,7 +65,7 @@ const About = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
               <div className="animate-fade-in">
-                <img src={HF.teamResults} alt="Our team at work" className="rounded-2xl shadow-lg w-full object-cover hover-scale" />
+                <img src={aiTeam} alt="Our team at work" className="rounded-2xl shadow-lg w-full object-cover hover-scale" />
               </div>
               <div className="animate-fade-in">
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
@@ -163,7 +162,7 @@ const About = () => {
               <Button variant="accent" size="lg" asChild className="hover-scale">
                 <a href="/process-audit">Get Your Free Process Audit <ArrowRight className="ml-2 h-5 w-5" /></a>
               </Button>
-              <Button variant="outline" size="lg" asChild className="hover-scale border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild style={{background:"transparent",border:"1.5px solid rgba(255,255,255,0.5)",color:"white"}} size="lg" className="hover-scale hover:bg-white/10">
                 <a href="/get-started">Get In Touch</a>
               </Button>
             </div>

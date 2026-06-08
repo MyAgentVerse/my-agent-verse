@@ -4,10 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { HF } from "@/lib/hf-images";
 import consultationHero from "@/assets/consultation-hero.jpg";
-
-
+import consultationResults from "@/assets/consultation-results.jpg";
+import buildCollaboration from "@/assets/build-collaboration.jpg";
 import {
   MailQuestion,
   FileSignature,
@@ -59,25 +58,25 @@ const automations = [
     icon: <UserCheck className="w-8 h-8 text-teal-600" />,
     title: "Client Onboarding Workflow",
     desc: "New client triggers an automated sequence: welcome email, document request, e-signature routing, CRM update — onboarding completes in 2 days, not 2 weeks.",
-    image: HF.teamResults,
+    image: buildCollaboration,
   },
   {
     icon: <FilePlus className="w-8 h-8 text-teal-600" />,
     title: "Proposal & Contract Generation",
     desc: "Pull client details, populate your template, generate a polished proposal or contract in seconds — ready to send before the meeting ends.",
-    image: HF.solutionClean,
+    image: consultationResults,
   },
   {
     icon: <DollarSign className="w-8 h-8 text-teal-600" />,
     title: "Invoice & Payment Follow-Up",
     desc: "Invoices sent automatically on schedule. Follow-up sequences fire at 7, 14, and 30 days — 100% follow-up rate with zero staff time.",
-    image: HF.professionalDesk,
+    image: consultationHero,
   },
   {
     icon: <Plug className="w-8 h-8 text-teal-600" />,
     title: "Intake-to-CRM Automation",
     desc: "Client submits intake form → data flows directly into your CRM, tagged and ready for your team. No re-typing, no errors, no lag.",
-    image: HF.teamResults,
+    image: buildCollaboration,
   },
 ];
 
@@ -113,7 +112,7 @@ export default function ProfessionalServices() {
       <section className="relative overflow-hidden min-h-[600px] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${HF.professionalDesk})` }}
+          style={{ backgroundImage: `url(${consultationHero})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,40%,10%)]/90 via-[hsl(220,40%,10%)]/70 to-transparent" />
         <div className="absolute top-20 right-28 w-80 h-80 rounded-full bg-teal-500/15 blur-3xl pointer-events-none" />

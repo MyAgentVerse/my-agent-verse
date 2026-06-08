@@ -4,12 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { HF } from "@/lib/hf-images";
 import manufacturingHero from "@/assets/manufacturing-hero.jpg";
-
-
-
-
+import manufacturingOperations from "@/assets/manufacturing-operations.jpg";
+import manufacturingEfficiency from "@/assets/manufacturing-efficiency.jpg";
+import manufacturingSupplyChain from "@/assets/manufacturing-supply-chain.jpg";
+import manufacturingForecasting from "@/assets/manufacturing-forecasting.jpg";
 import {
   FileText,
   CalendarDays,
@@ -60,25 +59,25 @@ const automations = [
     icon: <FileText className="w-8 h-8 text-teal-600" />,
     title: "Invoice & PO Processing",
     desc: "Auto-extract line items from invoices, match against POs, route for approval, and post to your accounting system — zero manual entry.",
-    image: HF.manufacturingMgr,
+    image: manufacturingOperations,
   },
   {
     icon: <ClipboardList className="w-8 h-8 text-teal-600" />,
     title: "Production Reporting",
     desc: "Auto-compile shift data from your machines and operators, flag exceptions, and deliver reports before the next shift starts.",
-    image: HF.teamResults,
+    image: manufacturingEfficiency,
   },
   {
     icon: <Truck className="w-8 h-8 text-teal-600" />,
     title: "Vendor Communication",
     desc: "Automated PO issuance, delivery confirmations, and vendor follow-ups — your purchasing runs itself.",
-    image: HF.consultation,
+    image: manufacturingSupplyChain,
   },
   {
     icon: <Calculator className="w-8 h-8 text-teal-600" />,
     title: "Job Costing & Quoting",
     desc: "Pull live material costs, apply labor rates, and generate accurate estimates automatically — quote faster, win more.",
-    image: HF.solutionClean,
+    image: manufacturingForecasting,
   },
 ];
 

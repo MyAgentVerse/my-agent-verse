@@ -4,11 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { HF } from "@/lib/hf-images";
 import heroHvacTech from "@/assets/hero-hvac-tech.jpg";
-
-
-
+import hvacTechniciansWorking from "@/assets/hvac-technicians-working.jpg";
+import hvacSuccessTestimonial from "@/assets/hvac-success-testimonial.jpg";
+import buildBookingCalendar from "@/assets/build-booking-calendar.png";
 import {
   Timer,
   PhoneOff,
@@ -60,25 +59,25 @@ const automations = [
     icon: <Calendar className="w-8 h-8 text-teal-600" />,
     title: "Job Dispatch Automation",
     desc: "New job request triggers automatic assignment to the right tech based on location, availability, and skill — no phone tag required.",
-    image: HF.solutionClean,
+    image: buildBookingCalendar,
   },
   {
     icon: <Repeat2 className="w-8 h-8 text-teal-600" />,
     title: "Quote-to-Follow-Up Sequence",
     desc: "Quote sent automatically minutes after assessment. Follow-up sequence fires at 24h, 48h, and 7 days — capturing acceptances you'd otherwise miss.",
-    image: HF.hvacTech,
+    image: hvacTechniciansWorking,
   },
   {
     icon: <Bell className="w-8 h-8 text-teal-600" />,
     title: "Customer Update Notifications",
     desc: "Customers get automatic SMS/email when job is scheduled, when tech is en route, and when job is complete — zero manual communication.",
-    image: HF.consultation,
+    image: hvacSuccessTestimonial,
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-teal-600" />,
     title: "Weekly Reporting",
     desc: "Every Monday morning: auto-compiled report of jobs completed, revenue, tech utilization, and open quotes — pulled from your existing job data.",
-    image: HF.solutionClean,
+    image: buildBookingCalendar,
   },
 ];
 
