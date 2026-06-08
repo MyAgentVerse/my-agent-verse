@@ -38,6 +38,16 @@ const AdminLogin      = lazy(() => import("./pages/admin/Login"));
 const Dashboard       = lazy(() => import("./pages/admin/Dashboard"));
 const ConsultationDashboard = lazy(() => import("./pages/admin/ConsultationDashboard"));
 
+// Scroll to top on every route change
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -46,6 +56,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <ElevenLabsVoiceAgent />
         <Suspense fallback={null}>
           <Routes>
