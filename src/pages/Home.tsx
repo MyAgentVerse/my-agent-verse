@@ -1,5 +1,6 @@
 // === FILE: src/pages/Home.tsx ===
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Clock,
   ArrowRight,
@@ -27,7 +28,17 @@ import buildCollaboration from "@/assets/build-collaboration.jpg";
 const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>MyAgentVerse — Meet Your AI Agents | Built to Amplify Your Business</title>
+        <meta name="description" content="MyAgentVerse builds custom 24/7 AI agents that automate calls, follow-ups, and workflows so your team can focus on growth." />
+        <link rel="canonical" href="https://my-agent-verse.lovable.app/" />
+        <meta property="og:title" content="MyAgentVerse — Meet Your AI Agents" />
+        <meta property="og:description" content="Custom 24/7 AI agents that automate calls, follow-ups, and workflows for SMBs." />
+        <meta property="og:url" content="https://my-agent-verse.lovable.app/" />
+      </Helmet>
       <Header />
+
+
 
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] py-24 md:py-32">

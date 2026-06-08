@@ -3,18 +3,18 @@
   <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meet Your AI Agents | Built to Amplify Your Business</title>
-  <meta name="description" content="Your world of 24/7 AI agents—automating calls, follow-ups, and workflows so your team can focus on growth.">
+  <title>MyAgentVerse — Meet Your AI Agents | Built to Amplify Your Business</title>
+  <meta name="description" content="MyAgentVerse builds custom 24/7 AI agents that automate calls, follow-ups, and workflows so your team can focus on growth." />
   <meta name="author" content="MyAgentVerse" />
 
   <!-- ✅ iMessage / Apple Preview -->
   <link rel="apple-touch-icon" sizes="180x180" href="/social-preview.png" />
 
-  <!-- ✅ Static fallback for LinkedIn -->
-  <meta property="og:image" content="https://staging.myagentverse.com/social-preview.png" />
-  <meta name="twitter:image" content="https://staging.myagentverse.com/social-preview.png" />
+  <!-- ✅ Static fallback social image (relative to current origin via dynamic block below) -->
+  <meta property="og:image" content="/social-preview.png" />
+  <meta name="twitter:image" content="/social-preview.png" />
 
-  <!-- ✅ Dynamic version for staging / production -->
+  <!-- ✅ Dynamic absolute URLs for staging / production -->
   <script>
     const baseUrl = window.location.origin;
     const imageUrl = `${baseUrl}/social-preview.png`;
@@ -27,18 +27,55 @@
 
   <!-- ✅ Open Graph -->
   <meta property="og:type" content="website" />
-  
-  
+  <meta property="og:site_name" content="MyAgentVerse" />
+  <meta property="og:title" content="MyAgentVerse — Meet Your AI Agents" />
+  <meta property="og:description" content="Custom 24/7 AI agents that automate calls, follow-ups, and workflows for SMBs." />
 
   <!-- ✅ Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  
-  
-  <meta property="og:title" content="Meet Your AI Agents | Built to Amplify Your Business">
-  <meta name="twitter:title" content="Meet Your AI Agents | Built to Amplify Your Business">
-  <meta property="og:description" content="Your world of 24/7 AI agents—automating calls, follow-ups, and workflows so your team can focus on growth.">
-  <meta name="twitter:description" content="Your world of 24/7 AI agents—automating calls, follow-ups, and workflows so your team can focus on growth.">
-  
+  <meta name="twitter:title" content="MyAgentVerse — Meet Your AI Agents" />
+  <meta name="twitter:description" content="Custom 24/7 AI agents that automate calls, follow-ups, and workflows for SMBs." />
+
+  <!-- ✅ Organization + WebSite + LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://my-agent-verse.lovable.app/#organization",
+        "name": "MyAgentVerse",
+        "url": "https://my-agent-verse.lovable.app/",
+        "logo": "https://my-agent-verse.lovable.app/social-preview.png",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://my-agent-verse.lovable.app/#website",
+        "url": "https://my-agent-verse.lovable.app/",
+        "name": "MyAgentVerse",
+        "publisher": { "@id": "https://my-agent-verse.lovable.app/#organization" }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://my-agent-verse.lovable.app/#localbusiness",
+        "name": "MyAgentVerse",
+        "image": "https://my-agent-verse.lovable.app/social-preview.png",
+        "url": "https://my-agent-verse.lovable.app/",
+        "telephone": "+1-281-699-8318",
+        "email": "hello@myagentverse.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "The Woodlands",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "areaServed": "US"
+      }
+    ]
+  }
+  </script>
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)

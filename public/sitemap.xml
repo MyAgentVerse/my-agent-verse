@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://my-agent-verse.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/process-audit</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/get-started</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/results</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/industries</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/industries/manufacturing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/industries/field-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/industries/professional-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/consultation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/build</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/discovery-call</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/booking</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/realtor</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/real-estate</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/hvac</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/healthcare-demo</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/playwithai</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://my-agent-verse.lovable.app/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

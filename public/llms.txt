@@ -1,0 +1,33 @@
+# MyAgentVerse
+
+> Custom 24/7 AI agents that automate calls, follow-ups, and workflows for small and mid-sized businesses. Based in The Woodlands, TX.
+
+MyAgentVerse designs and builds owned (no monthly lock-in) AI automation systems for businesses doing $1M–$5M in revenue. Engagements typically start with a free 30-minute Process Audit that maps the highest-ROI automation opportunities.
+
+## Pages
+
+- [Home](/): What MyAgentVerse does and who it's for.
+- [Services](/services): AI agent, workflow automation, and custom build offerings.
+- [About](/about): The team, beliefs, and approach.
+- [Process Audit](/process-audit): Free 30-minute audit that produces an Automation Opportunity Map.
+- [Get Started](/get-started): Book an audit or send a quick question.
+- [Results](/results): Case studies and outcomes.
+- [Consultation](/consultation): Paid AI Implementation Roadmap call.
+- [Build](/build): Custom build engagements.
+- [Contact](/contact): Reach the team directly.
+
+## Industries
+
+- [Industries overview](/industries): Verticals served.
+- [Manufacturing](/industries/manufacturing): Operations and back-office automation for manufacturers.
+- [Field Service](/industries/field-service): Dispatch, follow-up, and intake automation for field-service businesses.
+- [Professional Services](/industries/professional-services): Client intake and workflow automation for professional firms.
+
+## Optional
+
+- [Realtor](/realtor): Real-estate agent landing page.
+- [Real Estate](/real-estate): Real-estate vertical page.
+- [HVAC](/hvac): HVAC vertical landing page.
+- [Healthcare Demo](/healthcare-demo): Healthcare-specific demo.
+- [Play with AI](/playwithai): Interactive demo where you upload a document and ask questions.
+- [Privacy](/privacy): Privacy policy.
