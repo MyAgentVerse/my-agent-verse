@@ -68,6 +68,15 @@ export default function GetStarted() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <Helmet>
+        <title>Get Started — Book a Free Process Audit | MyAgentVerse</title>
+        <meta name="description" content="Talk to MyAgentVerse. Book a free 30-minute Process Audit or send a message — we reply within one business day." />
+        <link rel="canonical" href="https://my-agent-verse.lovable.app/get-started" />
+        <meta property="og:title" content="Get Started with MyAgentVerse" />
+        <meta property="og:description" content="Book a free Process Audit or ask a quick question. We reply within one business day." />
+        <meta property="og:url" content="https://my-agent-verse.lovable.app/get-started" />
+        <script type="application/ld+json">{JSON.stringify(FAQ_JSONLD)}</script>
+      </Helmet>
       <Header />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
