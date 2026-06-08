@@ -47,7 +47,7 @@ export default function Header() {
               <img
                 src={logo}
                 alt="MyAgentVerse"
-                className="h-9 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
 
@@ -131,7 +131,7 @@ export default function Header() {
                         onClick={() => setMobileOpen(false)}
                         className="flex items-center"
                       >
-                        <img src={logo} alt="MyAgentVerse" className="h-8 w-auto" />
+                        <img src={logo} alt="MyAgentVerse" className="h-12 w-auto" />
                       </Link>
                     </div>
 
