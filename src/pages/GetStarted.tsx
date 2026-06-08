@@ -396,20 +396,7 @@ export default function GetStarted() {
             Quick Answers
           </h2>
           <div className="space-y-6">
-            {[
-              {
-                q: "Where are you located?",
-                a: "We're based in The Woodlands, TX. We work with businesses locally and remotely across the US — most of our work happens on Zoom.",
-              },
-              {
-                q: "How quickly do you respond?",
-                a: "Within 1 business day, usually same day. For urgent matters, call us directly at (281) 699-8318.",
-              },
-              {
-                q: "How do I know if my business is a good fit?",
-                a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 30-minute Process Audit — no obligation, guaranteed results.",
-              },
-            ].map(({ q, a }) => (
+            {FAQ_ITEMS.map(({ q, a }) => (
               <Card key={q} className="border border-slate-200 shadow-sm">
                 <CardContent className="p-7">
                   <h3 className="font-bold text-[hsl(222_47%_11%)] mb-2">{q}</h3>
