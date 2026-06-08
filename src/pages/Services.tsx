@@ -16,6 +16,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import buildHero from "@/assets/build-hero.jpg";
+import manufacturingOperations from "@/assets/manufacturing-operations.jpg";
+import realtorDashboard from "@/assets/realtor-dashboard.jpg";
+import aiMattersInfographic from "@/assets/ai-matters-infographic.jpg";
 
 const Services = () => {
   return (
@@ -27,28 +31,43 @@ const Services = () => {
         <div className="pointer-events-none absolute -top-24 -left-24 h-[450px] w-[450px] rounded-full bg-[hsl(186_100%_27%)] opacity-20 blur-[120px] animate-pulse" />
         <div className="pointer-events-none absolute -bottom-16 right-0 h-[350px] w-[350px] rounded-full bg-[hsl(42_100%_50%)] opacity-10 blur-[100px] animate-pulse" />
 
-        <div className="container relative mx-auto max-w-4xl px-6 text-center">
-          <div className="animate-fade-in space-y-7">
-            <Badge className="border-[hsl(186_100%_27%)] bg-[hsl(186_100%_27%)]/10 text-[hsl(186_85%_60%)]">
-              What We Do
-            </Badge>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-              We don't sell AI. We fix the processes{" "}
-              <span className="text-[hsl(42_100%_50%)]">
-                eating your business alive.
-              </span>
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg text-slate-300 md:text-xl">
-              Every engagement starts with understanding your operations — not
-              pitching software. We find where time and money are bleeding out,
-              then we stop it.
-            </p>
-            <Button asChild variant="accent" size="lg" className="hover-scale group">
-              <Link to="/process-audit">
-                Get Your Free Process Audit
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+        <div className="container relative mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Left: text + CTA */}
+            <div className="animate-fade-in space-y-7">
+              <Badge className="border-[hsl(186_100%_27%)] bg-[hsl(186_100%_27%)]/10 text-[hsl(186_85%_60%)]">
+                What We Do
+              </Badge>
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+                We don't sell AI. We fix the processes{" "}
+                <span className="text-[hsl(42_100%_50%)]">
+                  eating your business alive.
+                </span>
+              </h1>
+              <p className="text-lg text-slate-300 md:text-xl">
+                Every engagement starts with understanding your operations — not
+                pitching software. We find where time and money are bleeding out,
+                then we stop it.
+              </p>
+              <Button asChild variant="accent" size="lg" className="hover-scale group">
+                <Link to="/process-audit">
+                  Get Your Free Process Audit
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Right: hero image with gradient overlay */}
+            <div className="animate-fade-in relative hidden lg:block">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+                <img
+                  src={buildHero}
+                  alt="Modern professional automation"
+                  className="rounded-2xl shadow-xl object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222_47%_11%)]/50 to-transparent rounded-2xl" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -56,7 +75,17 @@ const Services = () => {
       {/* ── 2a. SERVICE: OPERATIONS AUTOMATION ──────────────────── */}
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-12 lg:grid-cols-3">
+            {/* Image on the left */}
+            <div className="animate-fade-in relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] hidden lg:block">
+              <img
+                src={manufacturingOperations}
+                alt="Manufacturing operations floor"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
+
+            {/* Text content — middle */}
             <div className="animate-fade-in space-y-6">
               <div className="inline-flex rounded-xl bg-[hsl(186_100%_27%)]/10 p-4">
                 <Settings className="h-10 w-10 text-[hsl(186_100%_27%)]" />
@@ -89,6 +118,7 @@ const Services = () => {
               </ul>
             </div>
 
+            {/* Dark engagement card — right */}
             <div className="animate-fade-in space-y-6">
               <Card className="border-0 bg-[hsl(222_47%_11%)] text-white shadow-xl">
                 <CardContent className="p-8">
@@ -142,8 +172,9 @@ const Services = () => {
       {/* ── 2b. SERVICE: LEAD & QUOTE AUTOMATION ────────────────── */}
       <section className="bg-muted/40 py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="order-2 animate-fade-in space-y-6 lg:order-1">
+          <div className="grid items-center gap-12 lg:grid-cols-3">
+            {/* Dark engagement card — left */}
+            <div className="animate-fade-in space-y-6">
               <Card className="border-0 bg-[hsl(222_47%_11%)] text-white shadow-xl">
                 <CardContent className="p-8">
                   <h3 className="mb-6 text-lg font-bold text-slate-300 uppercase tracking-wider">
@@ -190,7 +221,8 @@ const Services = () => {
               </Card>
             </div>
 
-            <div className="order-1 animate-fade-in space-y-6 lg:order-2">
+            {/* Text content — middle */}
+            <div className="animate-fade-in space-y-6">
               <div className="inline-flex rounded-xl bg-[hsl(42_100%_50%)]/10 p-4">
                 <Zap className="h-10 w-10 text-[hsl(42_100%_50%)]" />
               </div>
@@ -221,6 +253,15 @@ const Services = () => {
                 ))}
               </ul>
             </div>
+
+            {/* Image on the right */}
+            <div className="animate-fade-in relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] hidden lg:block">
+              <img
+                src={realtorDashboard}
+                alt="CRM dashboard view"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -229,6 +270,7 @@ const Services = () => {
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Left: text */}
             <div className="animate-fade-in space-y-6">
               <div className="inline-flex rounded-xl bg-[hsl(186_100%_27%)]/10 p-4">
                 <FileText className="h-10 w-10 text-[hsl(186_100%_27%)]" />
@@ -271,7 +313,15 @@ const Services = () => {
               </div>
             </div>
 
+            {/* Right: image stacked above the dark pricing card */}
             <div className="animate-fade-in space-y-6">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl h-72 hidden lg:block">
+                <img
+                  src={aiMattersInfographic}
+                  alt="AI and automation infographic"
+                  className="rounded-2xl shadow-xl object-cover w-full h-full"
+                />
+              </div>
               <Card className="border-0 bg-[hsl(222_47%_11%)] text-white shadow-xl">
                 <CardContent className="p-8">
                   <h3 className="mb-6 text-lg font-bold text-slate-300 uppercase tracking-wider">

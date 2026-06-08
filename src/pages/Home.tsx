@@ -20,6 +20,9 @@ import Footer from "@/components/Footer";
 import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
 import industriesConnected from "@/assets/industries-connected.jpg";
+import businessChaos from "@/assets/business-chaos.jpg";
+import problemSolutionSplit from "@/assets/problem-solution-split.jpg";
+import buildCollaboration from "@/assets/build-collaboration.jpg";
 
 const Home = () => {
   return (
@@ -86,13 +89,26 @@ const Home = () => {
       {/* ── 2. PAIN SECTION ─────────────────────────────────────── */}
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center animate-fade-in">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Sound familiar?
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              If any of these hit close to home, you're in the right place.
-            </p>
+
+          {/* Split layout: image left, headline right */}
+          <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
+              <img
+                src={businessChaos}
+                alt="Overwhelmed team in chaotic office"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                Sound familiar?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                If any of these hit close to home, you're not alone — and you're
+                in the right place. These are the exact problems we were built
+                to fix.
+              </p>
+            </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -136,13 +152,28 @@ const Home = () => {
       {/* ── 3. SOLUTION SECTION ─────────────────────────────────── */}
       <section className="bg-muted/40 py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center animate-fade-in">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              We turn your most painful processes into systems{" "}
-              <span className="text-[hsl(186_100%_27%)]">
-                that run themselves.
-              </span>
-            </h2>
+
+          {/* Split layout: headline left, image right */}
+          <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                We turn your most painful processes into systems{" "}
+                <span className="text-[hsl(186_100%_27%)]">
+                  that run themselves.
+                </span>
+              </h2>
+              <p className="text-muted-foreground">
+                Every solution we build is custom to your existing tools — no new
+                software to buy, no platform lock-in, no monthly fees to us.
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
+              <img
+                src={problemSolutionSplit}
+                alt="Before and after: problem vs. solution"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -244,13 +275,24 @@ const Home = () => {
       {/* ── 5. INDUSTRIES SECTION ───────────────────────────────── */}
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center animate-fade-in">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Built for businesses like yours
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              We specialize in three industries where process waste hits hardest.
-            </p>
+
+          {/* 2-column header: text left, image right */}
+          <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                Built for businesses like yours
+              </h2>
+              <p className="text-muted-foreground">
+                We specialize in three industries where process waste hits hardest.
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl h-72">
+              <img
+                src={industriesConnected}
+                alt="Connected systems and industries"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -296,7 +338,7 @@ const Home = () => {
 
       {/* ── 6. HOW IT WORKS ─────────────────────────────────────── */}
       <section className="bg-muted/40 py-20">
-        <div className="container mx-auto max-w-5xl px-6">
+        <div className="container mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center animate-fade-in">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
               How it works
@@ -307,39 +349,51 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="relative space-y-8">
-            {[
-              {
-                step: "01",
-                title: "Free Process Audit",
-                description:
-                  "We map your top 3 painful processes and show you exactly what to automate — and what not to. You walk away with a clear picture of where your time is actually going, regardless of whether you hire us.",
-              },
-              {
-                step: "02",
-                title: "We Build It",
-                description:
-                  "Custom automation, built in 4–8 weeks. Scoped and priced before we start — no surprises mid-project. We connect your existing tools; you don't need to buy new software.",
-              },
-              {
-                step: "03",
-                title: "You Own It",
-                description:
-                  "No lock-in, no monthly platform fees to us. You own everything we build. We document it, hand it over, and train your team. We're available for ongoing support, but you're never trapped.",
-              },
-            ].map(({ step, title, description }, i) => (
-              <div key={i} className="hover-scale flex gap-8 rounded-2xl bg-card p-8 shadow-md">
-                <div className="flex-shrink-0">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(186_100%_27%)] text-lg font-extrabold text-white">
-                    {step}
+          {/* 2-column layout: steps left, image right */}
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative space-y-8">
+              {[
+                {
+                  step: "01",
+                  title: "Free Process Audit",
+                  description:
+                    "We map your top 3 painful processes and show you exactly what to automate — and what not to. You walk away with a clear picture of where your time is actually going, regardless of whether you hire us.",
+                },
+                {
+                  step: "02",
+                  title: "We Build It",
+                  description:
+                    "Custom automation, built in 4–8 weeks. Scoped and priced before we start — no surprises mid-project. We connect your existing tools; you don't need to buy new software.",
+                },
+                {
+                  step: "03",
+                  title: "You Own It",
+                  description:
+                    "No lock-in, no monthly platform fees to us. You own everything we build. We document it, hand it over, and train your team. We're available for ongoing support, but you're never trapped.",
+                },
+              ].map(({ step, title, description }, i) => (
+                <div key={i} className="hover-scale flex gap-8 rounded-2xl bg-card p-8 shadow-md">
+                  <div className="flex-shrink-0">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(186_100%_27%)] text-lg font-extrabold text-white">
+                      {step}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-xl font-bold">{title}</h3>
+                    <p className="text-muted-foreground">{description}</p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="mb-2 text-xl font-bold">{title}</h3>
-                  <p className="text-muted-foreground">{description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Collaboration image */}
+            <div className="relative overflow-hidden rounded-2xl shadow-xl h-full min-h-[400px] hidden lg:block">
+              <img
+                src={buildCollaboration}
+                alt="Team collaborating on automation project"
+                className="rounded-2xl shadow-xl object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>

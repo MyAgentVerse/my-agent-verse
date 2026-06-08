@@ -5,6 +5,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import founderJourney from "@/assets/founder-journey.jpg";
+import consultationHero from "@/assets/consultation-hero.jpg";
+import buildCollaboration from "@/assets/build-collaboration.jpg";
+import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
+import consultationResults from "@/assets/consultation-results.jpg";
 
 interface ContactForm {
   name: string;
@@ -43,18 +48,32 @@ export default function GetStarted() {
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] text-white py-24 px-6">
         <div className="pointer-events-none absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-[hsl(186_100%_27%)/20] blur-[110px]" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[380px] h-[380px] rounded-full bg-[hsl(42_100%_50%)/12] blur-[90px]" />
-        <div className="relative mx-auto max-w-2xl text-center animate-fade-in">
-          <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)/30] px-4 py-1 text-sm font-medium text-[hsl(186_100%_70%)]">
-            No Sales Pitch
+        <div className="relative mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center animate-fade-in">
+            {/* Left — text */}
+            <div>
+              <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)/30] px-4 py-1 text-sm font-medium text-[hsl(186_100%_70%)]">
+                No Sales Pitch
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                Let's Talk About{" "}
+                <span className="text-[hsl(42_100%_50%)]">Your Business.</span>
+              </h1>
+              <p className="text-lg text-slate-300 max-w-xl">
+                No sales pitch. Just a real conversation about what's slowing you down
+                and whether we can help.
+              </p>
+            </div>
+            {/* Right — image */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={founderJourney}
+                alt="Founder or business owner at work"
+                className="h-[400px] w-full object-cover rounded-2xl shadow-xl"
+                style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
+              />
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Let's Talk About{" "}
-            <span className="text-[hsl(42_100%_50%)]">Your Business.</span>
-          </h1>
-          <p className="text-lg text-slate-300 max-w-xl mx-auto">
-            No sales pitch. Just a real conversation about what's slowing you down
-            and whether we can help.
-          </p>
         </div>
       </section>
 
@@ -63,7 +82,15 @@ export default function GetStarted() {
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-8 items-stretch">
             {/* Option A — Primary */}
-            <Card className="border-2 border-[hsl(186_100%_27%)] shadow-lg flex flex-col">
+            <Card className="border-2 border-[hsl(186_100%_27%)] shadow-lg flex flex-col overflow-hidden">
+              {/* Card top image */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={consultationHero}
+                  alt="Professional consultation meeting"
+                  className="h-40 w-full object-cover rounded-xl"
+                />
+              </div>
               <CardContent className="p-9 flex flex-col flex-1">
                 <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)] text-white text-xs font-bold px-3 py-1 uppercase tracking-wide w-fit">
                   Most Popular
@@ -104,7 +131,15 @@ export default function GetStarted() {
             </Card>
 
             {/* Option B — Secondary */}
-            <Card className="border border-slate-200 shadow-md flex flex-col">
+            <Card className="border border-slate-200 shadow-md flex flex-col overflow-hidden">
+              {/* Card top image */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={buildCollaboration}
+                  alt="Team collaborating"
+                  className="h-40 w-full object-cover rounded-xl"
+                />
+              </div>
               <CardContent className="p-9 flex flex-col flex-1">
                 <div className="inline-block mb-4 rounded-full bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 uppercase tracking-wide w-fit">
                   Quick Question
@@ -136,7 +171,7 @@ export default function GetStarted() {
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <section id="contact-form" className="py-20 px-6 bg-white">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold text-center text-[hsl(222_47%_11%)] mb-3">
             Send Us a Message
           </h2>
@@ -144,108 +179,133 @@ export default function GetStarted() {
             We read every message personally and respond within 1 business day.
           </p>
 
-          {submitted ? (
-            <Card className="border-0 shadow-lg bg-[hsl(186_100%_27%)/8]">
-              <CardContent className="p-10 text-center">
-                <div className="text-5xl mb-4">✅</div>
-                <h3 className="text-2xl font-bold text-[hsl(222_47%_11%)] mb-2">
-                  Message received!
-                </h3>
-                <p className="text-slate-600">
-                  We'll be in touch within 1 business day. For faster response,
-                  call us at{" "}
-                  <a
-                    href="tel:+12816998318"
-                    className="text-[hsl(186_100%_27%)] font-bold hover:underline"
-                  >
-                    (281) 699-8318
-                  </a>
-                  .
-                </p>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="border border-slate-200 shadow-md">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
-                        Name *
-                      </label>
-                      <input
-                        required
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder="Jane Smith"
-                        className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
-                        Email *
-                      </label>
-                      <input
-                        required
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        placeholder="jane@acme.com"
-                        className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Phone
-                    </label>
-                    <input
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="(281) 555-0100"
-                      className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Message *
-                    </label>
-                    <textarea
-                      required
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      rows={5}
-                      placeholder="Tell us a bit about your business and what you're trying to solve..."
-                      className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)] resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12"
-                  >
-                    Send Message
-                  </Button>
-                  <p className="text-center text-xs text-slate-400">
-                    No spam. We respond within 1 business day.
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
-          )}
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left — form */}
+            <div>
+              {submitted ? (
+                <Card className="border-0 shadow-lg bg-[hsl(186_100%_27%)/8]">
+                  <CardContent className="p-10 text-center">
+                    <div className="text-5xl mb-4">✅</div>
+                    <h3 className="text-2xl font-bold text-[hsl(222_47%_11%)] mb-2">
+                      Message received!
+                    </h3>
+                    <p className="text-slate-600">
+                      We'll be in touch within 1 business day. For faster response,
+                      call us at{" "}
+                      <a
+                        href="tel:+12816998318"
+                        className="text-[hsl(186_100%_27%)] font-bold hover:underline"
+                      >
+                        (281) 699-8318
+                      </a>
+                      .
+                    </p>
+                  </CardContent>
+                </Card>
+              ) : (
+                <Card className="border border-slate-200 shadow-md">
+                  <CardContent className="p-8">
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid md:grid-cols-2 gap-5">
+                        <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                            Name *
+                          </label>
+                          <input
+                            required
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                            placeholder="Jane Smith"
+                            className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                            Email *
+                          </label>
+                          <input
+                            required
+                            type="email"
+                            name="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            placeholder="jane@acme.com"
+                            className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                          Phone
+                        </label>
+                        <input
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
+                          placeholder="(281) 555-0100"
+                          className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)]"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                          Message *
+                        </label>
+                        <textarea
+                          required
+                          name="message"
+                          value={form.message}
+                          onChange={handleChange}
+                          rows={5}
+                          placeholder="Tell us a bit about your business and what you're trying to solve..."
+                          className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)] resize-none"
+                        />
+                      </div>
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12"
+                      >
+                        Send Message
+                      </Button>
+                      <p className="text-center text-xs text-slate-400">
+                        No spam. We respond within 1 business day.
+                      </p>
+                    </form>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
+            {/* Right — decorative AI workspace image (hidden on mobile) */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={heroAiWorkspace}
+                alt="Modern AI workspace"
+                className="w-full h-full object-cover rounded-2xl shadow-xl"
+                style={{ minHeight: "420px" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── Direct Contact ───────────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-slate-50">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-center text-[hsl(222_47%_11%)] mb-10">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold text-center text-[hsl(222_47%_11%)] mb-6">
             Prefer to reach out directly?
           </h2>
+
+          {/* Decorative image above contact cards */}
+          <div className="relative overflow-hidden mb-10 max-w-sm mx-auto">
+            <img
+              src={consultationResults}
+              alt="Consultation results visual"
+              className="w-full h-40 object-cover rounded-2xl shadow-xl"
+            />
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[
               {

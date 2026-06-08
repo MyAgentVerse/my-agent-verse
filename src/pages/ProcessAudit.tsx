@@ -6,6 +6,11 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
+import consultationHero from "@/assets/consultation-hero.jpg";
+import buildCollaboration from "@/assets/build-collaboration.jpg";
+import buildIdealClient from "@/assets/build-ideal-client.jpg";
+import consultationResults from "@/assets/consultation-results.jpg";
+import consultationRoadmap from "@/assets/consultation-roadmap.jpg";
 
 interface FormState {
   name: string;
@@ -48,32 +53,46 @@ export default function ProcessAudit() {
         <div className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[hsl(186_100%_27%)/20] blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[420px] h-[420px] rounded-full bg-[hsl(42_100%_50%)/15] blur-[100px]" />
 
-        <div className="relative mx-auto max-w-3xl text-center animate-fade-in">
-          <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)/30] px-4 py-1 text-sm font-medium text-[hsl(186_100%_70%)]">
-            Free — No Obligation
+        <div className="relative mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center animate-fade-in">
+            {/* Left — text */}
+            <div>
+              <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)/30] px-4 py-1 text-sm font-medium text-[hsl(186_100%_70%)]">
+                Free — No Obligation
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                Find Out Exactly What's Costing You{" "}
+                <span className="text-[hsl(42_100%_50%)]">Time and Money</span>{" "}
+                — Free.
+              </h1>
+              <p className="text-lg md:text-xl text-slate-300 mb-8">
+                In a free 30-minute call, we map your top 3–5 most painful manual
+                processes and show you exactly what can be automated — with projected
+                time and cost savings. No pitch. Just a map.
+              </p>
+              <Link to="/get-started">
+                <Button
+                  size="lg"
+                  className="bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base px-8 py-4 h-auto transition-transform hover:scale-105"
+                >
+                  Book My Free Process Audit
+                </Button>
+              </Link>
+              <p className="mt-4 text-sm text-slate-400">
+                Takes 30 minutes. We bring the analysis. You bring your biggest
+                operational headache.
+              </p>
+            </div>
+            {/* Right — image */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={consultationHero}
+                alt="Professional consultation meeting"
+                className="h-[420px] w-full object-cover rounded-2xl shadow-xl"
+                style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
+              />
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Find Out Exactly What's Costing You{" "}
-            <span className="text-[hsl(42_100%_50%)]">Time and Money</span>{" "}
-            — Free.
-          </h1>
-          <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            In a free 30-minute call, we map your top 3–5 most painful manual
-            processes and show you exactly what can be automated — with projected
-            time and cost savings. No pitch. Just a map.
-          </p>
-          <Link to="/get-started">
-            <Button
-              size="lg"
-              className="bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base px-8 py-4 h-auto transition-transform hover:scale-105"
-            >
-              Book My Free Process Audit
-            </Button>
-          </Link>
-          <p className="mt-4 text-sm text-slate-400">
-            Takes 30 minutes. We bring the analysis. You bring your biggest
-            operational headache.
-          </p>
         </div>
       </section>
 
@@ -87,6 +106,16 @@ export default function ProcessAudit() {
             A focused 30-minute Zoom call that ends with a concrete plan in your
             hands.
           </p>
+
+          {/* Banner image above 3 columns */}
+          <div className="relative overflow-hidden mb-12">
+            <img
+              src={buildCollaboration}
+              alt="Team collaborating on process audit"
+              className="w-full h-64 object-cover rounded-2xl shadow-xl"
+            />
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -151,25 +180,36 @@ export default function ProcessAudit() {
 
       {/* ── Who This Is For ──────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-white">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold text-[hsl(222_47%_11%)] mb-10 text-center">
             Who This Is For
           </h2>
-          <div className="space-y-4">
-            {[
-              "You run a $1M–$5M revenue business",
-              "Your team does repetitive manual work every week",
-              "You've looked at automation tools but don't know where to start",
-              "You want results in 60 days, not a 12-month roadmap",
-              "You want to own what gets built — no platform lock-in",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-4">
-                <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-[hsl(186_100%_27%)] flex items-center justify-center text-white text-sm font-bold">
-                  ✓
-                </span>
-                <p className="text-lg text-slate-700">{item}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left — checklist */}
+            <div className="space-y-4">
+              {[
+                "You run a $1M–$5M revenue business",
+                "Your team does repetitive manual work every week",
+                "You've looked at automation tools but don't know where to start",
+                "You want results in 60 days, not a 12-month roadmap",
+                "You want to own what gets built — no platform lock-in",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-4">
+                  <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-[hsl(186_100%_27%)] flex items-center justify-center text-white text-sm font-bold">
+                    ✓
+                  </span>
+                  <p className="text-lg text-slate-700">{item}</p>
+                </div>
+              ))}
+            </div>
+            {/* Right — image */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={buildIdealClient}
+                alt="Ideal client — business owner at work"
+                className="w-full h-[380px] object-cover rounded-2xl shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -180,62 +220,86 @@ export default function ProcessAudit() {
           <h2 className="text-3xl font-bold text-center text-[hsl(222_47%_11%)] mb-12">
             What You Walk Away With
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: "🗺️",
-                title: "Automation Opportunity Map",
-                body: "Your top processes ranked by ROI — a clear, one-page document you can act on immediately.",
-              },
-              {
-                icon: "⏱️",
-                title: "Time Savings Estimate",
-                body: "Hours per week your team gets back when each automation is live.",
-              },
-              {
-                icon: "💰",
-                title: "Cost Savings Projection",
-                body: "Annual dollar value of automating each process, based on your actual labor costs.",
-              },
-              {
-                icon: "📋",
-                title: "Priority Sequence",
-                body: "What to fix first, second, and third — so you get the highest ROI fastest.",
-              },
-            ].map(({ icon, title, body }) => (
-              <Card
-                key={title}
-                className="border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <CardContent className="p-7 flex gap-5">
-                  <span className="text-3xl flex-shrink-0">{icon}</span>
-                  <div>
-                    <h3 className="font-bold text-[hsl(222_47%_11%)] text-lg mb-1">
-                      {title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {body}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left — deliverable cards */}
+            <div className="grid gap-6">
+              {[
+                {
+                  icon: "🗺️",
+                  title: "Automation Opportunity Map",
+                  body: "Your top processes ranked by ROI — a clear, one-page document you can act on immediately.",
+                },
+                {
+                  icon: "⏱️",
+                  title: "Time Savings Estimate",
+                  body: "Hours per week your team gets back when each automation is live.",
+                },
+                {
+                  icon: "💰",
+                  title: "Cost Savings Projection",
+                  body: "Annual dollar value of automating each process, based on your actual labor costs.",
+                },
+                {
+                  icon: "📋",
+                  title: "Priority Sequence",
+                  body: "What to fix first, second, and third — so you get the highest ROI fastest.",
+                },
+              ].map(({ icon, title, body }) => (
+                <Card
+                  key={title}
+                  className="border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <CardContent className="p-7 flex gap-5">
+                    <span className="text-3xl flex-shrink-0">{icon}</span>
+                    <div>
+                      <h3 className="font-bold text-[hsl(222_47%_11%)] text-lg mb-1">
+                        {title}
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {body}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            {/* Right — image */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={consultationResults}
+                alt="Consultation results and deliverables"
+                className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Testimonial ──────────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-[hsl(222_47%_11%)]">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="text-[hsl(42_100%_50%)] text-5xl mb-6">"</div>
-          <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8">
-            We were copy-pasting data between 4 systems every morning. The audit
-            took 30 minutes and we had a clear plan by the end of the week. The
-            automation paid for itself in 6 weeks.
-          </blockquote>
-          <p className="text-slate-400 text-sm font-medium uppercase tracking-widest">
-            — Operations Manager, Houston Manufacturing Co.
-          </p>
+        <div className="mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left — quote */}
+            <div className="text-center md:text-left">
+              <div className="text-[hsl(42_100%_50%)] text-5xl mb-6">"</div>
+              <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8">
+                We were copy-pasting data between 4 systems every morning. The audit
+                took 30 minutes and we had a clear plan by the end of the week. The
+                automation paid for itself in 6 weeks.
+              </blockquote>
+              <p className="text-slate-400 text-sm font-medium uppercase tracking-widest">
+                — Operations Manager, Houston Manufacturing Co.
+              </p>
+            </div>
+            {/* Right — roadmap image */}
+            <div className="relative overflow-hidden hidden md:block">
+              <img
+                src={consultationRoadmap}
+                alt="Roadmap and planning visual"
+                className="w-full h-72 object-cover rounded-2xl shadow-xl opacity-80"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
