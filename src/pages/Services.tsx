@@ -24,7 +24,17 @@ import aiMattersInfographic from "@/assets/ai-matters-infographic.jpg";
 const Services = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Services — AI Agents & Workflow Automation | MyAgentVerse</title>
+        <meta name="description" content="Custom AI agents, workflow automation, and owned builds for SMBs in manufacturing, field service, and professional services." />
+        <link rel="canonical" href="https://my-agent-verse.lovable.app/services" />
+        <meta property="og:title" content="Services | MyAgentVerse" />
+        <meta property="og:description" content="Custom AI agents and workflow automation for $1M–$5M businesses." />
+        <meta property="og:url" content="https://my-agent-verse.lovable.app/services" />
+      </Helmet>
       <Header />
+
+
 
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] py-24 md:py-32">

@@ -28,6 +28,14 @@ const beliefs = [
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About MyAgentVerse — Owned AI Automation for SMBs</title>
+        <meta name="description" content="We build owned AI automation systems for $1M–$5M businesses. No lock-in, fast ROI, simple by design. Based in The Woodlands, TX." />
+        <link rel="canonical" href="https://my-agent-verse.lovable.app/about" />
+        <meta property="og:title" content="About MyAgentVerse" />
+        <meta property="og:description" content="Owned AI automation systems for SMBs — fast ROI, no platform lock-in." />
+        <meta property="og:url" content="https://my-agent-verse.lovable.app/about" />
+      </Helmet>
       <Header />
       <main>
 
