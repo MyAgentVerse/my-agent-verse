@@ -14,5 +14,8 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Force a single React instance — prevents duplicate React errors
+    // from packages like @calcom/embed-react that bundle their own copy
+    dedupe: ["react", "react-dom", "react-router-dom"],
   },
 }));
