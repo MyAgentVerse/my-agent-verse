@@ -1,7 +1,7 @@
 // === FILE: src/pages/GetStarted.tsx ===
+import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,31 +11,6 @@ import consultationHero from "@/assets/consultation-hero.jpg";
 import buildCollaboration from "@/assets/build-collaboration.jpg";
 import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
 import consultationResults from "@/assets/consultation-results.jpg";
-
-const FAQ_ITEMS = [
-  {
-    q: "Where are you located?",
-    a: "We're based in The Woodlands, TX. We work with businesses locally and remotely across the US — most of our work happens on Zoom.",
-  },
-  {
-    q: "How quickly do you respond?",
-    a: "Within 1 business day, usually same day. For urgent matters, call us directly at (281) 699-8318.",
-  },
-  {
-    q: "How do I know if my business is a good fit?",
-    a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 30-minute Process Audit — no obligation, guaranteed results.",
-  },
-];
-
-const FAQ_JSONLD = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
 
 interface ContactForm {
   name: string;
@@ -69,13 +44,13 @@ export default function GetStarted() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Helmet>
-        <title>Get Started — Book a Free Process Audit | MyAgentVerse</title>
-        <meta name="description" content="Talk to MyAgentVerse. Book a free 30-minute Process Audit or send a message — we reply within one business day." />
-        <link rel="canonical" href="https://my-agent-verse.lovable.app/get-started" />
-        <meta property="og:title" content="Get Started with MyAgentVerse" />
-        <meta property="og:description" content="Book a free Process Audit or ask a quick question. We reply within one business day." />
-        <meta property="og:url" content="https://my-agent-verse.lovable.app/get-started" />
-        <script type="application/ld+json">{JSON.stringify(FAQ_JSONLD)}</script>
+        <title>Get Started with AI Automation | MyAgentVerse</title>
+        <meta name="description" content="Ready to automate your business? Get started with MyAgentVerse — choose a free Process Audit, a Strategy Sprint, or a full Custom AI Build. No lock-in, you own everything." />
+        <meta property="og:title" content="Get Started with AI Automation | MyAgentVerse" />
+        <meta property="og:description" content="Start automating your business today. Free Process Audit, Strategy Sprint, or Custom AI Build — choose the path that fits your goals." />
+        <meta property="og:url" content="https://myagentverse.com/get-started" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/get-started" />
       </Helmet>
       <Header />
 
@@ -243,11 +218,10 @@ export default function GetStarted() {
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                          <label htmlFor="gs-name" className="block text-sm font-medium text-slate-700 mb-1">
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
                             Name *
                           </label>
                           <input
-                            id="gs-name"
                             required
                             name="name"
                             value={form.name}
@@ -257,11 +231,10 @@ export default function GetStarted() {
                           />
                         </div>
                         <div>
-                          <label htmlFor="gs-email" className="block text-sm font-medium text-slate-700 mb-1">
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
                             Email *
                           </label>
                           <input
-                            id="gs-email"
                             required
                             type="email"
                             name="email"
@@ -273,11 +246,10 @@ export default function GetStarted() {
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="gs-phone" className="block text-sm font-medium text-slate-700 mb-1">
+                        <label className="block text-sm font-medium text-slate-700 mb-1">
                           Phone
                         </label>
                         <input
-                          id="gs-phone"
                           name="phone"
                           value={form.phone}
                           onChange={handleChange}
@@ -286,11 +258,10 @@ export default function GetStarted() {
                         />
                       </div>
                       <div>
-                        <label htmlFor="gs-message" className="block text-sm font-medium text-slate-700 mb-1">
+                        <label className="block text-sm font-medium text-slate-700 mb-1">
                           Message *
                         </label>
                         <textarea
-                          id="gs-message"
                           required
                           name="message"
                           value={form.message}
@@ -396,7 +367,20 @@ export default function GetStarted() {
             Quick Answers
           </h2>
           <div className="space-y-6">
-            {FAQ_ITEMS.map(({ q, a }) => (
+            {[
+              {
+                q: "Where are you located?",
+                a: "We're based in The Woodlands, TX. We work with businesses locally and remotely across the US — most of our work happens on Zoom.",
+              },
+              {
+                q: "How quickly do you respond?",
+                a: "Within 1 business day, usually same day. For urgent matters, call us directly at (281) 699-8318.",
+              },
+              {
+                q: "How do I know if my business is a good fit?",
+                a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 30-minute Process Audit — no obligation, guaranteed results.",
+              },
+            ].map(({ q, a }) => (
               <Card key={q} className="border border-slate-200 shadow-sm">
                 <CardContent className="p-7">
                   <h3 className="font-bold text-[hsl(222_47%_11%)] mb-2">{q}</h3>

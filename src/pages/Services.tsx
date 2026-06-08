@@ -1,6 +1,6 @@
 // === FILE: src/pages/Services.tsx ===
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle,
@@ -26,16 +26,15 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Services — AI Agents & Workflow Automation | MyAgentVerse</title>
-        <meta name="description" content="Custom AI agents, workflow automation, and owned builds for SMBs in manufacturing, field service, and professional services." />
-        <link rel="canonical" href="https://my-agent-verse.lovable.app/services" />
-        <meta property="og:title" content="Services | MyAgentVerse" />
-        <meta property="og:description" content="Custom AI agents and workflow automation for $1M–$5M businesses." />
-        <meta property="og:url" content="https://my-agent-verse.lovable.app/services" />
+        <title>AI Automation Services for Small Business | MyAgentVerse</title>
+        <meta name="description" content="Custom AI automation services for $1M–$5M businesses. We automate calls, follow-ups, scheduling, and workflows so your team can focus on growth. Based in The Woodlands, TX." />
+        <meta property="og:title" content="AI Automation Services for Small Business | MyAgentVerse" />
+        <meta property="og:description" content="Custom AI automation services for $1M–$5M businesses. We automate calls, follow-ups, scheduling, and workflows." />
+        <meta property="og:url" content="https://myagentverse.com/services" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/services" />
       </Helmet>
       <Header />
-
-
 
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] py-24 md:py-32">

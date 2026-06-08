@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import DemoModal from "@/components/DemoModal";
 import { RealtorLeadDialog } from "@/components/RealtorLeadDialog";
 import { Phone, Calendar, Sheet, Mic, Clock, CheckCircle, Star, Headset } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import realtorBusyImage from "@/assets/realtor-busy-calls.jpg";
 import guaranteePartnershipImage from "@/assets/guarantee-partnership.png";

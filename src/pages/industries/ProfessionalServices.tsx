@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -106,6 +107,15 @@ const stats = [
 export default function ProfessionalServices() {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>AI Automation for Professional Services Firms | MyAgentVerse</title>
+        <meta name="description" content="AI automation for consultants, law firms, accountants, and agencies. Automate client intake, follow-ups, scheduling, and reporting so your team focuses on billable work." />
+        <meta property="og:title" content="AI Automation for Professional Services Firms | MyAgentVerse" />
+        <meta property="og:description" content="Automate client intake, follow-ups, and scheduling for professional services firms with custom AI agents." />
+        <meta property="og:url" content="https://myagentverse.com/industries/professional-services" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/industries/professional-services" />
+      </Helmet>
       <Header />
 
       {/* Hero */}

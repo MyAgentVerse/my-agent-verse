@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -101,6 +102,15 @@ const testimonials = [
 const Results = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AI Automation Results & Case Studies | MyAgentVerse</title>
+        <meta name="description" content="Real results from real businesses. See how MyAgentVerse AI automation has saved HVAC contractors, realtors, and manufacturers hours per week and thousands per month." />
+        <meta property="og:title" content="AI Automation Results & Case Studies | MyAgentVerse" />
+        <meta property="og:description" content="Real results from real businesses — how AI automation saves time and drives revenue for HVAC, real estate, and manufacturing companies." />
+        <meta property="og:url" content="https://myagentverse.com/results" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/results" />
+      </Helmet>
       <Header />
       <main>
 

@@ -35,6 +35,8 @@ const HealthcareDemo  = lazy(() => import("./pages/HealthcareDemo"));
 const PlayWithAI      = lazy(() => import("./pages/PlayWithAI"));
 const Industries      = lazy(() => import("./pages/Industries"));
 const LandingPage     = lazy(() => import("./pages/LandingPage"));
+const Houston         = lazy(() => import("./pages/locations/Houston"));
+const TheWoodlands    = lazy(() => import("./pages/locations/TheWoodlands"));
 const AdminLogin      = lazy(() => import("./pages/admin/Login"));
 const Dashboard       = lazy(() => import("./pages/admin/Dashboard"));
 const ConsultationDashboard = lazy(() => import("./pages/admin/ConsultationDashboard"));
@@ -76,6 +78,10 @@ const App = () => (
             <Route path="/discovery-call" element={<DiscoveryCall />} />
             <Route path="/healthcare-demo" element={<HealthcareDemo />} />
             <Route path="/playwithai" element={<PlayWithAI />} />
+
+            {/* Location pages */}
+            <Route path="/houston" element={<Houston />} />
+            <Route path="/the-woodlands" element={<TheWoodlands />} />
 
             {/* Admin routes */}
             <Route path="/admin/login" element={<AdminLogin />} />

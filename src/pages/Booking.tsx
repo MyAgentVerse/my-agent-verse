@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,6 +15,15 @@ const Booking = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Book a Free AI Strategy Call | MyAgentVerse</title>
+        <meta name="description" content="Schedule your free 30-minute AI strategy call with MyAgentVerse. We'll identify your biggest automation opportunities and show you exactly what's possible for your business." />
+        <meta property="og:title" content="Book a Free AI Strategy Call | MyAgentVerse" />
+        <meta property="og:description" content="Schedule your free 30-minute AI strategy call. We'll find your biggest automation opportunities and map out the solution." />
+        <meta property="og:url" content="https://myagentverse.com/booking" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/booking" />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

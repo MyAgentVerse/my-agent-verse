@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -30,12 +30,13 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>About MyAgentVerse — Owned AI Automation for SMBs</title>
-        <meta name="description" content="We build owned AI automation systems for $1M–$5M businesses. No lock-in, fast ROI, simple by design. Based in The Woodlands, TX." />
-        <link rel="canonical" href="https://my-agent-verse.lovable.app/about" />
-        <meta property="og:title" content="About MyAgentVerse" />
-        <meta property="og:description" content="Owned AI automation systems for SMBs — fast ROI, no platform lock-in." />
-        <meta property="og:url" content="https://my-agent-verse.lovable.app/about" />
+        <title>About MyAgentVerse | AI Automation Agency — The Woodlands, TX</title>
+        <meta name="description" content="MyAgentVerse is a boutique AI automation agency based in The Woodlands, TX. We build custom AI agents for $1M–$5M businesses that automate follow-ups, scheduling, and workflows." />
+        <meta property="og:title" content="About MyAgentVerse | AI Automation Agency — The Woodlands, TX" />
+        <meta property="og:description" content="Boutique AI automation agency in The Woodlands, TX building custom AI agents for growing businesses." />
+        <meta property="og:url" content="https://myagentverse.com/about" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/about" />
       </Helmet>
       <Header />
       <main>

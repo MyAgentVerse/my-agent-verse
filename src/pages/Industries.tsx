@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,15 @@ import { Button } from "@/components/ui/button";
 const Industries = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Industries We Serve | AI Automation for HVAC, Real Estate & Manufacturing</title>
+        <meta name="description" content="MyAgentVerse builds AI automation for HVAC contractors, realtors, manufacturers, and field service businesses. 24/7 AI agents that handle calls, leads, and workflows." />
+        <meta property="og:title" content="Industries We Serve | AI Automation for HVAC, Real Estate & Manufacturing" />
+        <meta property="og:description" content="AI automation built for HVAC, real estate, manufacturing, and field service businesses. 24/7 coverage, no training required." />
+        <meta property="og:url" content="https://myagentverse.com/industries" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/industries" />
+      </Helmet>
       <Header />
       <main className="container mx-auto px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -107,6 +108,15 @@ const stats = [
 export default function Manufacturing() {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>AI Automation for Manufacturing Companies | MyAgentVerse</title>
+        <meta name="description" content="Custom AI automation for manufacturers and distributors. Automate production scheduling, quality tracking, supplier follow-ups, and reporting. Built for $1M–$5M manufacturers." />
+        <meta property="og:title" content="AI Automation for Manufacturing Companies | MyAgentVerse" />
+        <meta property="og:description" content="AI agents for manufacturers — automate scheduling, quality tracking, and supplier follow-ups. Built for growing manufacturing businesses." />
+        <meta property="og:url" content="https://myagentverse.com/industries/manufacturing" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/industries/manufacturing" />
+      </Helmet>
       <Header />
 
       {/* Hero */}

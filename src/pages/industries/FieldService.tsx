@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -107,6 +108,15 @@ const stats = [
 export default function FieldService() {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>AI Automation for Field Service Businesses | MyAgentVerse</title>
+        <meta name="description" content="AI agents built for field service companies — HVAC, plumbing, electrical, and more. Automate dispatch, booking, follow-ups, and customer communication 24/7." />
+        <meta property="og:title" content="AI Automation for Field Service Businesses | MyAgentVerse" />
+        <meta property="og:description" content="Automate dispatch, booking, and customer follow-ups for your field service business with custom AI agents." />
+        <meta property="og:url" content="https://myagentverse.com/industries/field-service" />
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <link rel="canonical" href="https://myagentverse.com/industries/field-service" />
+      </Helmet>
       <Header />
 
       {/* Hero */}
