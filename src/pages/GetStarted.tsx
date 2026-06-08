@@ -243,10 +243,11 @@ export default function GetStarted() {
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                          <label htmlFor="gs-name" className="block text-sm font-medium text-slate-700 mb-1">
                             Name *
                           </label>
                           <input
+                            id="gs-name"
                             required
                             name="name"
                             value={form.name}
@@ -256,10 +257,11 @@ export default function GetStarted() {
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                          <label htmlFor="gs-email" className="block text-sm font-medium text-slate-700 mb-1">
                             Email *
                           </label>
                           <input
+                            id="gs-email"
                             required
                             type="email"
                             name="email"
@@ -271,10 +273,11 @@ export default function GetStarted() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                        <label htmlFor="gs-phone" className="block text-sm font-medium text-slate-700 mb-1">
                           Phone
                         </label>
                         <input
+                          id="gs-phone"
                           name="phone"
                           value={form.phone}
                           onChange={handleChange}
@@ -283,10 +286,11 @@ export default function GetStarted() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                        <label htmlFor="gs-message" className="block text-sm font-medium text-slate-700 mb-1">
                           Message *
                         </label>
                         <textarea
+                          id="gs-message"
                           required
                           name="message"
                           value={form.message}
