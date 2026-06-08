@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "./components/admin/ProtectedRoute";
+import ChatWidget from "./components/ChatWidget";
 
 // ── Eagerly loaded (core pages, zero heavy deps) ───────────────────────────
 import Home from "./pages/Home";
@@ -33,6 +34,7 @@ const DiscoveryCall   = lazy(() => import("./pages/DiscoveryCall"));
 const HealthcareDemo  = lazy(() => import("./pages/HealthcareDemo"));
 const PlayWithAI      = lazy(() => import("./pages/PlayWithAI"));
 const Industries      = lazy(() => import("./pages/Industries"));
+const LandingPage     = lazy(() => import("./pages/LandingPage"));
 const AdminLogin      = lazy(() => import("./pages/admin/Login"));
 const Dashboard       = lazy(() => import("./pages/admin/Dashboard"));
 const ConsultationDashboard = lazy(() => import("./pages/admin/ConsultationDashboard"));
@@ -44,6 +46,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ChatWidget />
       <BrowserRouter>
         <Suspense fallback={null}>
           <Routes>
@@ -92,6 +95,9 @@ const App = () => (
                 </ProtectedRoute>
               }
             />
+
+            {/* Ad landing page — no nav */}
+            <Route path="/lp" element={<LandingPage />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
