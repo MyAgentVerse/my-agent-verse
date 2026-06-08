@@ -1,4 +1,5 @@
 // === FILE: src/pages/Services.tsx ===
+import { HF } from "@/lib/hf-images";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -16,10 +17,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import buildHero from "@/assets/build-hero.jpg";
-import manufacturingOperations from "@/assets/manufacturing-operations.jpg";
-import realtorDashboard from "@/assets/realtor-dashboard.jpg";
-import aiMattersInfographic from "@/assets/ai-matters-infographic.jpg";
+
+
+
+
 
 const Services = () => {
   return (
@@ -61,7 +62,7 @@ const Services = () => {
             <div className="animate-fade-in relative hidden lg:block">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
                 <img
-                  src={buildHero}
+                  src={HF.heroOwner}
                   alt="Modern professional automation"
                   className="rounded-2xl shadow-xl object-cover w-full h-full"
                 />
@@ -79,7 +80,7 @@ const Services = () => {
             {/* Image on the left */}
             <div className="animate-fade-in relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] hidden lg:block">
               <img
-                src={manufacturingOperations}
+                src={HF.manufacturingMgr}
                 alt="Manufacturing operations floor"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -257,7 +258,7 @@ const Services = () => {
             {/* Image on the right */}
             <div className="animate-fade-in relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] hidden lg:block">
               <img
-                src={realtorDashboard}
+                src={HF.consultation}
                 alt="CRM dashboard view"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -317,7 +318,7 @@ const Services = () => {
             <div className="animate-fade-in space-y-6">
               <div className="relative overflow-hidden rounded-2xl shadow-xl h-72 hidden lg:block">
                 <img
-                  src={aiMattersInfographic}
+                  src={HF.professionalDesk}
                   alt="AI and automation infographic"
                   className="rounded-2xl shadow-xl object-cover w-full h-full"
                 />

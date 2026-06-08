@@ -4,9 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HF } from "@/lib/hf-images";
 import consultationHero from "@/assets/consultation-hero.jpg";
-import consultationResults from "@/assets/consultation-results.jpg";
-import buildCollaboration from "@/assets/build-collaboration.jpg";
+
+
 import {
   MailQuestion,
   FileSignature,

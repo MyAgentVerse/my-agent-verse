@@ -4,11 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HF } from "@/lib/hf-images";
 import manufacturingHero from "@/assets/manufacturing-hero.jpg";
-import manufacturingOperations from "@/assets/manufacturing-operations.jpg";
-import manufacturingEfficiency from "@/assets/manufacturing-efficiency.jpg";
-import manufacturingSupplyChain from "@/assets/manufacturing-supply-chain.jpg";
-import manufacturingForecasting from "@/assets/manufacturing-forecasting.jpg";
+
+
+
+
 import {
   FileText,
   CalendarDays,

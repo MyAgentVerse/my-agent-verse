@@ -6,11 +6,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
-import consultationHero from "@/assets/consultation-hero.jpg";
-import buildCollaboration from "@/assets/build-collaboration.jpg";
-import buildIdealClient from "@/assets/build-ideal-client.jpg";
-import consultationResults from "@/assets/consultation-results.jpg";
-import consultationRoadmap from "@/assets/consultation-roadmap.jpg";
+import { HF } from "@/lib/hf-images";
+
+
+
+
+
 
 interface FormState {
   name: string;
@@ -86,7 +87,7 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={consultationHero}
+                src={HF.consultation}
                 alt="Professional consultation meeting"
                 className="h-[420px] w-full object-cover rounded-2xl shadow-xl"
                 style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
@@ -110,7 +111,7 @@ export default function ProcessAudit() {
           {/* Banner image above 3 columns */}
           <div className="relative overflow-hidden mb-12">
             <img
-              src={buildCollaboration}
+              src={HF.consultation}
               alt="Team collaborating on process audit"
               className="w-full h-64 object-cover rounded-2xl shadow-xl"
             />
@@ -205,7 +206,7 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={buildIdealClient}
+                src={HF.heroOwner}
                 alt="Ideal client — business owner at work"
                 className="w-full h-[380px] object-cover rounded-2xl shadow-xl"
               />
@@ -266,7 +267,7 @@ export default function ProcessAudit() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={consultationResults}
+                src={HF.solutionClean}
                 alt="Consultation results and deliverables"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />
@@ -294,7 +295,7 @@ export default function ProcessAudit() {
             {/* Right — roadmap image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={consultationRoadmap}
+                src={HF.teamResults}
                 alt="Roadmap and planning visual"
                 className="w-full h-72 object-cover rounded-2xl shadow-xl opacity-80"
               />

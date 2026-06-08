@@ -4,10 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HF } from "@/lib/hf-images";
 import heroHvacTech from "@/assets/hero-hvac-tech.jpg";
-import hvacTechniciansWorking from "@/assets/hvac-technicians-working.jpg";
-import hvacSuccessTestimonial from "@/assets/hvac-success-testimonial.jpg";
-import buildBookingCalendar from "@/assets/build-booking-calendar.png";
+
+
+
 import {
   Timer,
   PhoneOff,

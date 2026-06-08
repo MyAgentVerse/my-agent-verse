@@ -17,12 +17,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
-import guaranteeBadge from "@/assets/guarantee-badge.png";
-import industriesConnected from "@/assets/industries-connected.jpg";
-import businessChaos from "@/assets/business-chaos.jpg";
-import problemSolutionSplit from "@/assets/problem-solution-split.jpg";
-import buildCollaboration from "@/assets/build-collaboration.jpg";
+import { HF } from "@/lib/hf-images";
+
+
+
+
+
 
 const Home = () => {
   return (
@@ -77,7 +77,7 @@ const Home = () => {
             <div className="animate-fade-in relative hidden lg:block">
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-tr from-[hsl(186_100%_27%)]/30 to-[hsl(42_100%_50%)]/20 blur-xl" />
               <img
-                src={heroAiWorkspace}
+                src={HF.heroOwner}
                 alt="AI automation workspace"
                 className="relative rounded-2xl object-cover shadow-2xl"
               />
@@ -94,7 +94,7 @@ const Home = () => {
           <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
             <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
               <img
-                src={businessChaos}
+                src={HF.painChaos}
                 alt="Overwhelmed team in chaotic office"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -169,7 +169,7 @@ const Home = () => {
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
               <img
-                src={problemSolutionSplit}
+                src={HF.solutionClean}
                 alt="Before and after: problem vs. solution"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -288,7 +288,7 @@ const Home = () => {
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-xl h-72">
               <img
-                src={industriesConnected}
+                src={HF.consultation}
                 alt="Connected systems and industries"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -389,7 +389,7 @@ const Home = () => {
             {/* Collaboration image */}
             <div className="relative overflow-hidden rounded-2xl shadow-xl h-full min-h-[400px] hidden lg:block">
               <img
-                src={buildCollaboration}
+                src={HF.teamResults}
                 alt="Team collaborating on automation project"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
@@ -403,7 +403,7 @@ const Home = () => {
         <div className="container mx-auto max-w-3xl px-6 text-center">
           <div className="animate-fade-in flex flex-col items-center gap-6 rounded-2xl border border-[hsl(186_100%_27%)]/20 bg-[hsl(186_100%_27%)]/5 p-10 shadow-lg">
             <img
-              src={guaranteeBadge}
+              src="/guarantee-badge.png"
               alt="Guarantee badge"
               className="h-24 w-24 object-contain"
             />

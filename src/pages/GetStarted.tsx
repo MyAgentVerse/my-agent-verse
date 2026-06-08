@@ -1,15 +1,16 @@
 // === FILE: src/pages/GetStarted.tsx ===
+import { HF } from "@/lib/hf-images";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import founderJourney from "@/assets/founder-journey.jpg";
-import consultationHero from "@/assets/consultation-hero.jpg";
-import buildCollaboration from "@/assets/build-collaboration.jpg";
-import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
-import consultationResults from "@/assets/consultation-results.jpg";
+
+
+
+
+
 
 interface ContactForm {
   name: string;
@@ -67,7 +68,7 @@ export default function GetStarted() {
             {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={founderJourney}
+                src={HF.heroOwner}
                 alt="Founder or business owner at work"
                 className="h-[400px] w-full object-cover rounded-2xl shadow-xl"
                 style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
@@ -86,7 +87,7 @@ export default function GetStarted() {
               {/* Card top image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={consultationHero}
+                  src={HF.consultation}
                   alt="Professional consultation meeting"
                   className="h-40 w-full object-cover rounded-xl"
                 />
@@ -135,7 +136,7 @@ export default function GetStarted() {
               {/* Card top image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={buildCollaboration}
+                  src={HF.teamResults}
                   alt="Team collaborating"
                   className="h-40 w-full object-cover rounded-xl"
                 />
@@ -280,7 +281,7 @@ export default function GetStarted() {
             {/* Right — decorative AI workspace image (hidden on mobile) */}
             <div className="relative overflow-hidden hidden md:block">
               <img
-                src={heroAiWorkspace}
+                src={HF.solutionClean}
                 alt="Modern AI workspace"
                 className="w-full h-full object-cover rounded-2xl shadow-xl"
                 style={{ minHeight: "420px" }}
@@ -300,7 +301,7 @@ export default function GetStarted() {
           {/* Decorative image above contact cards */}
           <div className="relative overflow-hidden mb-10 max-w-sm mx-auto">
             <img
-              src={consultationResults}
+              src={HF.solutionClean}
               alt="Consultation results visual"
               className="w-full h-40 object-cover rounded-2xl shadow-xl"
             />

@@ -3,8 +3,9 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, ArrowRight, MapPin, Phone, Shield, Zap, Heart } from "lucide-react";
+import { HF } from "@/lib/hf-images";
 import founderJourney from "@/assets/founder-journey.jpg";
-import aiTeam from "@/assets/ai-team-avatars.jpg";
+
 import guaranteeBadge from "@/assets/guarantee-badge.png";
 
 const beliefs = [
@@ -54,7 +55,7 @@ const About = () => {
               </div>
               <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-2xl" />
-                <img src={founderJourney} alt="Our team" className="relative rounded-2xl shadow-2xl w-full object-cover" />
+                <img src={HF.heroOwner} alt="Our team" className="relative rounded-2xl shadow-2xl w-full object-cover" />
               </div>
             </div>
           </div>
@@ -65,7 +66,7 @@ const About = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
               <div className="animate-fade-in">
-                <img src={aiTeam} alt="Our team at work" className="rounded-2xl shadow-lg w-full object-cover hover-scale" />
+                <img src={HF.teamResults} alt="Our team at work" className="rounded-2xl shadow-lg w-full object-cover hover-scale" />
               </div>
               <div className="animate-fade-in">
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
