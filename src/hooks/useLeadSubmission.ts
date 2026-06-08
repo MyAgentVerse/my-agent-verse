@@ -75,6 +75,24 @@ export const useLeadSubmission = () => {
         // Don't fail the lead submission if n8n notification fails
       }
 
+      // Send Slack notification via Vercel API
+      try {
+        fetch('/api/slack-notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            form_type: data.form_type,
+            custom_fields: data.custom_fields,
+            form_source: window.location.pathname,
+          }),
+        }).catch(() => {});
+      } catch (slackError) {
+        console.error('Failed to send Slack notification:', slackError);
+      }
+
       return { success: true, lead };
     } catch (error: any) {
       console.error('Lead submission error:', error);
