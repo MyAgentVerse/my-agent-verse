@@ -158,7 +158,7 @@ const PlayWithAI = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             sessionId,
-            question,
+            question: values.question,
           }),
         });
 
