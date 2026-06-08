@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Users can view their submitted leads" ON public.leads;
