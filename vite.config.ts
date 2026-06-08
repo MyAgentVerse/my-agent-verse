@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -14,8 +13,31 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Force a single React instance — prevents duplicate React errors
-    // from packages like @calcom/embed-react that bundle their own copy
     dedupe: ["react", "react-dom", "react-router-dom"],
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // React MUST be in its own chunk so it initializes first
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          // Heavy UI libraries in separate chunks
+          "vendor-ui": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-sheet",
+          ],
+          // Supabase / data layer
+          "vendor-data": ["@supabase/supabase-js", "@tanstack/react-query"],
+          // Cal.com (known duplicate React offender — isolated)
+          "vendor-cal": ["@calcom/embed-react"],
+        },
+      },
+    },
   },
 }));
