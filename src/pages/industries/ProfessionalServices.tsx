@@ -59,25 +59,25 @@ const automations = [
     icon: <UserCheck className="w-8 h-8 text-teal-600" />,
     title: "Client Onboarding Workflow",
     desc: "New client triggers an automated sequence: welcome email, document request, e-signature routing, CRM update — onboarding completes in 2 days, not 2 weeks.",
-    image: buildCollaboration,
+    image: HF.teamResults,
   },
   {
     icon: <FilePlus className="w-8 h-8 text-teal-600" />,
     title: "Proposal & Contract Generation",
     desc: "Pull client details, populate your template, generate a polished proposal or contract in seconds — ready to send before the meeting ends.",
-    image: consultationResults,
+    image: HF.solutionClean,
   },
   {
     icon: <DollarSign className="w-8 h-8 text-teal-600" />,
     title: "Invoice & Payment Follow-Up",
     desc: "Invoices sent automatically on schedule. Follow-up sequences fire at 7, 14, and 30 days — 100% follow-up rate with zero staff time.",
-    image: consultationHero,
+    image: HF.professionalDesk,
   },
   {
     icon: <Plug className="w-8 h-8 text-teal-600" />,
     title: "Intake-to-CRM Automation",
     desc: "Client submits intake form → data flows directly into your CRM, tagged and ready for your team. No re-typing, no errors, no lag.",
-    image: buildCollaboration,
+    image: HF.teamResults,
   },
 ];
 
@@ -113,7 +113,7 @@ export default function ProfessionalServices() {
       <section className="relative overflow-hidden min-h-[600px] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${consultationHero})` }}
+          style={{ backgroundImage: `url(${HF.professionalDesk})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,40%,10%)]/90 via-[hsl(220,40%,10%)]/70 to-transparent" />
         <div className="absolute top-20 right-28 w-80 h-80 rounded-full bg-teal-500/15 blur-3xl pointer-events-none" />

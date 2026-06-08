@@ -60,25 +60,25 @@ const automations = [
     icon: <Calendar className="w-8 h-8 text-teal-600" />,
     title: "Job Dispatch Automation",
     desc: "New job request triggers automatic assignment to the right tech based on location, availability, and skill — no phone tag required.",
-    image: buildBookingCalendar,
+    image: HF.solutionClean,
   },
   {
     icon: <Repeat2 className="w-8 h-8 text-teal-600" />,
     title: "Quote-to-Follow-Up Sequence",
     desc: "Quote sent automatically minutes after assessment. Follow-up sequence fires at 24h, 48h, and 7 days — capturing acceptances you'd otherwise miss.",
-    image: hvacTechniciansWorking,
+    image: HF.hvacTech,
   },
   {
     icon: <Bell className="w-8 h-8 text-teal-600" />,
     title: "Customer Update Notifications",
     desc: "Customers get automatic SMS/email when job is scheduled, when tech is en route, and when job is complete — zero manual communication.",
-    image: hvacSuccessTestimonial,
+    image: HF.consultation,
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-teal-600" />,
     title: "Weekly Reporting",
     desc: "Every Monday morning: auto-compiled report of jobs completed, revenue, tech utilization, and open quotes — pulled from your existing job data.",
-    image: buildBookingCalendar,
+    image: HF.solutionClean,
   },
 ];
 

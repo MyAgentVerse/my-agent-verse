@@ -60,25 +60,25 @@ const automations = [
     icon: <FileText className="w-8 h-8 text-teal-600" />,
     title: "Invoice & PO Processing",
     desc: "Auto-extract line items from invoices, match against POs, route for approval, and post to your accounting system — zero manual entry.",
-    image: manufacturingOperations,
+    image: HF.manufacturingMgr,
   },
   {
     icon: <ClipboardList className="w-8 h-8 text-teal-600" />,
     title: "Production Reporting",
     desc: "Auto-compile shift data from your machines and operators, flag exceptions, and deliver reports before the next shift starts.",
-    image: manufacturingEfficiency,
+    image: HF.teamResults,
   },
   {
     icon: <Truck className="w-8 h-8 text-teal-600" />,
     title: "Vendor Communication",
     desc: "Automated PO issuance, delivery confirmations, and vendor follow-ups — your purchasing runs itself.",
-    image: manufacturingSupplyChain,
+    image: HF.consultation,
   },
   {
     icon: <Calculator className="w-8 h-8 text-teal-600" />,
     title: "Job Costing & Quoting",
     desc: "Pull live material costs, apply labor rates, and generate accurate estimates automatically — quote faster, win more.",
-    image: manufacturingForecasting,
+    image: HF.solutionClean,
   },
 ];
 
