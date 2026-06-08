@@ -107,7 +107,7 @@ export default async function handler(req, res) {
     const data = await completion.json();
     const reply = data.choices?.[0]?.message?.content || "Sorry, I had trouble responding. Call us at (281) 699-8318!";
 
-    // Non-blocking lead capture
+    // Non-blocking lead capture + Slack notification
     const { name, email, phone } = extractLead(messages);
     if (name && (email || phone)) {
       const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
@@ -127,6 +127,43 @@ export default async function handler(req, res) {
             phone: phone || undefined,
             form_type: "chat",
             custom_fields: { source: "chat_widget", last_message: lastUser?.content },
+          }),
+        }).catch(() => {});
+      }
+
+      // Slack notification
+      const slackWebhook = process.env.SLACK_WEBHOOK_URL;
+      if (slackWebhook) {
+        fetch(slackWebhook, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: `💬 New Chat Lead — ${name}`,
+            blocks: [
+              {
+                type: "header",
+                text: { type: "plain_text", text: "💬 New Chat Lead", emoji: true },
+              },
+              {
+                type: "section",
+                fields: [
+                  { type: "mrkdwn", text: `*Name:*\n${name}` },
+                  { type: "mrkdwn", text: `*Email:*\n${email ?? "—"}` },
+                  { type: "mrkdwn", text: `*Phone:*\n${phone ?? "—"}` },
+                  { type: "mrkdwn", text: `*Last Message:*\n${lastUser?.content ?? "—"}` },
+                ],
+              },
+              { type: "divider" },
+              {
+                type: "context",
+                elements: [
+                  {
+                    type: "mrkdwn",
+                    text: `Captured via chat widget · ${new Date().toLocaleString("en-US", { timeZone: "America/Chicago" })} CT`,
+                  },
+                ],
+              },
+            ],
           }),
         }).catch(() => {});
       }
