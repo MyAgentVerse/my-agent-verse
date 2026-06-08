@@ -1,6 +1,7 @@
 // === FILE: src/pages/GetStarted.tsx ===
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,31 @@ import consultationHero from "@/assets/consultation-hero.jpg";
 import buildCollaboration from "@/assets/build-collaboration.jpg";
 import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
 import consultationResults from "@/assets/consultation-results.jpg";
+
+const FAQ_ITEMS = [
+  {
+    q: "Where are you located?",
+    a: "We're based in The Woodlands, TX. We work with businesses locally and remotely across the US — most of our work happens on Zoom.",
+  },
+  {
+    q: "How quickly do you respond?",
+    a: "Within 1 business day, usually same day. For urgent matters, call us directly at (281) 699-8318.",
+  },
+  {
+    q: "How do I know if my business is a good fit?",
+    a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 30-minute Process Audit — no obligation, guaranteed results.",
+  },
+];
+
+const FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
 
 interface ContactForm {
   name: string;

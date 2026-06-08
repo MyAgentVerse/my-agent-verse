@@ -1,6 +1,7 @@
 // === FILE: src/pages/ProcessAudit.tsx ===
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProcessAuditVideo from "@/components/ProcessAuditVideo";
@@ -46,6 +47,14 @@ export default function ProcessAudit() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <Helmet>
+        <title>Free Process Audit — Find Hidden Automation ROI | MyAgentVerse</title>
+        <meta name="description" content="Free 30-minute Process Audit. We map your top manual processes and deliver an Automation Opportunity Map with projected time and cost savings." />
+        <link rel="canonical" href="https://my-agent-verse.lovable.app/process-audit" />
+        <meta property="og:title" content="Free Process Audit | MyAgentVerse" />
+        <meta property="og:description" content="30-minute audit that maps your highest-ROI automation opportunities. Free, guaranteed, no obligation." />
+        <meta property="og:url" content="https://my-agent-verse.lovable.app/process-audit" />
+      </Helmet>
       <Header />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
@@ -352,10 +361,11 @@ export default function ProcessAudit() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
+                      <label htmlFor="pa-name" className="block text-sm font-medium text-slate-700 mb-1">
                         Name *
                       </label>
                       <input
+                        id="pa-name"
                         required
                         name="name"
                         value={form.name}
@@ -365,10 +375,11 @@ export default function ProcessAudit() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
+                      <label htmlFor="pa-company" className="block text-sm font-medium text-slate-700 mb-1">
                         Company *
                       </label>
                       <input
+                        id="pa-company"
                         required
                         name="company"
                         value={form.company}
@@ -380,10 +391,11 @@ export default function ProcessAudit() {
                   </div>
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
+                      <label htmlFor="pa-phone" className="block text-sm font-medium text-slate-700 mb-1">
                         Phone
                       </label>
                       <input
+                        id="pa-phone"
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
@@ -392,10 +404,11 @@ export default function ProcessAudit() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
+                      <label htmlFor="pa-email" className="block text-sm font-medium text-slate-700 mb-1">
                         Email *
                       </label>
                       <input
+                        id="pa-email"
                         required
                         type="email"
                         name="email"
@@ -407,10 +420,11 @@ export default function ProcessAudit() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                    <label htmlFor="pa-painProcess" className="block text-sm font-medium text-slate-700 mb-1">
                       What's the most painful process in your business right now? *
                     </label>
                     <textarea
+                      id="pa-painProcess"
                       required
                       name="painProcess"
                       value={form.painProcess}
