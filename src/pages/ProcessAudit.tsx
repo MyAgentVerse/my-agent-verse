@@ -48,57 +48,70 @@ export default function ProcessAudit() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Helmet>
-        <title>Free AI Process Audit for Small Business | MyAgentVerse</title>
-        <meta name="description" content="Book your free AI Process Audit. We identify which workflows are costing your business the most time and money, then show you exactly how to automate them. The Woodlands, TX." />
-        <meta property="og:title" content="Free AI Process Audit for Small Business | MyAgentVerse" />
-        <meta property="og:description" content="Book your free AI Process Audit. We identify which workflows cost you the most and show you exactly how to automate them." />
-        <meta property="og:url" content="https://myagentverse.com/process-audit" />
-        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+        <title>Free Business Bottleneck Assessment | MyAgentVerse</title>
+        <meta
+          name="description"
+          content="Book your free Business Bottleneck Assessment. We find the operational bottleneck that's costing your business the most time and money, then show you exactly how to fix it. The Woodlands, TX."
+        />
+        <meta
+          property="og:title"
+          content="Free Business Bottleneck Assessment | MyAgentVerse"
+        />
+        <meta
+          property="og:description"
+          content="Find out exactly where your business is losing time and money. Free 60-minute session, written findings, no obligation."
+        />
+        <meta
+          property="og:url"
+          content="https://myagentverse.com/process-audit"
+        />
+        <meta
+          property="og:image"
+          content="https://myagentverse.com/social-preview.png"
+        />
         <link rel="canonical" href="https://myagentverse.com/process-audit" />
       </Helmet>
       <Header />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] text-white py-24 px-6">
-        {/* gradient blobs */}
         <div className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[hsl(186_100%_27%)/20] blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[420px] h-[420px] rounded-full bg-[hsl(42_100%_50%)/15] blur-[100px]" />
 
         <div className="relative mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center animate-fade-in">
-            {/* Left — text */}
             <div>
               <div className="inline-block mb-4 rounded-full bg-[hsl(186_100%_27%)/30] px-4 py-1 text-sm font-medium text-[hsl(186_100%_70%)]">
-                Free — No Obligation
+                Free. No Obligation.
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                Find Out Exactly What's Costing You{" "}
-                <span className="text-[hsl(42_100%_50%)]">Time and Money</span>{" "}
-                — Free.
+                Your Business Has a Bottleneck.{" "}
+                <span className="text-[hsl(42_100%_50%)]">
+                  Let's Find It Together.
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 mb-8">
-                In a free 30-minute call, we map your top 3–5 most painful manual
-                processes and show you exactly what can be automated — with projected
-                time and cost savings. No pitch. Just a map.
+                In a free 60-minute session, we map your operation, identify the
+                bottlenecks costing you the most time and money, and give you a
+                clear plan to fix them. You leave with a written report
+                regardless of what you decide to do next.
               </p>
-              <Link to="/get-started">
+              <a href="#book">
                 <Button
                   size="lg"
                   className="bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base px-8 py-4 h-auto transition-transform hover:scale-105"
                 >
-                  Book My Free Process Audit
+                  Book My Free Assessment
                 </Button>
-              </Link>
+              </a>
               <p className="mt-4 text-sm text-slate-400">
-                Takes 30 minutes. We bring the analysis. You bring your biggest
-                operational headache.
+                60 minutes. Written findings. Zero pressure.
               </p>
             </div>
-            {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
                 src={consultationHero}
-                alt="Professional consultation meeting"
+                alt="Business bottleneck assessment session"
                 className="h-[420px] w-full object-cover rounded-2xl shadow-xl"
                 style={{ boxShadow: "0 0 40px 0 hsl(186 100% 27% / 0.35)" }}
               />
@@ -111,28 +124,27 @@ export default function ProcessAudit() {
       <section className="py-16 px-6 bg-[hsl(222_47%_11%)]">
         <div className="mx-auto max-w-4xl">
           <p className="text-center text-slate-400 text-sm uppercase tracking-widest mb-6 font-medium">
-            See how it works — 15 seconds
+            See how it works
           </p>
           <ProcessAuditVideo />
         </div>
       </section>
 
-      {/* ── What Happens in the Audit ────────────────────────────────────── */}
+      {/* ── What Happens in the Session ──────────────────────────────────── */}
       <section className="py-20 px-6 bg-slate-50">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold text-center text-[hsl(222_47%_11%)] mb-4">
-            What Happens in the Audit
+            What Happens in the Assessment
           </h2>
           <p className="text-center text-slate-500 mb-12 max-w-xl mx-auto">
-            A focused 30-minute Zoom call that ends with a concrete plan in your
-            hands.
+            A focused 60-minute session that ends with a written bottleneck
+            report and a clear path forward.
           </p>
 
-          {/* Banner image above 3 columns */}
           <div className="relative overflow-hidden mb-12">
             <img
               src={buildCollaboration}
-              alt="Team collaborating on process audit"
+              alt="Business assessment session"
               className="w-full h-64 object-cover rounded-2xl shadow-xl"
             />
           </div>
@@ -141,18 +153,18 @@ export default function ProcessAudit() {
             {[
               {
                 step: "01",
-                title: "We Listen",
-                body: "You walk us through the processes that slow your team down most. No jargon, no prep work required — just your honest frustrations.",
+                title: "We Map Your Operation",
+                body: "You walk us through how your business runs day to day. What your team does, where things slow down, what falls through the cracks. No prep required.",
               },
               {
                 step: "02",
-                title: "We Map It",
-                body: "We identify the specific automation opportunities and rank them by ROI — so you know exactly where the biggest wins are hiding.",
+                title: "We Find the Bottlenecks",
+                body: "We identify the specific constraints limiting your growth and rank them by the impact they're having on your time, your team, and your revenue.",
               },
               {
                 step: "03",
-                title: "You Get a Plan",
-                body: "A 1-page Automation Opportunity Map: what to automate, in what order, with estimated time and cost savings you can take to your team.",
+                title: "You Get a Written Plan",
+                body: "A clear, one-page Bottleneck Report showing what's slowing you down, what to fix first, and what the fix could realistically save you. Yours to keep.",
               },
             ].map(({ step, title, body }) => (
               <Card
@@ -190,8 +202,10 @@ export default function ProcessAudit() {
                 </h2>
                 <p className="text-lg text-slate-700 leading-relaxed">
                   If we can't identify at least{" "}
-                  <strong>5 automation opportunities with positive ROI</strong>{" "}
-                  in your business, the audit costs you nothing. Not a dollar.
+                  <strong>5 bottlenecks worth fixing</strong> in your business,
+                  the session costs you nothing. Not a dollar. Not even your
+                  time, because you'll walk away with something useful no matter
+                  what.
                 </p>
               </div>
             </CardContent>
@@ -203,17 +217,17 @@ export default function ProcessAudit() {
       <section className="py-20 px-6 bg-white">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold text-[hsl(222_47%_11%)] mb-10 text-center">
-            Who This Is For
+            This Is For You If
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left — checklist */}
             <div className="space-y-4">
               {[
-                "You run a $1M–$5M revenue business",
-                "Your team does repetitive manual work every week",
-                "You've looked at automation tools but don't know where to start",
-                "You want results in 60 days, not a 12-month roadmap",
-                "You want to own what gets built — no platform lock-in",
+                "You own or run a service-based business",
+                "Your team spends time on repetitive work that could be automated",
+                "You're missing leads, calls, or follow-ups because nobody has the bandwidth",
+                "You want to grow but don't want to just keep adding headcount",
+                "You want results in weeks, not a 12-month roadmap",
+                "You want to own whatever gets built with no platform lock-in",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-4">
                   <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-[hsl(186_100%_27%)] flex items-center justify-center text-white text-sm font-bold">
@@ -223,11 +237,10 @@ export default function ProcessAudit() {
                 </div>
               ))}
             </div>
-            {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
                 src={buildIdealClient}
-                alt="Ideal client — business owner at work"
+                alt="Business owner at work"
                 className="w-full h-[380px] object-cover rounded-2xl shadow-xl"
               />
             </div>
@@ -242,28 +255,27 @@ export default function ProcessAudit() {
             What You Walk Away With
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left — deliverable cards */}
             <div className="grid gap-6">
               {[
                 {
                   icon: "🗺️",
-                  title: "Automation Opportunity Map",
-                  body: "Your top processes ranked by ROI — a clear, one-page document you can act on immediately.",
+                  title: "Bottleneck Report",
+                  body: "A clear, one-page document showing your top bottlenecks ranked by the impact they're having on your time, team, and revenue.",
                 },
                 {
                   icon: "⏱️",
                   title: "Time Savings Estimate",
-                  body: "Hours per week your team gets back when each automation is live.",
+                  body: "How many hours per week your team gets back when each bottleneck is removed. Real numbers based on your actual operation.",
                 },
                 {
                   icon: "💰",
                   title: "Cost Savings Projection",
-                  body: "Annual dollar value of automating each process, based on your actual labor costs.",
+                  body: "The annual dollar value of fixing each bottleneck, based on your labor costs and the volume of work involved.",
                 },
                 {
                   icon: "📋",
-                  title: "Priority Sequence",
-                  body: "What to fix first, second, and third — so you get the highest ROI fastest.",
+                  title: "Priority Action Plan",
+                  body: "What to fix first, second, and third so you get the highest return as fast as possible. A sequenced roadmap, not a vague suggestion.",
                 },
               ].map(({ icon, title, body }) => (
                 <Card
@@ -284,11 +296,10 @@ export default function ProcessAudit() {
                 </Card>
               ))}
             </div>
-            {/* Right — image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
                 src={consultationResults}
-                alt="Consultation results and deliverables"
+                alt="Assessment deliverables"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />
             </div>
@@ -300,23 +311,21 @@ export default function ProcessAudit() {
       <section className="py-20 px-6 bg-[hsl(222_47%_11%)]">
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left — quote */}
             <div className="text-center md:text-left">
               <div className="text-[hsl(42_100%_50%)] text-5xl mb-6">"</div>
               <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8">
-                We were copy-pasting data between 4 systems every morning. The audit
-                took 30 minutes and we had a clear plan by the end of the week. The
-                automation paid for itself in 6 weeks.
+                We were copy-pasting data between 4 systems every morning. The
+                assessment took 60 minutes and we had a clear plan by the end of
+                the call. The automation paid for itself in 6 weeks.
               </blockquote>
               <p className="text-slate-400 text-sm font-medium uppercase tracking-widest">
-                — Operations Manager, Houston Manufacturing Co.
+                Operations Manager, Houston Manufacturing Co.
               </p>
             </div>
-            {/* Right — roadmap image */}
             <div className="relative overflow-hidden hidden md:block">
               <img
                 src={consultationRoadmap}
-                alt="Roadmap and planning visual"
+                alt="Business planning session"
                 className="w-full h-72 object-cover rounded-2xl shadow-xl opacity-80"
               />
             </div>
@@ -328,7 +337,7 @@ export default function ProcessAudit() {
       <section id="book" className="py-20 px-6 bg-white">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold text-center text-[hsl(222_47%_11%)] mb-3">
-            Book Your Free Process Audit
+            Book Your Free Business Bottleneck Assessment
           </h2>
           <p className="text-center text-slate-500 mb-4">
             Or call us directly:{" "}
@@ -348,11 +357,11 @@ export default function ProcessAudit() {
               <CardContent className="p-10 text-center">
                 <div className="text-5xl mb-4">✅</div>
                 <h3 className="text-2xl font-bold text-[hsl(222_47%_11%)] mb-2">
-                  You're on the calendar!
+                  You're on the calendar.
                 </h3>
                 <p className="text-slate-600">
-                  We'll reach out within 1 business day to confirm your 30-minute
-                  audit time. Check your email for next steps.
+                  We'll reach out within 1 business day to confirm your session
+                  time. Check your email for next steps.
                 </p>
               </CardContent>
             </Card>
@@ -418,7 +427,7 @@ export default function ProcessAudit() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">
-                      What's the most painful process in your business right now? *
+                      What's the biggest bottleneck in your business right now? *
                     </label>
                     <textarea
                       required
@@ -426,7 +435,7 @@ export default function ProcessAudit() {
                       value={form.painProcess}
                       onChange={handleChange}
                       rows={4}
-                      placeholder="We manually copy orders from our website into QuickBooks every evening..."
+                      placeholder="We manually copy orders from our website into QuickBooks every evening. It takes two hours and someone always makes an error..."
                       className="w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(186_100%_27%)] resize-none"
                     />
                   </div>
@@ -435,10 +444,11 @@ export default function ProcessAudit() {
                     size="lg"
                     className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12"
                   >
-                    Book My Free Process Audit
+                    Book My Free Assessment
                   </Button>
                   <p className="text-center text-xs text-slate-400">
-                    No spam. No sales pitch. Just a 30-minute conversation.
+                    No spam. No sales pitch. Just a 60-minute conversation that
+                    could change how your business operates.
                   </p>
                 </form>
               </CardContent>
@@ -451,25 +461,29 @@ export default function ProcessAudit() {
       <section className="py-20 px-6 bg-slate-50">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold text-center text-[hsl(222_47%_11%)] mb-12">
-            Frequently Asked Questions
+            Common Questions
           </h2>
           <div className="space-y-6">
             {[
               {
-                q: "How long does the audit take?",
-                a: "30 minutes on Zoom. We keep it tight and respect your time.",
+                q: "How long does the session take?",
+                a: "60 minutes on Zoom. We use the full time. You'll leave with a written report, not just a conversation.",
               },
               {
                 q: "Is there any cost?",
-                a: "No cost, guaranteed. If we can't find at least 5 automation opportunities with positive ROI, you owe nothing.",
+                a: "None. If we can't find at least 5 bottlenecks worth fixing in your business, the session is free. If we do find them, the report is still yours to keep with no obligation to hire us.",
               },
               {
                 q: "Do I need to prepare anything?",
-                a: "Just think of your top 3 time-draining processes before the call. That's it. We'll do the rest.",
+                a: "Just think about where your team loses the most time in a typical week. That's it. We'll ask the right questions and map the rest.",
               },
               {
-                q: "What happens after the audit?",
-                a: "You get the Automation Opportunity Map. If you want to move forward, we scope a project together. No pressure — the map is yours to keep regardless.",
+                q: "What happens after the assessment?",
+                a: "You get your Bottleneck Report. If you want to move forward, we put together a scoped proposal. If you don't, you still have a clear picture of what to fix and in what order. No pressure either way.",
+              },
+              {
+                q: "What kind of businesses do you work with?",
+                a: "Service-based businesses across any industry: HVAC, healthcare, dental, real estate, law firms, manufacturing, field service, professional services. If your team is doing manual work that slows you down, we can help.",
               },
             ].map(({ q, a }) => (
               <Card key={q} className="border border-slate-200 shadow-sm">
@@ -486,19 +500,19 @@ export default function ProcessAudit() {
       {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-[hsl(186_100%_27%)] text-white text-center">
         <h2 className="text-3xl font-bold mb-4">
-          Ready to find your hidden hours?
+          Stop letting bottlenecks hold back your growth.
         </h2>
         <p className="text-[hsl(186_100%_85%)] mb-8 max-w-lg mx-auto">
-          30 minutes. A clear plan. Zero cost. Zero pressure.
+          60 minutes. A written plan. Zero cost. Zero pressure.
         </p>
-        <Link to="/get-started">
+        <a href="#book">
           <Button
             size="lg"
             className="bg-white text-[hsl(186_100%_27%)] hover:bg-slate-100 font-bold text-base px-8 h-12 transition-transform hover:scale-105"
           >
-            Book My Free Process Audit
+            Book My Free Assessment
           </Button>
-        </Link>
+        </a>
       </section>
 
       <Footer />
