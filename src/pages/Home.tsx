@@ -8,9 +8,10 @@ import {
   FileText,
   Users,
   Zap,
-  Shield,
   TrendingUp,
-  Quote,
+  Phone,
+  BarChart3,
+  Bot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,26 +32,25 @@ const Home = () => {
 
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[hsl(222_47%_11%)] py-24 md:py-32">
-        {/* Gradient blobs */}
         <div className="pointer-events-none absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-[hsl(186_100%_27%)] opacity-20 blur-[120px] animate-pulse" />
         <div className="pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[hsl(42_100%_50%)] opacity-10 blur-[100px] animate-pulse" />
 
         <div className="container relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Copy */}
             <div className="animate-fade-in space-y-8">
               <Badge className="border-[hsl(186_100%_27%)] bg-[hsl(186_100%_27%)]/10 text-[hsl(186_85%_60%)]">
-                AI Automation for Growing Businesses
+                AI-Powered Business Optimization
               </Badge>
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-                The stuff your team hates doing every week?{" "}
+                Your Business Has a Bottleneck.{" "}
                 <span className="text-[hsl(42_100%_50%)]">
-                  We make it run itself.
+                  We Find It. We Fix It.
                 </span>
               </h1>
               <p className="max-w-xl text-lg text-slate-300 md:text-xl">
-                We build custom AI systems for growing businesses that eliminate
-                your most costly, repetitive processes — in 60 days or less.
+                We identify and eliminate the operational bottlenecks that eat
+                your time, frustrate your team, and slow your growth. We use AI,
+                automation, and intelligent systems to remove them for good.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button
@@ -60,20 +60,29 @@ const Home = () => {
                   className="hover-scale group"
                 >
                   <Link to="/process-audit">
-                    Get Your Free Process Audit
+                    Book Free Bottleneck Assessment
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button asChild style={{background:"transparent",border:"1.5px solid rgba(255,255,255,0.4)",color:"white"}} size="lg" className="hover-scale hover:bg-white/10">
-                  <a href="tel:+12816998318">Call (281) 699-8318</a>
+                <Button
+                  asChild
+                  style={{
+                    background: "transparent",
+                    border: "1.5px solid rgba(255,255,255,0.4)",
+                    color: "white",
+                  }}
+                  size="lg"
+                  className="hover-scale hover:bg-white/10"
+                >
+                  <Link to="/services">See How It Works</Link>
                 </Button>
               </div>
               <p className="text-sm text-slate-400">
-                Based in The Woodlands, TX · Serving $1M–$5M businesses
+                Based in The Woodlands, TX · Serving service businesses across
+                the U.S.
               </p>
             </div>
 
-            {/* Hero image */}
             <div className="animate-fade-in relative hidden lg:block">
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-tr from-[hsl(186_100%_27%)]/30 to-[hsl(42_100%_50%)]/20 blur-xl" />
               <img
@@ -86,27 +95,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 2. PAIN SECTION ─────────────────────────────────────── */}
+      {/* ── 2. PROBLEM SECTION ──────────────────────────────────── */}
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
-
-          {/* Split layout: image left, headline right */}
           <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
             <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
               <img
                 src={businessChaos}
-                alt="Overwhelmed team in chaotic office"
+                alt="Overwhelmed business owner"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
             </div>
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                Sound familiar?
+                Most business owners are stuck. Not because they lack ambition.
               </h2>
               <p className="text-lg text-muted-foreground">
-                If any of these hit close to home, you're not alone — and you're
-                in the right place. These are the exact problems we were built
-                to fix.
+                They're stuck because a bottleneck somewhere in their operation
+                is quietly costing them time, money, and growth every single
+                week. Here's what that usually looks like.
               </p>
             </div>
           </div>
@@ -114,34 +121,29 @@ const Home = () => {
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                quote:
-                  "My best people are doing admin work instead of actual work.",
+                heading: "Missed calls. Missed revenue.",
+                body: "Leads call after hours, nobody picks up, and they book with whoever answers first. That's not a staffing problem. That's a bottleneck.",
+                icon: Phone,
+              },
+              {
+                heading: "Your best people doing busywork.",
+                body: "Scheduling, follow-up calls, manual data entry, copy-pasting between systems. Your team is capable of real work. This isn't it.",
                 icon: Users,
               },
               {
-                quote:
-                  "We're copying the same data into three different systems every single day.",
-                icon: Clock,
+                heading: "You can't see what's happening.",
+                body: "No clear picture of which leads converted, how fast your team responds, or where jobs are falling through. You're flying blind.",
+                icon: BarChart3,
               },
-              {
-                quote:
-                  "I follow up with leads manually and half of them fall through the cracks.",
-                icon: TrendingUp,
-              },
-            ].map(({ quote, icon: Icon }, i) => (
+            ].map(({ heading, body, icon: Icon }, i) => (
               <Card
                 key={i}
                 className="hover-scale group border-l-4 border-l-red-500/70 bg-card shadow-md transition-shadow hover:shadow-lg"
               >
                 <CardContent className="p-6">
-                  <Quote className="mb-4 h-8 w-8 text-red-400/60" />
-                  <p className="text-lg font-medium leading-relaxed text-foreground">
-                    "{quote}"
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                    <Icon className="h-4 w-4 text-orange-400" />
-                    <span>We hear this every week.</span>
-                  </div>
+                  <Icon className="mb-4 h-8 w-8 text-red-400/70" />
+                  <h3 className="mb-2 text-lg font-bold">{heading}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{body}</p>
                 </CardContent>
               </Card>
             ))}
@@ -152,49 +154,63 @@ const Home = () => {
       {/* ── 3. SOLUTION SECTION ─────────────────────────────────── */}
       <section className="bg-muted/40 py-20">
         <div className="container mx-auto max-w-7xl px-6">
-
-          {/* Split layout: headline left, image right */}
           <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                We turn your most painful processes into systems{" "}
-                <span className="text-[hsl(186_100%_27%)]">
-                  that run themselves.
-                </span>
+                We find the bottleneck. We fix it. Then we help you{" "}
+                <span className="text-[hsl(186_100%_27%)]">scale.</span>
               </h2>
+              <p className="text-muted-foreground text-lg">
+                We don't come in and try to sell you software. We start by
+                understanding your business. Then we figure out what's actually
+                slowing it down and build the right solution around that.
+              </p>
               <p className="text-muted-foreground">
-                Every solution we build is custom to your existing tools — no new
-                software to buy, no platform lock-in, no monthly fees to us.
+                Sometimes that's AI. Sometimes it's automation. Sometimes it's a
+                dashboard that finally gives you visibility. It depends on your
+                bottleneck, not on what we want to sell.
               </p>
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
               <img
                 src={problemSolutionSplit}
-                alt="Before and after: problem vs. solution"
+                alt="Before and after: problem solved"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
             </div>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
             {[
               {
-                icon: Settings,
-                title: "Operations Automation",
+                icon: Phone,
+                title: "AI Receptionists",
                 description:
-                  "Connect your tools, eliminate manual steps, free your team from repetitive work. We integrate your CRM, email, accounting, and inventory so data flows automatically — no copy-pasting, no dropped balls.",
+                  "24/7 call handling that never sleeps. Every call answered, every lead captured, every appointment booked. Your phone stops being a missed opportunity.",
               },
               {
                 icon: Zap,
-                title: "Lead & Quote Automation",
+                title: "AI Follow-Up Systems",
                 description:
-                  "Never lose a lead to slow response. Automated follow-up, quoting, and routing. Every inquiry gets an intelligent reply within minutes, and your CRM stays current without anyone touching it.",
+                  "Every lead gets an immediate response. Automated follow-up sequences run on their own until the prospect converts. No lead falls through the cracks.",
               },
               {
-                icon: FileText,
-                title: "Document & Process Simplification",
+                icon: Settings,
+                title: "Workflow Automation",
                 description:
-                  "Turn hours of paperwork into seconds. Invoices, contracts, forms — handled automatically. Extraction, routing, filing, and compliance checks happen without a single manual step.",
+                  "The repetitive manual tasks your team does every day, automated. Less time on process. More time on actual work that moves the business forward.",
+              },
+              {
+                icon: BarChart3,
+                title: "Business Dashboards",
+                description:
+                  "Real-time visibility into your operation. Know where your revenue is coming from, where it's leaking, and what needs attention right now.",
+              },
+              {
+                icon: Bot,
+                title: "Custom AI Agents",
+                description:
+                  "AI built specifically around how your business runs. Not a generic tool. A system designed for your processes, your team, and your customers.",
               },
             ].map(({ icon: Icon, title, description }, i) => (
               <Card
@@ -202,21 +218,28 @@ const Home = () => {
                 className="hover-scale group relative overflow-hidden border-0 bg-card shadow-md transition-all hover:shadow-xl"
               >
                 <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[hsl(186_100%_27%)] to-[hsl(42_100%_50%)]" />
-                <CardContent className="p-8">
-                  <div className="mb-5 inline-flex rounded-xl bg-[hsl(186_100%_27%)]/10 p-3">
-                    <Icon className="h-7 w-7 text-[hsl(186_100%_27%)]" />
+                <CardContent className="p-6">
+                  <div className="mb-4 inline-flex rounded-xl bg-[hsl(186_100%_27%)]/10 p-3">
+                    <Icon className="h-6 w-6 text-[hsl(186_100%_27%)]" />
                   </div>
-                  <h3 className="mb-3 text-xl font-bold">{title}</h3>
-                  <p className="text-muted-foreground">{description}</p>
+                  <h3 className="mb-2 text-lg font-bold">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="mt-10 text-center">
-            <Button asChild variant="accent" size="lg" className="hover-scale group">
+            <Button
+              asChild
+              variant="accent"
+              size="lg"
+              className="hover-scale group"
+            >
               <Link to="/process-audit">
-                See Which Applies to You
+                Find Your Bottleneck for Free
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -229,33 +252,33 @@ const Home = () => {
         <div className="container mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center animate-fade-in">
             <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-              Real outcomes. Real numbers.
+              What happens when the bottleneck is gone.
             </h2>
             <p className="mt-3 text-slate-400">
-              From automations we've already built for businesses like yours.
+              Real results from real businesses we've worked with.
             </p>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                stat: "8–19 hrs",
-                label: "saved per week per automation built",
+                stat: "8-19 hrs",
+                label: "saved per week, per automation built",
                 icon: Clock,
               },
               {
-                stat: "60 days",
-                label: "or less to first real results",
+                stat: "Under 30 days",
+                label: "from first call to live system",
                 icon: Zap,
               },
               {
-                stat: "200–300%",
-                label: "ROI on document automation",
+                stat: "200-300%",
+                label: "ROI on workflow automation",
                 icon: TrendingUp,
               },
               {
-                stat: "3–5x",
-                label: "more client volume without new hires",
+                stat: "3-5x",
+                label: "more client volume without adding headcount",
                 icon: Users,
               },
             ].map(({ stat, label, icon: Icon }, i) => (
@@ -275,55 +298,92 @@ const Home = () => {
       {/* ── 5. INDUSTRIES SECTION ───────────────────────────────── */}
       <section className="bg-background py-20">
         <div className="container mx-auto max-w-7xl px-6">
-
-          {/* 2-column header: text left, image right */}
           <div className="mb-12 grid items-center gap-8 lg:grid-cols-2 animate-fade-in">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                Built for businesses like yours
+                We work across industries. One thing stays the same.
               </h2>
-              <p className="text-muted-foreground">
-                We specialize in three industries where process waste hits hardest.
+              <p className="text-muted-foreground text-lg">
+                Every business we help has a bottleneck. We find it, fix it, and
+                build systems that keep it from coming back.
               </p>
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-xl h-72">
               <img
                 src={industriesConnected}
-                alt="Connected systems and industries"
+                alt="Businesses we serve"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Manufacturing & Distribution",
-                pain: "Job orders, inventory updates, and supplier coordination still done by hand — costing 15+ hours a week.",
-                href: "/industries/manufacturing",
+                title: "HVAC and Home Services",
+                pain: "After-hours calls go to voicemail. Leads book your competitor. Dispatch is still done by hand. We fix the response time and the scheduling chaos.",
+                href: "/hvac",
+                badge: "High Call Volume",
+              },
+              {
+                title: "Healthcare and Medical Practices",
+                pain: "Front desk is overwhelmed. Appointment reminders are manual. Patient follow-up falls off. We give you back time and reduce no-shows.",
+                href: "/industries",
+                badge: "Patient Experience",
+              },
+              {
+                title: "Dental Practices",
+                pain: "Scheduling gaps, missed recall outreach, and front desk juggling phones and walk-ins at the same time. We close those gaps automatically.",
+                href: "/industries",
+                badge: "Scheduling Bottleneck",
+              },
+              {
+                title: "Assisted Living Facilities",
+                pain: "Family communication, staff coordination, and documentation take hours that should go to residents. We automate the administrative load.",
+                href: "/industries",
                 badge: "Operations-Heavy",
               },
               {
-                title: "Field Service",
-                pain: "Dispatching, job scheduling, invoicing, and follow-up all fall on the same two people every day.",
-                href: "/industries/field-service",
-                badge: "Scheduling & Billing",
+                title: "Real Estate Teams",
+                pain: "New leads come in from five different places and most get followed up on once. We make sure every lead gets the attention it needs until it converts.",
+                href: "/realtor",
+                badge: "Lead Conversion",
               },
               {
                 title: "Professional Services",
-                pain: "Proposals, contracts, onboarding, and reporting take up more time than the actual client work.",
+                pain: "Proposals, contracts, onboarding, and reporting take more time than the actual client work. We automate the paper trail so you can focus on delivery.",
                 href: "/industries/professional-services",
                 badge: "Document-Heavy",
+              },
+              {
+                title: "Manufacturing and Distribution",
+                pain: "Job orders, inventory updates, and supplier coordination still done by hand. Reporting takes hours. We cut that down to minutes.",
+                href: "/industries/manufacturing",
+                badge: "Workflow Automation",
+              },
+              {
+                title: "Field Service Companies",
+                pain: "Dispatch, scheduling, invoicing, and follow-up all fall on the same two people. We build systems that handle the coordination so they can focus on the jobs.",
+                href: "/industries/field-service",
+                badge: "Scheduling and Billing",
+              },
+              {
+                title: "Law Firms",
+                pain: "Intake is slow. Client communication is inconsistent. Billing and document management eat hours every week. We tighten the entire operation.",
+                href: "/industries",
+                badge: "Client Intake",
               },
             ].map(({ title, pain, href, badge }, i) => (
               <Link key={i} to={href} className="group block">
                 <Card className="hover-scale h-full border-0 bg-card shadow-md transition-all group-hover:shadow-xl">
-                  <CardContent className="p-8">
-                    <Badge className="mb-4 bg-[hsl(186_100%_27%)]/10 text-[hsl(186_100%_27%)]">
+                  <CardContent className="p-6">
+                    <Badge className="mb-3 bg-[hsl(186_100%_27%)]/10 text-[hsl(186_100%_27%)]">
                       {badge}
                     </Badge>
-                    <h3 className="mb-3 text-xl font-bold">{title}</h3>
-                    <p className="mb-4 text-muted-foreground">{pain}</p>
+                    <h3 className="mb-2 text-lg font-bold">{title}</h3>
+                    <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
+                      {pain}
+                    </p>
                     <div className="flex items-center gap-1 text-sm font-medium text-[hsl(186_100%_27%)] transition-transform group-hover:translate-x-1">
                       See how we help
                       <ArrowRight className="h-4 w-4" />
@@ -343,36 +403,44 @@ const Home = () => {
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
               How it works
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              No long discovery phases. No vague proposals. Just a clear path
-              from problem to working system.
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
+              We don't do long discovery phases or vague proposals. You know
+              what you're getting before we start, and you see results fast.
             </p>
           </div>
 
-          {/* 2-column layout: steps left, image right */}
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative space-y-8">
               {[
                 {
                   step: "01",
-                  title: "Free Process Audit",
+                  title: "Business Bottleneck Assessment",
                   description:
-                    "We map your top 3 painful processes and show you exactly what to automate — and what not to. You walk away with a clear picture of where your time is actually going, regardless of whether you hire us.",
+                    "We spend time understanding how your business actually operates and find your biggest constraint. You walk away with a clear map of where time and money are leaking out, whether you work with us or not.",
                 },
                 {
                   step: "02",
-                  title: "We Build It",
+                  title: "Solution Design",
                   description:
-                    "Custom automation, built in 4–8 weeks. Scoped and priced before we start — no surprises mid-project. We connect your existing tools; you don't need to buy new software.",
+                    "We figure out the right combination of AI, automation, workflows, and dashboards for your specific situation. No cookie-cutter approaches. The solution fits your business, your tools, and your team.",
                 },
                 {
                   step: "03",
-                  title: "You Own It",
+                  title: "We Build and Deploy",
                   description:
-                    "No lock-in, no monthly platform fees to us. You own everything we build. We document it, hand it over, and train your team. We're available for ongoing support, but you're never trapped.",
+                    "We build the system and get it running. Most clients have something live in under 30 days. We connect to your existing tools. You don't need to buy new software to make this work.",
+                },
+                {
+                  step: "04",
+                  title: "Optimization",
+                  description:
+                    "Once the system is live, we keep improving it. We monitor performance, track results, and make adjustments. The goal is continuous improvement, not a one-time fix.",
                 },
               ].map(({ step, title, description }, i) => (
-                <div key={i} className="hover-scale flex gap-8 rounded-2xl bg-card p-8 shadow-md">
+                <div
+                  key={i}
+                  className="hover-scale flex gap-8 rounded-2xl bg-card p-8 shadow-md"
+                >
                   <div className="flex-shrink-0">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(186_100%_27%)] text-lg font-extrabold text-white">
                       {step}
@@ -386,11 +454,10 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Collaboration image */}
             <div className="relative overflow-hidden rounded-2xl shadow-xl h-full min-h-[400px] hidden lg:block">
               <img
                 src={buildCollaboration}
-                alt="Team collaborating on automation project"
+                alt="Building your automation solution"
                 className="rounded-2xl shadow-xl object-cover w-full h-full"
               />
             </div>
@@ -398,42 +465,83 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 7. GUARANTEE ────────────────────────────────────────── */}
+      {/* ── 7. WHY US SECTION ───────────────────────────────────── */}
       <section className="bg-background py-20">
-        <div className="container mx-auto max-w-3xl px-6 text-center">
-          <div className="animate-fade-in flex flex-col items-center gap-6 rounded-2xl border border-[hsl(186_100%_27%)]/20 bg-[hsl(186_100%_27%)]/5 p-10 shadow-lg">
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center animate-fade-in">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Business first. Technology second.
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto text-lg">
+              We don't show up with a product to sell. We show up to understand
+              your operation and figure out what's actually holding it back.
+              Then we build the right solution for that specific problem.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: CheckCircle,
+                title: "We find the real problem first.",
+                body: "Most companies skip this step and jump straight to selling you a tool. We don't. Every engagement starts with understanding your business before recommending anything.",
+              },
+              {
+                icon: FileText,
+                title: "You own everything we build.",
+                body: "No platform lock-in. No ongoing fees to us. The systems, the workflows, the automations. All of it is yours. We document everything and train your team.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Results in weeks, not months.",
+                body: "We move fast. Most clients have their first system running in under 30 days. We scope the work upfront so there are no surprises halfway through.",
+              },
+            ].map(({ icon: Icon, title, body }, i) => (
+              <div
+                key={i}
+                className="hover-scale rounded-2xl border bg-card p-8 shadow-md"
+              >
+                <div className="mb-4 inline-flex rounded-xl bg-[hsl(186_100%_27%)]/10 p-3">
+                  <Icon className="h-6 w-6 text-[hsl(186_100%_27%)]" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold">{title}</h3>
+                <p className="text-muted-foreground">{body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Guarantee */}
+          <div className="mt-16 animate-fade-in flex flex-col items-center gap-6 rounded-2xl border border-[hsl(186_100%_27%)]/20 bg-[hsl(186_100%_27%)]/5 p-10 shadow-lg max-w-3xl mx-auto text-center">
             <img
               src={guaranteeBadge}
               alt="Guarantee badge"
               className="h-24 w-24 object-contain"
             />
             <div>
-              <h2 className="mb-3 text-2xl font-bold md:text-3xl">
-                Our Audit Guarantee
-              </h2>
+              <h3 className="mb-3 text-2xl font-bold md:text-3xl">
+                Our Assessment Guarantee
+              </h3>
               <p className="text-lg text-muted-foreground">
                 If we can't find{" "}
                 <span className="font-semibold text-foreground">
-                  5 processes worth automating
+                  at least 5 bottlenecks worth fixing
                 </span>{" "}
-                in your business, the audit is completely free. No pitch, no
-                pressure — just an honest look at your operations.
+                in your business, the assessment is completely free. No pitch.
+                No pressure. Just an honest look at your operation.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "No obligation",
-                "60-minute session",
-                "Written findings",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-sm font-medium text-[hsl(186_100%_27%)]"
-                >
-                  <CheckCircle className="h-4 w-4" />
-                  {item}
-                </div>
-              ))}
+              {["No obligation", "60-minute session", "Written findings"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 text-sm font-medium text-[hsl(186_100%_27%)]"
+                  >
+                    <CheckCircle className="h-4 w-4" />
+                    {item}
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -441,20 +549,18 @@ const Home = () => {
 
       {/* ── 8. FINAL CTA ────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-24">
-        {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(186_100%_27%)] via-[hsl(186_80%_20%)] to-[hsl(222_47%_11%)]" />
         <div className="pointer-events-none absolute top-0 right-0 h-[300px] w-[300px] rounded-full bg-[hsl(42_100%_50%)] opacity-20 blur-[80px] animate-pulse" />
 
         <div className="container relative mx-auto max-w-3xl px-6 text-center">
           <div className="animate-fade-in space-y-6">
             <h2 className="text-4xl font-extrabold text-white md:text-5xl">
-              Ready to stop doing{" "}
-              <span className="text-[hsl(42_100%_50%)]">$20/hour work?</span>
+              Stop letting bottlenecks hold back your growth.
             </h2>
-            <p className="text-lg text-white/80">
-              Your first step is a free process audit. We'll show you exactly
-              where the hours are going — and what it would take to get them
-              back.
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Book your Free Business Bottleneck Assessment. We'll map out
+              exactly where your business is losing time and money, and show you
+              what it would take to fix it.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button
@@ -464,7 +570,7 @@ const Home = () => {
                 className="hover-scale group px-10 text-base"
               >
                 <Link to="/process-audit">
-                  Get Your Free Process Audit
+                  Book Free Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -474,9 +580,7 @@ const Home = () => {
                 size="lg"
                 className="hover-scale border-white/40 text-white hover:bg-white/10"
               >
-                <a href="tel:+12816998318">
-                  Or Call (281) 699-8318
-                </a>
+                <a href="tel:+12816998318">Call (281) 699-8318</a>
               </Button>
             </div>
             <p className="text-sm text-white/50">
