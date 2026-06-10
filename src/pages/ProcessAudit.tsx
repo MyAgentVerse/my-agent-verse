@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ProcessAuditVideo from "@/components/ProcessAuditVideo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLeadSubmission } from "@/hooks/useLeadSubmission";
 import guaranteeBadge from "@/assets/guarantee-badge.png";
 import consultationHero from "@/assets/consultation-hero.jpg";
 import buildCollaboration from "@/assets/build-collaboration.jpg";
@@ -33,6 +34,8 @@ const initialForm: FormState = {
 export default function ProcessAudit() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { submitLead } = useLeadSubmission();
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,9 +43,27 @@ export default function ProcessAudit() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await submitLead({
+        name: form.name,
+        email: form.email,
+        phone: form.phone || undefined,
+        company_name: form.company || undefined,
+        form_type: "consultation",
+        custom_fields: {
+          pain_process: form.painProcess,
+          source: "/process-audit",
+        },
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   }
 
   return (
@@ -442,9 +463,10 @@ export default function ProcessAudit() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12"
+                    disabled={loading}
+                    className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12 disabled:opacity-60"
                   >
-                    Book Free Bottleneck Assessment
+                    {loading ? "Submitting…" : "Book Free Bottleneck Assessment"}
                   </Button>
                   <p className="text-center text-xs text-slate-400">
                     No spam. No sales pitch. Just a 60-minute conversation that

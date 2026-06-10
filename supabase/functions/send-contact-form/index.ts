@@ -225,7 +225,7 @@ const handler = async (req: Request): Promise<Response> => {
         <br />
         <p>Best regards,<br />The MyAgentVerse Team</p>
         <p style="color: #666; font-size: 14px;">
-          📞 (281) 699-8318<br />
+          📞 (713) 517-6792<br />
           🌐 myagentverse.com
         </p>
       `,

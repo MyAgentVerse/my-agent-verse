@@ -106,7 +106,7 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    // Send email to notification recipients
+    // Send email to notification recipients (internal)
     const emailResponse = await resend.emails.send({
       from: "MyAgentVerse Leads <onboarding@resend.dev>",
       to: notifyEmails,
@@ -115,6 +115,57 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     console.log("Lead notification sent successfully:", emailResponse);
+
+    // Send confirmation email to the lead
+    if (lead.email) {
+      const confirmationHtml = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+          <div style="background: hsl(222,47%,11%); padding: 32px; border-radius: 12px 12px 0 0; text-align: center;">
+            <h1 style="color: #fff; margin: 0; font-size: 24px;">You're on the calendar.</h1>
+          </div>
+          <div style="background: #f9f9f9; padding: 32px; border-radius: 0 0 12px 12px;">
+            <p style="font-size: 16px;">Hi ${lead.name},</p>
+            <p style="font-size: 16px; line-height: 1.6;">
+              Thanks for booking your free <strong>Business Bottleneck Assessment</strong> with MyAgentVerse.
+              We'll reach out within 1 business day to confirm your session time.
+            </p>
+            <p style="font-size: 16px; line-height: 1.6;">Here's what to expect:</p>
+            <ul style="font-size: 15px; line-height: 2;">
+              <li>60-minute Zoom session</li>
+              <li>We map your top 3–5 operational bottlenecks</li>
+              <li>You get a written findings report the same day</li>
+              <li>Zero cost, zero obligation</li>
+            </ul>
+            <div style="margin: 32px 0; background: hsl(42,100%,50%); border-radius: 8px; padding: 20px; text-align: center;">
+              <p style="margin: 0; font-weight: bold; font-size: 16px; color: hsl(222,47%,11%);">
+                Questions? Call or text us directly.
+              </p>
+              <p style="margin: 8px 0 0; font-size: 18px; font-weight: bold; color: hsl(222,47%,11%);">
+                (713) 517-6792
+              </p>
+            </div>
+            <p style="font-size: 14px; color: #888;">
+              — The MyAgentVerse Team<br/>
+              Based in The Woodlands, TX &nbsp;·&nbsp;
+              <a href="https://myagentverse.com" style="color: hsl(186,100%,27%);">myagentverse.com</a>
+            </p>
+          </div>
+        </div>
+      `;
+
+      try {
+        await resend.emails.send({
+          from: "MyAgentVerse <onboarding@resend.dev>",
+          to: [lead.email],
+          subject: "You're on the calendar — MyAgentVerse Bottleneck Assessment",
+          html: confirmationHtml,
+        });
+        console.log("Confirmation email sent to:", lead.email);
+      } catch (confirmErr) {
+        console.error("Failed to send confirmation email:", confirmErr);
+        // Don't fail the whole function if confirmation email fails
+      }
+    }
 
     return new Response(
       JSON.stringify({ success: true }),
