@@ -81,7 +81,7 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "I kept saying I'd look into automation 'someday.' The audit took 30 minutes and we had a working system in 5 weeks. I wish we'd done it 2 years ago.",
+      "I kept saying I'd look into automation 'someday.' The assessment took 60 minutes and we had a working system in 5 weeks. I wish we'd done it 2 years ago.",
     name: "Sarah M.",
     title: "Operations Director",
   },

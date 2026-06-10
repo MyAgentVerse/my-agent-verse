@@ -19,9 +19,9 @@ const Realtor = () => {
   return (
     <>
       <Helmet>
-        <title>Ava – The 24/7 AI Real Estate Assistant | MyAgentVerse</title>
-        <meta name="description" content="Never miss another lead again. Ava answers, qualifies, and books calls 24/7 while you focus on closing deals. Try risk-free for 90 days." />
-        <meta name="keywords" content="AI assistant for realtors, real estate automation, missed call solution, AI booking agent, MyAgentVerse Ava" />
+        <title>AI Automation for Realtors – 24/7 Lead Follow-Up & Call Handling | MyAgentVerse</title>
+        <meta name="description" content="Never miss another lead again. Our AI system answers, qualifies, and books calls 24/7 while you focus on closing deals. Free Bottleneck Assessment." />
+        <meta name="keywords" content="AI assistant for realtors, real estate automation, missed call solution, AI booking agent, MyAgentVerse" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -394,13 +394,13 @@ const Realtor = () => {
                   Limited Pilot Cohort
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Limited Pilot Cohort: November Enrollment Now Open
+                  Limited Spots: Enrollment Now Open
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  To ensure every agent gets personalized voice training and perfect setup, we only accept 20 realtors each month. Once the November cohort is full, registration closes until next month.
+                  To ensure every agent gets personalized setup and voice training, we only accept a limited number of realtors each month. Once the current cohort is full, registration closes until next month.
                 </p>
                 <p className="text-base text-muted-foreground">
-                  Apply by <strong>Friday, November 8 at 11:59 PM</strong> to lock in your lifetime $49/mo pricing and claim your $499 Lead Surge Setup bonus free.
+                  Book your free assessment now to lock in current pricing and claim your Lead Surge Setup bonus free.
                 </p>
                 <RealtorLeadDialog ctaSource="pilot_reserve">
                   <Button size="lg">

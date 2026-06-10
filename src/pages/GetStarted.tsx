@@ -45,9 +45,9 @@ export default function GetStarted() {
     <div className="min-h-screen flex flex-col bg-white">
       <Helmet>
         <title>Get Started with AI Automation | MyAgentVerse</title>
-        <meta name="description" content="Ready to automate your business? Get started with MyAgentVerse — choose a free Process Audit, a Strategy Sprint, or a full Custom AI Build. No lock-in, you own everything." />
+        <meta name="description" content="Ready to automate your business? Get started with MyAgentVerse — book your free Bottleneck Assessment and see exactly where your business is losing time and money." />
         <meta property="og:title" content="Get Started with AI Automation | MyAgentVerse" />
-        <meta property="og:description" content="Start automating your business today. Free Process Audit, Strategy Sprint, or Custom AI Build — choose the path that fits your goals." />
+        <meta property="og:description" content="Start with a free 60-minute Bottleneck Assessment. No pitch, no pressure — just a clear map of what to fix first." />
         <meta property="og:url" content="https://myagentverse.com/get-started" />
         <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
         <link rel="canonical" href="https://myagentverse.com/get-started" />
@@ -109,17 +109,17 @@ export default function GetStarted() {
                   Book Free Assessment
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6 flex-1">
-                  In 30 minutes on Zoom, we map your top 3–5 most painful manual
+                  In 60 minutes on Zoom, we map your top 3–5 most painful manual
                   processes and show you exactly what can be automated — with
                   projected time and cost savings. You walk away with a concrete
                   plan, guaranteed.
                 </p>
                 <ul className="space-y-2 mb-8">
                   {[
-                    "30-minute Zoom call",
+                    "60-minute Zoom call",
                     "Automation Opportunity Map included",
                     "Zero cost, zero obligation",
-                    "Guaranteed 5+ opportunities or it's free",
+                    "Guaranteed 5 bottlenecks worth fixing or it's free",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
                       <span className="w-5 h-5 rounded-full bg-[hsl(186_100%_27%)] flex items-center justify-center text-white text-xs flex-shrink-0">

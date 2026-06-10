@@ -73,7 +73,7 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              In a free 30-minute call, we map your top 3–5 most painful manual
+              In a free 60-minute call, we map your top 3–5 most painful manual
               processes and show you exactly what can be automated — with
               projected time and cost savings.
             </p>
@@ -182,7 +182,7 @@ export default function LandingPage() {
             What you walk away with
           </h2>
           <p className="text-center text-teal-100 mb-12 text-lg">
-            A complete picture of your automation opportunity — in 30 minutes,
+            A complete picture of your operational bottlenecks — in 60 minutes,
             free.
           </p>
 
@@ -285,8 +285,8 @@ export default function LandingPage() {
             className="text-3xl lg:text-4xl font-extrabold mb-6 leading-tight"
             style={{ color: dark }}
           >
-            If we can't find 5 automation opportunities with positive ROI in
-            your business — the audit is completely free.
+            If we can't find 5 bottlenecks worth fixing in
+            your business — the assessment is completely free.
           </h2>
           <p className="text-lg mb-8" style={{ color: "hsl(222 47% 20%)" }}>
             No risk. No obligation. Just clarity.

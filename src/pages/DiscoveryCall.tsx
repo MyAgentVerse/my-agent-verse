@@ -91,7 +91,7 @@ const DiscoveryCall = () => {
                   </div>
                   <h3 className="text-xl font-bold">Discover Quick Wins</h3>
                   <p className="text-muted-foreground">
-                    Find 1–2 automation opportunities that can deliver measurable ROI within 30 days.
+                    Find 1–2 operational bottlenecks that can deliver measurable ROI within 30 days.
                   </p>
                 </CardContent>
               </Card>

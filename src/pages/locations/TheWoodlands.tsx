@@ -52,12 +52,12 @@ const TheWoodlands = () => {
         <title>AI Automation Agency The Woodlands, TX | MyAgentVerse</title>
         <meta
           name="description"
-          content="MyAgentVerse is The Woodlands' local AI automation agency. We build custom AI agents for small businesses that handle calls, follow-ups, and workflows 24/7. Free Process Audit."
+          content="MyAgentVerse is The Woodlands' local AI automation agency. We find and fix operational bottlenecks for The Woodlands businesses using AI, automation, and intelligent systems. Free Bottleneck Assessment."
         />
         <meta property="og:title" content="AI Automation Agency The Woodlands, TX | MyAgentVerse" />
         <meta
           property="og:description"
-          content="The Woodlands AI automation agency — custom AI agents for local businesses. 24/7 call handling, lead follow-up automation, and workflow systems. Free Process Audit."
+          content="The Woodlands AI automation agency — custom AI agents for local businesses. 24/7 call handling, lead follow-up automation, and workflow systems. Free Bottleneck Assessment."
         />
         <meta property="og:url" content="https://myagentverse.com/the-woodlands" />
         <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
@@ -106,7 +106,7 @@ const TheWoodlands = () => {
               <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8">
                 <Link to="/process-audit">Book Free Assessment</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,0.4)", color: "white" }} className="hover:bg-white/10">
                 <a href="tel:+17135176792">
                   <Phone className="mr-2 h-4 w-4" />
                   (713) 517-6792
@@ -224,7 +224,7 @@ const TheWoodlands = () => {
                   Book Free Assessment <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,0.4)", color: "white" }} className="hover:bg-white/10">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

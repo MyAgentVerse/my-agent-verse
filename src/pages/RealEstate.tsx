@@ -30,29 +30,29 @@ const RealEstate = () => {
   return (
     <>
       <Helmet>
-        <title>Realtor AI System – Automate Your Real Estate Calls, Leads & Follow-Ups | MyAgentVerse</title>
-        <meta 
-          name="description" 
-          content="Meet Ava, your 24/7 AI Real Estate Assistant. Automatically answer calls, follow up on leads, and generate new clients through our Realtor AI Dashboard and Growth Plan." 
+        <title>AI Automation for Real Estate Teams | MyAgentVerse</title>
+        <meta
+          name="description"
+          content="AI automation for real estate agents and teams. Automatically answer calls, follow up on every lead, and close more deals with custom AI systems. Free Bottleneck Assessment."
         />
-        <meta 
-          name="keywords" 
-          content="AI for realtors, real estate automation, AI real estate assistant, AI lead follow-up, realtor lead generation system, AI real estate CRM, AI call answering for agents, Realtor Growth Plan, real estate chatbot, AI real estate dashboard" 
+        <meta
+          name="keywords"
+          content="AI for realtors, real estate automation, AI real estate assistant, AI lead follow-up, realtor lead generation system, AI real estate CRM, AI call answering for agents, real estate chatbot, AI real estate dashboard"
         />
         <link rel="canonical" href="https://myagentverse.com/real-estate" />
-        
+
         {/* Open Graph */}
-        <meta property="og:title" content="Ava – The 24/7 AI Real Estate Assistant | MyAgentVerse" />
-        <meta property="og:description" content="Automate every call, follow-up, and showing. Ava handles leads 24/7 — so you close more deals without chasing clients." />
+        <meta property="og:title" content="AI Automation for Real Estate Teams | MyAgentVerse" />
+        <meta property="og:description" content="Automate every call, follow-up, and lead nurture. Our AI systems handle leads 24/7 — so you close more deals without chasing clients." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://myagentverse.com/real-estate" />
-        <meta property="og:image" content="https://myagentverse.com/assets/ava-ai-realtor-demo-banner.jpg" />
-        
+        <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
+
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ava – AI Real Estate Assistant by MyAgentVerse" />
-        <meta name="twitter:description" content="Automate your real estate business with AI. Calls, leads, and follow-ups handled 24/7 — all in one dashboard." />
-        <meta name="twitter:image" content="https://myagentverse.com/assets/ava-ai-realtor-demo-banner.jpg" />
+        <meta name="twitter:title" content="AI Automation for Real Estate Teams | MyAgentVerse" />
+        <meta name="twitter:description" content="Automate your real estate business with AI. Calls, leads, and follow-ups handled 24/7 — all in one system." />
+        <meta name="twitter:image" content="https://myagentverse.com/social-preview.png" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

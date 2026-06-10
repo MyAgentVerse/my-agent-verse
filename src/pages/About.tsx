@@ -128,7 +128,7 @@ const About = () => {
               <img src={guaranteeBadge} alt="Guarantee" className="h-20 w-20 mx-auto mb-6" />
               <h2 className="text-2xl font-bold mb-4">Our Guarantee</h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                If we can't find at least 5 automation opportunities with positive ROI in your business during the free audit, <span className="font-semibold text-foreground">you pay nothing</span>. Not a dollar.
+                If we can't find at least 5 bottlenecks worth fixing in your business during the free assessment, <span className="font-semibold text-foreground">you pay nothing</span>. Not a dollar.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center text-sm text-muted-foreground">
                 {["No risk", "No sales pitch", "No obligation"].map((item) => (
