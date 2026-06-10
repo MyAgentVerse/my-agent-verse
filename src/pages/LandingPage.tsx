@@ -85,7 +85,7 @@ export default function LandingPage() {
                   className="text-base font-bold px-8 py-6 rounded-xl shadow-lg hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: amber, color: dark }}
                 >
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                 </Button>
               </a>
               <a
@@ -168,7 +168,7 @@ export default function LandingPage() {
                 className="text-base font-bold px-8 py-6 rounded-xl hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: amber, color: dark }}
               >
-                Book Free Assessment
+                Book Free Bottleneck Assessment
               </Button>
             </a>
           </div>
@@ -312,7 +312,7 @@ export default function LandingPage() {
                 className="text-base font-bold px-10 py-6 rounded-xl hover:opacity-90 transition-opacity shadow-lg"
                 style={{ backgroundColor: dark, color: amber }}
               >
-                Book Free Assessment
+                Book Free Bottleneck Assessment
               </Button>
             </a>
           </div>
@@ -323,7 +323,7 @@ export default function LandingPage() {
       <section style={{ backgroundColor: dark }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-white text-center mb-3">
-            Book Free Assessment
+            Book Free Bottleneck Assessment
           </h2>
           <p className="text-gray-400 text-center mb-10">
             Fill out the form below and we'll reach out within 1 business day to
@@ -428,7 +428,7 @@ export default function LandingPage() {
                 className="w-full text-base font-bold py-6 rounded-xl hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: amber, color: dark }}
               >
-                Book Free Assessment
+                Book Free Bottleneck Assessment
               </Button>
             </form>
           )}

@@ -110,7 +110,7 @@ export default function Header() {
                 size="sm"
                 className="rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold px-5"
               >
-                <Link to="/process-audit">Book Free Assessment</Link>
+                <Link to="/process-audit">Book Free Bottleneck Assessment</Link>
               </Button>
             </div>
 
@@ -196,7 +196,7 @@ export default function Header() {
                         className="w-full rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold"
                       >
                         <Link to="/process-audit" onClick={() => setMobileOpen(false)}>
-                          Book Free Assessment
+                          Book Free Bottleneck Assessment
                         </Link>
                       </Button>
                     </div>

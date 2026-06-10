@@ -106,7 +106,7 @@ export default function GetStarted() {
                   Most Popular
                 </div>
                 <h2 className="text-2xl font-bold text-[hsl(222_47%_11%)] mb-3">
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6 flex-1">
                   In 60 minutes on Zoom, we map your top 3–5 most painful manual
@@ -134,7 +134,7 @@ export default function GetStarted() {
                     size="lg"
                     className="w-full bg-[hsl(186_100%_27%)] hover:bg-[hsl(186_100%_22%)] text-white font-bold text-base h-12 transition-transform hover:scale-[1.02]"
                   >
-                    Book Free Assessment
+                    Book Free Bottleneck Assessment
                   </Button>
                 </Link>
               </CardContent>
@@ -404,7 +404,7 @@ export default function GetStarted() {
             size="lg"
             className="bg-white text-[hsl(186_100%_27%)] hover:bg-slate-100 font-bold text-base px-10 h-12 transition-transform hover:scale-105"
           >
-            Book Free Assessment
+            Book Free Bottleneck Assessment
           </Button>
         </Link>
       </section>

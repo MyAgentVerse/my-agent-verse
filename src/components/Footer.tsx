@@ -51,7 +51,7 @@ export default function Footer() {
                 { label: "Operations Automation", href: "/services" },
                 { label: "Lead & Quote Automation", href: "/services" },
                 { label: "Document Processing", href: "/services" },
-                { label: "Book Free Assessment", href: "/process-audit" },
+                { label: "Book Free Bottleneck Assessment", href: "/process-audit" },
               ].map((item) => (
                 <Link
                   key={item.label}
@@ -115,7 +115,7 @@ export default function Footer() {
               size="sm"
               className="mb-6 w-full rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold"
             >
-              <Link to="/process-audit">Book Free Assessment</Link>
+              <Link to="/process-audit">Book Free Bottleneck Assessment</Link>
             </Button>
             <ContactForm />
           </div>

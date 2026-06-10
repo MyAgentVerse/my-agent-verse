@@ -61,7 +61,7 @@ const Services = () => {
               </p>
               <Button asChild variant="accent" size="lg" className="hover-scale group">
                 <Link to="/process-audit">
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -168,7 +168,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Book Free Assessment
+                      Book Free Bottleneck Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -223,7 +223,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Book Free Assessment
+                      Book Free Bottleneck Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -370,7 +370,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Book Free Assessment
+                      Book Free Bottleneck Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -473,7 +473,7 @@ const Services = () => {
                   Best for: one specific pain point you want solved fast.
                 </p>
                 <Button asChild variant="outline" className="hover-scale mt-4 w-full">
-                  <Link to="/process-audit">Book Free Assessment</Link>
+                  <Link to="/process-audit">Book Free Bottleneck Assessment</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -523,7 +523,7 @@ const Services = () => {
                 </p>
                 <Button asChild variant="accent" className="hover-scale mt-4 w-full group">
                   <Link to="/process-audit">
-                    Book Free Assessment
+                    Book Free Bottleneck Assessment
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
@@ -568,7 +568,7 @@ const Services = () => {
                   Best for: high-complexity operations or multiple departments.
                 </p>
                 <Button asChild variant="outline" className="hover-scale mt-4 w-full">
-                  <Link to="/process-audit">Book Free Assessment</Link>
+                  <Link to="/process-audit">Book Free Bottleneck Assessment</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -605,7 +605,7 @@ const Services = () => {
                 className="hover-scale group px-10 text-base"
               >
                 <Link to="/process-audit">
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

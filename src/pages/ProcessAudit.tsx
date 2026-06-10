@@ -101,7 +101,7 @@ export default function ProcessAudit() {
                   size="lg"
                   className="bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base px-8 py-4 h-auto transition-transform hover:scale-105"
                 >
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                 </Button>
               </a>
               <p className="mt-4 text-sm text-slate-400">
@@ -444,7 +444,7 @@ export default function ProcessAudit() {
                     size="lg"
                     className="w-full bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-[hsl(222_47%_11%)] font-bold text-base h-12"
                   >
-                    Book Free Assessment
+                    Book Free Bottleneck Assessment
                   </Button>
                   <p className="text-center text-xs text-slate-400">
                     No spam. No sales pitch. Just a 60-minute conversation that
@@ -510,7 +510,7 @@ export default function ProcessAudit() {
             size="lg"
             className="bg-white text-[hsl(186_100%_27%)] hover:bg-slate-100 font-bold text-base px-8 h-12 transition-transform hover:scale-105"
           >
-            Book Free Assessment
+            Book Free Bottleneck Assessment
           </Button>
         </a>
       </section>

@@ -143,7 +143,7 @@ const Industries = () => {
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="bg-[hsl(42_100%_50%)] hover:bg-[hsl(42_100%_42%)] text-slate-900 font-bold px-10">
               <Link to="/process-audit">
-                Book Free Assessment <ArrowRight className="ml-2 h-5 w-5" />
+                Book Free Bottleneck Assessment <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button

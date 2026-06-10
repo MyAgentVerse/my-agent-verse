@@ -145,7 +145,7 @@ export default function Manufacturing() {
               className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold hover-scale"
             >
               <Link to="/process-audit">
-                Book Free Assessment <ArrowRight className="ml-2 w-4 h-4" />
+                Book Free Bottleneck Assessment <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             <Button
@@ -312,7 +312,7 @@ export default function Manufacturing() {
             className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold hover-scale text-base px-8"
           >
             <Link to="/process-audit">
-              Book Free Assessment <ArrowRight className="ml-2 w-4 h-4" />
+              Book Free Bottleneck Assessment <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
           <p className="mt-4 text-slate-500 text-sm">

@@ -570,7 +570,7 @@ const Home = () => {
                 className="hover-scale group px-10 text-base"
               >
                 <Link to="/process-audit">
-                  Book Free Assessment
+                  Book Free Bottleneck Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
