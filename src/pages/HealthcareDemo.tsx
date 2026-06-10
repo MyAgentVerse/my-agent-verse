@@ -247,8 +247,8 @@ const HealthcareDemo = () => {
           {/* Footer */}
           <p className="text-center text-sm text-muted-foreground mt-6">
             Questions? Call us at{" "}
-            <a href="tel:+12816998318" className="text-primary hover:underline font-medium">
-              (281) 699-8318
+            <a href="tel:+17135176792" className="text-primary hover:underline font-medium">
+              (713) 517-6792
             </a>
           </p>
         </div>

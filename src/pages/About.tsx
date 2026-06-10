@@ -152,9 +152,9 @@ const About = () => {
                 We're active in The Woodlands business community and work with companies throughout the Greater Houston area. If you're looking for a local partner who understands Texas-area businesses, we'd love to meet in person.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+12816998318" className="flex items-center gap-2 justify-center text-primary font-semibold hover:text-primary/80 transition-colors">
+                <a href="tel:+17135176792" className="flex items-center gap-2 justify-center text-primary font-semibold hover:text-primary/80 transition-colors">
                   <Phone className="h-5 w-5" />
-                  (281) 699-8318
+                  (713) 517-6792
                 </a>
               </div>
             </div>

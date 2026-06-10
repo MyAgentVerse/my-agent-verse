@@ -4,8 +4,8 @@ import { Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/ContactForm";
 
-const PHONE = "(281) 699-8318";
-const PHONE_HREF = "tel:+12816998318";
+const PHONE = "(713) 517-6792";
+const PHONE_HREF = "tel:+17135176792";
 const EMAIL = "hello@myagentverse.com";
 const EMAIL_HREF = "mailto:hello@myagentverse.com";
 

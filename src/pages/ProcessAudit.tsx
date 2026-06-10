@@ -342,10 +342,10 @@ export default function ProcessAudit() {
           <p className="text-center text-slate-500 mb-4">
             Or call us directly:{" "}
             <a
-              href="tel:+12816998318"
+              href="tel:+17135176792"
               className="text-[hsl(186_100%_27%)] font-bold hover:underline"
             >
-              (281) 699-8318
+              (713) 517-6792
             </a>
           </p>
           <p className="text-center text-slate-400 text-sm mb-10">

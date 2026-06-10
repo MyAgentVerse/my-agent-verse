@@ -68,7 +68,7 @@ const TheWoodlands = () => {
             "@type": "LocalBusiness",
             "name": "MyAgentVerse",
             "url": "https://myagentverse.com",
-            "telephone": "+12816998318",
+            "telephone": "+17135176792",
             "description": "AI automation agency based in The Woodlands, TX — building custom AI agents for local businesses.",
             "address": {
               "@type": "PostalAddress",
@@ -107,9 +107,9 @@ const TheWoodlands = () => {
                 <Link to="/process-audit">Get Your Free Process Audit</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                <a href="tel:+12816998318">
+                <a href="tel:+17135176792">
                   <Phone className="mr-2 h-4 w-4" />
-                  (281) 699-8318
+                  (713) 517-6792
                 </a>
               </Button>
             </div>

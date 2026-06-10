@@ -203,10 +203,10 @@ export default function GetStarted() {
                       We'll be in touch within 1 business day. For faster response,
                       call us at{" "}
                       <a
-                        href="tel:+12816998318"
+                        href="tel:+17135176792"
                         className="text-[hsl(186_100%_27%)] font-bold hover:underline"
                       >
-                        (281) 699-8318
+                        (713) 517-6792
                       </a>
                       .
                     </p>
@@ -321,8 +321,8 @@ export default function GetStarted() {
               {
                 icon: "📞",
                 label: "Phone",
-                value: "(281) 699-8318",
-                href: "tel:+12816998318",
+                value: "(713) 517-6792",
+                href: "tel:+17135176792",
               },
               {
                 icon: "📍",
@@ -374,7 +374,7 @@ export default function GetStarted() {
               },
               {
                 q: "How quickly do you respond?",
-                a: "Within 1 business day, usually same day. For urgent matters, call us directly at (281) 699-8318.",
+                a: "Within 1 business day, usually same day. For urgent matters, call us directly at (713) 517-6792.",
               },
               {
                 q: "How do I know if my business is a good fit?",

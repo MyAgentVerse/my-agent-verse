@@ -316,7 +316,7 @@ export default function Manufacturing() {
             </Link>
           </Button>
           <p className="mt-4 text-slate-500 text-sm">
-            Based in The Woodlands, TX · (281) 699-8318
+            Based in The Woodlands, TX · (713) 517-6792
           </p>
         </div>
       </section>

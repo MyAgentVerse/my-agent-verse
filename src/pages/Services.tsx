@@ -615,7 +615,7 @@ const Services = () => {
                 size="lg"
                 className="hover-scale border-white/40 text-white hover:bg-white/10"
               >
-                <a href="tel:+12816998318">Call (281) 699-8318</a>
+                <a href="tel:+17135176792">Call (713) 517-6792</a>
               </Button>
             </div>
             <div className="flex flex-wrap justify-center gap-6 pt-2">

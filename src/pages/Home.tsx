@@ -580,7 +580,7 @@ const Home = () => {
                 style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,0.4)", color: "white" }}
                 className="hover-scale hover:bg-white/10"
               >
-                <a href="tel:+12816998318">Call (281) 699-8318</a>
+                <a href="tel:+17135176792">Call (713) 517-6792</a>
               </Button>
             </div>
             <p className="text-sm text-white/50">

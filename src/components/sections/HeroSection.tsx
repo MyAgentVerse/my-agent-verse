@@ -32,9 +32,9 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button variant="accent" size="lg" asChild className="hover-scale">
-                <a href="tel:+12816998318" className="flex items-center gap-2">
+                <a href="tel:+17135176792" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
-                  Call Now: (281) 699-8318
+                  Call Now: (713) 517-6792
                 </a>
               </Button>
               <DemoModal>

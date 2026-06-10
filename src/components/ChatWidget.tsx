@@ -84,7 +84,7 @@ export default function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Sorry, I'm having trouble connecting right now. You can reach us directly at (281) 699-8318.",
+            "Sorry, I'm having trouble connecting right now. You can reach us directly at (713) 517-6792.",
         },
       ]);
     } finally {

@@ -99,11 +99,11 @@ export default function Header() {
             {/* Desktop right side */}
             <div className="hidden md:flex items-center gap-4 shrink-0">
               <a
-                href="tel:+12816998318"
+                href="tel:+17135176792"
                 className="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                (281) 699-8318
+                (713) 517-6792
               </a>
               <Button
                 asChild
@@ -137,11 +137,11 @@ export default function Header() {
 
                     {/* Phone prominent */}
                     <a
-                      href="tel:+12816998318"
+                      href="tel:+17135176792"
                       className="flex items-center gap-3 px-6 py-4 bg-slate-50 border-b border-slate-100 text-base font-semibold text-slate-800 hover:text-primary transition-colors"
                     >
                       <Phone className="w-5 h-5 text-primary" />
-                      (281) 699-8318
+                      (713) 517-6792
                     </a>
 
                     {/* Mobile nav links */}

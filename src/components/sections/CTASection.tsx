@@ -21,9 +21,9 @@ const CTASection = () => {
               size="lg"
               asChild
             >
-              <a href="tel:+12816998318" className="flex items-center gap-2">
+              <a href="tel:+17135176792" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                Call Us: (281) 699-8318
+                Call Us: (713) 517-6792
               </a>
             </Button>
             <DemoModal>

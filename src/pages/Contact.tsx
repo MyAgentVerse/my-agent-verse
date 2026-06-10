@@ -8,9 +8,9 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Contact MyAgentVerse | AI Automation Agency — The Woodlands, TX</title>
-        <meta name="description" content="Get in touch with MyAgentVerse. We build custom AI automation for small businesses in Houston, The Woodlands, and across the US. Call (281) 699-8318 or fill out the form." />
+        <meta name="description" content="Get in touch with MyAgentVerse. We build custom AI automation for small businesses in Houston, The Woodlands, and across the US. Call (713) 517-6792 or fill out the form." />
         <meta property="og:title" content="Contact MyAgentVerse | AI Automation Agency" />
-        <meta property="og:description" content="Contact MyAgentVerse — custom AI automation for small businesses. Call (281) 699-8318 or send us a message." />
+        <meta property="og:description" content="Contact MyAgentVerse — custom AI automation for small businesses. Call (713) 517-6792 or send us a message." />
         <meta property="og:url" content="https://myagentverse.com/contact" />
         <meta property="og:image" content="https://myagentverse.com/social-preview.png" />
         <link rel="canonical" href="https://myagentverse.com/contact" />

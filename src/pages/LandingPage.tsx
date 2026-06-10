@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { HF } from "@/lib/hf-images";
 
-const PHONE = "(281) 699-8318";
-const PHONE_HREF = "tel:+12816998318";
+const PHONE = "(713) 517-6792";
+const PHONE_HREF = "tel:+17135176792";
 const CTA_HREF = "/process-audit";
 
 // ─── Brand tokens ────────────────────────────────────────────────────────────
