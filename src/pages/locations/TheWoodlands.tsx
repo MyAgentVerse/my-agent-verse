@@ -104,7 +104,7 @@ const TheWoodlands = () => {
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8">
-                <Link to="/process-audit">Get Your Free Process Audit</Link>
+                <Link to="/process-audit">Book Free Assessment</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
                 <a href="tel:+17135176792">
@@ -215,13 +215,13 @@ const TheWoodlands = () => {
               Let's Talk About Your Business
             </h2>
             <p className="mb-8 text-lg text-gray-300">
-              Book a free Process Audit. We'll map out your biggest automation opportunities
+              Book a free Bottleneck Assessment. We'll map out exactly where your operation is losing time and money
               and show you the ROI — no obligation, no pressure.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8">
                 <Link to="/process-audit">
-                  Book Free Process Audit <ArrowRight className="ml-2 h-4 w-4" />
+                  Book Free Assessment <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">

@@ -166,11 +166,11 @@ const About = () => {
           <div className="container mx-auto px-6 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to talk?</h2>
             <p className="text-white/80 text-xl mb-8 max-w-xl mx-auto">
-              Start with a free process audit — 30 minutes, no pitch, just a map of what's worth fixing first.
+              Start with a free 60-minute Bottleneck Assessment. No pitch, no pressure. Just a clear map of what to fix first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="lg" asChild className="hover-scale">
-                <a href="/process-audit">Get Your Free Process Audit <ArrowRight className="ml-2 h-5 w-5" /></a>
+                <a href="/process-audit">Book Free Assessment <ArrowRight className="ml-2 h-5 w-5" /></a>
               </Button>
               <Button asChild style={{background:"transparent",border:"1.5px solid rgba(255,255,255,0.5)",color:"white"}} size="lg" className="hover-scale hover:bg-white/10">
                 <a href="/get-started">Get In Touch</a>

@@ -106,7 +106,7 @@ export default function GetStarted() {
                   Most Popular
                 </div>
                 <h2 className="text-2xl font-bold text-[hsl(222_47%_11%)] mb-3">
-                  Book a Free Process Audit
+                  Book Free Assessment
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6 flex-1">
                   In 30 minutes on Zoom, we map your top 3–5 most painful manual
@@ -134,7 +134,7 @@ export default function GetStarted() {
                     size="lg"
                     className="w-full bg-[hsl(186_100%_27%)] hover:bg-[hsl(186_100%_22%)] text-white font-bold text-base h-12 transition-transform hover:scale-[1.02]"
                   >
-                    Book My Free Audit
+                    Book Free Assessment
                   </Button>
                 </Link>
               </CardContent>
@@ -378,7 +378,7 @@ export default function GetStarted() {
               },
               {
                 q: "How do I know if my business is a good fit?",
-                a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 30-minute Process Audit — no obligation, guaranteed results.",
+                a: "If your team does repetitive manual work every week and you want it gone, you're a fit. The best way to find out is a free 60-minute Bottleneck Assessment — no obligation, no pitch.",
               },
             ].map(({ q, a }) => (
               <Card key={q} className="border border-slate-200 shadow-sm">
@@ -404,7 +404,7 @@ export default function GetStarted() {
             size="lg"
             className="bg-white text-[hsl(186_100%_27%)] hover:bg-slate-100 font-bold text-base px-10 h-12 transition-transform hover:scale-105"
           >
-            Book My Free Process Audit
+            Book Free Assessment
           </Button>
         </Link>
       </section>

@@ -131,7 +131,7 @@ const Results = () => {
               </p>
               <Button variant="accent" size="lg" asChild className="hover-scale">
                 <a href="/process-audit">
-                  Get Your Free Process Audit <ArrowRight className="ml-2 h-5 w-5" />
+                  Book Free Assessment <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>
@@ -255,11 +255,11 @@ const Results = () => {
           <div className="container mx-auto px-6 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Want results like these?</h2>
             <p className="text-white/80 text-xl mb-8 max-w-2xl mx-auto">
-              Start with a free 30-minute process audit. We'll map your biggest operational pain points and show you exactly what's worth automating.
+              Book your free 60-minute Bottleneck Assessment. We'll map out exactly where your business is losing time and money.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="lg" asChild className="hover-scale">
-                <a href="/process-audit">Get Your Free Process Audit <ArrowRight className="ml-2 h-5 w-5" /></a>
+                <a href="/process-audit">Book Free Assessment <ArrowRight className="ml-2 h-5 w-5" /></a>
               </Button>
               <Button asChild style={{background:"transparent",border:"1.5px solid rgba(255,255,255,0.5)",color:"white"}} size="lg" className="hover-scale hover:bg-white/10">
                 <a href="tel:+17135176792">(713) 517-6792</a>

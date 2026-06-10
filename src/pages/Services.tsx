@@ -61,7 +61,7 @@ const Services = () => {
               </p>
               <Button asChild variant="accent" size="lg" className="hover-scale group">
                 <Link to="/process-audit">
-                  Get Your Free Process Audit
+                  Book Free Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -168,7 +168,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Start with a Free Audit
+                      Book Free Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -223,7 +223,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Start with a Free Audit
+                      Book Free Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -370,7 +370,7 @@ const Services = () => {
                     className="hover-scale mt-8 w-full group"
                   >
                     <Link to="/process-audit">
-                      Start with a Free Audit
+                      Book Free Assessment
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -473,7 +473,7 @@ const Services = () => {
                   Best for: one specific pain point you want solved fast.
                 </p>
                 <Button asChild variant="outline" className="hover-scale mt-4 w-full">
-                  <Link to="/process-audit">Start with a Free Audit</Link>
+                  <Link to="/process-audit">Book Free Assessment</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -523,7 +523,7 @@ const Services = () => {
                 </p>
                 <Button asChild variant="accent" className="hover-scale mt-4 w-full group">
                   <Link to="/process-audit">
-                    Start with a Free Audit
+                    Book Free Assessment
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
@@ -568,7 +568,7 @@ const Services = () => {
                   Best for: high-complexity operations or multiple departments.
                 </p>
                 <Button asChild variant="outline" className="hover-scale mt-4 w-full">
-                  <Link to="/process-audit">Start with a Free Audit</Link>
+                  <Link to="/process-audit">Book Free Assessment</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -593,7 +593,7 @@ const Services = () => {
               Not sure which fits?
             </h2>
             <p className="text-lg text-white/80">
-              Start with the free process audit. We'll map your top 3 painful
+              Book your free Bottleneck Assessment. We'll map your top 3 painful
               processes, tell you exactly what's worth automating, and give you
               a clear recommendation — with no obligation to hire us.
             </p>
@@ -605,7 +605,7 @@ const Services = () => {
                 className="hover-scale group px-10 text-base"
               >
                 <Link to="/process-audit">
-                  Get Your Free Process Audit
+                  Book Free Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

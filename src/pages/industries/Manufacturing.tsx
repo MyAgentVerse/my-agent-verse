@@ -145,7 +145,7 @@ export default function Manufacturing() {
               className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold hover-scale"
             >
               <Link to="/process-audit">
-                Get a Free Process Audit <ArrowRight className="ml-2 w-4 h-4" />
+                Book Free Assessment <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             <Button
@@ -301,7 +301,7 @@ export default function Manufacturing() {
             <span className="text-teal-700 font-medium text-sm">Free, no-obligation audit</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Get a free process audit for your manufacturing operation.
+            Book your free Bottleneck Assessment.
           </h2>
           <p className="text-slate-600 mb-8 text-lg">
             We'll map your biggest admin bottlenecks and show you exactly where automation delivers fast ROI — before you spend a dollar.
@@ -312,7 +312,7 @@ export default function Manufacturing() {
             className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold hover-scale text-base px-8"
           >
             <Link to="/process-audit">
-              Book Your Free Audit <ArrowRight className="ml-2 w-4 h-4" />
+              Book Free Assessment <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
           <p className="mt-4 text-slate-500 text-sm">
