@@ -20,8 +20,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <p className="text-lg font-bold text-white mb-2">MyAgentVerse</p>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              We simplify the hard stuff. AI automation for businesses that are
-              growing but drowning in process. The Woodlands, TX.
+              We find and fix the operational bottlenecks holding your business
+              back. AI, automation, and intelligent systems built around your
+              operation. The Woodlands, TX.
             </p>
             <nav className="flex flex-col gap-2">
               {[
@@ -50,7 +51,7 @@ export default function Footer() {
                 { label: "Operations Automation", href: "/services" },
                 { label: "Lead & Quote Automation", href: "/services" },
                 { label: "Document Processing", href: "/services" },
-                { label: "Free Process Audit", href: "/process-audit" },
+                { label: "Book Free Assessment", href: "/process-audit" },
               ].map((item) => (
                 <Link
                   key={item.label}
@@ -114,7 +115,7 @@ export default function Footer() {
               size="sm"
               className="mb-6 w-full rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold"
             >
-              <Link to="/process-audit">Book Free Audit</Link>
+              <Link to="/process-audit">Book Free Assessment</Link>
             </Button>
             <ContactForm />
           </div>
