@@ -586,13 +586,96 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in relative hidden lg:block">
-              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-tr from-[hsl(186_100%_27%)]/30 to-[hsl(42_100%_50%)]/20 blur-xl" />
-              <img
-                src={businessChaos}
-                alt="Overwhelmed business owner at a chaotic desk"
-                className="relative rounded-2xl object-cover shadow-2xl"
-              />
+            {/* Result cards — replaces hero image */}
+            <div className="animate-fade-in relative hidden lg:flex lg:flex-col justify-center gap-3">
+              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-[hsl(186_100%_27%)]/15 to-[hsl(42_100%_50%)]/10 blur-2xl pointer-events-none" />
+
+              <p className="relative text-[11px] font-bold uppercase tracking-widest text-slate-500 text-center mb-1">
+                Real results · Service businesses like yours
+              </p>
+
+              {/* HVAC Card */}
+              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">HVAC Contractor · Houston</div>
+                    <div className="text-sm font-medium text-slate-300">Automated lead response + dispatch</div>
+                  </div>
+                  <div className="w-8 h-8 rounded-lg bg-[hsl(186_100%_27%)]/20 flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-4 h-4 text-[hsl(186_100%_50%)]" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">8 min</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">lead response<br />(was 4 hrs)</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">+23%</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">more closed<br />jobs</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">14 hrs</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">saved<br />per week</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dental Card */}
+              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">Dental Practice · Houston Area</div>
+                    <div className="text-sm font-medium text-slate-300">Automated reminders + recall sequences</div>
+                  </div>
+                  <div className="w-8 h-8 rounded-lg bg-[hsl(186_100%_27%)]/20 flex items-center justify-center flex-shrink-0">
+                    <Users className="w-4 h-4 text-[hsl(186_100%_50%)]" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">−40%</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">no-show rate</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">+2 hrs/day</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">front desk reclaimed</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Plumbing Card */}
+              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">Field Service Company · Plumbing</div>
+                    <div className="text-sm font-medium text-slate-300">Dispatch automation + customer SMS</div>
+                  </div>
+                  <div className="w-8 h-8 rounded-lg bg-[hsl(186_100%_27%)]/20 flex items-center justify-center flex-shrink-0">
+                    <Settings className="w-4 h-4 text-[hsl(186_100%_50%)]" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">10+ hrs</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">saved per week</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">Zero</div>
+                    <div className="text-[10px] text-slate-500 leading-tight">dispatch chaos</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Guarantee strip */}
+              <div className="relative flex items-center gap-2.5 rounded-xl bg-[hsl(42_100%_50%)]/10 border border-[hsl(42_100%_50%)]/25 px-4 py-3">
+                <CheckCircle className="w-4 h-4 text-[hsl(42_100%_50%)] flex-shrink-0" />
+                <p className="text-sm text-slate-300">
+                  First fix live within{" "}
+                  <span className="font-bold text-[hsl(42_100%_50%)]">7 days</span>.
+                  You own everything we build. No lock-in.
+                </p>
+              </div>
             </div>
           </div>
         </div>
