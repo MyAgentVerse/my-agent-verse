@@ -511,39 +511,34 @@ const PainItem = ({
           obs.unobserve(el);
         }
       },
-      { threshold: 0.18 }
+      { threshold: 0.15 }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
-
-  const isEven = idx % 2 === 0;
 
   return (
     <div
       ref={ref}
       style={{
         opacity: 0,
-        transform: "translateY(48px)",
-        transition: `opacity 0.65s ease ${idx * 0.12}s, transform 0.65s ease ${idx * 0.12}s`,
+        transform: "translateY(40px)",
+        transition: `opacity 0.6s ease ${idx * 0.1}s, transform 0.6s ease ${idx * 0.1}s`,
       }}
-      className={`flex flex-col gap-6 rounded-2xl border border-border bg-card p-8 shadow-md md:flex-row md:items-start ${
-        !isEven ? "md:flex-row-reverse" : ""
-      }`}
+      className="flex gap-5 rounded-2xl border border-border bg-card p-7 shadow-md items-start"
     >
-      {/* Number badge */}
-      <div className="flex-shrink-0">
-        <div className="flex h-16 w-16 flex-col items-center justify-center rounded-2xl bg-red-500/10 border border-red-500/20">
-          <span className="text-xs font-bold uppercase tracking-widest text-red-400">
-            {item.label}
-          </span>
-          <span className="text-2xl font-extrabold text-red-400 leading-none">
-            {item.number}
-          </span>
-        </div>
+      {/* Number circle */}
+      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-500/10 border border-red-500/20 mt-0.5">
+        <span className="text-lg font-extrabold text-red-400 leading-none tabular-nums">
+          {item.number}
+        </span>
       </div>
-      <div className="space-y-3">
-        <h3 className="text-xl font-bold md:text-2xl">{item.heading}</h3>
+
+      <div className="flex-1 space-y-2">
+        <span className="text-xs font-bold uppercase tracking-widest text-red-400">
+          {item.label}
+        </span>
+        <h3 className="text-xl font-bold md:text-2xl leading-snug">{item.heading}</h3>
         <p className="text-muted-foreground leading-relaxed">{item.body}</p>
       </div>
     </div>

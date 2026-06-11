@@ -46,18 +46,27 @@ export default function ProcessAudit() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+
+    // Never let the form hang — resolve within 10 s regardless of Supabase status
+    const timeoutFallback = new Promise<{ success: boolean }>((resolve) =>
+      setTimeout(() => resolve({ success: false }), 10000)
+    );
+
     try {
-      await submitLead({
-        name: form.name,
-        email: form.email,
-        phone: form.phone || undefined,
-        company_name: form.company || undefined,
-        form_type: "consultation",
-        custom_fields: {
-          pain_process: form.painProcess,
-          source: "/process-audit",
-        },
-      });
+      await Promise.race([
+        submitLead({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || undefined,
+          company_name: form.company || undefined,
+          form_type: "consultation",
+          custom_fields: {
+            pain_process: form.painProcess,
+            source: "/process-audit",
+          },
+        }),
+        timeoutFallback,
+      ]);
     } catch (err) {
       console.error("Form submission error:", err);
     } finally {
