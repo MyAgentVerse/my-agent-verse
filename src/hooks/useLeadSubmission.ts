@@ -50,30 +50,24 @@ export const useLeadSubmission = () => {
         form_source: window.location.pathname,
       });
 
-      // Send email notification if enabled
+      // Send email notification if enabled — fire-and-forget (do NOT await)
       if (options?.sendNotification !== false) {
-        try {
-          await supabase.functions.invoke('send-lead-notification', {
-            body: {
-              leadId: lead.id,
-              notifyEmails: options?.notifyEmails,
-            },
-          });
-        } catch (notifyError) {
+        supabase.functions.invoke('send-lead-notification', {
+          body: {
+            leadId: lead.id,
+            notifyEmails: options?.notifyEmails,
+          },
+        }).catch((notifyError: unknown) => {
           console.error('Failed to send notification:', notifyError);
-          // Don't fail the lead submission if notification fails
-        }
+        });
       }
 
-      // Send lead data to n8n webhook
-      try {
-        await supabase.functions.invoke('notify-n8n', {
-          body: { leadId: lead.id },
-        });
-      } catch (n8nError) {
+      // Send lead data to n8n webhook — fire-and-forget (do NOT await)
+      supabase.functions.invoke('notify-n8n', {
+        body: { leadId: lead.id },
+      }).catch((n8nError: unknown) => {
         console.error('Failed to notify n8n:', n8nError);
-        // Don't fail the lead submission if n8n notification fails
-      }
+      });
 
       // Send Slack notification via Vercel API
       try {
