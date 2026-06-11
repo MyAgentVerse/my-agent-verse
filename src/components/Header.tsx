@@ -1,38 +1,25 @@
 // === FILE: src/components/Header.tsx ===
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, ChevronDown } from "lucide-react";
+import { Phone, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import logo from "@/assets/myagentverse-logo-new.png";
 
-const industries = [
-  { label: "Manufacturing", href: "/industries/manufacturing" },
-  { label: "Field Service", href: "/industries/field-service" },
-  { label: "Professional Services", href: "/industries/professional-services" },
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Results", href: "/results" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Header() {
   const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  function isActive(href: string) {
-    return pathname === href;
-  }
-
-  function isIndustriesActive() {
-    return pathname.startsWith("/industries");
-  }
-
   const linkClass = (href: string) =>
     `text-sm font-medium transition-colors hover:text-primary ${
-      isActive(href)
+      pathname === href
         ? "text-primary border-b-2 border-primary pb-0.5"
         : "text-slate-700"
     }`;
@@ -53,47 +40,11 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-7">
-              <Link to="/" className={linkClass("/")}>
-                Home
-              </Link>
-              <Link to="/services" className={linkClass("/services")}>
-                Services
-              </Link>
-
-              {/* Industries dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary focus:outline-none ${
-                      isIndustriesActive()
-                        ? "text-primary border-b-2 border-primary pb-0.5"
-                        : "text-slate-700"
-                    }`}
-                  >
-                    Industries
-                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
-                  </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-52">
-                  {industries.map((item) => (
-                    <DropdownMenuItem key={item.href} asChild>
-                      <Link
-                        to={item.href}
-                        className="cursor-pointer w-full"
-                      >
-                        {item.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <Link to="/results" className={linkClass("/results")}>
-                Results
-              </Link>
-              <Link to="/about" className={linkClass("/about")}>
-                About
-              </Link>
+              {NAV_LINKS.map((item) => (
+                <Link key={item.href} to={item.href} className={linkClass(item.href)}>
+                  {item.label}
+                </Link>
+              ))}
             </nav>
 
             {/* Desktop right side */}
@@ -146,18 +97,13 @@ export default function Header() {
 
                     {/* Mobile nav links */}
                     <nav className="flex flex-col px-6 py-4 gap-1 flex-1">
-                      {[
-                        { label: "Home", href: "/" },
-                        { label: "Services", href: "/services" },
-                        { label: "Results", href: "/results" },
-                        { label: "About", href: "/about" },
-                      ].map((item) => (
+                      {NAV_LINKS.map((item) => (
                         <Link
                           key={item.href}
                           to={item.href}
                           onClick={() => setMobileOpen(false)}
                           className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
-                            isActive(item.href)
+                            pathname === item.href
                               ? "bg-primary/10 text-primary"
                               : "text-slate-700 hover:bg-slate-100 hover:text-primary"
                           }`}
@@ -165,27 +111,6 @@ export default function Header() {
                           {item.label}
                         </Link>
                       ))}
-
-                      {/* Industries section */}
-                      <div className="mt-2">
-                        <p className="px-3 py-1 text-xs font-semibold text-slate-400 uppercase tracking-widest">
-                          Industries
-                        </p>
-                        {industries.map((item) => (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            onClick={() => setMobileOpen(false)}
-                            className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
-                              isActive(item.href)
-                                ? "bg-primary/10 text-primary"
-                                : "text-slate-700 hover:bg-slate-100 hover:text-primary"
-                            }`}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
                     </nav>
 
                     {/* Mobile CTA */}
