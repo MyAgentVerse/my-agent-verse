@@ -590,12 +590,12 @@ const Home = () => {
             <div className="animate-fade-in relative hidden lg:flex lg:flex-col justify-center gap-3">
               <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-[hsl(186_100%_27%)]/15 to-[hsl(42_100%_50%)]/10 blur-2xl pointer-events-none" />
 
-              <p className="relative text-[11px] font-bold uppercase tracking-widest text-slate-500 text-center mb-1">
+              <p className="relative text-[11px] font-bold uppercase tracking-widest text-slate-400 text-center mb-1">
                 Real results · Service businesses like yours
               </p>
 
               {/* HVAC Card */}
-              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+              <div className="relative bg-[hsl(222_47%_8%)] border border-white/10 rounded-2xl p-5 shadow-xl">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">HVAC Contractor · Houston</div>
@@ -608,21 +608,21 @@ const Home = () => {
                 <div className="grid grid-cols-3 gap-2">
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">8 min</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">lead response<br />(was 4 hrs)</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">lead response<br />(was 4 hrs)</div>
                   </div>
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">+23%</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">more closed<br />jobs</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">more closed<br />jobs</div>
                   </div>
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">14 hrs</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">saved<br />per week</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">saved<br />per week</div>
                   </div>
                 </div>
               </div>
 
               {/* Dental Card */}
-              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+              <div className="relative bg-[hsl(222_47%_8%)] border border-white/10 rounded-2xl p-5 shadow-xl">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">Dental Practice · Houston Area</div>
@@ -635,17 +635,17 @@ const Home = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">−40%</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">no-show rate</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">no-show rate</div>
                   </div>
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">+2 hrs/day</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">front desk reclaimed</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">front desk reclaimed</div>
                   </div>
                 </div>
               </div>
 
               {/* Plumbing Card */}
-              <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-2xl p-5 shadow-xl">
+              <div className="relative bg-[hsl(222_47%_8%)] border border-white/10 rounded-2xl p-5 shadow-xl">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-widest text-[hsl(186_100%_50%)] mb-0.5">Field Service Company · Plumbing</div>
@@ -658,11 +658,11 @@ const Home = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">10+ hrs</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">saved per week</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">saved per week</div>
                   </div>
                   <div>
                     <div className="text-lg font-extrabold text-[hsl(42_100%_50%)]">Zero</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">dispatch chaos</div>
+                    <div className="text-[10px] text-slate-400 leading-tight">dispatch chaos</div>
                   </div>
                 </div>
               </div>
