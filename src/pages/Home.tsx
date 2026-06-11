@@ -25,36 +25,15 @@ import industriesConnected from "@/assets/industries-connected.jpg";
 import problemSolutionSplit from "@/assets/problem-solution-split.jpg";
 import buildCollaboration from "@/assets/build-collaboration.jpg";
 
-// ── Rotating Headline ─────────────────────────────────────────
-const HEADLINES = [
-  {
-    part1: "You're Working 60 Hours a Week.",
-    part2: "Your Business Should Be Working Harder Than You.",
-    duration: 4000,
-  },
-  {
-    part1: "You Built This Business to Have Freedom.",
-    part2: "Let's Get It Back.",
-    duration: 2500,
-  },
-  {
-    part1: "Your Business Is Running You.",
-    part2: "Let's Flip That.",
-    duration: 4000,
-  },
-  {
-    part1: "More Revenue. Fewer Hours.",
-    part2: "No New Hires.",
-    duration: 2500,
-  },
-  {
-    part1: "Your Business Has a Bottleneck.",
-    part2: "It's Costing You 15 Hours a Week. We Find It and Fix It.",
-    duration: 2500,
-  },
+// ── Rotating hooks (4 secondary, below the static H1) ────────
+const ROTATING_HOOKS = [
+  { text: "You Built This Business to Have Freedom. Let's Get It Back.", duration: 2500 },
+  { text: "Your Business Is Running You. Let's Flip That.", duration: 4000 },
+  { text: "More Revenue. Fewer Hours. No New Hires.", duration: 2500 },
+  { text: "Your Business Has a Bottleneck. It's Costing You 15 Hours a Week. We Find It and Fix It.", duration: 2500 },
 ];
 
-const RotatingHeadline = () => {
+const RotatingHooks = () => {
   const [idx, setIdx] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -62,22 +41,24 @@ const RotatingHeadline = () => {
     const t = setTimeout(() => {
       setVisible(false);
       setTimeout(() => {
-        setIdx((i) => (i + 1) % HEADLINES.length);
+        setIdx((i) => (i + 1) % ROTATING_HOOKS.length);
         setVisible(true);
       }, 400);
-    }, HEADLINES[idx].duration);
+    }, ROTATING_HOOKS[idx].duration);
     return () => clearTimeout(t);
   }, [idx]);
 
   return (
-    <div style={{ minHeight: "210px" }}>
-      <h1
-        className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
+    <div
+      className="flex items-start gap-3 border-l-2 border-[hsl(42_100%_50%)]/40 pl-4"
+      style={{ minHeight: "52px" }}
+    >
+      <p
+        className="text-base font-medium text-slate-300 md:text-lg leading-snug"
         style={{ opacity: visible ? 1 : 0, transition: "opacity 0.4s ease" }}
       >
-        {HEADLINES[idx].part1}{" "}
-        <span className="text-[hsl(42_100%_50%)]">{HEADLINES[idx].part2}</span>
-      </h1>
+        {ROTATING_HOOKS[idx].text}
+      </p>
     </div>
   );
 };
@@ -559,7 +540,15 @@ const Home = () => {
         <div className="container relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="animate-fade-in space-y-8">
-              <RotatingHeadline />
+              {/* Static H1 — always in DOM for SEO */}
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+                You're Working 60 Hours a Week.{" "}
+                <span className="text-[hsl(42_100%_50%)]">
+                  Your Business Should Be Working Harder Than You.
+                </span>
+              </h1>
+              {/* 4 secondary hooks rotate below the H1 */}
+              <RotatingHooks />
               <p className="max-w-xl text-lg text-slate-300 md:text-xl">
                 You started this business for freedom. Instead you're the first
                 one in, the last one out, and the one everything breaks without.
