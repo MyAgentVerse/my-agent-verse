@@ -4,61 +4,43 @@
   <!-- Core pages -->
   <url>
     <loc>https://myagentverse.com/</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/services</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/process-audit</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/consultation</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/build</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/get-started</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/results</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/contact</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/booking</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/about</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -66,77 +48,47 @@
   <!-- Industry pages -->
   <url>
     <loc>https://myagentverse.com/industries</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/industries/manufacturing</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/industries/field-service</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/industries/professional-services</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Niche landing pages -->
+  <!-- Niche landing page -->
   <url>
     <loc>https://myagentverse.com/hvac</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/realtor</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/real-estate</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/healthcare-demo</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/discovery-call</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://myagentverse.com/playwithai</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
   <!-- Location pages -->
   <url>
     <loc>https://myagentverse.com/houston</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://myagentverse.com/the-woodlands</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -144,7 +96,7 @@
   <!-- Legal -->
   <url>
     <loc>https://myagentverse.com/privacy</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
