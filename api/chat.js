@@ -58,12 +58,15 @@ NEVER: Don't make up case study numbers. Don't say you're an AI unless asked dir
 KNOWLEDGE BASE:
 {KB_CONTEXT}`;
 
-// Extract lead info from conversation
+// Extract lead info — only scan USER messages to avoid matching assistant intros like "I'm Alex"
 function extractLead(messages) {
-  const text = messages.map((m) => m.content).join(" ");
-  const email = text.match(/[\w.+-]+@[\w-]+\.[a-z]{2,}/i)?.[0] || null;
-  const phone = text.match(/\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/)?.[0] || null;
-  const nameMatch = text.match(/(?:i'?m|my name is|this is|i am)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/i);
+  const userText = messages
+    .filter((m) => m.role === "user")
+    .map((m) => m.content)
+    .join(" ");
+  const email = userText.match(/[\w.+-]+@[\w-]+\.[a-z]{2,}/i)?.[0] || null;
+  const phone = userText.match(/\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/)?.[0] || null;
+  const nameMatch = userText.match(/(?:i'?m|my name is|this is|i am)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/i);
   const name = nameMatch?.[1] || null;
   return { name, email, phone };
 }
@@ -109,13 +112,13 @@ export default async function handler(req, res) {
     const data = await completion.json();
     const reply = data.choices?.[0]?.message?.content || "Sorry, I had trouble responding. Call us at (713) 517-6792!";
 
-    // Non-blocking lead capture + Slack notification
+    // Lead capture + Slack notification (awaited — Vercel freezes Lambda on res.json())
     const { name, email, phone } = extractLead(messages);
     if (name && (email || phone)) {
       const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
       const supabaseKey = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
       if (supabaseUrl && supabaseKey) {
-        fetch(`${supabaseUrl}/rest/v1/leads`, {
+        await fetch(`${supabaseUrl}/rest/v1/leads`, {
           method: "POST",
           headers: {
             apikey: supabaseKey,
@@ -133,10 +136,10 @@ export default async function handler(req, res) {
         }).catch(() => {});
       }
 
-      // Slack notification
+      // Slack notification — must be awaited before res.json() or Vercel cuts the fetch
       const slackWebhook = process.env.SLACK_WEBHOOK_URL;
       if (slackWebhook) {
-        fetch(slackWebhook, {
+        await fetch(slackWebhook, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
